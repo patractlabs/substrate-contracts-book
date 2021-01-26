@@ -9,3 +9,15 @@
 其中由于`pallet-evm`（即EVM/solidity体系的合约）在以太坊生态中已有比较丰富的资料，故不会在本合约书中当做重点讲解。而另外的合约体系如`pallet-actor`，或`libra`移植合约平台等皆处于比较早期的研究阶段，因此也不会作为本书的重点。
 
 **本书当前主要以`pallet-contracts` （即WASM合约）作为主体进行介绍。**
+
+因此本书内容包含：
+
+* 运行合约的合约平台（模块）
+    * `pallet-contracts`
+* 编写合约的语言
+    * `ink!`
+    * `Ask!`
+    * `Solang`
+* 帮助合约开发的工具们
+    * `Redspot`
+    * `Europa`
