@@ -14,7 +14,7 @@ before_script:
   # - cargo install-update -a
 
 script:
-  - mdbook build # && mdbook test
+  - mdbook build && cp ./src/index.html ./book # && mdbook test
   
 deploy:
   provider: pages
@@ -23,7 +23,7 @@ deploy:
   cleanup: false
   github-token: $GITHUB_TOKEN
   local-dir: ./book
-  keep-history: true
+  keep-history: false
   on:
     branch: master
   target_branch: gh-pages
