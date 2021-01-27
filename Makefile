@@ -5,7 +5,7 @@ init:
 
 deploy: book
 	@echo "====> deploying to github"
-	mdbook-ruin0x11 build
+	mdbook-ruin0x11 build && cp ./src/index.html ./book
 	rm -rf /tmp/book/*
 	cp -rp book/* /tmp/book/
 	cd /tmp/book && \
