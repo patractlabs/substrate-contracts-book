@@ -1,6 +1,11 @@
 # Substrate Contracts Book
 This is the source repo to build "Substrate Contracts Book".
 
+Currently, everyone can access our book from here:
+
+* 中文：[《Substrate 合约书》](https://patractlabs.github.io/substrate-contracts-book/zh_CN/index.html)
+* English: [\<Substrate Contracts Book\>](https://patractlabs.github.io/substrate-contracts-book/en_US/index.html) (not yet now, need translation)
+
 ## Build
 This repo is build by `mdBook`, however `mdBook` do not support `i18n` now, thus we choose a 
 forked version `mdBook` to support `i18n` features.
