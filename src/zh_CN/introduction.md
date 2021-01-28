@@ -1,6 +1,12 @@
 # Substrate 合约书
 ## 介绍
-本书用于介绍 Substrate 中与合约体系相关的一系列知识，主体包含三类：
+本书用于介绍 Substrate 中与合约体系相关的一系列知识。
+
+本书由 Patract ([https://patract.io/](https://patract.io/)) @ [patractlabs](https://github.com/patractlabs) 主导编写，由 Aten @ [atenjin](https://github.com/atenjin) 负责。
+
+本书仓库位于 [https://github.com/patractlabs/substrate-contracts-book](https://github.com/patractlabs/substrate-contracts-book)，欢迎有志之士一起为本书做出贡献。
+
+本书主体包含三类：
 
 * 运行合约的合约平台（模块）
 * 编写合约的语言
