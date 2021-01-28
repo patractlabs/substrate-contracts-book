@@ -47,7 +47,7 @@
 
 上文已描述链的业务逻辑大部分会运行于沙盒的系统中，且“运行合约”这种业务逻辑更是要需要沙盒隔离。而另一方面Substrate的runtime就是一个沙盒环境（运行于Wasm中），因此在Substrate的合约模块（`pallet-emv`，`pallet-contracts`），就是需要在一个沙盒环境中运行另一个沙盒，如下图所示：
 
-![](./imgs/contracts_overview_module.jpg)
+![](./imgs/overview_module.jpg)
 
 其中：
 * 左边是以太坊模型，表示每运行一个合约，需要在链的平台上启动一个EVM虚拟机去运行
