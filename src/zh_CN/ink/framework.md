@@ -10,5 +10,5 @@ ink!的所有主体功能都实现于｀ink/creates｀目录下：
     * lang：eDSL过程宏的定义组件，合约的规范由这个地方决定
     * metadata：生成metadata的组件
     * prelude：合约编写过程中需要预先导入的包，包含一些标准库
-    * primitives：操作Memory的指针，开发者绝大部分情况下无需关心
+    * primitives：操作状态存储的指针，开发者绝大部分情况下无需关心
     * storage：提供链存储的分配模型以及提供一些预定义好的存储集合类型
