@@ -10,6 +10,7 @@
     - [ink! 框架](./ink/framework.md)
     - [ink! eDSL基础元素](./ink/edsl-basic.md)
     - [ink! 跨合约调用](./ink/call-contracts.md)
+    - [ink! 与solidity的对比](./ink/ink-solidity.md)
     - [cargo-contract](./ink/cargo-contract.md)
     - [ink! 当前的坑](./ink/trap.md)
 - [Ask!](./ask/introduction.md)
