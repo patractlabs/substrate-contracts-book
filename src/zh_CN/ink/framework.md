@@ -1,5 +1,6 @@
 # ink! 框架
-ink!的所有主体功能都实现于｀ink/creates｀目录下：
+
+ink!的所有主体功能都实现于 [`ink/crates`](https://github.com/paritytech/ink/tree/master/crates) 目录下：
 
 * crates:
     * allocator：与Wasm相关，定义allocator，开发者绝大部分情况下无需关心
