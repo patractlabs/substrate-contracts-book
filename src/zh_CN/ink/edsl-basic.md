@@ -113,7 +113,7 @@ mod erc20 {
 
 因此这个结构体可以理解为是合约实体。
 
-> 虽然修饰`mod`的部分才是合约，但是因为`mod`在rust中只能代表作用域，因此为了实践使用，使用`#[ink(storage)]`修饰的结构体表示能过进行操作的合约实体。
+> 虽然修饰`mod`的部分才是合约，但是因为`mod`在rust中只能代表作用域，因此为了实践使用，使用`#[ink(storage)]`修饰的结构体表示能够进行操作的合约实体。
 >
 > 在这种语境下，可以将`#[ink::contract]`修饰的`mod`理解为“开启了合约域”的概念，而`#[ink(storage)]`修饰的`stuct`是在这个合约域下的合约。
 
@@ -158,7 +158,7 @@ pub struct Erc20 {
     > 
     > ink!在设计的这块的时候进一步做了很多事情，因此ink!提供的集合类型`Vec`，`BTreeMap`，`HashMap`等等都是**可以遍历**的。相较于Solidity能实现的功能而言是相当大的进步。
 
-2. 即便基于以上的设计，嵌套集合类型既然很难实现（因为Substrate的状态结构采用了k/v模型）。因此在设计中还是只能尽量避免嵌套集合类型。如果一定需要嵌套集合类型，需要将嵌套的层次打平（flat），将第二层的key和第一层的key合并一起，使用元组替代（相当于Substrate Runtime中的`double_map`）
+2. 即便基于以上的设计，嵌套集合类型依然很难实现（因为Substrate的状态结构采用了k/v模型）。因此在设计中还是只能尽量避免嵌套集合类型。如果一定需要嵌套集合类型，需要将嵌套的层次打平（flat），将第二层的key和第一层的key合并一起，使用元组替代（相当于Substrate Runtime中的`double_map`）
 
     ```Solidity,ignore
     // solidity
@@ -267,7 +267,7 @@ blake2_512(call)[0..4]
 
 > 笔者认为这种设计造成了其他合约语言设计的困扰。因为rust不支持重载不代表别的语言不支持重载。当前Solang将Solidity编译到Wasm的过程后，想和ink!的metadata做兼容，互相调用就会出现问题。
 
-另一方面`selector`也是运行开发者自己定义的
+另一方面`selector`也可以运行合约开发者自己定义的
 
 ```rust,json
 #[ink(message, selector = "0xCAFEBABE")]
