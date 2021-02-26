@@ -1,4 +1,4 @@
-# WASM简要介绍
+# Wasm简要介绍
 
-## WASM与合约模型的关联
+## Wasm与合约模型的关联
 ![](./imgs/wasm.jpg)

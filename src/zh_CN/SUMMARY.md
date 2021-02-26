@@ -3,6 +3,7 @@
 - [介绍](./introduction.md)
     - [合约综述](./contracts/overview.md)
     - [合约模型](./contracts/model.md)
+    - [合约语言（框架）](./contracts/language.md)
     - [Wasm初步](./contracts/wasm_first_step.md)
 - [pallet-contracts 合约模块](./pallet-contracts/introduction.md)
 - [ink!](./ink/introduction.md)
