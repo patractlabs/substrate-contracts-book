@@ -62,7 +62,7 @@ ret.events // 打印events的信息
 
 ```typescript
 var ret = await contract.balanceOf("15Jbynf3EcRqdHV1K14LXYh7PQFTbp5wiXfrc4kbMReR9KxA")
-c.output.toString()
+ret.output.toString()
 ```
 
 如果这个过程是比较固定的，则可以把以上命令写到一个文件中放到`scripts`目录下，例如命名为`scripts/do_something.ts`：
