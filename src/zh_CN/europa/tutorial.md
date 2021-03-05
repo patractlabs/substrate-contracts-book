@@ -23,13 +23,13 @@
 * 安装  [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract/tree/cmd/debug)
 
   ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.9.1
+  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0
   ```
 
   如果你已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式：
   
   ```bash
-  $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.9.1
+  $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
   $ cd cargo-contract
   $ cargo build --release
   ```
