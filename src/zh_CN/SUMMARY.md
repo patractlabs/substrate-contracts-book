@@ -21,5 +21,7 @@
     - [控制台console](./redspot/console.md)
 - [Europa](./europa/introduction.md)
     - [Europa tutorial](./europa/tutorial.md)
-    - [Europa 特性](./europa/features.md)
+    - [Europa 合约执行日志信息解释](./europa/execution_info.md)
+    - [Europa 根据信息定位问题示例](./europa/sample.md)
+    - [Europa 的Wasm Backtrace](./europa/wasm_backtrace.md)
 - [Patract](./patract/introduction.md)

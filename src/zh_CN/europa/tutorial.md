@@ -1,32 +1,42 @@
 # Europa tutorial
 
+Europa 作为一个模拟具备合约功能的节点沙盒环境，其接口（主要是rpc）对于大部分第三方工具都保持兼容，因此可以将Europa视为一个独立的节点进行操作。
+
 ## 搭建开发环境
 
-* Europa搭建
+Europa的环境与正常使用节点调试合约的环境无异，唯一的差别在于若需要打印Wasm的backtrace时，需要使用Patract提供的一个fork版本的`cargo-contract`，直到parity（官方）的`cargo-contract`合并Patract提交的功能之前。若不需要打印合约执行崩溃时的Wasm backtract，则使用官方提供的`cargo-contract`即可。
 
-  ```
-  $ git clone https://github.com/patractlabs/europa
-  $ cd europa
-  $ cargo build --release
+* 编译并运行 Europa 节点
+
+  ```bash
+  $ git clone --recurse-submodules https://github.com/patractlabs/europa.git
+  ## or do following commands
+  $ git clone https://github.com/patractlabs/europa.git
+  $ cd europa/vendor
+  $ git submodule update --init --recursive
   ```
 
-  也直接使用`cargo install`的方式安装Europa。
+  也直接使用`cargo install`的方式安装Europa。（注意要添加上`--locked`以使用Europa当前依赖的Substrate版本）
+
+  ```bash
+  $ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
+  ```
 
   运行Europa：
 
-  ```
+  ```bash
   $ ./target/release/europa --log=runtime=debug -d ./europa_database
+  # 若没有需要保留数据的需求，也可以使用`--tmp`运行Europa
+  $ ./target/release/europa --log=runtime=debug --tmp
   ```
 
-  
-
-* 安装  [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract/tree/cmd/debug)
+* 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract/tree/cmd/debug) （可选，若需要Wasm合约执行崩溃时的backtrace时才需要）
 
   ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
   ```
 
-  如果你已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式：
+  如果开发者已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式：
   
   ```bash
   $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
@@ -34,8 +44,9 @@
   $ cargo build --release
   ```
 
-
 * 编译合约
+
+  `--debug`选项是Patract的`cargo-contract`提供的，若使用parity提供的`cargo-contract`则下面执行命令中都不需要`--debug`的选项。
 
   ```bash
   $ cargo-contract build --debug
@@ -43,9 +54,9 @@
   $ cargo +nightly contract build --debug
   ```
   
-  `-d/--debug`能够在`target/ink`目录下生成另一份`*.src.wasm`，其中包含了"name section"部分，用来帮助分析wasm调用栈的信息。
+  `-d/--debug`能够在`target/ink`目录下**替换**原本的`*.wasm`及`*.contract`文件，替换后的Wasm、Contract文件关闭了编译过程中的代码优化条件，且包含了"name section"部分，用来帮助分析wasm调用栈的信息。
   
-  >  如果没有使用PatractLabs's `cargo-contract`或者不是`*.src.wasm`，在出现wasm panic时，可能出现如下日志：
+  >  如果在编译合约的时候没有使用Patract仓库中的`cargo-contract`并携带`-d/--debug`参数进行合约编译，则在合约执行过程中若出现wasm panic时，可能出现如下日志：
   >
   > ```
   > wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
@@ -55,11 +66,11 @@
   >    ╰─><unknown>[...]
   > ```
   
-  
+  > 添加了`-d/--debug`后产生的编译产物一般比原产物大几百倍（例如原产物2.5k，新产物700k），因为新产物没有进行优化，且保留了大量调试信息。因此开发者也可以通过产物大小粗略判定是否是添加了`-d/--debug`选项后的产物。
 
 ## 部署合约
 
-你可以使用[Redspot](https://redspot.patract.io/zh-CN/tutorial/)或者[Substrate Protal](https://polkadot.js.org/apps/#/explorer)来部署合约。
+开发者可以使用[Redspot](https://redspot.patract.io/zh-CN/tutorial/)或者[Substrate Protal](https://polkadot.js.org/apps/#/explorer)来部署合约。
 
 注意，Europa的`extending types`如下：
 
@@ -69,8 +80,6 @@
   "Address": "MultiAddress"
 }
 ```
-
-
 
 例如使用Redspot部署，使用apps执行交易和查看状态。
 
@@ -82,45 +91,11 @@ $ npx redspot run scripts/deploy.js
 
 获取到部署成功的合约地址，在apps上添加一个已存在的合约：
 
-![add_exist](/Users/jenner/codes/substrate-contracts-book/src/zh_CN/europa/img/add_exist.png)
-
-
+![add_exist](./img/add_exist.png)
 
 ## 分析日志
 
-```rust
-/// Record the contract execution context.
-pub struct NestedRuntime {
-	/// Current depth
-    depth: usize,
-	/// The current contract execute result
-	ext_result: ExecResultTrace,
-	/// The value in sandbox successful result
-	sandbox_result_ok: Option<ReturnValue>,
-	/// Who call the current contract
-    caller: AccountId32,
-	/// The account of the current contract
-    self_account: Option<AccountId32>,
-	/// The input selector
-    selector: Option<HexVec>,
-	/// The input arguments
-    args: Option<HexVec>,
-	/// The value in call or the endowment in instantiate
-    value: u128,
-	/// The gas limit when this contract is called
-    gas_limit: Gas,
-	/// The gas left when this contract return
-    gas_left: Gas,
-	/// The host function call stack
-    env_trace: EnvTraceList,
-	/// The error in wasm
-    wasm_error: Option<WasmErrorWrapper>,
-	/// The trap in host function execution
-    trap_reason: Option<TrapReason>,
-	/// Nested contract execution context
-    nest: Vec<NestedRuntime>,
-}
-```
+使用Europa部署及执行合约的过程中会有如下详细信息的打印，这些信息是合约执行中的信息，可以方便的帮助开发人员定位合约中出现的问题。通过这些信息，合约的执行过程就不再是一个黑盒了。
 
 日志的打印效果举例：
 
@@ -151,94 +126,34 @@ pub struct NestedRuntime {
 
 ### Contract执行日志
 
-说明：
+上面列举的日志案例，我们可以简单分析出以下信息：
 
-* `1: NestedRuntime`：调用深度为1的合约执行日志。
+* `ext_result`： 可以表面这次合约调用执行的执行结果（通过交易调用与rpc调用都属于合约调用）；
+* `caller`： 表面了调用者的公钥，合约调用合约则为父合约的公钥（与EVM的模型一致）；
+* `self_account`：表面本合约的地址；
+* `selector`: 被调用的方法的selector，通过这个属性可以判断出这次的调用是合约的哪个方法；
+* `args`，`value`，`gas_limit`，`gas_limit`等表明了这次执行的相关参数及gas消耗；
+* `env_trace`及`sandbox_result_ok`：表面了合约Wasm执行与`pallet-contracts`之间的交互信息，及Wasm执行器最终的结果（Wasm执行器结果与合约执行结果是不同概念）
+* `nest`：描述了合约调用合约的关系，由于这里为空，表面这次调用只涉及一个合约执行。详细介绍见后文；
 
-* `ext_result`：合约在`pallet-contract`层的执行结果，有`[success]`和`[failed]`两种情况。
+由此可见，Europa提供的合约日志能够清晰的表面一次合约调用中的很多详细信息。若合约的开发者对合约模块`pallet-contracts`比较了解，则可以获得许多重要的调试信息以辅助定位合约问题。若合约开发者对合约模块了解较少，则例如`selector`，`caller`，`nest`等信息也能给合约开发过程中带来很大帮助，减少调试合约的时间。
 
-  * `[success]`只能说明在`pallet-contract`层是执行成功的，但是合约本身的业务逻辑可能是抛出Error的。`ExecResultValue {flag:0, data: 0x...}`中的data值也许是合约的返回值，也许是合约内定义的Error的枚举值。
-  * `[failed]`后面会跟随一个`ExecError {.. }`，错误信息是定义在`pallet-contracts`中的。
+**注意，当在apps上查看contracts中的messages时，apps会自动调用合约只读的messages获取当前合约的一些值，导致Europa会出现一些读取调用的日志，干扰正常判断。因此开发者需要辨别清楚哪块日志才是自己所需要的。** 若使用发送请求都是能被自己控制的第三方客户端，则没有这方面的顾虑。
 
-* `caller`：该合约的调用者，可能是用户，也可能是另外一个合约账户。当该值为`0x000...`时，是被rpc调用的。
-
-* `self_account`：当前合约账户。
-
-* `selector`：传递给合约的函数标识，在合约的metadata.json中查询到对应关系。
-
-* `args`：传递给合约调用函数的参数。
-
-* `value`：给当前合约转账数量。
-
-* `gas_limit`：当前合约最多可以使用的gas数量。
-
-* `gas_left`：退出当前合约时，还剩余的gas数量。
-
-* `env_trace`：在当前合约执行过程中，host_function的调用栈，详细地给出了每个function的参数。以`seal_call`为例，如果input为Some(xxx)而output为None，那么可能是在合约互相调用过程中出错了。
-
-* `trap_reason`：在执行host_function过程中，遇到trap的原因。
-
-  * Return & Termination & Restoration：是合约执行的正常退出策略，不是Error。
-  * SupervisorError：定义在`pallet_contracts`中的DispatchError。
-
-* `wasm_error`：如果合约内部出现了wasm执行错误，会将wasm调用栈打印在该字段中。当且仅当`ext_result`是`[failed]`。
-
-* `sandbox_result_ok`：假如在host_function执行过程中没有`trap`，并且没有`wasm_error`，那么认为合约执行成功，打印该字段。该字段携带一个`ReturnValue`的信息，在`ink!`中，如果返回的value值不为0，那么可能是出现了一个`ink!`内定义的Error，需要查询相应的[`DispatchError`](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80)。
-
-* `nest`：嵌套调用的合约日志。如果当前合约调用了其他合约，被调用合约的执行日志会被嵌套在该字段之中。
-
-  合约间的互相调用，日志如下：
-
-  * 在合约A中，调用合约B之后再调用合约C
-
-    ![call_other_1](/Users/jenner/codes/substrate-contracts-book/src/zh_CN/europa/img/call_other_1.png)
-
-    日志如下：
-
-    ```bash
-    1: NestedRuntime {
-     self_account: A,
-     nest:[
-         2: NestedRuntime {
-             self_account: B,
-             nest:[],
-         },
-         2: NestedRuntime {
-             self_account: C,
-             nest:[],
-         }
-     ]
-    }
-    ```
-
-    
-
-  * 在合约A中，调用合约B，在合约B中，调用合约C
-
-    ![call_other_2](/Users/jenner/codes/substrate-contracts-book/src/zh_CN/europa/img/call_other_2.png)
-
-    日志如下：
-
-    ```bash
-    1: NestedRuntime {
-     self_account: A,
-     nest:[
-         2: NestedRuntime {
-             self_account: B,
-             nest:[
-                 3: NestedRuntime {
-                    self_account: C,
-                    nest:[],
-                }
-             ],
-         }  
-     ]
-    }
-    ```
-
-    
-
-注意，当在apps上查看contracts中的messages时，apps会自动调用读取类的messages，导致Europa日志中会出现一些读取调用。
+> 开发者使用apps发送请求时，在Europa中辨别出需要日志的小tip：
+> 
+> `1: NestedRuntime {}` 块下有一个`selector`字段，表示该次合约执行所使用的selector。开发者可以在metadata.json 中的`messages`部分中，获知当前调用的方法名对应的selector是什么，例如：
+> ```json
+> "messages": [
+>     {
+>       "name": [
+>         "flip"
+>       ],
+>       "selector": "0x633aa551"
+>     }
+> ]
+> ```
+> 因此可以通过`selector`字段与日志中的`selector`进行比对，判定出当前通过apps发出的合约调用所对应的日志部分。
 
 ### wasmi panic backtrace
 
@@ -254,7 +169,7 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 }
 ```
 
-调用该方法时，Europa中会打印如下日志：
+调用该方法时，Europa中会打印如下日志（请注意当前该合约需要使用Patract的`cargo-contract`才会打印Wasm的Backtrace）：
 
 ```bash
 1: NestedRuntime {
@@ -300,7 +215,9 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 call -> dispatch_using_mode -> ... -> transfer -> panic 
 ```
 
-以上为简单的日志分析说明，更多特殊的情况将在下一节“示例”中介绍。
+因此合约开发者可以定位到产生这次panic的原因是因为`transfer`这个函数中出现了`panic`导致。
+
+以上为简单的日志分析说明，更多特殊的情况将在后面的“示例”章节中介绍。
 
 ## 自定义ChainExtensions
 
