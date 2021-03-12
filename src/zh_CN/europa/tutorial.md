@@ -30,7 +30,7 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
   $ ./target/release/europa --log=runtime=debug --tmp
   ```
 
-* 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract/tree/cmd/debug) （可选，若需要Wasm合约执行崩溃时的backtrace时才需要）
+* 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) （可选，若需要Wasm合约执行崩溃时的backtrace时才需要）
 
   ```
   $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force

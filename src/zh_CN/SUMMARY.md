@@ -23,5 +23,6 @@
     - [Europa tutorial](./europa/tutorial.md)
     - [Europa 合约执行日志信息解释](./europa/execution_info.md)
     - [Europa 根据信息定位问题示例](./europa/sample.md)
+    - [Europa Wasm executor](./europa/wasm_executor.md)
     - [Europa 的Wasm Backtrace](./europa/wasm_backtrace.md)
 - [Patract](./patract/introduction.md)
