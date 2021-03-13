@@ -91,7 +91,7 @@ $ npx redspot run scripts/deploy.js
 
 获取到部署成功的合约地址，在apps上添加一个已存在的合约：
 
-![add_exist](./img/add_exist.png)
+![add_exist](./imgs/add_exist.png)
 
 ## 分析日志
 

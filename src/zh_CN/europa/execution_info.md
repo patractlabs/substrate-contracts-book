@@ -105,7 +105,7 @@ pub struct NestedRuntime {
 
 * 在合约A中，调用合约B之后再调用合约C
 
-![call_other_1](./img/call_other_1.png)
+![call_other_1](./imgs/call_other_1.png)
 
 日志如下：
 
@@ -127,7 +127,7 @@ pub struct NestedRuntime {
 
 * 在合约A中，调用合约B，在合约B中，调用合约C
 
-![call_other_2](./img/call_other_2.png)
+![call_other_2](./imgs/call_other_2.png)
 
 日志如下：
 
