@@ -1,19 +1,19 @@
-# API
+# API 接入
 
-## ENDPOINT Rules
+## ENDPOINT 规则
 
-`Https`Access：
+`Https`接入
 ```
 https://api.elara.patract.io/<Network>/<YOUR-PROJECT-ID>
 ```
 
-`Websocket`Access：
+`Websocket`接入
 ```
 wss://api.elara.patract.io/<Network>/<YOUR-PROJECT-ID>
 ```
 
 
-##  Supported Network
+##  支持网络
 
 
 | **NETWORK** | **DESCRIPTION**         | ENDPOINT                                              |

@@ -48,5 +48,5 @@
 - [Patract](./patract/introduction.md)
 - [Elara](./elara/introduction.md)
     - [tutorial](./elara/tutorial.md)
-    - [design](./elara/design.md)
+    - [设计](./elara/design.md)
     - [API](./elara/API.md)

@@ -1,27 +1,27 @@
 # Tutorial
-Elara's  APIs require a valid Project Endpoint to be included with your request traffic. This identifier should be appended to the request URL.
+Elara的API需要有效的Project Endpoint包含在您的请求中。此标识符应附加到请求URL。
 
-## Get YOUR-PROJECT-ENDPOINT
-1. Login with your github account [Elara official website](https://elara.patract.io/)
+## 获取YOUR-PROJECT-ENDPOINT
+1.使用您的github帐户登录[Elara官方网站](https://elara.patract.io/)
 
-2. Enter [Elara Dashboard](https://elara.patract.io/#/dashboard/console), click to select the main chain in the left sidebar
+2.进入[Elara Dashboard](https://elara.patract.io/#/dashboard/console)，单击以选中左侧边栏中的主链。
 
-3. Click the "Create New Project" button in the upper right corner, enter `PROJECT-NAME` in the pop-up dialog box, and click "OK". If everything is normal, you will see a message that the project was created successfully.
+3.单击右上角的“创建新项目”按钮，在弹出对话框中输入“ PROJECT-NAME”，然后单击“确定”。如果一切正常，您将看到一条消息，说明该项目已成功创建。
 
-4. In the project list, click on the project to enter the project details page
-     - There is a column of information showing `PID`, a string of characters and numbers with a length of 32, which is the `YOUR-PROJECT-ID` of the project
-     - There is a column of information displaying `ENDPOINTS`, including `https` and `wss` to access ENDPOINT. That is the project's `YOUR-PROJECT-ENDPOINT`
-
-
-
-## Make Requests
-
-Use one of these endpoints as your  client provider.
+4.在项目列表中，单击项目以进入项目详细信息页面
+     -有一列信息显示“ PID”，一串长度为32的字符和数字，即项目的“ YOUR-PROJECT-ID”
+     -有一列显示“ ENDPOINTS”的信息，包括访问ENDPOINT的“ https”和“ wss”。那就是项目的“ YOUR-PROJECT-ENDPOINT”
 
 
-*NOTE:Be sure to replace YOUR-PROJECT-ENDPOINT with a Project ENDPOINT from your Elara dashboard*
 
-- Method 1 : curl sends HTTP request:
+## 发出请求
+
+使用这些ENDPOINT之一作为您的客户端程序的Provider。
+
+
+*注意：请务必将YOUR-PROJECT-ENDPOINT替换为Elara仪表板中的Project Endpoint *
+
+- 方法1：curl发送HTTP请求：
 ```
 #curl http
 curl --location --request POST 'https://YOUR-PROJECT-ENDPOINT' \
@@ -34,7 +34,7 @@ curl --location --request POST 'https://YOUR-PROJECT-ENDPOINT' \
     }'
 ```
 
-- Method 2: wscat sends websocket request:
+- 方法2：使用wscat发送websocket请求：
 ```
 parachain@ubuntu:~/elara$ wscat  -c wss://YOUR-PROJECT-ENDPOINT
 Connected (press CTRL+C to quit)
@@ -43,9 +43,9 @@ Connected (press CTRL+C to quit)
 > 
 ```
 
-- Method 3 : Using the SDK
+- 方法3：使用SDK
 
-You can refer to polkadot-js, use the following similar code to access the node with Https or Websocket：
+您可以参考polkadot-js，使用以下类似代码通过Https或Websocket访问节点：
 ```
 const { ApiPromise, WsProvider } = require('@polkadot/api');
 const { HttpProvider } = require('@polkadot/rpc-provider');
@@ -64,9 +64,4 @@ const api = await ApiPromise.create({ provider: wsProvider })
 })()
 ```
 
-It's important to note that JSON-RPC requests are transport agnostic, the same requests can be made over HTTPS, Websockets.
-
-
-
-
-
+请务必注意，JSON-RPC请求与传输无关，可以通过HTTPS，Websockets发出相同的请求。
