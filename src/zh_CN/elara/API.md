@@ -46,9 +46,9 @@ wss://api.elara.patract.io/<Network>/<YOUR-PROJECT-ID>
 | Mandala      | JSON-RPC over WebSocket | wss://api.elara.patract.io/Mandala/YOUR-PROJECT-ID     |
 
 
-## Error Codes
+## 错误代码
 
-If an Substrate RPC method encounters an error, the error member included on the response object MUST be an object containing a code member and descriptive message member. The following list contains all possible error codes and associated messages:
+如果Substrate RPC方法遇到错误，则响应对象中包含的错误成员务必是包含代码成员和描述性消息成员的对象。 以下列表包含所有可能的错误代码和关联的消息：
 
 
 | **CODE** | ****MEANING****         | **CATEGORY**                       |
