@@ -44,5 +44,7 @@
     - [go-patract](./himalia/go-patract.md)
     - [py-patract](./himalia/py-patract.md)
 - [Metis](./metis/introduction.md)
+    - [Tokens](./metis/tokens.md)
+    - [Access Control](./metis/access-control.md)
 - [Carpo](./carpo/introduction.md)
 - [Patract](./patract/introduction.md)
