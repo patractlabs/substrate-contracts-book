@@ -37,7 +37,41 @@ TODO 确定不同平台的安装方式
 
 ### 准备能运行合约的区块链节点
 
-TODO 节点安装文档
+#### 1. Jupiter
+
+Jupiter [https://github.com/patractlabs/jupiter](https://github.com/patractlabs/jupiter) 是 Patract 维护的，包含 Patract 合约设计规范并兼容最新 `pallet-contracts` 模块的合约测试网。
+
+Jupiter 有三类节点：
+
+* 运行于 rococo 上的 Jupiter 合约平行链；
+* 独立运行对外提供最新合约功能的 Jupiter 独立测试网；
+* 适用于本地快速测试的 Jupiter 节点
+
+这三类节点的区别及编译安装等信息请参阅该项目的Readme。
+
+#### 2. Europa
+
+Europa [https://github.com/patractlabs/europa](https://github.com/patractlabs/europa) 是 Patract 设计的用于帮助合约开发者调试及测试合约的合约沙盒。该合约沙盒的定位类似于 Ethereum 生态中的 Ganache，但 Europa 的特性更多的体现在其提供了部署调用合约过程中的详细执行信息的日志，能够最大程度反应出合约模块这个“黑盒”的运行情况，对合约的开发者十分有帮助。
+
+开发者可以简单的通过以下方式安装并启动Europa：
+
+```bash
+cargo install europa --git https://github.com/patractlabs/europa --locked --force
+europa --tmp
+```
+
+Europa 不同的版本及其他信息请参阅该项目的Readme。
+
+#### 3. Canvas
+
+Canvas [https://github.com/paritytech/canvas-node](https://github.com/paritytech/canvas-node) 是 parity 官方提供的具备 `pallet-contracts` 模块的合约测试链，这个测试链是一个 parity `ink!` & `pallet-contracts` 开发组维护的测试网。
+
+参与 canvas 网络的方式请参照该项目的 Readme。若目的只是为了在本地运行测试节点，可以执行如下命令：
+
+```bash
+cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --force --locked
+cargo --dev --tmp
+```
 
 ## 创建 Redspot 项目
 Redspot 通过 `npx` 进行安装。（Redspot 并不需要通过 clone 项目进行安装）
