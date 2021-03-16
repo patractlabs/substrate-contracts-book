@@ -46,3 +46,7 @@
 - [Metis](./metis/introduction.md)
 - [Carpo](./carpo/introduction.md)
 - [Patract](./patract/introduction.md)
+- [Elara](./elara/introduction.md)
+    - [tutorial](./elara/tutorial.md)
+    - [设计](./elara/design.md)
+    - [API](./elara/API.md)
