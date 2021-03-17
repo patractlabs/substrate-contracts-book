@@ -50,3 +50,7 @@
     - [tutorial](./elara/tutorial.md)
     - [设计](./elara/design.md)
     - [API](./elara/API.md)
+- [PatraStore](./patra-store/introduction.md)
+    - [Overview](./patra-store/overview.md)
+    - [Getting Starter](./patra-store/getting-starter.md)
+    - [发布DApp](./patra-store/publish-dapps.md)
