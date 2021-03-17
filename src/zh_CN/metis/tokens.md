@@ -7,10 +7,11 @@ metis 提供了完全符合 `ERC20` 标准的 [trait_definition](https://github.
 ## Trait Definition
 通过 `#[ink::trait_definition]` 处理宏，开发者可以定义自己的 trait definitions，然后可以由 ink! 智能合约实现。 这允许为不同的具体实现定义共享的智能合约接口。 注意这种 `#[ink::trait_definition]` 可以在任何地方定义，甚至可以在另一个 crate 中定义！
 
-### erc20 trait 代码解析 
+### erc20 trait 源码解析 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
+// 注意：这里需要导出 tarit 定义供其他包使用
 pub use self::erc20::{Error, IErc20, Result};
 pub mod events {
     // pub use crate::erc20::{Transfer, Approval};
@@ -166,6 +167,7 @@ use ink_lang as ink;
 
 #[ink::contract]
 mod erc20 {
+    // 这里需要导入 erc20_trait 中定义的接口和错误
     use erc20_trait::{Error, IErc20, Result};
     use ink_prelude::string::String;
 
@@ -213,28 +215,41 @@ mod erc20 {
 }
 ```
 
-## 跨合约调用
-在此之前我们已经通过 erc20 trait 实现了标准 erc20 合约, 在一些复杂的 dapps 中与 erc20 合约交互是必不可少的。metis 提供了 `erc20 stub` 支持调用我们已经实现erc20合约。
+## 跨合约调用 stub
+在此之前我们已经通过 erc20 trait 实现了标准 erc20 合约, 在一些复杂的 dapps 中与 erc20 合约交互是必不可少的。metis 提供了 `erc20-stub` 支持跨合约调用我们已经实现erc20合约。
 
+### erc20 stub 源码解析
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
+// 需要将 Erc20Stub 导出供子合约调用
 pub use self::erc20::Erc20Stub;
 use ink_lang as ink;
 
 #[ink::contract]
 mod erc20 {
-    use erc20_trait::{IErc20, Result};
     use ink_prelude::string::String;
 
-    /// Basic version of Erc20Stub.
+    /// The ERC-20 error types.
+    #[derive(Debug, PartialEq, Eq, scale::Encode, scale::Decode)]
+    #[cfg_attr(feature = "std", derive(scale_info::TypeInfo))]
+    pub enum Error {
+        /// Returned if not enough balance to fulfill a request is available.
+        InsufficientBalance,
+        /// Returned if not enough allowance to fulfill a request is available.
+        InsufficientAllowance,
+    }
+
+    /// The ERC-20 result type.
+    pub type Result<T> = core::result::Result<T, Error>;
+
     #[ink(storage)]
     pub struct Erc20Stub {}
 
-    impl IErc20 for Erc20Stub {
+    impl Erc20Stub {
         /// Creates a new ERC-20 contract with the specified initial supply.
         #[ink(constructor)]
-        fn new(
+        pub fn new(
             _initial_supply: Balance,
             _name: Option<String>,
             _symbol: Option<String>,
@@ -242,13 +257,64 @@ mod erc20 {
         ) -> Self {
             unimplemented!()
         }
-        
-        // Omitted part of interface
+
+        /// Returns the token name.
+        #[ink(message, selector = "0x6b1bb951")]
+        pub fn token_name(&self) -> Option<String> {
+            unimplemented!()
+        }
+
+        /// Returns the token symbol.
+        #[ink(message, selector = "0xb42c3368")]
+        pub fn token_symbol(&self) -> Option<String> {
+            unimplemented!()
+        }
+
+        /// Returns the token decimals.
+        #[ink(message, selector = "0xc64b0eb2")]
+        pub fn token_decimals(&self) -> Option<u8> {
+            unimplemented!()
+        }
+
+        /// Returns the total token supply.
+        #[ink(message, selector = "0x143862ae")]
+        pub fn total_supply(&self) -> Balance {
+            unimplemented!()
+        }
+
+        /// Returns the account balance for the specified `owner`.
+        #[ink(message, selector = "0xb7d968c9")]
+        pub fn balance_of(&self, _owner: AccountId) -> Balance {
+            unimplemented!()
+        }
+
+        /// Transfers `value` amount of tokens from the caller's account to account `to`.
+        #[ink(message, selector = "0x10d455c2")]
+        pub fn transfer(&mut self, _to: AccountId, _value: Balance) -> Result<()> {
+            unimplemented!()
+        }
+
+        /// Returns the amount which `spender` is still allowed to withdraw from `owner`.
+        #[ink(message, selector = "0xc04aa300")]
+        pub fn allowance(&self, _owner: AccountId, _spender: AccountId) -> Balance {
+            unimplemented!()
+        }
+
+        /// Transfers `value` tokens on the behalf of `from` to the account `to`.
+        #[ink(message, selector = "0xbb399017")]
+        pub fn transfer_from(
+            &mut self,
+            _from: AccountId,
+            _to: AccountId,
+            _value: Balance,
+        ) -> Result<()> {
+            unimplemented!()
+        }
 
         /// Allows `spender` to withdraw from the caller's account multiple times, up to
         /// the `value` amount.
-        #[ink(message)]
-        fn approve(&mut self, _spender: AccountId, _value: Balance) -> Result<()> {
+        #[ink(message, selector = "0x4ce0e831")]
+        pub fn approve(&mut self, _spender: AccountId, _value: Balance) -> Result<()> {
             unimplemented!()
         }
     }
@@ -256,6 +322,15 @@ mod erc20 {
 ```
 通过以上代码可以知道，在 stub 合约中没有erc20 具体逻辑的实现，只提供了接口的空实现，该合约将作为父合约被子合约实例化，
 并且可以在子合约中，调用父合约的接口。
+
+注意：在该erc20-stub 合约中每个合约方法的 `selector`都设置了固定的值, 这里的 `selector` 的值是由 `BLAKE2("IErc20::{message_func_name}".to_string().as_bytes())[0..4]` 
+公式计算得出。
+
+在 ink! 体系中 `selector` 的计算方式跟 solidity 的有所区别，在 solidity 中是对 方法签名做hash运算， 而在 ink! 中有一套自己的计算方式，最简的是对 `{message_func_name}`
+进行hash运算，但 message 是通过 `#[ink::trait_definition]` 实现时，采用 {trait_name} + {message_func_name} 混合hash 的方式，详细的计算规则，
+可以查看 ink！源码（https://github.com/paritytech/ink/blob/master/crates/lang/ir/src/ir/item_impl/callable.rs#L190）。
+
+因此，erc20-stub 只适用于 metis 中实现的 erc20 合约（通过 IErc20 trait 实现）的跨合约调用, 如果是其他方式实现的 erc20 合约，由于 `selector` 不匹配，不能使用此 stub。
 
 ### 通过 erc20 stub 跨合约调用
 1. 将 `erc20-stub` 包添加到新合约项目的 `cargo.toml` 依赖中
@@ -302,3 +377,5 @@ mod delegate {
 }
 ```
 在 ink! 合约中可以使用 `FromAccountId` 实例化合约对象（不是创建一个新合约），接下来就可以使用合约对象对合约方法进行跨合约调用。
+
+> `ink_storage::Lazy` 管理数据实体，并在存储上延迟执行读取/写入操作, 只有在确定确实需要读取/写入时，才会在存储上执行。
