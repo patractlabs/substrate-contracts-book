@@ -78,7 +78,7 @@ async function initApi(): ApiPromise {
   return new ApiPromise({
     provider,
     signer,
-    // Patract types
+    // Jupiter types
     types: {
       "LookupSource": "MultiAddress",
       "Address": "MultiAddress",
