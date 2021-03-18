@@ -28,5 +28,6 @@
     * `Redspot`
     * `Europa`
     * `Elara`
+    * 等等
 
 为了让合约开发者更好的理解`pallet-contracts`模块与WASM合约的运行方式，本书也会涉及一些WASM的介绍以及区块链合约模型的介绍。
