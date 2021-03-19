@@ -1,17 +1,17 @@
-## 发布DApp
+## Publish DApp
 
-目前我们不支持托管DApp，需要开发者部署好DApp，然后在PatraStore上面上传一下资料（域名，类型，图片，账户等信息）。
+Currently we do not support hosting DApps. Developers need to deploy DApps and upload information (domain name, type, picture, account, etc.) on PatraStore.
 
-确保您开发的DApp前端引入了我们的[SDK](./getting-starter.md)，否则DApp在PatraStore中无法正常工作。
+Make sure that the front end of the DApp you develop includes our [SDK](./getting-starter.md), otherwise the DApp will not work properly in PatraStore.
 
-1. 进入[https://patrastore.io/:chain-value/system/developer](https://patrastore.io/jupiter-a1/system/developer)页面
-2. 点击Publish DApp按钮
+1. Enter [https://patrastore.io/:chain-value/system/developer](https://patrastore.io/jupiter-a1/system/developer) page
+2. Click the Publish DApp button
 ![](./imgs/publish.png)
 ![](./imgs/publish-form.png)
-3. 选择Account，然后填入DApp的基本信息
-4. **在html中加入meta标签**
-    ```html
-    <!-- accountId必须和您选择的账户地址一致，我们后台会间隔一段时间检查一下meta标签，如果accountId和账户地址不一致，DApp将会变为Offline状态 -->
-    <meta name="patrastore:verify" content="accountId" >
-    ```
-5. 点击`Publish`按钮，如果上方填的信息无误，即可成功发布DApp。
+3. Select Account and fill in the basic information of the DApp
+4. **Add meta tag to html**
+     ```html
+     <!-- The accountId must be the same as the account address you selected. We will check the meta tag at intervals in the background. If the accountId and the account address are inconsistent, the DApp will become Offline -->
+     <meta name="patrastore:verify" content="accountId">
+     ```
+5. Click the `Publish` button, and if the information filled above is correct, the DApp can be successfully published.

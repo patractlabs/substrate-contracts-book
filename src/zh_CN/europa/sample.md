@@ -14,14 +14,14 @@
    ```rust
    #[ink(constructor)]
    pub fn new(initial_supply: Balance) -> Self {
-   	//...
-       Self::env().emit_event(Transfer {
+        //...
+        Self::env().emit_event(Transfer {
            from: None,
            to: Some(caller),
            // change this from `initial_supply` to `0_u128`
            value: 0_u128.into() // initial_supply,
-       });
-       instance
+        });
+        instance
    }
    ```
 
@@ -48,8 +48,8 @@
     	|  <ink_env::engine::on_chain::EnvInstance as ink_env::engine::OnInstance>::on_instance[1562]
     	|  ink_env::api::emit_event[1561]
     	|  erc20::erc20::_::<impl ink_lang::events::EmitEvent<erc20::erc20::Erc20> for ink_lang::env_access::EnvAccess<<erc20::erc20::Erc20 as ink_lang::env_access::ContractEnv>::Env>>::emit_event[1685]
-# ...
-# ...
+        # ...
+        # ...
     	|  deploy[1691]
     	╰─><unknown>[2385]
     ,
@@ -96,8 +96,6 @@
     nest: [],
 }
 ```
-
-
 
 调用`tranfer`时，Europa中日志如下：
 

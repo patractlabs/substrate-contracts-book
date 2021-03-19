@@ -1,5 +1,5 @@
-## 介绍
+## Introduction
 
-PatraStore是通过iFrame的方式嵌入Dapp，PatraStore会为Dapp提供Signer，Provider的功能。
+PatraStore embeds Dapp through iFrame, PatraStore will provide Dapp with Signer and Provider functions.
 
-阅读本文档需要对[pokadot-js](https://polkadot.js.org/docs/)有一定的了解。
+Reading this document requires a certain understanding of [pokadot-js](https://polkadot.js.org/docs/).

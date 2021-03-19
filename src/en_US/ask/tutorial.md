@@ -1,23 +1,23 @@
 # tutorial
 
-> 当前 Ask! 只进行了Kusama国库议案的第一期的开发。因此还未发布到npm等公开仓库中。
+> At present, Ask! has only carried out the development of the first phase of the Kusama Treasury bill. Therefore, it has not been released to public repositories such as npm.
 
-## 简单运行：
+## Simple start：
 
-1. clone 项目
+1. clone project
 
     ```bash
     $ git clone https://github.com/patractlabs/ask
     ```
 
-2. 案例合约
+2. example contract
 
-    在Ask!项目中准备了一些案例合约例如`flipper`，`incrementer`等，在`/example`目录下。开发者可以直接参考这些项目，也可以通过新建一个typescript文件(*.ts)来执行下列过程。以下示例过程的最终代码位于`/example/solar` 目录下。
+    Some case contracts, such as `flipper`, `incrementer`, etc., are prepared in the Ask! project, under the `/example` directory. Developers can directly refer to these projects, or they can perform the following process by creating a new typescript file (*.ts). The final code of the following example process is located in the `/example/solar` directory.
 
-    1. 新建文件 `solar.ts`
-    2. 定义合约存储
+    1. create file `solar.ts`
+    2. define contract storage
 
-        Ask! 采用注解 `@storage` 定义一个合约的存储。这个过程类似于ink!中的 `#[ink(storage)]`宏。例如在这个案例中，我们定义下面3个合约存储变量：
+        Ask! uses the annotation `@storage` to define the storage of a contract. This process is similar to the `#[ink(storage)]` macro in ink!. For example, in this case, we define the following three contract storage variables:
 
         ```typescript
         @storage
@@ -28,9 +28,9 @@
         }
         ```
 
-    3. 定义合约的范围及可调用方法：
+    3. Define the scope of the contract and callable methods:
 
-        Ask! 采用`@contract`注解来指定一个class为合约类。这个过程类似于ink!中的 `#[ink::contract]`宏。
+        Ask! uses the `@contract` annotation to specify a class as the contract class. This process is similar to the `#[ink::contract]` macro in ink!.
 
         ```typescript
         @contract
@@ -39,7 +39,7 @@
         }
         ```
 
-        Ask! 提供了`@constructor` 和 `@message` 注解修饰合约类中的方法，类似于ink!中的 `#[ink(constructor)]` 和 `#[ink(message)]`。
+        Ask! provides `@constructor` and `@message` annotations to modify the methods in the contract class, similar to `#[ink(constructor)]` and `#[ink(message)]` in ink!.
 
         ```typescript
         @contract
@@ -52,28 +52,28 @@
         }
         ```
 
-    4. 编译 Ask! 合约
+    4. Compile the Ask! contract
 
-        1. 安装依赖环境：
+        1. Installation dependent environment:
 
-            进入Ask!项目的根目录，执行命令：
+            Enter the root directory of the Ask! project and execute the command:
 
             ```bash
             $ npm install
             ```
 
-        2. 编译
+        2. Compile
 
-            在 Ask! 项目的**根目录**下编译合约。假设当前合约的路径位于`examples/solar/solar.ts`（开发者可以替换为自己合约文件的路径），则编译命令是：
+            Compile the contract in the **root directory** of the Ask! project. Assuming that the path of the current contract is located in `examples/solar/solar.ts` (developers can replace with the path of their own contract files), then the compilation command is:
 
             ```bash
             ./assembly/codegen/bin/ask examples/solar/solar.ts
             ```
 
-            执行了这个命令后，会在合约文件的目录下生成一个扩展文件`extension.ts`，且合约的编译产物位于合约文件目录下的`target`目录。
+            After executing this command, an extension file `extension.ts` will be generated in the contract file directory, and the compiled product of the contract is located in the `target` directory under the contract file directory.
 
-        3. 测试
+        3. Test
 
-            开发者可以采用 Patract 提供的合约执行环境沙盒 [Europa](../europa/introduction.md) 进行合约的部署调用和测试。
+            Developers can use the contract execution environment sandbox [Europa](../europa/introduction.md) provided by Patract to deploy and test contracts.
 
-            启动 Europa后，开发者可以通过 [https://polkadot.js.org/apps]( https://polkadot.js.org/apps) 将`target`目录下的合约进行部署和调用，这个过程和 ink! 合约的操作过程一致。
+            After starting Europa, developers can deploy and call contracts in the `target` directory through [https://polkadot.js.org/apps]( https://polkadot.js.org/apps). This process is similar to Ink! The operation process of the contract is the same.

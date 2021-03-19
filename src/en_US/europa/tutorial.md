@@ -1,12 +1,12 @@
 # Europa tutorial
 
-Europa 作为一个模拟具备合约功能的节点沙盒环境，其接口（主要是rpc）对于大部分第三方工具都保持兼容，因此可以将Europa视为一个独立的节点进行操作。
+Europa is a simulated node sandbox environment with contract functions, and its interface (mainly rpc) is compatible with most third-party tools, so Europa can be regarded as an independent node for operation.
 
-## 搭建开发环境
+## Set up development environment
 
-Europa的环境与正常使用节点调试合约的环境无异，唯一的差别在于若需要打印Wasm的backtrace时，需要使用Patract提供的一个fork版本的`cargo-contract`，直到parity（官方）的`cargo-contract`合并Patract提交的功能之前。若不需要打印合约执行崩溃时的Wasm backtract，则使用官方提供的`cargo-contract`即可。
+The environment of Europa is the same as the environment of normal use of node debugging contracts. The only difference is that if you need to print the backtrace of Wasm, you need to use a fork version of `cargo-contract` provided by Patract until parity (official)`cargo- contract` before merging the features submitted by Patract. If you don't need to print the Wasm backtract when the contract execution crashes, just use the official `cargo-contract`.
 
-* 编译并运行 Europa 节点
+* Compile and run Europa node
 
   ```bash
   $ git clone --recurse-submodules https://github.com/patractlabs/europa.git
@@ -16,27 +16,27 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
   $ git submodule update --init --recursive
   ```
 
-  也直接使用`cargo install`的方式安装Europa。（注意要添加上`--locked`以使用Europa当前依赖的Substrate版本）
+  You can also install Europa directly using `cargo install`. (Note to add `--locked` to use the Substrate version that Europa currently depends on)
 
   ```bash
   $ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
   ```
 
-  运行Europa：
+  Run Europa:
 
   ```bash
   $ ./target/release/europa --log=runtime=debug -d ./europa_database
-  # 若没有需要保留数据的需求，也可以使用`--tmp`运行Europa
+  # If there is no need to retain data, you can also use `--tmp` to run Europa
   $ ./target/release/europa --log=runtime=debug --tmp
   ```
 
-* 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) （可选，若需要Wasm合约执行崩溃时的backtrace时才需要）
+* Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) (optional, only needed if the Wasm contract executes backtrace when it crashes)
 
   ```
   $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
   ```
 
-  如果开发者已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式：
+  If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation:
   
   ```bash
   $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
@@ -44,9 +44,9 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
   $ cargo build --release
   ```
 
-* 编译合约
+* Compile contract
 
-  `--debug`选项是Patract的`cargo-contract`提供的，若使用parity提供的`cargo-contract`则下面执行命令中都不需要`--debug`的选项。
+  The `--debug` option is provided by Patract's `cargo-contract`. If you use the `cargo-contract` provided by parity, you do not need the `--debug` option in the following commands.
 
   ```bash
   $ cargo-contract build --debug
@@ -54,25 +54,25 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
   $ cargo +nightly contract build --debug
   ```
   
-  `-d/--debug`能够在`target/ink`目录下**替换**原本的`*.wasm`及`*.contract`文件，替换后的Wasm、Contract文件关闭了编译过程中的代码优化条件，且包含了"name section"部分，用来帮助分析wasm调用栈的信息。
+  `-d/--debug` can **replace** the original `*.wasm` and `*.contract` files in the `target/ink` directory. The replaced Wasm and Contract files close the compilation process Code optimization conditions, and include the "name section" part to help analyze the information of the wasm call stack.
   
-  >  如果在编译合约的时候没有使用Patract仓库中的`cargo-contract`并携带`-d/--debug`参数进行合约编译，则在合约执行过程中若出现wasm panic时，可能出现如下日志：
+  > If the contract is compiled without using the `cargo-contract` in the Patract warehouse and carrying the `-d/--debug` parameter when compiling the contract, the following log may appear when a wasm panic occurs during the execution of the contract:
   >
   > ```
-  > wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
-  >    wasm backtrace:
-  >    |  <unknown>[...]
-  >    |  <unknown>[...]
-  >    ╰─><unknown>[...]
+  > wasm_error: Error::WasmiExecution(Trap(Trap {kind: Unreachable }))
+  > wasm backtrace:
+  > | <unknown>[...]
+  > | <unknown>[...]
+  > ╰─><unknown>[...]
   > ```
   
-  > 添加了`-d/--debug`后产生的编译产物一般比原产物大几百倍（例如原产物2.5k，新产物700k），因为新产物没有进行优化，且保留了大量调试信息。因此开发者也可以通过产物大小粗略判定是否是添加了`-d/--debug`选项后的产物。
+  > The compiled product produced after adding `-d/--debug` is generally several hundred times larger than the original product (for example, the original product 2.5k, the new product 700k), because the new product is not optimized and retains a lot of debugging information. Therefore, the developer can roughly determine whether it is the product after adding the `-d/--debug` option by the product size.
 
-## 部署合约
+## Deploy contract
 
-开发者可以使用[Redspot](https://redspot.patract.io/zh-CN/tutorial/)或者[Substrate Protal](https://polkadot.js.org/apps/#/explorer)来部署合约。
+Developers can use [Redspot](https://redspot.patract.io/zh-CN/tutorial/) or [Substrate Protal](https://polkadot.js.org/apps/#/explorer) to deploy contracts .
 
-注意，Europa的`extending types`如下：
+Note that Europa's `extending types` are as follows:
 
 ```json
 {
@@ -81,23 +81,23 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
 }
 ```
 
-例如使用Redspot部署，使用apps执行交易和查看状态。
+For example, use Redspot to deploy, use apps to execute transactions and view status.
 
-Redspot部署一个合约：
+Redspot deploys a contract:
 
 ```bash
 $ npx redspot run scripts/deploy.js
 ```
 
-获取到部署成功的合约地址，在apps上添加一个已存在的合约：
+Get the successfully deployed contract address, and add an existing contract to apps:
 
 ![add_exist](./imgs/add_exist.png)
 
-## 分析日志
+## Analysis log
 
-使用Europa部署及执行合约的过程中会有如下详细信息的打印，这些信息是合约执行中的信息，可以方便的帮助开发人员定位合约中出现的问题。通过这些信息，合约的执行过程就不再是一个黑盒了。
+In the process of deploying and executing the contract using Europa, the following detailed information will be printed. This information is the information in the execution of the contract, which can conveniently help developers locate problems in the contract. With this information, the execution process of the contract is no longer a black box.
 
-日志的打印效果举例：
+Examples of log printing effects:
 
 ```bash
 1: NestedRuntime {
@@ -124,25 +124,25 @@ $ npx redspot run scripts/deploy.js
 }
 ```
 
-### Contract执行日志
+### Contract execution log
 
-上面列举的日志案例，我们可以简单分析出以下信息：
+For the log cases listed above, we can simply analyze the following information:
 
-* `ext_result`： 可以表面这次合约调用执行的执行结果（通过交易调用与rpc调用都属于合约调用）；
-* `caller`： 表面了调用者的公钥，合约调用合约则为父合约的公钥（与EVM的模型一致）；
-* `self_account`：表面本合约的地址；
-* `selector`: 被调用的方法的selector，通过这个属性可以判断出这次的调用是合约的哪个方法；
-* `args`，`value`，`gas_limit`，`gas_limit`等表明了这次执行的相关参数及gas消耗；
-* `env_trace`及`sandbox_result_ok`：表面了合约Wasm执行与`pallet-contracts`之间的交互信息，及Wasm执行器最终的结果（Wasm执行器结果与合约执行结果是不同概念）
-* `nest`：描述了合约调用合约的关系，由于这里为空，表面这次调用只涉及一个合约执行。详细介绍见后文；
+* `ext_result`: It can surface the execution result of this contract call execution (call through transaction and rpc call belong to contract call);
+* `caller`: The public key of the caller is displayed, and the contract calling contract is the public key of the parent contract (consistent with the EVM model);
+* `self_account`: The address of this contract on the surface;
+* `selector`: The selector of the method being called. Through this attribute, it can be judged which method of the contract is called this time;
+* `args`, `value`, `gas_limit`, `gas_limit`, etc. indicate the relevant parameters and gas consumption of this execution;
+* `env_trace` and `sandbox_result_ok`: surface the interaction information between contract Wasm execution and `pallet-contracts`, and the final result of Wasm executor (Wasm executor result and contract execution result are different concepts)
+* `nest`: Describes the relationship between the contract calling the contract. Since this is empty, it appears that this call only involves the execution of one contract. See the following text for details;
 
-由此可见，Europa提供的合约日志能够清晰的表面一次合约调用中的很多详细信息。若合约的开发者对合约模块`pallet-contracts`比较了解，则可以获得许多重要的调试信息以辅助定位合约问题。若合约开发者对合约模块了解较少，则例如`selector`，`caller`，`nest`等信息也能给合约开发过程中带来很大帮助，减少调试合约的时间。
+It can be seen that the contract log provided by Europa can clearly surface many detailed information in a contract call. If the developer of the contract has a better understanding of the contract module `pallet-contracts`, a lot of important debugging information can be obtained to assist in locating contract problems. If the contract developer knows less about the contract module, information such as `selector`, `caller`, `nest`, etc. can also bring great help to the contract development process and reduce the time for debugging the contract.
 
-**注意，当在apps上查看contracts中的messages时，apps会自动调用合约只读的messages获取当前合约的一些值，导致Europa会出现一些读取调用的日志，干扰正常判断。因此开发者需要辨别清楚哪块日志才是自己所需要的。** 若使用发送请求都是能被自己控制的第三方客户端，则没有这方面的顾虑。
+**Note that when viewing messages in contracts on apps, apps will automatically call the read-only messages of the contract to obtain some values ​​of the current contract, causing Europa to display some logs of read calls, which interferes with normal judgment. Therefore, developers need to distinguish clearly which log is what they need. ** If you use a third-party client that sends requests that can be controlled by yourself, there is no concern in this regard.
 
-> 开发者使用apps发送请求时，在Europa中辨别出需要日志的小tip：
-> 
-> `1: NestedRuntime {}` 块下有一个`selector`字段，表示该次合约执行所使用的selector。开发者可以在metadata.json 中的`messages`部分中，获知当前调用的方法名对应的selector是什么，例如：
+> When the developer uses apps to send a request, he identifies the small tip that needs to be logged in Europa:
+>
+> `1: NestedRuntime {}` There is a `selector` field under the block, which indicates the selector used for this contract execution. Developers can find out what the selector corresponding to the currently called method name is in the `messages` section of metadata.json, for example:
 > ```json
 > "messages": [
 >     {
@@ -153,11 +153,11 @@ $ npx redspot run scripts/deploy.js
 >     }
 > ]
 > ```
-> 因此可以通过`selector`字段与日志中的`selector`进行比对，判定出当前通过apps发出的合约调用所对应的日志部分。
+> Therefore, you can compare the `selector` field with the `selector` in the log to determine the part of the log corresponding to the current contract call issued through apps.
 
 ### wasmi panic backtrace
 
-假设在`ink!`中编写合约的方法如下：
+Suppose the method of writing a contract in `ink!` is as follows:
 
 ```rust
 #[ink(message)]
@@ -169,7 +169,7 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 }
 ```
 
-调用该方法时，Europa中会打印如下日志（请注意当前该合约需要使用Patract的`cargo-contract`才会打印Wasm的Backtrace）：
+When this method is called, EuropThe following log will be printed in a (please note that the current contract needs to use Patract's `cargo-contract` to print Wasm's Backtrace):
 
 ```bash
 1: NestedRuntime {
@@ -209,22 +209,22 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 }
 ```
 
-从Europa的日志中，我们可以分析出如下调用过程：
+From Europa's log, we can analyze the following calling process:
 
 ```bash
-call -> dispatch_using_mode -> ... -> transfer -> panic 
+call -> dispatch_using_mode -> ... -> transfer -> panic
 ```
 
-因此合约开发者可以定位到产生这次panic的原因是因为`transfer`这个函数中出现了`panic`导致。
+Therefore, the contract developer can locate the cause of the panic because of the occurrence of the panic in the transfer function.
 
-以上为简单的日志分析说明，更多特殊的情况将在后面的“示例”章节中介绍。
+The above is a simple log analysis description, more special cases will be introduced in the following "Examples" chapter.
 
-## 自定义ChainExtensions
+## Custom ChainExtensions
 
 ### ink logger
 
-查看[ink-log](https://github.com/patractlabs/ink-log)。
+Check [ink-log](https://github.com/patractlabs/ink-log).
 
 ### ZKP feature
 
-查看 [megaclite](https://github.com/patractlabs/megaclite)，相关合约示例[metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
+Check [zkMega](https://github.com/patractlabs/zkMega), related contract example [metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16).

@@ -1,5 +1,5 @@
 # Europa Wasm executor
 
-TODO：未完成
+TODO: Not completed
 
-Europa 提供了不同的 Wasm 执行器执行合约。当前提供了`wasmi`与`wasmtime`。
+Europa offers different Wasm actuators to execute contracts. Currently `wasmi` and `wasmtime` are provided.

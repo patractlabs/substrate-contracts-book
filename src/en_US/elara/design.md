@@ -1,19 +1,17 @@
-# 设计简述
+# Design Brief
 
-Elara有长期的开发迭代规划和运维目标，为的是能够支撑Polkadot生态开发者从万+级别到亿+级别的持续跃迁。Elara的核心是一套高性能、高可用和高扩展的分布式架构。与其他提供 Node API Service的项目有显著区别：
+Elara has long-term development iteration planning and operation and maintenance goals, in order to be able to support the continuous transition of Polkadot ecological developers from the 10,000+ level to the 100 million+ level. The core of Elara is a set of high-performance, high-availability and high-scalability distributed architecture. It is significantly different from other projects that provide Node API Service:
 
-1. Elara的后端架构不是简单但低效的NodePool+LoadBalancer。这种方案无法承担大规模应用和流量的冲击，无法及时扩展，因为Node会成为体系中的显著瓶颈。而在Elara的架构中，只需要很少数量的Node提供基础数据源。Elara通过分布式架构的设计、多服务的融合以及对请求访问路径的极致优化，来支撑海量用户的访问。NodePool方案的短期开发成本较低，但长期服务用户的单位成本却极高。反过来，Elara在初期的技术成本投入较高，但长期可以极大降低服务用户的单位成本，同时还可以保障高服务质量。
+1. Elara's back-end architecture is not a simple but inefficient NodePool+LoadBalancer. This solution cannot bear the impact of large-scale applications and traffic, and cannot be expanded in time, because Node will become a significant bottleneck in the system. In Elara's architecture, only a small number of Nodes are required to provide basic data sources. Elara supports the access of a large number of users through the design of distributed architecture, the integration of multiple services, and the ultimate optimization of request access paths. The short-term development cost of the NodePool solution is low, but the unit cost of long-term service to users is extremely high. Conversely, Elara’s initial investment in technology costs is relatively high, but in the long term it can greatly reduce the unit cost of serving users, while also ensuring high service quality.
 
-2. Elara专注于为生态开发者提供极简的全功能体验。我们提供的是极其“薄薄”的一层服务，希望开发者感受不到Elara的存在。Elara提供的API服务不仅包括节点的所有功能，也包括了历史状态数据功能，还包括项目的请求统计仪表盘等功能，给开发者提供的服务能力远大于自己部署节点所提供的能力。所以，在这个目标之下，"一键节点部署"之类的功能就显得非常多余，开发者只应该专注于自己的业务应用。
+2. Elara focuses on providing a minimalist full-featured experience for ecological developers. What we provide is an extremely "thin" layer of service, and we hope that developers will not feel the existence of Elara. The API service provided by Elara not only includes all the functions of the node, but also includes the historical status data function, but also includes the project's request statistics dashboard and other functions. The service capabilities provided to developers are far greater than the capabilities provided by the deployment of nodes by themselves. Therefore, under this goal, functions such as "one-click node deployment" are very redundant, and developers should only focus on their own business applications.
 
-3. Elara是一个开放的平台，秉持社区共建的原则。在接下来的版本迭代中，我们会陆续接入更多主网，还会建立一套Polkadot生态主链和平行链自动化接入的流程规范。
+3. Elara is an open platform, upholding the principle of community building. In the next iteration of the version, we will continue to access more mainnets and establish a set of process specifications for the automatic access of the Polkadot ecological main chain and parachain.
 
 
 
-在整体设计上，Elara设计成微服务的架构体系，由多个可独立进行扩展的微服务组成。所有的微服务启动后都以独立进程运行，所以在将来可以对单独的微服务进行平行扩容、重构、替换实现等升级。其中用到`Redis`作为数据高速访问的存储容器,和使用`kafka`做架构解耦。将来可以很容易地在此设计的基础上，添加更多复杂的功能模块，让Elara发挥更强大的效果。
+In terms of overall design, Elara is designed as a microservice architecture system consisting of multiple microservices that can be independently extended. All microservices run as independent processes after they are started, so in the future, individual microservices can be upgraded in parallel, such as expansion, reconstruction, replacement implementation, and so on. Among them, `Redis` is used as a storage container for high-speed data access, and is decoupled from the use of `kafka` for architecture. In the future, it will be easy to add more complex functional modules based on this design to let Elara play a more powerful effect.
 
-Elara的核心架构大概如下所示
+The core architecture of Elara is roughly as follows
 
 ![elara](https://user-images.githubusercontent.com/21072025/111115173-35923280-859f-11eb-8172-737c07aab4e7.png)
-
-

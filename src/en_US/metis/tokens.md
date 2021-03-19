@@ -1,17 +1,17 @@
 # ERC20
-metis 提供了完全符合 `ERC20` 标准的 [trait_definition](https://github.com/patractlabs/metis/tree/master/traits/token/erc20) 、[合约间调用 stub](https://github.com/patractlabs/metis/tree/master/stubs/token/erc20) 
-以及 [erc20合约](https://github.com/patractlabs/metis/tree/master/impls/token/erc20) 的标准实现。
+metis provides [trait_definition](https://github.com/patractlabs/metis/tree/master/traits/token/erc20) and [calling stub between contracts](https://github.com/patractlabs/metis/tree/master/traits/token/erc20) that fully complies with the `ERC20` standard. com/patractlabs/metis/tree/master/stubs/token/erc20)
+And the standard implementation of [erc20 contract](https://github.com/patractlabs/metis/tree/master/impls/token/erc20).
 
-下面详细介绍下 metis 提供的 erc20 trait 和 stub 的使用方法。
+The following is a detailed introduction to the use of the erc20 trait and stub provided by metis.
 
 ## Trait Definition
-通过 `#[ink::trait_definition]` 处理宏，开发者可以定义自己的 trait definitions，然后可以由 ink! 智能合约实现。 这允许为不同的具体实现定义共享的智能合约接口。 注意这种 `#[ink::trait_definition]` 可以在任何地方定义，甚至可以在另一个 crate 中定义！
+By processing macros with `#[ink::trait_definition]`, developers can define their own trait definitions, which can then be implemented by ink! smart contract. This allows the definition of shared smart contract interfaces for different specific implementations. Note that this `#[ink::trait_definition]` can be defined anywhere, even in another crate!
 
-### erc20 trait 源码解析 
+### erc20 trait source code analysis
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
-// 注意：这里需要导出 tarit 定义供其他包使用
+// Note: The tarit definition needs to be exported here for other packages to use
 pub use self::erc20::{Error, IErc20, Result};
 pub mod events {
     // pub use crate::erc20::{Transfer, Approval};
@@ -118,22 +118,22 @@ mod erc20 {
     }
 }
 ```
-首先必须要定义 `#[ink::trait_definition]`, 这里定义了一个 `IErc20` 的 trait 接口。在 trait_definition 中必须定义至少一个 `#[ink(constructor)]` 和 `#[ink(message)]`。
-所有接口只有声明，没有实现。
+First, you must define `#[ink::trait_definition]`, where a trait interface of `IErc20` is defined. At least one of `#[ink(constructor)]` and `#[ink(message)]` must be defined in trait_definition.
+All interfaces have only declarations, not implementations.
 
-`#[ink::trait_definition]` 是可以脱离于 `#[ink::contract]` 单独定义的，一般简单的trait的，只需要定义 trait_definition 即可，如在前文介绍中定义的那样。但在这个 erc20 trait 的
-实现中，之所以定义在`#[ink::contract]` 中，是因为 `#[ink(event)]` 的存在，我们希望不仅提供接口，也提供一些事件和错误的定义，这样开发者在使用我们的 erc20-trait 包时可以清楚的知道会
-触发那些事件和发生哪些错误，但美中不足的是`#[ink(event)]`不能脱离于`#[ink::contract]`单独定义，所以我们只能临时实现一个 `Phantom` 合约及存储来使编译通过。这个问题我们已经像官方提交issue
-（https://github.com/paritytech/ink/issues/683） 。
+`#[ink::trait_definition]` can be defined separately from `#[ink::contract]`. For simple traits, you only need to define trait_definition, as defined in the introduction. But in this erc20 trait
+In the implementation, the reason why it is defined in `#[ink::contract]` is because of the existence of `#[ink(event)]`. We hope to not only provide interfaces, but also provide some event and error definitions, so that developers When using our erc20-trait package, you can clearly know that it will
+Which events are triggered and what errors occur, but the catch is that `#[ink(event)]` cannot be separated from the separate definition of `#[ink::contract]`, so we can only temporarily implement a `Phantom` contract and store it. Make the compilation pass. We have submitted this issue as an official issue
+(Https://github.com/paritytech/ink/issues/683).
 
-在定义了`#[ink::trait_definition]`后，注意需要将 trait 导出，如： `pub use self::erc20::{Error, IErc20, Result};`, 只有导出后才可以被其他 crate 使用。
+After defining `#[ink::trait_definition]`, pay attention to exporting the trait, such as: `pub use self::erc20::{Error, IErc20, Result};`, only after exporting can it be used by other crates .
 
-### 使用 erc20-trait 实现合约
-1. 创建一个新合约
+### Use erc20-trait to implement the contract
+1. Create a new contract
 ```
 cargo contract new myerc20
 ```
-注意： metis中所有合约的 ink! dependencies 都是最新的ink仓库中的代码，因此需要将新建的合约项目中的依赖改为最新，不然会引起版本冲突，如下：
+Note: The ink! dependencies of all contracts in metis are the codes in the latest ink warehouse, so you need to change the dependencies in the newly created contract project to the latest, otherwise it will cause version conflicts, as follows:
 ```toml
 [dependencies]
 ink_primitives = { version = "3.0.0-rc3", git = "https://github.com/paritytech/ink", default-features = false }
@@ -143,7 +143,7 @@ ink_storage = { version = "3.0.0-rc3", git = "https://github.com/paritytech/ink"
 ink_lang = { version = "3.0.0-rc3", git = "https://github.com/paritytech/ink", default-features = false }
 ink_prelude = { version = "3.0.0-rc3", git = "https://github.com/paritytech/ink", default-features = false }
 ```
-2. 将 `erc20-trait` 包添加到新合约项目的 `cargo.toml` 依赖中
+2. Add the `erc20-trait` package to the `cargo.toml` dependency of the new contract project
 ```toml
 [dependencies]
 erc20-trait = { git = "https://github.com/patractlabs/metis", default-features = false, features = ["ink-as-dependency"] }
@@ -154,11 +154,11 @@ std = [
     "erc20-trait/std",
 ]
 ```
-这里添加依赖时，启用了 ` features = ["ink-as-dependency"]` 特性，是因为在 ink！中合约作为依赖是需要开启改特性。 
+When adding a dependency here, the `features = ["ink-as-dependency"]` feature is enabled because it is in ink! As a dependency, the Chinese contract needs to be turned on and modified.
 
-3. 在新合约项目中实现 erc20 trait
+3. Implement the erc20 trait in the new contract project
 
-完整代码在: `https://github.com/patractlabs/metis/blob/master/impls/token/erc20`
+The complete code is at: `https://github.com/patractlabs/metis/blob/master/impls/token/erc20`
 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -167,7 +167,7 @@ use ink_lang as ink;
 
 #[ink::contract]
 mod erc20 {
-    // 这里需要导入 erc20_trait 中定义的接口和错误
+    // Here you need to import the interface and errors defined in erc20_trait
     use erc20_trait::{Error, IErc20, Result};
     use ink_prelude::string::String;
 
@@ -215,14 +215,14 @@ mod erc20 {
 }
 ```
 
-## 跨合约调用 stub
-在此之前我们已经通过 erc20 trait 实现了标准 erc20 合约, 在一些复杂的 dapps 中与 erc20 合约交互是必不可少的。metis 提供了 `erc20-stub` 支持跨合约调用我们已经实现erc20合约。
+## Call stub across contracts
+Before that, we have implemented the standard erc20 contract through the erc20 trait, and it is essential to interact with the erc20 contract in some complex dapps. Metis provides `erc20-stub` to support cross-contract calls. We have implemented the erc20 contract.
 
-### erc20 stub 源码解析
+### erc20 stub source code analysis
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
-// 需要将 Erc20Stub 导出供子合约调用
+// Need to export Erc20Stub for sub-contract call
 pub use self::erc20::Erc20Stub;
 use ink_lang as ink;
 
@@ -320,23 +320,23 @@ mod erc20 {
     }
 }
 ```
-通过以上代码可以知道，在 stub 合约中没有erc20 具体逻辑的实现，只提供了接口的空实现，该合约将作为父合约被子合约实例化，
-并且可以在子合约中，调用父合约的接口。
+From the above code, we can know that there is no erc20 specific logic implementation in the stub contract, only an empty implementation of the interface is provided, and the contract will be instantiated by the child contract as the parent contract.
+And you can call the interface of the parent contract in the child contract.
 
-注意：在该erc20-stub 合约中每个合约方法的 `selector`都设置了固定的值, 这里的 `selector` 的值是由 `BLAKE2("IErc20::{message_func_name}".to_string().as_bytes())[0..4]` 
-公式计算得出。
+Note: In the erc20-stub contract, the `selector` of each contract method is set with a fixed value, where the value of `selector` is determined by `BLAKE2("IErc20::{message_func_name}".to_string().as_bytes ())[0..4]`
+The formula is calculated.
 
-在 ink! 体系中 `selector` 的计算方式跟 solidity 的有所区别，在 solidity 中是对 方法签名做hash运算， 而在 ink! 中有一套自己的计算方式，最简的是对 `{message_func_name}`
-进行hash运算，但 message 是通过 `#[ink::trait_definition]` 实现时，采用 {trait_name} + {message_func_name} 混合hash 的方式，详细的计算规则，
-可以查看 ink！源码（https://github.com/paritytech/ink/blob/master/crates/lang/ir/src/ir/item_impl/callable.rs#L190）。
+The calculation method of `selector` in the ink! system is different from that of solidity. In solidity, the method signature is hashed, while in ink! there is a set of calculation methods. The simplest one is for `{message_func_name} `
+Perform hash operation, but when message is implemented by `#[ink::trait_definition]`, use {trait_name} + {message_func_name} mixed hash method, detailed calculation rules,
+You can check ink! Source code (https://github.com/paritytech/ink/blob/master/crates/lang/ir/src/ir/item_impl/callable.rs#L190).
 
-因此，erc20-stub 只适用于 metis 中实现的 erc20 合约（通过 IErc20 trait 实现）的跨合约调用, 如果是其他方式实现的 erc20 合约，由于 `selector` 不匹配，不能使用此 stub。
+Therefore, erc20-stub is only applicable to cross-contract calls of the erc20 contract implemented in metis (implemented through the IErc20 trait). If it is an erc20 contract implemented in other ways, this stub cannot be used due to the mismatch of `selector`.
 
-### 通过 erc20 stub 跨合约调用
-1. 将 `erc20-stub` 包添加到新合约项目的 `cargo.toml` 依赖中
+### Cross-contract call through erc20 stub
+1. Add the `erc20-stub` package to the `cargo.toml` dependency of the new contract project
 ```toml
 [dependencies]
-erc20-stub = { git = "https://github.com/patractlabs/metis", default-features = false, features = ["ink-as-dependency"] }
+erc20-stub = {git = "https://github.com/patractlabs/metis", default-features = false, features = ["ink-as-dependency"]}
 
 [features]
 default = ["std"]
@@ -345,7 +345,7 @@ std = [
 ]
 ```
 
-2. 在新合约中实例化 erc20 stub
+2. Instantiate erc20 stub in the new contract
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
 
@@ -376,6 +376,6 @@ mod delegate {
     }
 }
 ```
-在 ink! 合约中可以使用 `FromAccountId` 实例化合约对象（不是创建一个新合约），接下来就可以使用合约对象对合约方法进行跨合约调用。
+In the ink! contract, you can use `FromAccountId` to instantiate the contract object (not to create a new contract), and then you can use the contract object to make cross-contract calls to contract methods.
 
-> `ink_storage::Lazy` 管理数据实体，并在存储上延迟执行读取/写入操作, 只有在确定确实需要读取/写入时，才会在存储上执行。
+> `ink_storage::Lazy` manages data entities and delays the execution of read/write operations on the storage. Only when it is determined that reading/writing is really needed, it will be executed on the storage.

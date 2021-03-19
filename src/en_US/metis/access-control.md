@@ -1,10 +1,10 @@
 # Access Control
-虽然智能合约应用是去中心化的，但在合约中实现必要的中心化访问控制可以使合约更加安全。
+Although smart contract applications are decentralized, implementing necessary centralized access control in the contract can make the contract more secure.
 
 ## Ownership and Ownable
-所有权的概念是访问控制最常见和最基本的形式：有一个帐户是合约的 owner，可以在合约上执行管理任务。 
+The concept of ownership is the most common and basic form of access control: an account is the owner of the contract and can perform management tasks on the contract.
 
-metis 提供 [Ownership](https://github.com/patractlabs/metis/tree/master/traits/access/ownership)  来实现您合约中的所有权。
+metis provides [Ownership](https://github.com/patractlabs/metis/tree/master/traits/access/ownership) to realize the ownership in your contract.
 ```rust
 #[ink::trait_definition]
 pub trait Ownable {
@@ -22,11 +22,11 @@ pub trait Ownable {
 }
 ```
 
-### 使用 `Ownership` 实现合约所有权
-1. 将 `ownership` 包添加到新合约项目的 `cargo.toml` 依赖中
+### Use `Ownership` to realize contract ownership
+1. Add the `ownership` package to the `cargo.toml` dependency of the new contract project
 ```toml
 [dependencies]
-ownership = { version = "0.1.0", git = "https://github.com/patractlabs/metis", default-features = false }
+ownership = {version = "0.1.0", git = "https://github.com/patractlabs/metis", default-features = false}
 
 [features]
 default = ["std"]
@@ -34,13 +34,13 @@ std = [
     "ownership/std",
 ]
 ```
-2. 最简实现 `ownership`
+2. The simplest realization of `ownership`
 ```rust
 use ink_lang as ink;
 
 #[ink::contract]
 mod ownership {
-	use super::Ownable;
+use super::Ownable;
 
     #[ink(storage)]
     pub struct Ownership {
@@ -71,4 +71,4 @@ mod ownership {
     }
 }
 ```
-默认情况下，合约的所有者是部署它的帐户，`Ownable` 也提供了 `transfer_ownership` 方法可以让您将合约所有权转移到其他帐户。
+By default, the owner of the contract is the account that deployed it, and `Ownable` also provides the `transfer_ownership` method to allow you to transfer the contract ownership to other accounts.

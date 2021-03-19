@@ -1,28 +1,28 @@
 ## Getting started
 
-首先，请确保您在html中引入了`<script type="text/javascript" src="https://static.patrastore.io/sdk/store-sdk.min.js"></script>`，为了确保sdk可以正常工作，需要您在业务代码之前引用，比较好的方式是放在html的`head`标签中。
+First of all, please make sure you include `<script type="text/javascript" src="https://static.patrastore.io/sdk/store-sdk.min.js"></script>` in the html, In order to ensure that the SDK can work normally, you need to quote it before the business code. A better way is to put it in the `head` tag of html.
 
-确保对`@polkadot/extension-dapp`的[文档](https://polkadot.js.org/docs/extension)有一定的了解，我们在下方也会出Demo。
+Make sure you have a certain understanding of the [document](https://polkadot.js.org/docs/extension) of `@polkadot/extension-dapp`, we will also post a demo below.
 
-安装相应依赖。`yarn add @polkadot/extension-dapp`。
+Install the corresponding dependencies. `yarn add @polkadot/extension-dapp`.
 
 
-### 请求用户授权
+### Request user authorization
 
-**这一步是在以下所有操作调用之前。**
+**This step is before all the following operations are called. **
 
 ```typescript
-import { web3Enable } from '@polkadot/extension-dapp';
+import {web3Enable} from'@polkadot/extension-dapp';
 
 await web3Enable();
 ```
 
-### 获取Injected
+### Get Injected
 
 ```typescript
-import { web3FromSource } from '@polkadot/extension-dapp';
+import {web3FromSource} from'@polkadot/extension-dapp';
 
-// PatraStore注入injected的名称为store
+// The injected name of PatraStore is store
 const injected = await web3FromSource('store');
 ```
 
@@ -31,11 +31,11 @@ const injected = await web3FromSource('store');
 ```typescript
 const signer = injected.signer;
 ```
-获取到Signer之后可以使用signer调取PatraStore的签名
+After obtaining the Signer, you can use the signer to retrieve the signature of PatraStore
 
 ### Provider(Optional)
 
-我们提供的Provider是基于PostMessage实现，为了确保Dapp和PatraStore连接的是同一个链，建议您使用这种方式实例化Provider。
+The Provider we provide is implemented based on PostMessage. To ensure that Dapp and PatraStore are connected to the same chain, it is recommended that you use this method to instantiate the Provider.
 
 ```typescript
 import type { ProviderInterface } from '@polkadot/rpc-provider/types';
@@ -53,7 +53,7 @@ if (providers && Object.keys(providers).length > 0) {
 
 ### Init Api
 
-经过上面的步骤，我们已经获得了Provider和Signer，下面是实例化`ApiPromise`的完整实例。
+After the above steps, we have obtained Provider and Signer. Below is a complete example of instantiating `ApiPromise`.
 
 ```typescript
 import type { ProviderInterface } from '@polkadot/rpc-provider/types';
@@ -105,6 +105,6 @@ async function initApi(): ApiPromise {
 const api: ApiPromise = await initApi();
 ```
 
-### 更多用法
+### More usage
 
-请参考[https://polkadot.js.org/docs/extension](https://polkadot.js.org/docs/extension)
+Please refer to [https://polkadot.js.org/docs/extension](https://polkadot.js.org/docs/extension)

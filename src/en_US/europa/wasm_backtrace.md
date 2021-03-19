@@ -1,42 +1,42 @@
-# Europa 的Wasm Backtrace
+#Europa's Wasm Backtrace
 
-`pallet-contracts`的执行包含“合约模型”中的执行与Wasm中的执行。其中
+The execution of `pallet-contracts` includes the execution in the "contract model" and the execution in Wasm. among them
 
-* 合约模型中的执行过程通过Wasm的 host_function 转移到了 `pallet-contracts` 模块中执行，若出现panic或者错误定位可以让节点的runtime以Native运行的形式来定位。
-* Wasm 中的执行过程由于处于Wasm虚拟机中，因此对于外界而言是黑盒，若内部执行过程出现了崩溃异常，只能由Wasm执行器对外展示。
+* The execution process in the contract model is transferred to the `pallet-contracts` module through Wasm's host_function. If panic or incorrect positioning occurs, the node runtime can be located in the form of native operation.
+* Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process has a crash exception, it can only be displayed by the Wasm executor.
 
-Europa 的 `pallet-contracts` 模块当前支持2种执行器：
+Europa's `pallet-contracts` module currently supports 2 types of actuators:
 
-* `wasmi`：由parity研发的Wasm解释器，当Wasm执行出现panic时只会返回错误，没有Backtrace。Patract fork 了parity的wasmi，在原基础上添加了执行栈的跟踪与打印。当Wasm的执行过程出现Panic的时候，将当前的执行栈及相应信息通过错误一并返回。
-* `wasmtime`：Wasm的JIT执行器，已经自带了执行崩溃时的Backtrace。
+* `wasmi`: Wasm interpreter developed by parity. When Wasm executes panic, it will only return an error without Backtrace. Patract forks the wasmi of parity, and adds tracking and printing of the execution stack on the original basis. When Panic appears during Wasm's execution, the current execution stack and corresponding information will be returned with an error.
+* `wasmtime`: Wasm's JIT executor, which already comes with Backtrace when it crashes.
 
-## Europa 能打印出 Wasm Backtrace 的条件
+## Europa can print out Wasm Backtrace conditions
 
-Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name section”段。由于parity提供的`cargo-contract`已经封装了许多操作，因此**在当前**其默认操作中是以最优优化方式去编译合约，在这个过程中会去除掉“name section”段。另一方面`cargo-contract`也没有提供对应的接口或选项允许开发者调整合约编译使用的优化条件及是否保留一些调试信息。因此Patract只能提供一个修改版本的`cargo-contract`，开发者使用这个修改版的`cargo-contract`可编译出携带“name section”段的合约Wasm文件。
+Wasm can print Backtrace, requiring the "name section" section in the Wasm file compiled by the contract. Since the `cargo-contract` provided by parity has already encapsulated many operations, ** in the current ** default operation, the contract is compiled in the most optimal way, and the "name section" section will be removed in this process. On the other hand, `cargo-contract` does not provide corresponding interfaces or options to allow developers to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of `cargo-contract`. Developers can use this modified version of `cargo-contract` to compile the contract Wasm file with the "name section" section.
 
-另一方面release的编译中会对原代码有优化，通过优化后的Backtrace来定位bug有可能会受到干扰，因此最好能降低优化等级，这样崩溃时的Backtrace才会最大可能性和原代码相匹配。
+On the other hand, the original code will be optimized during the release compilation. The optimized Backtrace to locate the bug may be disturbed, so it is best to reduce the optimization level, so that the Backtrace will be the same as the original code when it crashes. match.
 
-## 安装 Patract 仓库下的`cargo-contract`
+## Install `cargo-contract` under Patract warehouse
 
-1. 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract)
+1. Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract)
 
     ```
     $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
     ```
 
-    > 由于当前 parity 的 `cargo-contract` 发布的版本为 `v0.10.0`，因此我们Patract 基于这个版本添加了功能。若将来`cargo-contract`继续升级，Patract 也会继续维护。
+    > Since the current version of parity's `cargo-contract` is `v0.10.0`, our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
 
-    通过这种方式安装的 `cargo-contract` 将会**覆盖**已安装过的的`cargo-contract`。因此请注意留意当前环境中的`cargo-contract`来自哪个仓库，以防止定位问题时收到干扰。
+    The `cargo-contract` installed in this way will **overwrite** the installed `cargo-contract`. Therefore, please pay attention to which warehouse the `cargo-contract` in the current environment comes from to prevent interference when locating problems.
 
-    执行命令：
+    Excuting an order:
     ```bash
     $ cargo install --list | grep cargo-contract
     cargo-contract v0.10.0 (https://github.com/patractlabs/cargo-contract?branch=v0.10.0#106081f1):
     cargo-contract
     ```
-    可通过列出的结果判定当前环境中的`cargo-contract`安装来自什么源。例如上面的结果即来自Patract。若没有括号及其中的内容则表示来自`crates.io`。
+    The results listed can be used to determine what source the `cargo-contract` installation in the current environment comes from. For example, the above result is from Patract. If there is no parenthesis and the content in it, it means it is from `crates.io`.
 
-2. 如果开发者已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式。
+2. If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation.
 
     ```bash
     $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
@@ -44,35 +44,35 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name sect
     $ cargo build --release
     ```
 
-    编译好后可以将编译的产物移动到任意可以被全局访问的路径，并重命名（以防和已安装过的cargo-contract冲突）。
+    After compilation, you can move the compiled product to any path that can be accessed globally, and rename it (in case it conflicts with the installed cargo-contract).
 
     ```bash
     $ cp target/release/cargo-contract <to any path>/patract-cargo-contract
     ```
 
-    后续在 ink! 合约的编译过程中则使用 `patract-cargo-contract xxx` 替代 `cargo +nighlty contract xxx` 执行相应命令。（请注意这种方式要求 default toolchain 为 nightly）
+    In the subsequent compilation of the ink! contract, use `patract-cargo-contract xxx` instead of `cargo +nighlty contract xxx` to execute the corresponding commands. (Please note that this method requires the default toolchain to be nightly)
 
-## 使用 Patract 的 cargo-contract 生成携带 “name section” 段的 `*.wasm/*.contract` 文件
+## Use Patract's cargo-contract to generate `*.wasm/*.contract` files with "name section" section
 
-Patract 的 `cargo-contract` 提供 `-d/--debug` 选项。当执行一下命令时：
+Patract's `cargo-contract` provides `-d/--debug` options. When the following command is executed:
 
 ```bash
 $ cargo +nightly contract build
 ```
 
-生成的`*.wasm/*.contract` 文件与parity官方的`cargo-contract`执行结果一致。
+The generated `*.wasm/*.contract` file is consistent with parity's official `cargo-contract` execution result.
 
-当执行以下命令时：
+When the following command is executed:
 
 ```bash
 $ cargo +nightly contract build --debug
 ```
 
-则生成的`*.wasm/*.contract` 文件就是没有经过优化，且携带“name section”段的`*.wasm/*.contract` 文件。相当于通过这种方式生成的文件**替换**了原本生成逻辑生成的文件。
+The generated `*.wasm/*.contract` file is the `*.wasm/*.contract` file that is not optimized and carries the "name section" section. It is equivalent to the files generated in this way **replace** the files generated by the original generation logic.
 
-**请注意通过这种模式生成的编译产物，一般情况下其大小是原产物的几百倍**。因此开发者可以留意生成产物的大小粗略判定是通过那种编译方式生成的编译产物。
+**Please note that the size of the compiled product generated by this mode is generally several hundred times the size of the original product**. Therefore, the developer can pay attention to the size of the generated product to roughly determine the compiled product generated by which compilation method.
 
-例如如下示例：
+For example, the following example:
 
 ```bash
 $ cd target/ink
@@ -84,18 +84,18 @@ $ ls -h
 -rw-rw-r-- 1 root root 2.1K 3月  12 16:01 metadata.json
 ```
 
-带`*.old` 文件表示是由parity版本的`cargo-contract`生成（第一次编译后重命名过），反之的同名文件是由Patract的`cargo-contract`并加上了`--debug`命令生成。可以看到新文件比老文件大许多倍。而`metadata.json`则是没有变化的。
+The file with `*.old` means it was generated by the parity version of `cargo-contract` (renamed after the first compilation), on the contrary, the file with the same name is from Patract's `cargo-contract` with the addition of `-- The debug` command is generated. You can see that the new file is many times larger than the old file. And `metadata.json` is unchanged.
 
-## Wasm Backtrace 解释
+## Wasm Backtrace explained
 
-TODO：待完成
+TODO: To be completed
 
-## 实验性功能
-### Wasm Backtrace 打印行号（只支持Wasmtime）
+## Experimental features
+### Wasm Backtrace print line number (only Wasmtime is supported)
 
-TODO：该部分未完成
+TODO: This part is not completed
 
-启动Europa的时候添加`WASMTIME_BACKTRACE_DETAILS=1`或者将这个变量设置成环境变量：
+Add `WASMTIME_BACKTRACE_DETAILS=1` when starting Europa or set this variable as an environment variable:
 
 ```bash
 WASMTIME_BACKTRACE_DETAILS=1 europa --tmp
@@ -104,7 +104,7 @@ export WASMTIME_BACKTRACE_DETAILS=1
 europa --tmp # run europa in normal way
 ```
 
-那么在europa的日中的`wasm_error`部分，将会出现崩溃栈对应原代码中的行号：
+Then in the `wasm_error` part of europa's Japanese, there will be a line number in the original code corresponding to the crash stack:
 
 ```bash
 wasm_error: Error::Trap(
@@ -131,11 +131,11 @@ wasm_error: Error::Trap(
 ),
 ```
 
-在这段backtrace日志中，一些能解析出行号的部分将会在那一行的最后附加错误栈中的函数对应的行号，例如：
+In this backtrace log, some parts that can parse the line number will be appended with the line number corresponding to the function in the error stack at the end of that line, for example:
 
 ```bash
 "2: 0x10fa - core::result::Result<T,E>::map_err::h576871030fe833d4",
             "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1199:31"
 ```
 
-中的`codec.rs:1199:31`部分即表示该错误栈中的这一帧对应于`codec.rs`这个文件的行`1199`，列`31`。其余行由于解析还不充分或者是由于代码由宏生成，因此还没有行号。
+The part of `codec.rs:1199:31` means that this frame in the error stack corresponds to line `1199` and column `31` of the file `codec.rs`. The remaining lines do not have line numbers due to insufficient parsing or because the code is generated by macros.

@@ -1,5 +1,5 @@
-# Europa 合约执行日志信息解释
-当前Europa的`pallet-contract`中记录合约执行信息的结构体如下所示。注释简要说明了每个属性代表记录的信息：
+# Europa contract execution log information interpretation
+The structure for recording contract execution information in the current Europa `pallet-contract` is as follows. The notes briefly explain the information that each attribute represents:
 
 ```rust
 /// Record the contract execution context.
@@ -35,7 +35,7 @@ pub struct NestedRuntime {
 }
 ```
 
-## 该结构对应的日志示例：
+## Log example corresponding to this structure:
 
 ```bash
 1: NestedRuntime {
@@ -62,52 +62,52 @@ pub struct NestedRuntime {
 }
 ```
 
-## 日志字段说明：
+## Log field description:
 
-* `1: NestedRuntime`：调用深度为1的合约执行日志。
+* `1: NestedRuntime`: The contract execution log with a call depth of 1.
 
-* `ext_result`：合约在`pallet-contract`层的执行结果，有`[success]`和`[failed]`两种情况。
+* `ext_result`: The execution result of the contract at the `pallet-contract` level, there are two cases: `[success]` and `[failed]`.
 
-  * `[success]`只能说明在`pallet-contract`层是执行成功的，但是合约本身的业务逻辑可能是抛出Error的。`ExecResultValue {flag:0, data: 0x...}`中的data值也许是合约的返回值，也许是合约内定义的Error的枚举值。
-  * `[failed]`后面会跟随一个`ExecError {.. }`，错误信息是定义在`pallet-contracts`中的。
+  * `[success]` can only indicate that the execution was successful at the `pallet-contract` level, but the business logic of the contract itself may throw an Error. The data value in `ExecResultValue {flag:0, data: 0x...}` may be the return value of the contract, or the enumeration value of Error defined in the contract.
+  * `[failed]` will be followed by an `ExecError {.. }`, the error message is defined in `pallet-contracts`.
 
-* `caller`：该合约的调用者，可能是用户，也可能是另外一个合约账户。当该值为`0x000...`时，是被rpc调用的。
+* `caller`: The caller of the contract, which may be a user or another contract account. When the value is `0x000...`, it is called by rpc.
 
-* `self_account`：当前合约账户。
+* `self_account`: The current contract account.
 
-* `selector`：传递给合约的函数标识，在合约的metadata.json中查询到对应关系。
+* `selector`: The function identifier passed to the contract, and the corresponding relationship can be queried in the contract's metadata.json.
 
-* `args`：传递给合约调用函数的参数。
+* `args`: The parameters passed to the contract calling function.
 
-* `value`：给当前合约转账数量。
+* `value`: transfer amount to the current contract.
 
-* `gas_limit`：当前合约最多可以使用的gas数量。
+* `gas_limit`: The maximum amount of gas that can be used by the current contract.
 
-* `gas_left`：退出当前合约时，还剩余的gas数量。
+* `gas_left`: The amount of gas remaining when exiting the current contract.
 
-* `env_trace`：在当前合约执行过程中，host_function的调用栈，详细地给出了每个function的参数。以`seal_call`为例，如果input为Some(xxx)而output为None，那么可能是在合约互相调用过程中出错了。
+* `env_trace`: During the execution of the current contract, the call stack of host_function gives the parameters of each function in detail. Take `seal_call` as an example. If input is Some(xxx) and output is None, then there may be an error in the process of calling each other between the contracts.
 
-* `trap_reason`：在执行host_function过程中，遇到trap的原因。
+* `trap_reason`: The reason for trap encountered during host_function execution.
 
-  * Return & Termination & Restoration：是合约执行的正常退出策略，不是Error。
-  * SupervisorError：定义在`pallet_contracts`中的DispatchError。
+  * Return & Termination & Restoration: It is the normal exit strategy executed by the contract, not Error.
+  * SupervisorError: DispatchError defined in `pallet_contracts`.
 
-* `wasm_error`：如果合约内部出现了wasm执行错误，会将wasm调用栈打印在该字段中。当且仅当`ext_result`是`[failed]`。
+* `wasm_error`: If a wasm execution error occurs in the contract, the wasm call stack will be printed in this field. If and only if `ext_result` is `[failed]`.
 
-* `sandbox_result_ok`：假如在host_function执行过程中没有`trap`，并且没有`wasm_error`，那么认为合约执行成功，打印该字段。该字段携带一个`ReturnValue`的信息，在`ink!`中，如果返回的value值不为0，那么可能是出现了一个`ink!`内定义的Error，需要查询相应的[`DispatchError`](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80)。
+* `sandbox_result_ok`: If there is no `trap` and no `wasm_error` during the execution of host_function, then the contract is considered to be executed successfully and this field is printed. This field carries a `ReturnValue` information. In `ink!`, if the value returned is not 0, then an Error defined in `ink!` may have occurred, and the corresponding [`DispatchError`] needs to be queried. (https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80).
 
-* `nest`：嵌套调用的合约日志。如果当前合约调用了其他合约，被调用合约的执行日志会被嵌套在该字段之中。
+* `nest`: The contract log of nested calls. If the current contract calls other contracts, the execution log of the called contract will be nested in this field.
 
-  该部分详细解释请参照后续章节“合约嵌套调用”部分。  
+  For a detailed explanation of this part, please refer to the subsequent chapter "Contract Nested Call".
 
-## 合约嵌套调用
-合约间的互相调用，日志如下：
+## Contract nested call
+The logs of the mutual calls between the contracts are as follows:
 
-* 在合约A中，调用合约B之后再调用合约C
+* In contract A, call contract C after calling contract B
 
 ![call_other_1](./imgs/call_other_1.png)
 
-日志如下：
+The log is as follows:
 
 ```bash
 1: NestedRuntime {
@@ -125,11 +125,11 @@ pub struct NestedRuntime {
 }
 ```
 
-* 在合约A中，调用合约B，在合约B中，调用合约C
+* In contract A, call contract B, in contract B, call contract C
 
 ![call_other_2](./imgs/call_other_2.png)
 
-日志如下：
+The log is as follows:
 
 ```bash
 1: NestedRuntime {

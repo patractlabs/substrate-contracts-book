@@ -1,25 +1,25 @@
 # tutorial
 
-Himalia 用于与链的合约部分交互的sdk，需要首先启动一个节点才能进行后续的执行过程。
+The SDK used by Himalia to interact with the contract part of the chain needs to start a node before proceeding with the subsequent execution process.
 
-对于有`pallet-contracts`功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的[文档](./europa.md)。
+For nodes with `pallet-contracts` function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's [Document](./europa.md).
 
-Europa 可以以一下命令简单安装使用：
+Europa can be easily installed and used with the following commands:
 
 ```bash
 git install --recurse-submodules https://github.com/patractlabs/europa.git --force --locked
 europa --tmp
 ```
 
-另一方面也可以使用 Patract 的测试网 [Jupiter](https://github.com/patractlabs/jupiter)，或者 Parity 提供的合约测试网 [Canvas-node](https://github.com/paritytech/canvas-node.git)
+On the other hand, you can also use Patract’s testnet [Jupiter](https://github.com/patractlabs/jupiter), or the contract testnet provided by Parity [Canvas-node](https://github.com/paritytech/ canvas-node.git)
 
 ## go
 
-PatractGo 依赖于 [GSRPC](https://github.com/centrifuge/go-substrate-rpc-client)。Go 版本的 Himalia 项目叫做 [go-patract](https://github.com/patractlabs/go-patract)
+PatractGo relies on [GSRPC](https://github.com/centrifuge/go-substrate-rpc-client). The Go version of Himalia project is called [go-patract](https://github.com/patractlabs/go-patract)
 
-在安装了 PatractGo 之后，可以采用如下方式快速部署，调用一个合约。完整案例请参考 [transfer_test](https://github.com/patractlabs/go-patract/blob/master/contracts/erc20/transfer_test.go)
+After installing PatractGo, you can use the following methods to quickly deploy and call a contract. For the complete case, please refer to [transfer_test](https://github.com/patractlabs/go-patract/blob/master/contracts/erc20/transfer_test.go)
 
-### 部署合约
+### Deploy the contract
 
 ```go
 // read the code wasm from file
@@ -50,7 +50,7 @@ if err := cApi.Native().Cli.GetStorageLatest(&codeBz,
         return err
     }
 
-	var endowment uint64 = 1000000000000
+var endowment uint64 = 1000000000000
 
 // Instantiate
 _, contractAccount, err := cApi.Instantiate(ctx,
@@ -58,13 +58,13 @@ _, contractAccount, err := cApi.Instantiate(ctx,
     types.NewCompactGas(test.DefaultGas),
     contracts.CodeHashERC20,
     types.NewU128(totalSupply),
-)    
+)
 ```
 
-### 调用合约
+### Call contract
 #### rpc call
 
-调用 `total_supply` 获取当前的总共供应量。
+Call `total_supply` to get the current total supply.
 
 ```go
 var res types.U128
@@ -76,9 +76,9 @@ err := a.CallToRead(ctx,
 )
 ```
 
-#### 交易调用
+#### Transaction call
 
-调用 `transfer` 转移一笔资金。
+Call `transfer` to transfer a fund.
 
 ```go
 toParam := struct {
@@ -104,15 +104,15 @@ return a.CallToExec(ctx,
 
 ## python
 
-PatractPy 依赖于 [py-substrate-interface](https://github.com/polkascan/py-substrate-interface)Python 版本的 Himalia 项目叫做 [py-patract](https://github.com/patractlabs/py-patract)
+PatractPy relies on [py-substrate-interface](https://github.com/polkascan/py-substrate-interface) The Python version of the Himalia project is called [py-patract](https://github.com/patractlabs/py -patract)
 
-### 安装
+### Installation
 
 ```bash
-pip3 install -U patract-interface 
+pip3 install -U patract-interface
 ```
 
-在 python 脚本中即可使用
+Can be used in python script
 
 ```bash
 from patractinterface import ContractFactory, ContractAPI
@@ -120,7 +120,7 @@ from patractinterface import ContractFactory, ContractAPI
 // ... So something ...
 ```
 
-### 快速使用
+### Quick use
 ```python
 import os
 from substrateinterface import SubstrateInterface, Keypair
