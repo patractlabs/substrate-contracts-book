@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>合约模型 - Substrate 合约书</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> 介绍</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../contracts/overview.html"><strong aria-hidden="true">1.1.</strong> 合约综述</a></li><li class="chapter-item expanded "><a href="../contracts/model.html" class="active"><strong aria-hidden="true">1.2.</strong> 合约模型</a></li><li class="chapter-item expanded "><a href="../contracts/language.html"><strong aria-hidden="true">1.3.</strong> 合约语言（框架）</a></li><li class="chapter-item expanded "><a href="../contracts/wasm_first_step.html"><strong aria-hidden="true">1.4.</strong> Wasm初步</a></li></ol></li><li class="chapter-item expanded "><a href="../pallet-contracts/introduction.html"><strong aria-hidden="true">2.</strong> pallet-contracts 合约模块</a></li><li class="chapter-item expanded "><a href="../ink/introduction.html"><strong aria-hidden="true">3.</strong> ink!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ink/tutorial.html"><strong aria-hidden="true">3.1.</strong> ink! tutorial</a></li><li class="chapter-item expanded "><a href="../ink/framework.html"><strong aria-hidden="true">3.2.</strong> ink! 框架</a></li><li class="chapter-item expanded "><a href="../ink/edsl-basic.html"><strong aria-hidden="true">3.3.</strong> ink! eDSL基础元素</a></li><li class="chapter-item expanded "><a href="../ink/call-contracts.html"><strong aria-hidden="true">3.4.</strong> ink! 跨合约调用</a></li><li class="chapter-item expanded "><a href="../ink/ink-solidity.html"><strong aria-hidden="true">3.5.</strong> ink! 与solidity的对比</a></li><li class="chapter-item expanded "><a href="../ink/cargo-contract.html"><strong aria-hidden="true">3.6.</strong> cargo-contract</a></li><li class="chapter-item expanded "><a href="../ink/trap.html"><strong aria-hidden="true">3.7.</strong> ink! 当前的坑</a></li></ol></li><li class="chapter-item expanded "><a href="../ask/introduction.html"><strong aria-hidden="true">4.</strong> Ask!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ask/tutorial.html"><strong aria-hidden="true">4.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../ask/design.html"><strong aria-hidden="true">4.2.</strong> 设计</a></li><li class="chapter-item expanded "><a href="../ask/basics.html"><strong aria-hidden="true">4.3.</strong> 基础</a></li><li class="chapter-item expanded "><a href="../ask/example.html"><strong aria-hidden="true">4.4.</strong> example</a></li></ol></li><li class="chapter-item expanded "><a href="../solang/introduction.html"><strong aria-hidden="true">5.</strong> Solang</a></li><li class="chapter-item expanded "><a href="../redspot/introduction.html"><strong aria-hidden="true">6.</strong> Redspot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/tutorial.html"><strong aria-hidden="true">6.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../redspot/overview.html"><strong aria-hidden="true">6.2.</strong> 介绍</a></li><li class="chapter-item expanded "><a href="../redspot/configuration.html"><strong aria-hidden="true">6.3.</strong> 配置</a></li><li class="chapter-item expanded "><a href="../redspot/runtime-environment.html"><strong aria-hidden="true">6.4.</strong> Runtime Environment</a></li><li class="chapter-item expanded "><a href="../redspot/console.html"><strong aria-hidden="true">6.5.</strong> 控制台console</a></li><li class="chapter-item expanded "><a href="../redspot/q-and-a.html"><strong aria-hidden="true">6.6.</strong> Q &amp; A</a></li><li class="chapter-item expanded "><a href="../redspot/plugin.html"><strong aria-hidden="true">6.7.</strong> plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-chai.html"><strong aria-hidden="true">6.7.1.</strong> @redspot/chai</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-gas-reporter.html"><strong aria-hidden="true">6.7.2.</strong> @redspot/gas-reporter</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-patract.html"><strong aria-hidden="true">6.7.3.</strong> @redspot/patract</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../europa/introduction.html"><strong aria-hidden="true">7.</strong> Europa</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../europa/tutorial.html"><strong aria-hidden="true">7.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../europa/execution_info.html"><strong aria-hidden="true">7.2.</strong> 合约执行日志信息解释</a></li><li class="chapter-item expanded "><a href="../europa/sample.html"><strong aria-hidden="true">7.3.</strong> 根据信息定位问题示例</a></li><li class="chapter-item expanded "><a href="../europa/wasm_executor.html"><strong aria-hidden="true">7.4.</strong> Wasm executor</a></li><li class="chapter-item expanded "><a href="../europa/wasm_backtrace.html"><strong aria-hidden="true">7.5.</strong> Wasm Backtrace</a></li></ol></li><li class="chapter-item expanded "><a href="../zkmega/introduction.html"><strong aria-hidden="true">8.</strong> zkMega</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../zkmega/tutorial.html"><strong aria-hidden="true">8.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../zkmega/contract.html"><strong aria-hidden="true">8.2.</strong> 零知识合约</a></li><li class="chapter-item expanded "><a href="../zkmega/example.html"><strong aria-hidden="true">8.3.</strong> 使用案例</a></li><li class="chapter-item expanded "><a href="../zkmega/benchmark.html"><strong aria-hidden="true">8.4.</strong> benchmark</a></li></ol></li><li class="chapter-item expanded "><a href="../himalia/introduction.html"><strong aria-hidden="true">9.</strong> Himalia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../himalia/tutorial.html"><strong aria-hidden="true">9.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../himalia/go-patract.html"><strong aria-hidden="true">9.2.</strong> go-patract</a></li><li class="chapter-item expanded "><a href="../himalia/py-patract.html"><strong aria-hidden="true">9.3.</strong> py-patract</a></li></ol></li><li class="chapter-item expanded "><a href="../metis/introduction.html"><strong aria-hidden="true">10.</strong> Metis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../metis/tokens.html"><strong aria-hidden="true">10.1.</strong> Tokens</a></li><li class="chapter-item expanded "><a href="../metis/access-control.html"><strong aria-hidden="true">10.2.</strong> Access Control</a></li></ol></li><li class="chapter-item expanded "><a href="../carpo/introduction.html"><strong aria-hidden="true">11.</strong> Carpo</a></li><li class="chapter-item expanded "><a href="../patract/introduction.html"><strong aria-hidden="true">12.</strong> Patract</a></li><li class="chapter-item expanded "><a href="../elara/introduction.html"><strong aria-hidden="true">13.</strong> Elara</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elara/tutorial.html"><strong aria-hidden="true">13.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../elara/design.html"><strong aria-hidden="true">13.2.</strong> 设计</a></li><li class="chapter-item expanded "><a href="../elara/API.html"><strong aria-hidden="true">13.3.</strong> API</a></li></ol></li><li class="chapter-item expanded "><a href="../patra-store/introduction.html"><strong aria-hidden="true">14.</strong> PatraStore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patra-store/overview.html"><strong aria-hidden="true">14.1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../patra-store/getting-starter.html"><strong aria-hidden="true">14.2.</strong> Getting Starter</a></li><li class="chapter-item expanded "><a href="../patra-store/publish-dapps.html"><strong aria-hidden="true">14.3.</strong> 发布DApp</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                          
+                            <li role="none"><a href="../../en_US/contracts/model.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                          
+                            <li role="none"><a href="../../zh_CN/contracts/model.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                          
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Substrate 合约书</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#合约模型" id="合约模型">合约模型</a></h1>
+<p>在已经具备合约及合约沙盒的概念后，我们就可以开始讨论合约模型的概念了。</p>
+<p>合约沙盒只是代表运行合约的环境，而合约是以什么方式运行的，合约和合约是怎么交互的，合约是怎么与链的数据互动的，这些问题就归属于合约模型问题。</p>
+<p>换句话说，<strong>合约模型就是合约是以什么模型运行在合约沙盒/虚拟机中的</strong>。</p>
+<p><img src="./imgs/model.jpg" alt="" /></p>
+<p>如图所示，合约模型与合约虚拟机本质上是可以解耦的，其中关系只存在合约虚拟机是否能支持上层所需要的合约模型，例如：</p>
+<ul>
+<li>Bitcoin 的虚拟机就是比特币脚本的栈执行器，由于执行器设计是非图灵完备的OP_CODE，因此对于上层的合约模型只能支持Bitcoin的脚本。</li>
+<li>Ethereum 跟随Bitcoin的灵感，设计了具备图灵完备的OP_CODE，即EVM虚拟机（Ethereum Virtual Machine）。但是EVM的OP_CODE比较简陋，且只有栈的设计，没有堆的概念。但是EVM引入了读写状态的OP_CODE，因此从虚拟机机制上对合约模型可以支持状态模型。因此EVM也被看做一个执行状态转换的状态转换机（如Gavin Wood撰写的以太坊黄皮书中所描述的）。状态模型实际上是比较通用的抽象模型，绝大多数模型都可以用状态模型模拟（如在状态模型中构建UTXO模型），因此从理论上来说，只要继续完善EVM的OP_CODE，EVM的上层同样可以构建出其他合约模型。</li>
+<li>libra 认为区块链的核心在于资产的处理，因此提出了Move的虚拟机模型（Move Virtual Machine (MVM)）来从虚拟机上限定合约的模型，可以理解为是一种特化逻辑过的OP_CODE集合。因此MVM的上层只能运行Move模型。</li>
+</ul>
+<p>通过以上讨论，我们可以认识到合约模型的概念，并且理解到虚拟机对上层合约模型的限制，因此接下来就可以讨论Wasm虚拟机可以运行的合约模型以及<code>pallet-contracts</code>的合约模型构成。</p>
+<h2><a class="header" href="#wasm-虚拟机" id="wasm-虚拟机">Wasm 虚拟机</a></h2>
+<p>Wasm是一种在基于栈的虚拟机上运行的二进制的指令格式。（WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine, from <a href="https://webassembly.org/">https://webassembly.org/</a>）因此Wasm的模型和主流计算机程序的模型结构比较相似。另一方面Wasm被设计成为了一种比较通用的形式，且设计了WASI并支持了运行环境自由定义<code>host function</code>，因此虽然Wasm从浏览器发展而来，但是当前的使用场景已经不限于浏览器，开始在边缘计算，热更新，Serverless平台等发挥效果。</p>
+<p>若以指令的完备性来衡量一个虚拟机的能力，则EVM处于半成品的程度，限制多且不够灵活；而JVM，Wasm虚拟机则是比较完备的，限制少，功能性强。另一方面指令设计的合理性一定程度也会影响虚拟机的执行效率，同时虚拟机采用的实现方案也会对执行效率产生比较大的影响。</p>
+<p>例如EVM当前只能以解释器（interpreter）的形式运行，并且当前的实现过程体（go, c++等版本）中没有看到针对解释器的优化，执行效率比较底下，而 JVM, Wasm等虚拟机有采用JIT的模式的实现，执行效率相当高甚至逼近本地执行的性能。</p>
+<blockquote>
+<p>注：<code>pallet-contracts</code>当前只能使用<code>wasmi</code>（解释器）执行Wasm代码，因此合约的执行性能比不上使用<code>wasmtime</code>的Runtime的执行性能。</p>
+</blockquote>
+<p>而同时，Wasm虚拟机相比于JVM等虚拟机，十分轻便（Lightweight），快速，可定制性强，<strong>且<code>host function</code>的功能给予了Wasm虚拟机与宿主之间交互的通道</strong>，因此和其他虚拟机相比，将Wasm虚拟机作为区块链合约沙盒与链的功能结合在一起比较容易。</p>
+<p>另一方面在笔者看来，Wasm是处于底层代码与上层代码之间比较好的一个抽象层，且其复杂性与完备性也远超于EVM，因此比较适合区块链合约领域的需求。</p>
+<p>因此Wasm虚拟机提供的沙盒环境在满足合约沙盒的前提下还满足以下2点要求：</p>
+<ul>
+<li>指令完备，功能性丰富，执行效率高</li>
+<li>有适合的接口能与宿主（这里指代运行Wasm的环境，即链）交互，方便宿主提供需要的功能。</li>
+</ul>
+<h2><a class="header" href="#evm-的合约模型" id="evm-的合约模型">EVM 的合约模型</a></h2>
+<p>由于Ethereum是存储状态的区块链，因此EVM的合约模型理所应当的需要基本读写状态的功能。如果把每次合约运行的过程看做一次程序的启动到执行结束的过程，那么状态数据的变化就对应着这个程序需要持久化数据的变化。</p>
+<p>因此对于读写状态，以太坊的EVM提供了<code>SLOAD</code>和<code>SSTORE</code>两个指令。</p>
+<p>另一方面以太坊描述一个账户使用了“账户模型”，即将合约和调用合约的用户都看做了一个账户，在这个账户下存在<code>balance</code>等概念，因此EVM提供了<code>CALLER</code>，<code>ORIGIN</code>，<code>CALLVALUE</code>等等一系列指令来描述这种模型。</p>
+<p>同时由于在EVM的抽象体系中，认为合约与用户是一致的，因此出现了“合约调用合约”的模型，即<code>CALL</code>，<code>DELEGATECALL</code>等指令，由此带来了合约的可组合性，造就了Ethereum繁荣的生态。而在EVM中，一个合约依托于一个EVM进行运行，因此合约调用合约是在一个EVM中启动了另一个EVM并加载指令进行执行。</p>
+<p>当然EVM虚拟机设计的初衷就是为了解决比特币脚本的非图灵完备问题，为了解决这个问题并保证停机问题不发生，引入了指令的Gas计费模型</p>
+<p>因此总结以上可以得到，EVM的合约模型具备以下特性：</p>
+<ol>
+<li>处理数据的模型是状态机模型，状态的变更靠外界调用触发（类比于调用了状态变更函数的过程）；</li>
+<li>合约模型中需要链相关的特性；</li>
+<li>将合约与用户看做一致，允许合约调用合约；</li>
+<li>引入指令计费模型。</li>
+</ol>
+<h2><a class="header" href="#pallet-contracts的合约模型" id="pallet-contracts的合约模型"><code>pallet-contracts</code>的合约模型</a></h2>
+<p>这里直接下结论：<strong><code>pallet-contracts</code>虽然使用了Wasm虚拟机来执行代码，但是其合约模型基本与EVM合约模型一致</strong>。</p>
+<p>也就是说<code>pallet-contracts</code>的合约模型同样具备以下4点特性：</p>
+<ol>
+<li>处理数据的模型是状态机模型；</li>
+<li>合约模型中需要链相关的特性；</li>
+<li>将合约与用户看做一致，允许合约调用合约；</li>
+<li>引入指令计费模型。</li>
+</ol>
+<p>并且，在以上4种特性的基础上，增加了“存储租赁模型”：</p>
+<ul>
+<li><code>Rent</code>存储租赁计费。</li>
+</ul>
+<p>在上文已经称述了合约执行的环境和合约模型是可以解耦的，EVM由于设计的比较早还没有解耦这个层次的概念，因此在指令中<code>SLOAD</code>，<code>SSTORE</code>及类似和链相关的指令是与EVM其他指令合并一起的。而Wasm本来并非为区块链设计，因此一定不存在这些和链环境相关的指令。</p>
+<p>因此Wasm的<code>host function</code>即是用来完成这件事情的。链作为<code>host</code>宿主，只需要把<strong>他认为合约可能会用到的方法</strong>提供给Wasm虚拟机，让他导入这些函数对象，在合约的执行过程中即可以使用。因此通过<code>host function</code>，<code>pallet-contracts</code>合约模块就可以具备1，2，4功能，并将提供3需要的部分功能，同时第5点特性（租赁计费）也可以引入。</p>
+<p>并且其中第3点功能的实现方式也与EVM一致，当出现合约调用合约的部分时，通过<code>host function</code>从Wasm回到了<code>pallet-contracts</code>模块，并启动了一个新的Wasm虚拟机去执行被调用的合约。（该部分在以后的文章中会描述）</p>
+<p>因此总结而言，<code>pallet-contracts</code>的合约模型具备如下特性：</p>
+<ol>
+<li>合约模型与EVM的合约模型一致，并在此基础上增加了存储计费模型</li>
+<li>与链交互的实现通过Wasm的<code>host function</code>特性实现</li>
+</ol>
+<h2><a class="header" href="#使用wasm虚拟机实现其他合约模型" id="使用wasm虚拟机实现其他合约模型">使用Wasm虚拟机实现其他合约模型</a></h2>
+<p>刚才简要描述了<code>pallet-contracts</code>是如何在Wasm虚拟机上实现合约模型的，由于前文已经解释了虚拟机与合约模型是可以解耦的，因此实际上在Wasm虚拟机上同样可以实现其他的合约模型。</p>
+<p>例如我们可以考虑将Move虚拟机也移植到Wasm虚拟机中，其有两种可能的实现方式：</p>
+<ol>
+<li>
+<p>类比于将EVM的实现体在Runtime的Wasm环境运行，可以将MVM的实现体也编译成Wasm的形式（例如命名为<code>pallet-mvm</code>），在Runtime Wasm中运行。</p>
+<p>基于这种实现，Move依然可以按正常方式编译，并和Solidity的编译结果运行于<code>pallet-evm</code>一致，将Move的编译结果运行在例如<code>pallet-mvm</code>的平台上。</p>
+</li>
+<li>
+<p>将MVM与所有权，链相关的特性抽象一层，做成和<code>pallet-contracts</code>的形式，并设计将Move语言编译的中间码IR编译到Wasm。</p>
+<p>基于这种实现，可以将Move编译成为Wasm，并在Wasm虚拟机中运行。</p>
+</li>
+</ol>
+<h2><a class="header" href="#其他合约模型" id="其他合约模型">其他合约模型</a></h2>
+<h3><a class="header" href="#eos的合约模型" id="eos的合约模型">EOS的合约模型</a></h3>
+<p>EOS的合约模型与EVM类似，同时强化了账户模型的概念。因此EOS使用Wasm的方式也是基于Wasm的执行，并通过<code>host function</code>引入与链相关的功能。</p>
+<p>EOS和EVM模型的主要区别在于，EOS的合约调用合约的过程是以发交易的形态调用，并且EOS的资源模型是抵押模型。当前普遍认为正是EOS的抵押模型最后导致EOS没有走向成功。</p>
+<h3><a class="header" href="#异步合约模型" id="异步合约模型">异步合约模型</a></h3>
+<p><code>pallet-actor</code>是 substrate 尝试实现异步合约模型的一个开端，当前没有什么进展。<code>pallet-actor</code>的模型打算使用Wasm虚拟机作为运行环境，并在此基础上添加异步的功能以提升性能。</p>
+<p>当前也有其他少数对异步合约模型的研究，但是皆处于比较初步的阶段。</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../contracts/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../contracts/language.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../contracts/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../contracts/language.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

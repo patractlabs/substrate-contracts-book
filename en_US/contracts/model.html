@@ -1,0 +1,322 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Contracts Model - Substrate Contracts Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../contracts/overview.html"><strong aria-hidden="true">1.1.</strong> Contracts Overview</a></li><li class="chapter-item expanded "><a href="../contracts/model.html" class="active"><strong aria-hidden="true">1.2.</strong> Contracts Model</a></li><li class="chapter-item expanded "><a href="../contracts/language.html"><strong aria-hidden="true">1.3.</strong> Contracts Language (Framework)</a></li><li class="chapter-item expanded "><a href="../contracts/wasm_first_step.html"><strong aria-hidden="true">1.4.</strong> Brief introduction of Wasm</a></li></ol></li><li class="chapter-item expanded "><a href="../pallet-contracts/introduction.html"><strong aria-hidden="true">2.</strong> pallet-contracts module</a></li><li class="chapter-item expanded "><a href="../ink/introduction.html"><strong aria-hidden="true">3.</strong> ink!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ink/tutorial.html"><strong aria-hidden="true">3.1.</strong> ink! tutorial</a></li><li class="chapter-item expanded "><a href="../ink/framework.html"><strong aria-hidden="true">3.2.</strong> ink! framework</a></li><li class="chapter-item expanded "><a href="../ink/edsl-basic.html"><strong aria-hidden="true">3.3.</strong> ink! eDSL basic element</a></li><li class="chapter-item expanded "><a href="../ink/call-contracts.html"><strong aria-hidden="true">3.4.</strong> ink! contract call</a></li><li class="chapter-item expanded "><a href="../ink/ink-solidity.html"><strong aria-hidden="true">3.5.</strong> ink! compile with solidity</a></li><li class="chapter-item expanded "><a href="../ink/cargo-contract.html"><strong aria-hidden="true">3.6.</strong> cargo-contract</a></li><li class="chapter-item expanded "><a href="../ink/trap.html"><strong aria-hidden="true">3.7.</strong> ink! suck</a></li></ol></li><li class="chapter-item expanded "><a href="../ask/introduction.html"><strong aria-hidden="true">4.</strong> Ask!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ask/tutorial.html"><strong aria-hidden="true">4.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../ask/design.html"><strong aria-hidden="true">4.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../ask/basics.html"><strong aria-hidden="true">4.3.</strong> basic</a></li><li class="chapter-item expanded "><a href="../ask/example.html"><strong aria-hidden="true">4.4.</strong> example</a></li></ol></li><li class="chapter-item expanded "><a href="../solang/introduction.html"><strong aria-hidden="true">5.</strong> Solang</a></li><li class="chapter-item expanded "><a href="../redspot/introduction.html"><strong aria-hidden="true">6.</strong> Redspot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/tutorial.html"><strong aria-hidden="true">6.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../redspot/overview.html"><strong aria-hidden="true">6.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../redspot/configuration.html"><strong aria-hidden="true">6.3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="../redspot/runtime-environment.html"><strong aria-hidden="true">6.4.</strong> Runtime Environment</a></li><li class="chapter-item expanded "><a href="../redspot/console.html"><strong aria-hidden="true">6.5.</strong> console</a></li><li class="chapter-item expanded "><a href="../redspot/q-and-a.html"><strong aria-hidden="true">6.6.</strong> Q &amp; A</a></li><li class="chapter-item expanded "><a href="../redspot/plugin.html"><strong aria-hidden="true">6.7.</strong> plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-chai.html"><strong aria-hidden="true">6.7.1.</strong> @redspot/chai</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-gas-reporter.html"><strong aria-hidden="true">6.7.2.</strong> @redspot/gas-reporter</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-patract.html"><strong aria-hidden="true">6.7.3.</strong> @redspot/patract</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../europa/introduction.html"><strong aria-hidden="true">7.</strong> Europa</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../europa/tutorial.html"><strong aria-hidden="true">7.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../europa/execution_info.html"><strong aria-hidden="true">7.2.</strong> explain for execution log</a></li><li class="chapter-item expanded "><a href="../europa/sample.html"><strong aria-hidden="true">7.3.</strong> example for debug</a></li><li class="chapter-item expanded "><a href="../europa/wasm_executor.html"><strong aria-hidden="true">7.4.</strong> Wasm executor</a></li><li class="chapter-item expanded "><a href="../europa/wasm_backtrace.html"><strong aria-hidden="true">7.5.</strong> Wasm Backtrace</a></li></ol></li><li class="chapter-item expanded "><a href="../zkmega/introduction.html"><strong aria-hidden="true">8.</strong> zkMega</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../zkmega/tutorial.html"><strong aria-hidden="true">8.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../zkmega/contract.html"><strong aria-hidden="true">8.2.</strong> ZKP contract</a></li><li class="chapter-item expanded "><a href="../zkmega/example.html"><strong aria-hidden="true">8.3.</strong> example</a></li><li class="chapter-item expanded "><a href="../zkmega/benchmark.html"><strong aria-hidden="true">8.4.</strong> benchmark</a></li></ol></li><li class="chapter-item expanded "><a href="../himalia/introduction.html"><strong aria-hidden="true">9.</strong> Himalia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../himalia/tutorial.html"><strong aria-hidden="true">9.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../himalia/go-patract.html"><strong aria-hidden="true">9.2.</strong> go-patract</a></li><li class="chapter-item expanded "><a href="../himalia/py-patract.html"><strong aria-hidden="true">9.3.</strong> py-patract</a></li></ol></li><li class="chapter-item expanded "><a href="../metis/introduction.html"><strong aria-hidden="true">10.</strong> Metis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../metis/tokens.html"><strong aria-hidden="true">10.1.</strong> Tokens</a></li><li class="chapter-item expanded "><a href="../metis/access-control.html"><strong aria-hidden="true">10.2.</strong> Access Control</a></li></ol></li><li class="chapter-item expanded "><a href="../carpo/introduction.html"><strong aria-hidden="true">11.</strong> Carpo</a></li><li class="chapter-item expanded "><a href="../patract/introduction.html"><strong aria-hidden="true">12.</strong> Patract</a></li><li class="chapter-item expanded "><a href="../elara/introduction.html"><strong aria-hidden="true">13.</strong> Elara</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elara/tutorial.html"><strong aria-hidden="true">13.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../elara/design.html"><strong aria-hidden="true">13.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../elara/API.html"><strong aria-hidden="true">13.3.</strong> API</a></li></ol></li><li class="chapter-item expanded "><a href="../patra-store/introduction.html"><strong aria-hidden="true">14.</strong> PatraStore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patra-store/overview.html"><strong aria-hidden="true">14.1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../patra-store/getting-starter.html"><strong aria-hidden="true">14.2.</strong> Getting Starter</a></li><li class="chapter-item expanded "><a href="../patra-store/publish-dapps.html"><strong aria-hidden="true">14.3.</strong> Publish DApp</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                          
+                            <li role="none"><a href="../../en_US/contracts/model.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                          
+                            <li role="none"><a href="../../zh_CN/contracts/model.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                          
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Substrate Contracts Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#contract-model" id="contract-model">Contract model</a></h1>
+<p>After we have the concept of contracts and contract sandboxes, we can begin to discuss the concept of contract models.</p>
+<p>The contract sandbox only represents the environment in which the contract is run, and how the contract is run, how the contract interacts with the contract, and how the contract interacts with the data of the chain. These problems belong to the contract model problem.</p>
+<p>In other words, the <strong>contract model is the model in which the contract runs in the contract sandbox/virtual machine</strong>.</p>
+<p><img src="./imgs/model.jpg" alt="" /></p>
+<p>As shown in the figure, the contract model and the contract virtual machine can be decoupled in nature. The only relationship is whether the contract virtual machine can support the contract model required by the upper layer, for example:</p>
+<ul>
+<li>Bitcoin's virtual machine is the stack executor of Bitcoin scripts. Since the executor design is a non-Turing complete OP_CODE, the upper-level contract model can only support Bitcoin scripts.</li>
+<li>Ethereum follows the inspiration of Bitcoin and designed OP_CODE with Turing completeness, namely EVM Virtual Machine (Ethereum Virtual Machine). But the OP_CODE of EVM is relatively simple, and only has a stack design, without the concept of a heap. But EVM introduces the OP_CODE of read and write state, so the contract model can support the state model from the virtual machine mechanism. Therefore, the EVM is also regarded as a state transition machine that performs state transitions (as described in the Ethereum Yellow Paper written by Gavin Wood). The state model is actually a relatively general abstract model. Most models can be simulated with the state model (such as building a UTXO model in the state model). Therefore, theoretically, as long as you continue to improve the OP_CODE of the EVM, the upper layer of the EVM can also be used. Construct other contract models.</li>
+<li>libra believes that the core of the blockchain lies in the processing of assets, so it proposes the Move Virtual Machine (MVM) model to limit the contract model from the virtual machine, which can be understood as a specialized logic OP_CODE collection. Therefore, the upper layer of MVM can only run the Move model.</li>
+</ul>
+<p>Through the above discussion, we can recognize the concept of the contract model and understand the limitations of the virtual machine on the upper-level contract model. Therefore, we can discuss the contract model that the Wasm virtual machine can run and the contract model composition of <code>pallet-contracts</code>.</p>
+<h2><a class="header" href="#wasm-virtual-machine" id="wasm-virtual-machine">Wasm Virtual Machine</a></h2>
+<p>Wasm is a binary instruction format that runs on a stack-based virtual machine. (WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine, from <a href="https://webassembly.org/">https://webassembly.org/</a>) So Wasm’s model and mainstream computer program The model structure is relatively similar. On the other hand, Wasm is designed to be a more general form, and WASI is designed and supports the free definition of <code>host function</code> in the operating environment. Therefore, although Wasm is developed from the browser, the current usage scenarios are not limited to browsing. It is beginning to take effect on edge computing, hot updates, and serverless platforms.</p>
+<p>If the ability of a virtual machine is measured by the completeness of instructions, the EVM is at the level of a semi-finished product, which has many restrictions and is not flexible enough; while the JVM and Wasm virtual machines are relatively complete with few restrictions and strong functionality. On the other hand, the rationality of the instruction design will also affect the execution efficiency of the virtual machine to a certain extent, and the implementation scheme adopted by the virtual machine will also have a relatively large impact on the execution efficiency.</p>
+<p>For example, EVM currently can only run in the form of an interpreter, and there is no optimization for the interpreter in the current implementation process body (go, c++, etc.), and the execution efficiency is relatively low, while virtual machines such as JVM and Wasm There are implementations using JIT mode, and the execution efficiency is quite high and even close to the performance of local execution.</p>
+<blockquote>
+<p>Note: <code>pallet-contracts</code> currently can only use <code>wasmi</code> (interpreter) to execute Wasm code, so the execution performance of the contract is not as good as that of Runtime using <code>wasmtime</code>.</p>
+</blockquote>
+<p>At the same time, compared to virtual machines such as JVM, the Wasm virtual machine is very lightweight (lightweight), fast, and highly customizable. ** And the function of <code>host function</code> gives the Wasm virtual machine a channel for interaction with the host** Therefore, compared with other virtual machines, it is easier to combine the Wasm virtual machine as a blockchain contract sandbox with the functions of the chain.</p>
+<p>On the other hand, in the author's opinion, Wasm is a better abstraction layer between the bottom code and the upper code, and its complexity and completeness are far beyond EVM, so it is more suitable for the needs of the blockchain contract field.</p>
+<p>Therefore, the sandbox environment provided by the Wasm virtual machine meets the following two requirements on the premise that the contract sandbox is satisfied:</p>
+<ul>
+<li>Complete instructions, rich functionality, and high execution efficiency</li>
+<li>There is a suitable interface that can interact with the host (here refers to the environment in which Wasm is running, that is, the chain), so that the host can provide the required functions.</li>
+</ul>
+<h2><a class="header" href="#evm-contract-model" id="evm-contract-model">EVM contract model</a></h2>
+<p>Since Ethereum is a blockchain that stores state, the contract model of EVM needs basic read and write state functions as it should. If the process of each contract operation is regarded as a process from the start of the program to the end of its execution, then the changes in the state data correspond to the changes in the data that the program needs to persist.</p>
+<p>Therefore, for the read and write status, Ethereum's EVM provides two instructions, <code>SLOAD</code> and <code>SSTORE</code>.</p>
+<p>On the other hand, Ethereum describes an account using the &quot;account model&quot;, that is, the contract and the user calling the contract are regarded as an account. Under this account, there are concepts such as <code>balance</code>, so EVM provides <code>CALLER</code>, <code>ORIGIN </code>, <code>CALLVALUE</code> and a series of instructions to describe this model.</p>
+<p>At the same time, because in the abstract system of EVM, the contract and the user are considered to be consistent, the model of &quot;contract call contract&quot; appears, namely <code>CALL</code>, <code>DELEGATECALL</code> and other instructions, which brings the composability of the contract. Created a prosperous Ethereum ecosystem. In EVM, a contract relies on one EVM to run, so the contract calling contract starts another EVM in one EVM and loads instructions for execution.</p>
+<p>Of course, the original intention of the EVM virtual machine design is to solve the problem of non-Turing completeness of the Bitcoin script. In order to solve this problem and ensure that the downtime problem does not occur, the instruction Gas billing model is introduced.</p>
+<p>Therefore, in summary, the EVM contract model has the following characteristics:</p>
+<ol>
+<li>The data processing model is a state machine model, and state changes are triggered by external calls (analogous to the process of calling a state change function);</li>
+<li>The contract model requires chain-related features;</li>
+<li>Treat the contract as consistent with the user and allow the contract to call the contract;</li>
+<li>Introduce an instruction billing model.</li>
+</ol>
+<h2><a class="header" href="#the-contract-model-of-pallet-contracts" id="the-contract-model-of-pallet-contracts">The contract model of <code>pallet-contracts</code></a></h2>
+<p>Here is a direct conclusion: <strong><code>pallet-contracts</code> uses the Wasm virtual machine to execute code, but its contract model is basically the same as the EVM contract model</strong>.</p>
+<p>In other words, the contract model of <code>pallet-contracts</code> also has the following 4 characteristics:</p>
+<ol>
+<li>The data processing model is the state machine model;</li>
+<li>The contract model requires chain-related features;</li>
+<li>Treat the contract as consistent with the user and allow the contract to call the contract;</li>
+<li>Introduce an instruction billing model.</li>
+</ol>
+<p>And, on the basis of the above 4 characteristics, a &quot;storage leasing model&quot; has been added:</p>
+<ul>
+<li><code>Rent</code> storage lease billing.</li>
+</ul>
+<p>As mentioned above, the contract execution environment and contract model can be decoupled. Since the EVM was designed relatively early, there is no concept of decoupling this level, so the instructions in the instructions are <code>SLOAD</code>, <code>SSTORE</code> and similar. The instructions are combined with other instructions of the EVM. And Wasm was not originally designed for the blockchain, so there must be no instructions related to the chain environment.</p>
+<p>So Wasm's <code>host function</code> is used to accomplish this. As the host of the host, the chain only needs to provide the methods that he thinks the contract may use to the Wasm virtual machine, and let him import these function objects, which can be used during the execution of the contract. Therefore, through the <code>host function</code>, the <code>pallet-contracts</code> contract module can have 1, 2, and 4 functions, and will provide some of the functions required by 3, and the fifth feature (rental billing) can also be introduced.</p>
+<p>And the implementation of the third function is also consistent with EVM. When there is a part of the contract calling the contract, it returns to the <code>pallet-contracts</code> module from Wasm through the <code>host function</code>, and starts a new Wasm virtual machine to execute The contract being called. (This part will be described in a future article)</p>
+<p>So in summary, the contract model of <code>pallet-contracts</code> has the following characteristics:</p>
+<ol>
+<li>The contract model is consistent with the EVM contract model, and a storage billing model is added on this basis</li>
+<li>The interaction with the chain is realized through the <code>host function</code> feature of Wasm</li>
+</ol>
+<h2><a class="header" href="#use-wasm-virtual-machine-to-implement-other-contract-models" id="use-wasm-virtual-machine-to-implement-other-contract-models">Use Wasm virtual machine to implement other contract models</a></h2>
+<p>I just briefly described how <code>pallet-contracts</code> implements the contract model on the Wasm virtual machine. Since the previous article has explained that the virtual machine and the contract model can be decoupled, in fact, other things can also be implemented on the Wasm virtual machine. Contract model.</p>
+<p>For example, we can consider porting the Move virtual machine to the Wasm virtual machine. There are two possible implementations:</p>
+<ol>
+<li>
+<p>Analogous to running the EVM implementation in the Runtime Wasm environment, the MVM implementation can also be compiled into the form of Wasm (for example, named <code>pallet-mvm</code>) and run in the Runtime Wasm.</p>
+<p>Based on this implementation, Move can still be compiled in the normal way, and it is consistent with the compilation result of Solidity running on <code>pallet-evm</code>, and the result of Move compilation is run on a platform such as <code>pallet-mvm</code>.</p>
+</li>
+<li>
+<p>Abstract the MVM, ownership, and chain-related features into a form of <code>pallet-contracts</code>, and design to compile the intermediate code IR compiled by the Move language to Wasm.</p>
+<p>Based on this realization, Move can be compiled into Wasm and run in the Wasm virtual machine.</p>
+</li>
+</ol>
+<h2><a class="header" href="#other-contract-models" id="other-contract-models">Other contract models</a></h2>
+<h3><a class="header" href="#eos-contract-model" id="eos-contract-model">EOS contract model</a></h3>
+<p>EOS's contract model is similar to EVM, while strengthening the concept of account model. Therefore, the way EOS uses Wasm is also based on the execution of Wasm, and introduces chain-related functions through <code>host function</code>.</p>
+<p>The main difference between the EOS and EVM models is that the EOS contract calls the contract in the form of a transaction, and the EOS resource model is a mortgage model. At present, it is generally believed that it is the EOS mortgage model that ultimately led to EOS not succeeding.</p>
+<h3><a class="header" href="#asynchronous-contract-model" id="asynchronous-contract-model">Asynchronous contract model</a></h3>
+<p>The <code>pallet-actor</code> is the beginning of Substrate's attempt to implement the asynchronous contract model, and there is currently no progress. The model of <code>pallet-actor</code> intends to use the Wasm virtual machine as the operating environment, and on this basis add asynchronous functions to improve performance.</p>
+<p>There are also a few other studies on asynchronous contract models, but they are all in a relatively preliminary stage.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../contracts/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../contracts/language.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../contracts/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../contracts/language.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Contracts Language (Framework) - Substrate Contracts Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../contracts/overview.html"><strong aria-hidden="true">1.1.</strong> Contracts Overview</a></li><li class="chapter-item expanded "><a href="../contracts/model.html"><strong aria-hidden="true">1.2.</strong> Contracts Model</a></li><li class="chapter-item expanded "><a href="../contracts/language.html" class="active"><strong aria-hidden="true">1.3.</strong> Contracts Language (Framework)</a></li><li class="chapter-item expanded "><a href="../contracts/wasm_first_step.html"><strong aria-hidden="true">1.4.</strong> Brief introduction of Wasm</a></li></ol></li><li class="chapter-item expanded "><a href="../pallet-contracts/introduction.html"><strong aria-hidden="true">2.</strong> pallet-contracts module</a></li><li class="chapter-item expanded "><a href="../ink/introduction.html"><strong aria-hidden="true">3.</strong> ink!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ink/tutorial.html"><strong aria-hidden="true">3.1.</strong> ink! tutorial</a></li><li class="chapter-item expanded "><a href="../ink/framework.html"><strong aria-hidden="true">3.2.</strong> ink! framework</a></li><li class="chapter-item expanded "><a href="../ink/edsl-basic.html"><strong aria-hidden="true">3.3.</strong> ink! eDSL basic element</a></li><li class="chapter-item expanded "><a href="../ink/call-contracts.html"><strong aria-hidden="true">3.4.</strong> ink! contract call</a></li><li class="chapter-item expanded "><a href="../ink/ink-solidity.html"><strong aria-hidden="true">3.5.</strong> ink! compile with solidity</a></li><li class="chapter-item expanded "><a href="../ink/cargo-contract.html"><strong aria-hidden="true">3.6.</strong> cargo-contract</a></li><li class="chapter-item expanded "><a href="../ink/trap.html"><strong aria-hidden="true">3.7.</strong> ink! suck</a></li></ol></li><li class="chapter-item expanded "><a href="../ask/introduction.html"><strong aria-hidden="true">4.</strong> Ask!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ask/tutorial.html"><strong aria-hidden="true">4.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../ask/design.html"><strong aria-hidden="true">4.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../ask/basics.html"><strong aria-hidden="true">4.3.</strong> basic</a></li><li class="chapter-item expanded "><a href="../ask/example.html"><strong aria-hidden="true">4.4.</strong> example</a></li></ol></li><li class="chapter-item expanded "><a href="../solang/introduction.html"><strong aria-hidden="true">5.</strong> Solang</a></li><li class="chapter-item expanded "><a href="../redspot/introduction.html"><strong aria-hidden="true">6.</strong> Redspot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/tutorial.html"><strong aria-hidden="true">6.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../redspot/overview.html"><strong aria-hidden="true">6.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../redspot/configuration.html"><strong aria-hidden="true">6.3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="../redspot/runtime-environment.html"><strong aria-hidden="true">6.4.</strong> Runtime Environment</a></li><li class="chapter-item expanded "><a href="../redspot/console.html"><strong aria-hidden="true">6.5.</strong> console</a></li><li class="chapter-item expanded "><a href="../redspot/q-and-a.html"><strong aria-hidden="true">6.6.</strong> Q &amp; A</a></li><li class="chapter-item expanded "><a href="../redspot/plugin.html"><strong aria-hidden="true">6.7.</strong> plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-chai.html"><strong aria-hidden="true">6.7.1.</strong> @redspot/chai</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-gas-reporter.html"><strong aria-hidden="true">6.7.2.</strong> @redspot/gas-reporter</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-patract.html"><strong aria-hidden="true">6.7.3.</strong> @redspot/patract</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../europa/introduction.html"><strong aria-hidden="true">7.</strong> Europa</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../europa/tutorial.html"><strong aria-hidden="true">7.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../europa/execution_info.html"><strong aria-hidden="true">7.2.</strong> explain for execution log</a></li><li class="chapter-item expanded "><a href="../europa/sample.html"><strong aria-hidden="true">7.3.</strong> example for debug</a></li><li class="chapter-item expanded "><a href="../europa/wasm_executor.html"><strong aria-hidden="true">7.4.</strong> Wasm executor</a></li><li class="chapter-item expanded "><a href="../europa/wasm_backtrace.html"><strong aria-hidden="true">7.5.</strong> Wasm Backtrace</a></li></ol></li><li class="chapter-item expanded "><a href="../zkmega/introduction.html"><strong aria-hidden="true">8.</strong> zkMega</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../zkmega/tutorial.html"><strong aria-hidden="true">8.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../zkmega/contract.html"><strong aria-hidden="true">8.2.</strong> ZKP contract</a></li><li class="chapter-item expanded "><a href="../zkmega/example.html"><strong aria-hidden="true">8.3.</strong> example</a></li><li class="chapter-item expanded "><a href="../zkmega/benchmark.html"><strong aria-hidden="true">8.4.</strong> benchmark</a></li></ol></li><li class="chapter-item expanded "><a href="../himalia/introduction.html"><strong aria-hidden="true">9.</strong> Himalia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../himalia/tutorial.html"><strong aria-hidden="true">9.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../himalia/go-patract.html"><strong aria-hidden="true">9.2.</strong> go-patract</a></li><li class="chapter-item expanded "><a href="../himalia/py-patract.html"><strong aria-hidden="true">9.3.</strong> py-patract</a></li></ol></li><li class="chapter-item expanded "><a href="../metis/introduction.html"><strong aria-hidden="true">10.</strong> Metis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../metis/tokens.html"><strong aria-hidden="true">10.1.</strong> Tokens</a></li><li class="chapter-item expanded "><a href="../metis/access-control.html"><strong aria-hidden="true">10.2.</strong> Access Control</a></li></ol></li><li class="chapter-item expanded "><a href="../carpo/introduction.html"><strong aria-hidden="true">11.</strong> Carpo</a></li><li class="chapter-item expanded "><a href="../patract/introduction.html"><strong aria-hidden="true">12.</strong> Patract</a></li><li class="chapter-item expanded "><a href="../elara/introduction.html"><strong aria-hidden="true">13.</strong> Elara</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elara/tutorial.html"><strong aria-hidden="true">13.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../elara/design.html"><strong aria-hidden="true">13.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../elara/API.html"><strong aria-hidden="true">13.3.</strong> API</a></li></ol></li><li class="chapter-item expanded "><a href="../patra-store/introduction.html"><strong aria-hidden="true">14.</strong> PatraStore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patra-store/overview.html"><strong aria-hidden="true">14.1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../patra-store/getting-starter.html"><strong aria-hidden="true">14.2.</strong> Getting Starter</a></li><li class="chapter-item expanded "><a href="../patra-store/publish-dapps.html"><strong aria-hidden="true">14.3.</strong> Publish DApp</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                          
+                            <li role="none"><a href="../../en_US/contracts/language.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                          
+                            <li role="none"><a href="../../zh_CN/contracts/language.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                          
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Substrate Contracts Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#contract-language-framework" id="contract-language-framework">Contract language (framework)</a></h1>
+<p>Corresponding to the concept of &quot;contract model&quot; (operating platform), we can derive the concept of contract language (framework) (writing code that can run on the platform).</p>
+<p>Instead of simply using &quot;contract language&quot;, we use words like &quot;contract language (framework)&quot; because we have separated the &quot;contract sandbox&quot; and &quot;contract model&quot; in the previous chapter. Structure level, so in fact, some new contract platforms did not &quot;invent&quot; a new Solidity contract language like EVM, but chose some languages ​​(such as Rust, C++, AssemblyScript, etc.) based on this language. &quot;hack syntax analysis&quot;, &quot;macro&quot;, and other dimensions add contract-related constraints and functional logic to existing languages. Therefore, in many cases, it will exist in the form of &quot;frame&quot;, &quot;library&quot;, etc. (such as Frame Contract Pallet's rust contract language framework ink!). And this &quot;framework/library&quot; is not the dimension of libraries used in usual program development. Some contract language frameworks need to be modified to the compiler dimension, so we prefer to call them &quot;language frameworks&quot;.</p>
+<h2><a class="header" href="#correspondence-between-contract-language-framework-and-contract-model" id="correspondence-between-contract-language-framework-and-contract-model">Correspondence between contract language (framework) and contract model</a></h2>
+<p><img src="./imgs/language_1.jpg" alt="language 1" /></p>
+<p>As shown in the figure above, the upper part is the relationship between EVM and Solidity. Since EVM/Solidity was proposed earlier, its model is consistent with the usual model relationship between computer virtual machines and languages. The lower part is the correspondence between the language framework part after separating the contract model.</p>
+<p>Here we will focus on the second half. The readers of the first half can analyze according to their own experience in Ethereum contract development compared with the introduction in the following text.</p>
+<p>In the system of compiled language, first simply define the following nouns (not rigorously speaking, defined only for the following introduction):</p>
+<ul>
+<li>S language: the original language (source) for programmers to write code, for example, to compile C++ into assembly, then C++ is the original language S</li>
+<li>T language: The language (target) produced after S language is compiled by a compiler, for example, if C++ is compiled into assembly, then assembly is the target language T</li>
+</ul>
+<p>The previous article has introduced that the environment for running the contract system can be logically split into a &quot;contract model&quot; and a &quot;contract virtual machine&quot;. The former manages the business logic of the contract, and the latter manages how to run the code of the contract, so the corresponding contract language The part can also be disassembled into &quot;contract language framework&quot; and &quot;S language compiled into contract virtual machine&quot;.</p>
+<p>According to this definition, it is clear that Solidity is a product that has the characteristics of both &quot;contract language framework&quot; and &quot;S language&quot;:</p>
+<ol>
+<li>
+<p>Solidity has a Turing complete language system, so Solidity is a &quot;language&quot; (relative to the BTC script)</p>
+</li>
+<li>
+<p>The grammar of Solidity has many keywords with contract characteristics, corresponding to the concept of &quot;contract language framework&quot;, such as:</p>
+<ul>
+<li><code>mapping</code>: A typical case of contract storage</li>
+<li><code>msg.sender</code>, <code>msg.value</code>: variables related to contract calls</li>
+<li><code>view</code>, <code>pure</code> and other modifiers</li>
+<li><code>call</code>, <code>delegate_call</code> and other keywords related to contract calls</li>
+</ul>
+<p>These concepts do not exist to support the logic of the Solidity language, but to serve the business logic of the Ethereum contract virtual machine.</p>
+</li>
+</ol>
+<p>The purpose of the &quot;contract language framework&quot; is to correspond to the business logic of the contract model. What kind of contract model requires what kind of contract language framework. For example, the bottom layer of EVM is k/v type storage, so the <code>mapping</code> designed in Solidity cannot be traversed (unless extra storage is attached). For example, the contract model of EVM contract interaction is designed as a contract calling contract mode, so Solidity provides <code>call</code> and <code>delegate_call</code>. <strong>The same applies to other contract systems</strong>.</p>
+<p>On the other hand, the contract language framework is an additional function built on the S language, so the functions provided by the contract language framework are ultimately compiled to the T language corresponding to the S language. Some of the features required by the blockchain, such as deterministic requirements, not allowed to use the interface called by the operating system, etc., will be <strong>constrained</strong> at this level. Therefore, the contract language framework not only provides the function of the contract model for the S language itself, but also needs to impose certain constraints on the language itself. This step is also a difficult place to develop and understand the contract language framework. At the same time, it is precisely because of this point that causes many awkward situations in the process of contract developers using the contract model framework. Languages ​​such as Solidity or Move are new languages ​​developed for contract platforms. Even though their grammar will have many traces of simulating other languages, they can be more friendly to contract developers in terms of constraints. However, it is difficult to deal with the contract language that adds the contract language framework function to the existing language, and this is one of the reasons why it is difficult for contract developers to use the framework function.</p>
+<p>Take ink! for example:</p>
+<ol>
+<li>
+<p>Float should be avoided in the blockchain, because floating-point numbers may produce non-deterministic behavior. Therefore, in contract/runtime development, if you need to use floating-point numbers, or multiply and divide overflow numbers, you need to introduce fixed-point numbers for processing. Therefore, the fixed-point library provided by Substrate runtime can be introduced into the ink! contract for processing.</p>
+</li>
+<li>
+<p>Since the contract model of <code>pallet-contracts</code> is basically the same as EVM, the contract storage of <code>pallet-contracts</code> is also composed of K/V. Then the contract model framework needs to deal with the various collection types provided in the standard library. Therefore, the collection types that may be used in the standard library are rewritten in <strong>ink!</strong>, and the process of processing the collection element types into K/V data is added. Therefore, in the ink! contract storage, if a collection type is designed, only the types provided in the ink! standard library can be used. On the other hand, since the return value of ink! needs to export metadata for third-party processing, and the current metadata interface implementation is only implemented for the collection in the standard library, so the collection of the return value of the ink! method can only use the collection of the standard library. Types of. So the following code will appear:</p>
+<pre><code class="language-rust ignore">#[ink::contract]
+mod test {
+    // Introduce Vec realized by ink
+    use ink_storage::collections::Vec as StorageVec;
+    // Introduce the Vec of the standard library
+    use ink_prelude::vec::Vec;
+    #[ink(storage)]
+    pub struct Test {
+        owners: StorageVec&lt;AccountId&gt;, // Only ink's Vec can be used
+    }
+    impl Test {
+        #[ink(message)]
+        pub fn get_owners(&amp;self) -&gt; Vec&lt;AccountId&gt; {
+            // Convert Vec implemented by ink to Vec implemented by standard library
+            self.owners.iter().map(Clone::clone).collect()
+        }
+    }
+}
+</code></pre>
+</li>
+</ol>
+<p>So in summary, in the model structure, developers need to understand:</p>
+<ul>
+<li>The contract language framework corresponds to the contract model, and the characteristics of the language framework will match the model one by one;</li>
+<li>The contract language framework provides the S language with business functions for the contract model, and it also restricts the S language itself according to the requirements of the contract business logic.</li>
+</ul>
+<p>However, because Solidity itself is positioned as a language designed for writing contracts, many contract-related functions can be designed as keywords. And if a language itself is not designed for contracts, it is necessary to design a &quot;contract language framework&quot; corresponding to the contract model based on this contract. Since new functions are added to this language, it is generally difficult to integrate with the language itself in depth. Therefore, the final result is related to the ability of this language to <strong>expand the syntax tree</strong>. The language itself provides more flexible interfaces (macros, plug-ins, etc.) for modifying/adding the syntax tree, the more functions the contract language framework can achieve. The less the language itself provides such extensibility functions, the contract language framework can only consider modifying the compiler and extending the required grammar to support the contract model, so that the final language becomes a &quot;dialect&quot; of the original language. Up. Therefore, the former can exist in the form of a library/framework, while the latter becomes a new language. <strong>This is why we call this model the &quot;contract language framework&quot;</strong>.</p>
+<h2><a class="header" href="#pallet-contracts-and-the-corresponding-contract-language-framework" id="pallet-contracts-and-the-corresponding-contract-language-framework"><code>pallet-contracts</code> and the corresponding contract language framework</a></h2>
+<p><img src="./imgs/language_2.jpg" alt="language 2" /></p>
+<p>After explaining the contract language framework model above, we can apply the contract model framework to Substrate's Wasm contract system.</p>
+<p>Obviously, the realization of the ink! system corresponds to the contract model of pallet-contracts. ink! 3.0 introduces the functional logic corresponding to <code>pallet-contracts</code> into rust through the system of process macros (2.0 through god declaration macros). Therefore, the S language in this system is rust, and the T language is Wasm bytecode. With the help of an auxiliary tool <code>cargo-contract</code>, the rust code using the ink! framework is compiled into the Wasm bytecode of the contract. The environment in which Wasm bytecode runs on the chain is wasmi (Wasmtime and other JIT execution environments will also be introduced in the future).</p>
+<p>And because the execution environment of <code>pallet-contracts</code> is Wasm bytecode, the language that can be compiled into Wasm bytecode is matched with a contract language framework that conforms to the <code>pallet-contracts</code> contract model, and it can be generated that can run on <code>pallet. -contracts</code> The contracts on this contract platform. So for <code>pallet-contracts</code>, it is completely possible to design contract systems in different languages ​​to provide multiple options for development and use different languages ​​to develop Wasm contracts.</p>
+<p>In addition to rust's ink!, the contract language framework that currently supports running on <code>pallet-contracts</code> also has the following items:</p>
+<ul>
+<li>Ask!, developed by Patract, is a contract language framework based on the AssemblyScript language. (Currently under development)</li>
+<li>Solang, developed by hyperledger-labs, supports to compile Solidity to Wasm tool of <code>pallet-contracts</code>.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../contracts/model.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../contracts/wasm_first_step.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../contracts/model.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../contracts/wasm_first_step.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>configuration - Substrate Contracts Book</title>
+        
+        
+
+
+        <!-- Custom HTML head -->
+        
+
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../contracts/overview.html"><strong aria-hidden="true">1.1.</strong> Contracts Overview</a></li><li class="chapter-item expanded "><a href="../contracts/model.html"><strong aria-hidden="true">1.2.</strong> Contracts Model</a></li><li class="chapter-item expanded "><a href="../contracts/language.html"><strong aria-hidden="true">1.3.</strong> Contracts Language (Framework)</a></li><li class="chapter-item expanded "><a href="../contracts/wasm_first_step.html"><strong aria-hidden="true">1.4.</strong> Brief introduction of Wasm</a></li></ol></li><li class="chapter-item expanded "><a href="../pallet-contracts/introduction.html"><strong aria-hidden="true">2.</strong> pallet-contracts module</a></li><li class="chapter-item expanded "><a href="../ink/introduction.html"><strong aria-hidden="true">3.</strong> ink!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ink/tutorial.html"><strong aria-hidden="true">3.1.</strong> ink! tutorial</a></li><li class="chapter-item expanded "><a href="../ink/framework.html"><strong aria-hidden="true">3.2.</strong> ink! framework</a></li><li class="chapter-item expanded "><a href="../ink/edsl-basic.html"><strong aria-hidden="true">3.3.</strong> ink! eDSL basic element</a></li><li class="chapter-item expanded "><a href="../ink/call-contracts.html"><strong aria-hidden="true">3.4.</strong> ink! contract call</a></li><li class="chapter-item expanded "><a href="../ink/ink-solidity.html"><strong aria-hidden="true">3.5.</strong> ink! compile with solidity</a></li><li class="chapter-item expanded "><a href="../ink/cargo-contract.html"><strong aria-hidden="true">3.6.</strong> cargo-contract</a></li><li class="chapter-item expanded "><a href="../ink/trap.html"><strong aria-hidden="true">3.7.</strong> ink! suck</a></li></ol></li><li class="chapter-item expanded "><a href="../ask/introduction.html"><strong aria-hidden="true">4.</strong> Ask!</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../ask/tutorial.html"><strong aria-hidden="true">4.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../ask/design.html"><strong aria-hidden="true">4.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../ask/basics.html"><strong aria-hidden="true">4.3.</strong> basic</a></li><li class="chapter-item expanded "><a href="../ask/example.html"><strong aria-hidden="true">4.4.</strong> example</a></li></ol></li><li class="chapter-item expanded "><a href="../solang/introduction.html"><strong aria-hidden="true">5.</strong> Solang</a></li><li class="chapter-item expanded "><a href="../redspot/introduction.html"><strong aria-hidden="true">6.</strong> Redspot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/tutorial.html"><strong aria-hidden="true">6.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../redspot/overview.html"><strong aria-hidden="true">6.2.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../redspot/configuration.html" class="active"><strong aria-hidden="true">6.3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="../redspot/runtime-environment.html"><strong aria-hidden="true">6.4.</strong> Runtime Environment</a></li><li class="chapter-item expanded "><a href="../redspot/console.html"><strong aria-hidden="true">6.5.</strong> console</a></li><li class="chapter-item expanded "><a href="../redspot/q-and-a.html"><strong aria-hidden="true">6.6.</strong> Q &amp; A</a></li><li class="chapter-item expanded "><a href="../redspot/plugin.html"><strong aria-hidden="true">6.7.</strong> plugin</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-chai.html"><strong aria-hidden="true">6.7.1.</strong> @redspot/chai</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-gas-reporter.html"><strong aria-hidden="true">6.7.2.</strong> @redspot/gas-reporter</a></li><li class="chapter-item expanded "><a href="../redspot/plugin/redspot-patract.html"><strong aria-hidden="true">6.7.3.</strong> @redspot/patract</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../europa/introduction.html"><strong aria-hidden="true">7.</strong> Europa</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../europa/tutorial.html"><strong aria-hidden="true">7.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../europa/execution_info.html"><strong aria-hidden="true">7.2.</strong> explain for execution log</a></li><li class="chapter-item expanded "><a href="../europa/sample.html"><strong aria-hidden="true">7.3.</strong> example for debug</a></li><li class="chapter-item expanded "><a href="../europa/wasm_executor.html"><strong aria-hidden="true">7.4.</strong> Wasm executor</a></li><li class="chapter-item expanded "><a href="../europa/wasm_backtrace.html"><strong aria-hidden="true">7.5.</strong> Wasm Backtrace</a></li></ol></li><li class="chapter-item expanded "><a href="../zkmega/introduction.html"><strong aria-hidden="true">8.</strong> zkMega</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../zkmega/tutorial.html"><strong aria-hidden="true">8.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../zkmega/contract.html"><strong aria-hidden="true">8.2.</strong> ZKP contract</a></li><li class="chapter-item expanded "><a href="../zkmega/example.html"><strong aria-hidden="true">8.3.</strong> example</a></li><li class="chapter-item expanded "><a href="../zkmega/benchmark.html"><strong aria-hidden="true">8.4.</strong> benchmark</a></li></ol></li><li class="chapter-item expanded "><a href="../himalia/introduction.html"><strong aria-hidden="true">9.</strong> Himalia</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../himalia/tutorial.html"><strong aria-hidden="true">9.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../himalia/go-patract.html"><strong aria-hidden="true">9.2.</strong> go-patract</a></li><li class="chapter-item expanded "><a href="../himalia/py-patract.html"><strong aria-hidden="true">9.3.</strong> py-patract</a></li></ol></li><li class="chapter-item expanded "><a href="../metis/introduction.html"><strong aria-hidden="true">10.</strong> Metis</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../metis/tokens.html"><strong aria-hidden="true">10.1.</strong> Tokens</a></li><li class="chapter-item expanded "><a href="../metis/access-control.html"><strong aria-hidden="true">10.2.</strong> Access Control</a></li></ol></li><li class="chapter-item expanded "><a href="../carpo/introduction.html"><strong aria-hidden="true">11.</strong> Carpo</a></li><li class="chapter-item expanded "><a href="../patract/introduction.html"><strong aria-hidden="true">12.</strong> Patract</a></li><li class="chapter-item expanded "><a href="../elara/introduction.html"><strong aria-hidden="true">13.</strong> Elara</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../elara/tutorial.html"><strong aria-hidden="true">13.1.</strong> tutorial</a></li><li class="chapter-item expanded "><a href="../elara/design.html"><strong aria-hidden="true">13.2.</strong> design</a></li><li class="chapter-item expanded "><a href="../elara/API.html"><strong aria-hidden="true">13.3.</strong> API</a></li></ol></li><li class="chapter-item expanded "><a href="../patra-store/introduction.html"><strong aria-hidden="true">14.</strong> PatraStore</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patra-store/overview.html"><strong aria-hidden="true">14.1.</strong> Overview</a></li><li class="chapter-item expanded "><a href="../patra-store/getting-starter.html"><strong aria-hidden="true">14.2.</strong> Getting Starter</a></li><li class="chapter-item expanded "><a href="../patra-store/publish-dapps.html"><strong aria-hidden="true">14.3.</strong> Publish DApp</a></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                        
+                        <button id="language-toggle" class="icon-button" type="button" title="Select language" aria-label="Select language" aria-haspopup="true" aria-expanded="false" aria-controls="language-list">
+                            <i class="fa fa-globe"></i>
+                        </button>
+                        <ul id="language-list" class="language-popup" aria-label="Languages" role="menu">
+                          
+                            <li role="none"><a href="../../en_US/redspot/configuration.html"><button role="menuitem" class="language" id="light">English</button></a></li>
+                          
+                            <li role="none"><a href="../../zh_CN/redspot/configuration.html"><button role="menuitem" class="language" id="light">中文</button></a></li>
+                          
+                        </ul>
+                        
+                    </div>
+
+                    <h1 class="menu-title">Substrate Contracts Book</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1><a class="header" href="#configure" id="configure">Configure</a></h1>
+<p>When you run Redspot, it will search for the closest redspot.config.js file starting from the current working directory. This file is usually located in the root directory of the project.</p>
+<p>This file contains the entire Redspot setup (e.g. configuration, plugins, custom tasks, etc.).</p>
+<h2><a class="header" href="#configuration-options" id="configuration-options">Configuration options</a></h2>
+<p>To set the configuration, you need to export the object (object) from redspot.config.ts.</p>
+<pre><code class="language-typescript">import { RedspotUserConfig } from 'redspot/types';
+
+export default {
+  defaultNetwork: 'development',
+  contract: {
+    ink: {
+      toolchain: 'nightly',
+      sources: ['contracts/**/*']
+    },
+    solang: {
+      sources: ['contracts/**/*.sol']
+    }
+  },
+  networks: {
+    development: {
+      endpoint: 'ws://127.0.0.1:9944',
+      types: {},
+      gasLimit: '400000000000'
+    },
+    substrate: {
+      endpoint: 'ws://127.0.0.1:9944',
+      gasLimit: '400000000000',
+      accounts: ['//Alice', &quot;tomato mad peasant blush poem obtain inspire distance attitude mercy return marriage&quot;, &quot; 0x26aa394eea5630e07c48ae0c9558cef70a98fdbe9ce6c55837576c60c7af3850&quot;],
+      types: {}
+    }
+  },
+  paths: {
+    artifacts: &quot;artifacts&quot;,
+    tests: &quot;tests&quot;
+  },
+  mocha: {
+    timeout: 60000
+  }
+} as RedspotUserConfig;
+</code></pre>
+<p>The configuration information can be obtained in the js file via ``config`''.</p>
+<pre><code class="language-typescript">import { config } from &quot;redspot&quot;
+
+console.log(config)
+</code></pre>
+<h2><a class="header" href="#defaultnetwork" id="defaultnetwork">defaultNetwork</a></h2>
+<p>You can customize the network that is used by default when running Redspot by using the <code>defaultNetwork</code> field in the configuration. If this configuration is omitted, the default value is <code>localhost</code>.</p>
+<h2><a class="header" href="#networks" id="networks">networks</a></h2>
+<p>The <code>networks</code> configuration field is an optional object to which the network name maps to its configuration.</p>
+<p>The default configuration for <code>localhost</code> is :</p>
+<pre><code class="language-typescript">{
+  localhost: {
+    gasLimit: &quot;400000000000&quot;,
+    accounts: [&quot;//Alice&quot;, &quot;//Bob&quot;, &quot;//Charlie&quot;, &quot;//Dave&quot;, &quot;//Eve&quot;, &quot;//Ferdie&quot;],
+    endpoint: &quot;ws://127.0.0.1:9944&quot;,
+    types: {}
+  }
+}
+</code></pre>
+<p>Other network names can also be configured, e.g. configure <code>mainnet</code>, the name of a particular network <code>some_network_name</code>, etc.</p>
+<pre><code class="language-typescript">{
+    mainnet: {
+        //...
+    },
+    some_network_name: {
+        //...
+    }
+}
+</code></pre>
+<p>The following configuration options are described for the <code>network</code> section.</p>
+<h3><a class="header" href="#networkgaslimit" id="networkgaslimit"><code>[network].gasLimit</code></a></h3>
+<p>This configuration is used to set the default value of <code>gaslimit</code> that needs to be provided when instantiating or invoking a contract via a transaction. This value must be an integer, with no precision.</p>
+<p>If this value is too small, you will get a <code>contracts.OutOfGas</code> error. The maximum gaslimit is the maximum value used for <code>DispatchClass::Normal</code> in Runtime for this Substrate's chain. (For example, in the configuration of Substrate's node node is <code>NORMAL_DISPATCH_RATIO * MAXIMUM_BLOCK_WEIGHT = 75% * 2000000000000</code>).</p>
+<p>So it is generally recommended to set it higher.</p>
+<h3><a class="header" href="#networkaccounts" id="networkaccounts"><code>[network].accounts</code></a></h3>
+<p><code>accounts</code> should be set by <a href="https://polkadot.js.org/docs/keyring/start/suri/"><code>suri</code></a> or <a href="https://polkadot.js.org/docs/keyring/"><code>KeyringPair</code></a> start/create/#adding-a-pair).</p>
+<p>The accounts default to [&quot;//Alice&quot;, &quot;//Bob&quot;, &quot;//Charlie&quot;, &quot;//Dave&quot;, &quot;//Eve&quot;, &quot;//Ferdie&quot;].</p>
+<p>See runtime-environment for details </p>
+<h3><a class="header" href="#networkendpoint" id="networkendpoint"><code>[network].endpoint</code></a></h3>
+<p><code>endpoint</code> specifies the node in the current network configuration that the developer wants to connect to.</p>
+<p>Currently, only WebSockets type RPC connections are supported (i.e. only link protocols starting with <code>wss://</code> or <code>ws://</code> are supported).</p>
+<h3><a class="header" href="#networktypes" id="networktypes"><code>[network].types</code></a></h3>
+<p>type is a concept defined in <code>polkadotjs</code>. If there is any doubt about this, you can see it here at <a href="https://polkadot.js.org/docs/api/start/types.extend/"><code>types.extend</code></a>. You can also set <code>[network].typesbundle</code>, <code>[network].typesSpec</code>, etc. Usually, if you get an error like &quot;No such variant in enum MultiSignature&quot;, you should probably consider adding <code>{ Address: &quot;AccountId&quot;, LookupSource: &quot;AccountId&quot;}</code>, see <a href="https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics">impact-on-extrinsics</a> .</p>
+<h2><a class="header" href="#contract" id="contract">contract</a></h2>
+<p>In the contract, you can set the compiler options, currently <a href="https://github.com/paritytech/ink">ink</a> and <a href="https://github.com/hyperledger-labs/solang">solang</a> are supported. You can also compile the ink contract and the solang contract together under the same project.</p>
+<p>See the example of compiling multiple contracts at https://github.com/patractlabs/redspot/tree/master/examples/multi-contract .</p>
+<h3><a class="header" href="#contractinktoolchain" id="contractinktoolchain">[contract].ink.toolchain</a></h3>
+<p>Set the toolchain used by <a href="https://github.com/paritytech/cargo-contract">cargo-contract</a> when compiling contracts. You can also specify <code>nightly-YYYY-MM-DD</code></p>
+<h3><a class="header" href="#contractinksources" id="contractinksources">[contract].ink.sources</a></h3>
+<p>Sets the directory of the ink contract to look for at compile time. glob syntax.</p>
+<h3><a class="header" href="#contractsolangsources" id="contractsolangsources">[contract].solang.sources</a></h3>
+<p>Set the directory of the solang contract to be looked up at compile time. glob syntax.</p>
+<h2><a class="header" href="#paths" id="paths">Paths</a></h2>
+<p>paths sets the directory name for artifacts and tests files. Normally, you don't need to change this.</p>
+<h2><a class="header" href="#mocha" id="mocha">mocha</a></h2>
+<p>Redspot uses mocha as its testing framework, and all of the options here will be passed to mocha. Check out https://mochajs.org/api/mocha for more details.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../redspot/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../redspot/runtime-environment.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../redspot/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+
+                
+                    <a rel="next" href="../redspot/runtime-environment.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        
+
+        
+
+        
+
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+
+        
+
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+
+        
+
+    </body>
+</html>
