@@ -227,4 +227,4 @@ call -> dispatch_using_mode -> ... -> transfer -> panic
 
 ### ZKP feature
 
-查看 [megaclite](https://github.com/patractlabs/megaclite)，相关合约示例[metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
+查看 [zkMega](https://github.com/patractlabs/zkmega)，相关合约示例[metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
