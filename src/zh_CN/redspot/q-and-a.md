@@ -63,7 +63,7 @@ contract.tx["baseErc20,transfer"](receiver.address, 7))
 
 
 
-### 如何保证私钥的安全
+### 如何保证线上私钥的安全，避免上传到 github
 
 可以使用环境变量配置 account，如：
 
