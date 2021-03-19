@@ -61,3 +61,34 @@ contract.tx.transfer(receiver.address, 7))
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
 
+
+
+### 如何保证私钥的安全
+
+可以使用环境变量配置 account，如：
+
+```typescript
+// redspot.config.ts
+import { RedspotUserConfig } from 'redspot/types';
+
+
+export default {
+ ...
+  network: {
+    mainnet: {
+      ...
+      account: [process.env.ACCOUNT]
+      ...
+    }
+  }
+} as RedspotUserConfig;
+```
+
+运行脚本：
+
+```bash
+REDSPOT_NETWORK=mainnet ACCOUNT="//Alice" npx redspot run ./scripts/deploy.ts
+```
+
+你也可以使用 [dotenv ](https://github.com/motdotla/dotenv) 等工具。
+
