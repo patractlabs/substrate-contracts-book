@@ -1,8 +1,8 @@
-name: feature/vuepress
+name: Master
 on:
   push:
     branches:
-      - feature/vuepress
+      - master
 
 jobs:
   github_page:
