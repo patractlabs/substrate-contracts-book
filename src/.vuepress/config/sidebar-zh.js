@@ -90,22 +90,14 @@ module.exports = [
     title: 'Metis',
     path: '/metis/introduction',
     collapsable: false,
-    children: [
-      '/metis/tokens',
-      '/metis/access-control'
-    ]
+    children: ['/metis/tokens', '/metis/access-control']
   },
   '/carpo/introduction',
-  '/patract/introduction',
   {
     title: 'Elara',
     path: '/elara/introduction',
     collapsable: false,
-    children: [
-      '/elara/tutorial',
-      '/elara/design',
-      '/elara/API'
-    ]
+    children: ['/elara/tutorial', '/elara/design', '/elara/API']
   },
   {
     title: 'PatraStore',
@@ -116,5 +108,6 @@ module.exports = [
       '/patra-store/getting-starter',
       '/patra-store/publish-dapps'
     ]
-  }
-]
+  },
+  '/patract/introduction'
+];
