@@ -5,7 +5,7 @@ on:
       - feature/vuepress
 
 jobs:
-  github page:
+  github_page:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
