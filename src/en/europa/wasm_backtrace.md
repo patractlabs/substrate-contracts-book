@@ -1,4 +1,4 @@
-#Europa's Wasm Backtrace
+# Europa's Wasm Backtrace
 
 The execution of `pallet-contracts` includes the execution in the "contract model" and the execution in Wasm. among them
 

@@ -32,7 +32,7 @@ module.exports = config({
     baseLang: 'zh-CN',
     themeColor: {
       blue: '#007CDB',
-      green: "#3eaf7c"
+      green: '#3eaf7c'
     },
 
     author: 'patractlabs',
@@ -40,12 +40,44 @@ module.exports = config({
 
     locales: {
       '/': {
-        nav: [{ text: 'Doc', link: '/', icon: 'home' }],
+        nav: [
+          {
+            text: '主页',
+            link: 'https://patract.io',
+            target: '_self',
+            rel: '',
+            icon: 'home'
+          },
+          {
+            text: '博客',
+            link: 'https://blog.patract.io',
+            target: '_self',
+            rel: '',
+            icon: 'blog'
+          },
+          { text: 'Doc', link: '/', icon: '' }
+        ],
 
         sidebar: require('./config/sidebar-zh')
       },
       '/en/': {
-        nav: [{ text: 'Doc', link: '/en/', icon: 'home' }],
+        nav: [
+          {
+            text: 'Official Home',
+            link: 'https://patract.io',
+            target: '_self',
+            rel: '',
+            icon: 'home'
+          },
+          {
+            text: 'Blog',
+            link: 'https://blog.patract.io',
+            target: '_self',
+            rel: '',
+            icon: 'blog'
+          },
+          { text: 'Doc', link: '/en/' }
+        ],
         sidebar: require('./config/sidebar-en')
       }
     },
