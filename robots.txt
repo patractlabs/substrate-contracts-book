@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://www.patract.io/sitemap.xml
+Sitemap: https://patractlabs.github.io/substrate-contracts-book/sitemap.xml
