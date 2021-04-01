@@ -23,6 +23,34 @@ $ npm i -g yarn
 $ yarn install
 ```
 
+## Sidebar configuration
+
+Sidebar config file is in `src/.vuepress/config`, `sidebar-en.js` is english, `sidebar-zh.js` is chinese
+
+```javascript
+[
+  {
+    title: 'Group 1',   // Required
+    path: '/introduction',      // Required, The path to jump
+    collapsable: false, // Required, set it to false
+    children: [
+      '/contracts/overview',
+      '/contracts/model',
+      '/contracts/language',
+      '/contracts/wasm_first_step'
+    ]
+  },
+  {
+    title: 'Group 2',   // Required
+    path: '/foo/',      // Required, The path to jump
+    collapsable: false, // Required, set it to false
+    children: [
+      '/ink/tutorial'
+    ]
+  }
+]
+```
+
 ## Develop
 ```base
 $ yarn dev
