@@ -6,17 +6,26 @@
     <link>https://patractlabs.github.io/substrate-contracts-book/</link>
     <description></description>
     <language>zh-CN</language>
-    <pubDate>Thu, 01 Apr 2021 09:49:07 GMT</pubDate>
-    <lastBuildDate>Thu, 01 Apr 2021 09:49:07 GMT</lastBuildDate>
+    <pubDate>Thu, 01 Apr 2021 10:16:34 GMT</pubDate>
+    <lastBuildDate>Thu, 01 Apr 2021 10:16:34 GMT</lastBuildDate>
     <generator>@mr-hope/vuepress-plugin-feed</generator>
     <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
     <copyright>Copyright by patractlabs</copyright>
+    <item>
+      <title>基础</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/ask/basics/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/ask/basics/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">基础</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="基础"> 基础</h1>
+]]></content:encoded>
+    </item>
     <item>
       <title>Summary</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Summary</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="summary"> Summary</h1>
 <ul>
 <li><a href="./introduction.html">介绍</a>
@@ -119,7 +128,7 @@
       <link>https://patractlabs.github.io/substrate-contracts-book/ask/design/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ask/design/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">设计</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="设计"> 设计</h1>
 <h2 id="ask-设计总览"> Ask! 设计总览</h2>
 <p>AssemblyScript 使用 asc 编译器将TypeScript（TS）文件编译为WebAssembly字节码。 但是，asc是通用编译工具，无法使用智能合约结构将TS文件直接编译为WASM字节码和元数据信息。因此为了使 asc 能够识别并解析 Ask! 提供的和合约相关的注解与特定语法，需要对 asc 进行修改。</p>
@@ -159,20 +168,11 @@
 ]]></content:encoded>
     </item>
     <item>
-      <title>基础</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/ask/basics/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/ask/basics/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">基础</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="基础"> 基础</h1>
-]]></content:encoded>
-    </item>
-    <item>
       <title>example</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/ask/example/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ask/example/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">example</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="example"> example</h1>
 ]]></content:encoded>
     </item>
@@ -181,7 +181,7 @@
       <link>https://patractlabs.github.io/substrate-contracts-book/ask/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ask/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Ask!</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ask"> Ask!</h1>
 <p><img src="https://camo.githubusercontent.com/207ae88065c356df521ad4c6cff4a68ef91ae963a9c65893dd0d9d991a4e00a8/68747470733a2f2f706174726163742e6e6574776f726b2f696d616765732f706174726163742d61736b2e706e67" alt=""></p>
 <p>Ask! 是由 Patract 设计的，基于 AssemblyScript 上构建的，能运行于<code>pallet-contracts</code>模块上的Wasm合约语言框架。</p>
@@ -203,7 +203,7 @@ ink! 描述合约的外部调用接口采用 <code>#[ink(constructor)]</code>, <
       <link>https://patractlabs.github.io/substrate-contracts-book/ask/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ask/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <blockquote>
 <p>当前 Ask! 只进行了Kusama国库议案的第一期的开发。因此还未发布到npm等公开仓库中。</p>
@@ -285,7 +285,7 @@ ink! 描述合约的外部调用接口采用 <code>#[ink(constructor)]</code>, <
       <link>https://patractlabs.github.io/substrate-contracts-book/carpo/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/carpo/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Carpo</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="carpo"> Carpo</h1>
 ]]></content:encoded>
     </item>
@@ -294,7 +294,7 @@ ink! 描述合约的外部调用接口采用 <code>#[ink(constructor)]</code>, <
       <link>https://patractlabs.github.io/substrate-contracts-book/contracts/language/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/contracts/language/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">合约语言（框架）</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="合约语言-框架"> 合约语言（框架）</h1>
 <p>与“合约模型”的概念相对应的（运行平台），我们可以衍生出合约语言（框架）的概念（编写能运行于平台上的代码）。</p>
 <p>而这里不简单的使用“合约语言”，而是用“合约语言（框架）”这样的词语，是因为由于上一章节中我们已经拆分出了“合约沙盒”与“合约模型”的结构层次，因此实际上一些新型的合约平台并不是像EVM那样“发明”了一套新的Solidity合约语言，而是选择了一些语言（如Rust，C++，AssemblyScript等），基于这门语言在“hack语法解析”，“宏”，等维度上给现有语言添加上合约相关的约束，功能逻辑等。因此许多情况下会以“框架”，“库”等形态存在（如Frame Contract Pallet的rust合约语言框架ink!）。而这种“框架/库”又不是平时程序开发中使用库的维度，有一些合约语言框架需要修改到编译器维度，因此我们更倾向称呼为“语言框架”。</p>
@@ -377,7 +377,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/contracts/model/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/contracts/model/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">合约模型</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="合约模型"> 合约模型</h1>
 <p>在已经具备合约及合约沙盒的概念后，我们就可以开始讨论合约模型的概念了。</p>
 <p>合约沙盒只是代表运行合约的环境，而合约是以什么方式运行的，合约和合约是怎么交互的，合约是怎么与链的数据互动的，这些问题就归属于合约模型问题。</p>
@@ -465,7 +465,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/contracts/overview/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/contracts/overview/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">合约综述</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="合约综述"> 合约综述</h1>
 <p>区块链运行合约的模型从本质上可以认为是 “区块链的环境（分布式共识系统）”+“能运行一段逻辑的平台”，例如</p>
 <ul>
@@ -537,7 +537,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/contracts/wasm_first_step/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/contracts/wasm_first_step/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Wasm简要介绍</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="wasm简要介绍"> Wasm简要介绍</h1>
 <h2 id="wasm与合约模型的关联"> Wasm与合约模型的关联</h2>
 <p><img src="./imgs/wasm.jpg" alt=""></p>
@@ -548,7 +548,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/elara/API/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/elara/API/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">API 接入</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="api-接入"> API 接入</h1>
 <h2 id="endpoint-规则"> ENDPOINT 规则</h2>
 <p><code>Https</code>接入</p>
@@ -799,7 +799,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/elara/design/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/elara/design/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">设计简述</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="设计简述"> 设计简述</h1>
 <p>Elara有长期的开发迭代规划和运维目标，为的是能够支撑Polkadot生态开发者从万+级别到亿+级别的持续跃迁。Elara的核心是一套高性能、高可用和高扩展的分布式架构。与其他提供 Node API Service的项目有显著区别：</p>
 <ol>
@@ -824,7 +824,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/elara/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/elara/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Elara</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="elara"> Elara</h1>
 <p>在Polkadot、Kusama或Parachain中，RPC是Dapp与网络交互的界面。随着Polkadot网络的不断扩展，会有越来越多的平行链上线，也会有越来越多的平行链支持智能合约功能。面对越来越多的平行链，开发者们为了与之交互需要搭建并维护多条链的节点RPC，这对于他们而言将是巨大的开发成本。</p>
 <p>无论是面对开发者的开发测试需要，还是用户线上对Dapp的使用需求，方便便捷、快速稳定的网络接入能力都是必备条件之一。因此，为开发者们和普通用户提供统一简化的网络接入服务能力是服务Dapp开发者的必要支撑，也是Polkadot生态的基础设施。</p>
@@ -846,7 +846,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/elara/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/elara/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> Tutorial</h1>
 <p>Elara的API需要有效的Project Endpoint包含在您的请求中。此标识符应附加到请求URL。</p>
 <h2 id="获取your-project-endpoint"> 获取YOUR-PROJECT-ENDPOINT</h2>
@@ -909,7 +909,7 @@ const api = await ApiPromise.create({ provider: wsProvider })
       <link>https://patractlabs.github.io/substrate-contracts-book/en/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Summary</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="summary"> Summary</h1>
 <ul>
 <li><a href="./introduction.html">Introduction</a>
@@ -1012,7 +1012,7 @@ const api = await ApiPromise.create({ provider: wsProvider })
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ask/basics/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ask/basics/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">基础</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="基础"> 基础</h1>
 ]]></content:encoded>
     </item>
@@ -1021,7 +1021,7 @@ const api = await ApiPromise.create({ provider: wsProvider })
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ask/design/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ask/design/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Design</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="design"> Design</h1>
 <h2 id="ask-design-overview"> Ask! Design Overview</h2>
 <p>AssemblyScript uses the asc compiler to compile TypeScript (TS) files into WebAssembly bytecode. However, asc is a general-purpose compilation tool, and the smart contract structure cannot be used to directly compile TS files into WASM bytecode and metadata information. Therefore, in order for asc to recognize and parse the contract-related annotations and specific grammar provided by Ask!, asc needs to be modified.</p>
@@ -1065,7 +1065,7 @@ const api = await ApiPromise.create({ provider: wsProvider })
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ask/example/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ask/example/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">example</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="example"> example</h1>
 ]]></content:encoded>
     </item>
@@ -1074,7 +1074,7 @@ const api = await ApiPromise.create({ provider: wsProvider })
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ask/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ask/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Ask!</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ask"> Ask!</h1>
 <p><img src="https://camo.githubusercontent.com/207ae88065c356df521ad4c6cff4a68ef91ae963a9c65893dd0d9d991a4e00a8/68747470733a2f2f706174726163742e6e6574776f726b2f696d616765732f706174726163742d61736b2e706e67" alt=""></p>
 <p>Ask! is a Wasm contract language framework designed by Patract, built on AssemblyScript and able to run on the <code>pallet-contracts</code> module.</p>
@@ -1096,7 +1096,7 @@ ink! describes the external call interface of the contract using <code>#[ink(con
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ask/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ask/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <blockquote>
 <p>At present, Ask! has only carried out the development of the first phase of the Kusama Treasury bill. Therefore, it has not been released to public repositories such as npm.</p>
@@ -1178,7 +1178,7 @@ ink! describes the external call interface of the contract using <code>#[ink(con
       <link>https://patractlabs.github.io/substrate-contracts-book/en/carpo/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/carpo/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Carpo</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="carpo"> Carpo</h1>
 ]]></content:encoded>
     </item>
@@ -1187,7 +1187,7 @@ ink! describes the external call interface of the contract using <code>#[ink(con
       <link>https://patractlabs.github.io/substrate-contracts-book/en/contracts/language/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/contracts/language/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Contract language (framework)</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="contract-language-framework"> Contract language (framework)</h1>
 <p>Corresponding to the concept of &quot;contract model&quot; (operating platform), we can derive the concept of contract language (framework) (writing code that can run on the platform).</p>
 <p>Instead of simply using &quot;contract language&quot;, we use words like &quot;contract language (framework)&quot; because we have separated the &quot;contract sandbox&quot; and &quot;contract model&quot; in the previous chapter. Structure level, so in fact, some new contract platforms did not &quot;invent&quot; a new Solidity contract language like EVM, but chose some languages ​​(such as Rust, C++, AssemblyScript, etc.) based on this language. &quot;hack syntax analysis&quot;, &quot;macro&quot;, and other dimensions add contract-related constraints and functional logic to existing languages. Therefore, in many cases, it will exist in the form of &quot;frame&quot;, &quot;library&quot;, etc. (such as Frame Contract Pallet's rust contract language framework ink!). And this &quot;framework/library&quot; is not the dimension of libraries used in usual program development. Some contract language frameworks need to be modified to the compiler dimension, so we prefer to call them &quot;language frameworks&quot;.</p>
@@ -1270,7 +1270,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/contracts/model/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/contracts/model/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Contract model</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="contract-model"> Contract model</h1>
 <p>After we have the concept of contracts and contract sandboxes, we can begin to discuss the concept of contract models.</p>
 <p>The contract sandbox only represents the environment in which the contract is run, and how the contract is run, how the contract interacts with the contract, and how the contract interacts with the data of the chain. These problems belong to the contract model problem.</p>
@@ -1358,7 +1358,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/contracts/overview/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/contracts/overview/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Contract System Overview</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="contract-system-overview"> Contract System Overview</h1>
 <p>Model of the blockchain running contract is considered to be the combination of the blockchain environment (distributed consensus system) and a platform that can run a piece of logic. You can see the following examples:</p>
 <ul>
@@ -1429,7 +1429,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/contracts/wasm_first_step/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/contracts/wasm_first_step/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Brief introduction of Wasm</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="brief-introduction-of-wasm"> Brief introduction of Wasm</h1>
 <h2 id="the-association-between-wasm-and-contract-model"> The association between Wasm and contract model</h2>
 <p><img src="./imgs/wasm.jpg" alt=""></p>
@@ -1440,7 +1440,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/elara/API/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/elara/API/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">API access</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="api-access"> API access</h1>
 <h2 id="endpoint-rules"> ENDPOINT Rules</h2>
 <p><code>Https</code> access</p>
@@ -1505,7 +1505,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/elara/design/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/elara/design/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Design Brief</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="design-brief"> Design Brief</h1>
 <p>Elara has long-term development iteration planning and operation and maintenance goals, in order to be able to support the continuous transition of Polkadot ecological developers from the 10,000+ level to the 100 million+ level. The core of Elara is a set of high-performance, high-availability and high-scalability distributed architecture. It is significantly different from other projects that provide Node API Service:</p>
 <ol>
@@ -1530,7 +1530,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/elara/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/elara/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Elara</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="elara"> Elara</h1>
 <p>In Polkadot, Kusama or Parachain, RPC is the interface between Dapp and the network. As the Polkadot network continues to expand, more and more parachains will be online, and more and more parachains will support smart contract functions. Faced with more and more parallel chains, developers need to build and maintain multiple chain node RPCs in order to interact with them, which will be a huge development cost for them.</p>
 <p>Whether it is facing the development and testing needs of developers, or users' online Dapp usage needs, convenient, convenient, fast and stable network access is one of the necessary conditions. Therefore, providing developers and ordinary users with a unified and simplified network access service capability is a necessary support for serving Dapp developers, and it is also the infrastructure of the Polkadot ecosystem.</p>
@@ -1550,7 +1550,7 @@ mod test {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/elara/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/elara/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> Tutorial</h1>
 <p>Elara's API requires a valid Project Endpoint to be included in your request. This identifier should be appended to the request URL.</p>
 <h2 id="get-your-project-endpoint"> Get YOUR-PROJECT-ENDPOINT</h2>
@@ -1623,7 +1623,7 @@ console<span>.</span><span>log</span><span>(</span><span>'latest block Hash'</sp
       <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/execution_info/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/execution_info/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa contract execution log information interpretation</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-contract-execution-log-information-interpretation"> Europa contract execution log information interpretation</h1>
 <p>The structure for recording contract execution information in the current Europa <code>pallet-contract</code> is as follows. The notes briefly explain the information that each attribute represents:</p>
 <div><pre><code><span>/// Record the contract execution context.</span>
@@ -1784,7 +1784,7 @@ console<span>.</span><span>log</span><span>(</span><span>'latest block Hash'</sp
       <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa"> Europa</h1>
 <p>Europa is a sandbox environment for running <code>FRAME Contracts pallet</code> and **simulating nodes. It is also a framework for running Substrate runtime.</p>
 <ol>
@@ -1834,7 +1834,7 @@ Nov <span>12</span> <span>15</span>:53:27.699 INFO key:26aa394eea5630e07c48ae0c9
       <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/sample/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/sample/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa debugging example</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-debugging-example"> Europa debugging example</h1>
 <h2 id="duplicate-topics"> Duplicate topics</h2>
 <ol>
@@ -1986,7 +1986,7 @@ $ <span>git</span> checkout 8e8fe09565ca6d2fad7701d68ff13f12deda7eed -b tmp
       <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-tutorial"> Europa tutorial</h1>
 <p>Europa is a simulated node sandbox environment with contract functions, and its interface (mainly rpc) is compatible with most third-party tools, so Europa can be regarded as an independent node for operation.</p>
 <h2 id="set-up-development-environment"> Set up development environment</h2>
@@ -2168,11 +2168,122 @@ wasm backtrace:
 ]]></content:encoded>
     </item>
     <item>
+      <title>Europa&amp;apos;s Wasm Backtrace</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/wasm_backtrace/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/wasm_backtrace/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa's Wasm Backtrace</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="europa-s-wasm-backtrace"> Europa's Wasm Backtrace</h1>
+<p>The execution of <code>pallet-contracts</code> includes the execution in the &quot;contract model&quot; and the execution in Wasm. among them</p>
+<ul>
+<li>The execution process in the contract model is transferred to the <code>pallet-contracts</code> module through Wasm's host_function. If panic or incorrect positioning occurs, the node runtime can be located in the form of native operation.</li>
+<li>Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process has a crash exception, it can only be displayed by the Wasm executor.</li>
+</ul>
+<p>Europa's <code>pallet-contracts</code> module currently supports 2 types of actuators:</p>
+<ul>
+<li><code>wasmi</code>: Wasm interpreter developed by parity. When Wasm executes panic, it will only return an error without Backtrace. Patract forks the wasmi of parity, and adds tracking and printing of the execution stack on the original basis. When Panic appears during Wasm's execution, the current execution stack and corresponding information will be returned with an error.</li>
+<li><code>wasmtime</code>: Wasm's JIT executor, which already comes with Backtrace when it crashes.</li>
+</ul>
+<h2 id="europa-can-print-out-wasm-backtrace-conditions"> Europa can print out Wasm Backtrace conditions</h2>
+<p>Wasm can print Backtrace, requiring the &quot;name section&quot; section in the Wasm file compiled by the contract. Since the <code>cargo-contract</code> provided by parity has already encapsulated many operations, ** in the current ** default operation, the contract is compiled in the most optimal way, and the &quot;name section&quot; section will be removed in this process. On the other hand, <code>cargo-contract</code> does not provide corresponding interfaces or options to allow developers to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of <code>cargo-contract</code>. Developers can use this modified version of <code>cargo-contract</code> to compile the contract Wasm file with the &quot;name section&quot; section.</p>
+<p>On the other hand, the original code will be optimized during the release compilation. The optimized Backtrace to locate the bug may be disturbed, so it is best to reduce the optimization level, so that the Backtrace will be the same as the original code when it crashes. match.</p>
+<h2 id="install-cargo-contract-under-patract-warehouse"> Install <code>cargo-contract</code> under Patract warehouse</h2>
+<ol>
+<li>
+<p>Install <a href="https://github.com/patractlabs/cargo-contract" target="_blank" rel="noopener noreferrer">PatractLabs's <code>cargo-contract</code></a></p>
+<div><pre><code>$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+</code></pre>
+<div><span>1</span><br></div></div><blockquote>
+<p>Since the current version of parity's <code>cargo-contract</code> is <code>v0.10.0</code>, our Patract has added features based on this version. If <code>cargo-contract</code> continues to be upgraded in the future, Patract will continue to be maintained.</p>
+</blockquote>
+<p>The <code>cargo-contract</code> installed in this way will <strong>overwrite</strong> the installed <code>cargo-contract</code>. Therefore, please pay attention to which warehouse the <code>cargo-contract</code> in the current environment comes from to prevent interference when locating problems.</p>
+<p>Excuting an order:</p>
+<div><pre><code>$ cargo <span>install</span> --list <span>|</span> <span>grep</span> cargo-contract
+cargo-contract v0.10.0 <span>(</span>https://github.com/patractlabs/cargo-contract?branch<span>=</span>v0.10.0<span>#106081f1):</span>
+cargo-contract
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>The results listed can be used to determine what source the <code>cargo-contract</code> installation in the current environment comes from. For example, the above result is from Patract. If there is no parenthesis and the content in it, it means it is from <code>crates.io</code>.</p>
+</li>
+<li>
+<p>If the developer has installed the official <code>cargo-contract</code> and does not want to overwrite the installation, you can use manual compilation.</p>
+<div><pre><code>$ <span>git</span> clone https://github.com/patractlabs/cargo-contract --branch<span>=</span>v0.10.0
+$ <span>cd</span> cargo-contract
+$ cargo build --release
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>After compilation, you can move the compiled product to any path that can be accessed globally, and rename it (in case it conflicts with the installed cargo-contract).</p>
+<div><pre><code>$ <span>cp</span> target/release/cargo-contract <span>&lt;</span>to any path<span>></span>/patract-cargo-contract
+</code></pre>
+<div><span>1</span><br></div></div><p>In the subsequent compilation of the ink! contract, use <code>patract-cargo-contract xxx</code> instead of <code>cargo +nighlty contract xxx</code> to execute the corresponding commands. (Please note that this method requires the default toolchain to be nightly)</p>
+</li>
+</ol>
+<h2 id="use-patract-s-cargo-contract-to-generate-wasm-contract-files-with-name-section-section"> Use Patract's cargo-contract to generate <code>*.wasm/*.contract</code> files with &quot;name section&quot; section</h2>
+<p>Patract's <code>cargo-contract</code> provides <code>-d/--debug</code> options. When the following command is executed:</p>
+<div><pre><code>$ cargo +nightly contract build
+</code></pre>
+<div><span>1</span><br></div></div><p>The generated <code>*.wasm/*.contract</code> file is consistent with parity's official <code>cargo-contract</code> execution result.</p>
+<p>When the following command is executed:</p>
+<div><pre><code>$ cargo +nightly contract build --debug
+</code></pre>
+<div><span>1</span><br></div></div><p>The generated <code>*.wasm/*.contract</code> file is the <code>*.wasm/*.contract</code> file that is not optimized and carries the &quot;name section&quot; section. It is equivalent to the files generated in this way <strong>replace</strong> the files generated by the original generation logic.</p>
+<p><strong>Please note that the size of the compiled product generated by this mode is generally several hundred times the size of the original product</strong>. Therefore, the developer can pay attention to the size of the generated product to roughly determine the compiled product generated by which compilation method.</p>
+<p>For example, the following example:</p>
+<div><pre><code>$ <span>cd</span> target/ink
+$ <span>ls</span> -h
+-rw-rw-r-- <span>1</span> root root <span>1</span>.5M <span>3</span>月  <span>12</span> <span>16</span>:01 flipper.contract
+-rw-rw-r-- <span>1</span> root root <span>6</span>.1K <span>3</span>月  <span>12</span> <span>15</span>:34 flipper.contract.old
+-rw-rw-r-- <span>1</span> root root 732K <span>3</span>月  <span>12</span> <span>16</span>:00 flipper.wasm
+-rw-rw-r-- <span>1</span> root root <span>2</span>.5K <span>3</span>月  <span>12</span> <span>15</span>:34 flipper.wasm.old
+-rw-rw-r-- <span>1</span> root root <span>2</span>.1K <span>3</span>月  <span>12</span> <span>16</span>:01 metadata.json
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>The file with <code>*.old</code> means it was generated by the parity version of <code>cargo-contract</code> (renamed after the first compilation), on the contrary, the file with the same name is from Patract's <code>cargo-contract</code> with the addition of <code>-- The debug</code> command is generated. You can see that the new file is many times larger than the old file. And <code>metadata.json</code> is unchanged.</p>
+<h2 id="wasm-backtrace-explained"> Wasm Backtrace explained</h2>
+<p>TODO: To be completed</p>
+<h2 id="experimental-features"> Experimental features</h2>
+<h3 id="wasm-backtrace-print-line-number-only-wasmtime-is-supported"> Wasm Backtrace print line number (only Wasmtime is supported)</h3>
+<p>TODO: This part is not completed</p>
+<p>Add <code>WASMTIME_BACKTRACE_DETAILS=1</code> when starting Europa or set this variable as an environment variable:</p>
+<div><pre><code><span>WASMTIME_BACKTRACE_DETAILS</span><span>=</span><span>1</span> europa --tmp
+<span># or use</span>
+<span>export</span> <span>WASMTIME_BACKTRACE_DETAILS</span><span>=</span><span>1</span>
+europa --tmp <span># run europa in normal way</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br></div></div><p>Then in the <code>wasm_error</code> part of europa's Japanese, there will be a line number in the original code corresponding to the crash stack:</p>
+<div><pre><code>wasm_error: Error::Trap<span>(</span>
+    Trap <span>{</span>
+        code: TrapCode::UnreachableCodeReached,
+        trace: <span>[</span>
+            <span>"wasm trap: unreachable"</span>,
+            <span>"wasm backtrace:"</span>,
+            <span>"    0: 0x31b2 - &lt;unknown>!core::panicking::panic::he000af669cfcac01"</span>,
+            <span>"    1: 0x3c8c - &lt;unknown>!flipper::flippter::_::&lt;impl flipper::flippter::Flippter>::flip::h12b84979a77ae484"</span>,
+            <span>"    2: 0x10fa - core::result::Result&lt;T,E>::map_err::h576871030fe833d4"</span>,
+            <span>"                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1199:31"</span>,
+            <span>"    3: 0x10d6 - core::result::Result&lt;T,E>::map_err::h576871030fe833d4"</span>,
+            <span>"                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1198"</span>,
+            <span>"    4: 0x3966 - &lt;unknown>!&lt;flipper::flippter::_::_::__ink_MessageDispatchEnum as ink_lang::dispatcher::Execute>::execute::{{closure}}::hf35b139aaf5fba3b"</span>,
+            <span>"    5: 0x3941 - &lt;unknown>!ink_lang::dispatcher::execute_message_mut::hf62eb790d230d371"</span>,
+            <span>"    6: 0x3c12 - &lt;unknown>!&lt;flipper::flippter::_::_::__ink_MessageDispatchEnum as ink_lang::dispatcher::Execute>::execute::heae3e5bbfc02afa0"</span>,
+            <span>"    7: 0x3a7a - &lt;unknown>!flipper::flippter::_::&lt;impl ink_lang::contract::DispatchUsingMode for flipper::flippter::Flippter>::dispatch_using_mode::h8e0c4495e09cd910"</span>,
+            <span>"    8: 0x3ba3 - &lt;unknown>!call"</span>,
+            <span>"    9: 0xf704 - &lt;unknown>!&lt;wasm function 638>"</span>,
+            <span>""</span>,
+        <span>]</span>,
+    <span>}</span>,
+<span>)</span>,
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br></div></div><p>In this backtrace log, some parts that can parse the line number will be appended with the line number corresponding to the function in the error stack at the end of that line, for example:</p>
+<div><pre><code><span>"2: 0x10fa - core::result::Result&lt;T,E>::map_err::h576871030fe833d4"</span>,
+            <span>"                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1199:31"</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>The part of <code>codec.rs:1199:31</code> means that this frame in the error stack corresponds to line <code>1199</code> and column <code>31</code> of the file <code>codec.rs</code>. The remaining lines do not have line numbers due to insufficient parsing or because the code is generated by macros.</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Europa Wasm executor</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/europa/wasm_executor/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/europa/wasm_executor/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa Wasm executor</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-wasm-executor"> Europa Wasm executor</h1>
 <p>TODO: Not completed</p>
 <p>Europa offers different Wasm actuators to execute contracts. Currently <code>wasmi</code> and <code>wasmtime</code> are provided.</p>
@@ -2183,7 +2294,7 @@ wasm backtrace:
       <link>https://patractlabs.github.io/substrate-contracts-book/en/himalia/go-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/himalia/go-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">go-patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="go-patract"> go-patract</h1>
 <h2 id="intruduction"> Intruduction</h2>
 <p>Most contract behaviors are highly related to context. In addition to interacting with the chain, user-oriented contract applications also need to provide users with current relevant context status information:</p>
@@ -2243,7 +2354,7 @@ wasm backtrace:
       <link>https://patractlabs.github.io/substrate-contracts-book/en/himalia/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/himalia/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Himalia</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="himalia"> Himalia</h1>
 <p>Himalia is the general name of the SDK library of the pallet-contracts contract module built by Patract for a series of access chains in different languages. For Substrate, there are already some SDKs for access chains in different languages. However, due to the particularity of the <code>pallet-contracts</code> module, it is necessary to continue to build an SDK based on the access contract module on the SDK of the access chain. Its particularity is mainly manifested in:</p>
 <ul>
@@ -2268,7 +2379,7 @@ wasm backtrace:
       <link>https://patractlabs.github.io/substrate-contracts-book/en/himalia/py-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/himalia/py-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">py-patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="py-patract"> py-patract</h1>
 <p>PatractPy is a contract SDK to support the development of Python scripts that interact with contracts, including automated scripts to support testing. Unlike PatractGo, PatractPy is mainly for script development, so PatractPy mainly completes contract-related RPC interfaces, and completes contract deployment and instantiation-related operations.</p>
 <p>PatractPy will provide support for <a href="https://github.com/patractlabs/europa" target="_blank" rel="noopener noreferrer">europa</a> env, which is a good environment for contract exec sandbox,
@@ -2528,7 +2639,7 @@ observer<span>.</span>scanEvents<span>(</span>from_num<span>,</span> to_num<span
       <link>https://patractlabs.github.io/substrate-contracts-book/en/himalia/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/himalia/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <p>The SDK used by Himalia to interact with the contract part of the chain needs to start a node before proceeding with the subsequent execution process.</p>
 <p>For nodes with <code>pallet-contracts</code> function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's <a href="./europa.html">Document</a>.</p>
@@ -2674,7 +2785,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/call-contracts/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/call-contracts/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 跨合约调用</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-跨合约调用"> ink! 跨合约调用</h1>
 ]]></content:encoded>
     </item>
@@ -2683,7 +2794,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/cargo-contract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/cargo-contract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">cargo-contract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="cargo-contract"> cargo-contract</h1>
 ]]></content:encoded>
     </item>
@@ -2692,7 +2803,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/edsl-basic/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/edsl-basic/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! eDSL basic elements</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-edsl-basic-elements"> ink! eDSL basic elements</h1>
 <p>The elements of ink! eDSL design are actually relatively similar to those of Solidity, because the contract model structure of Contracts Pallet and the contract model of EVM are relatively similar.</p>
 <p>Therefore, the design of ink! can find a lot of shadows similar to Solidity (the same applies to the Runtime design of Substrate). When describing the ink characteristics later, I will try to compare with the characteristics of Solidity, which is convenient for readers to understand.</p>
@@ -2938,7 +3049,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/framework/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/framework/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! Framework</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-framework"> ink! Framework</h1>
 <p>All the main functions of ink! are implemented in the <a href="https://github.com/paritytech/ink/tree/master/crates" target="_blank" rel="noopener noreferrer"><code>ink/crates</code></a> directory:</p>
 <ul>
@@ -2967,7 +3078,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/ink-solidity/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/ink-solidity/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 与solidity的对比</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-与solidity的对比"> ink! 与solidity的对比</h1>
 ]]></content:encoded>
     </item>
@@ -2976,7 +3087,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink"> ink</h1>
 <p>ink! is an eDSL to write WebAssembly based smart contracts using the Rust programming language. The compilation target are blockchains built on the Substrate framework.</p>
 <p>Although ink! claims to be a kind of eDSL for writing contracts, I prefer to think that ink! is a contract framework written in Rust language that meets the requirements of Contracts Pallet.</p>
@@ -3011,7 +3122,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/trap/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/trap/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 当前的坑</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-当前的坑"> ink! 当前的坑</h1>
 ]]></content:encoded>
     </item>
@@ -3020,7 +3131,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/ink/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/ink/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-tutorial"> ink! tutorial</h1>
 <p>TODO</p>
 ]]></content:encoded>
@@ -3030,7 +3141,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Substrate Contracts Book</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="substrate-contracts-book"> Substrate Contracts Book</h1>
 <h2 id="introduction"> Introduction</h2>
 <p>This book introduces a series of knowledge related to the contract system in Substrate. The book is written by Aten @atenjin, who comes from Patract (<a href="https://patract.io/" target="_blank" rel="noopener noreferrer">https://patract.io/</a>) @<a href="https://github.com/patractlabs" target="_blank" rel="noopener noreferrer">patractlabs</a>. You can check the repository of this book on <a href="https://github.com/patractlabs/substrate-contracts-book" target="_blank" rel="noopener noreferrer">GitHub</a> and we welcome you to contribute to this book.</p>
@@ -3062,7 +3173,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/metis/access-control/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/metis/access-control/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Access Control</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="access-control"> Access Control</h1>
 <p>Although smart contract applications are decentralized, implementing necessary centralized access control in the contract can make the contract more secure.</p>
 <h2 id="ownership-and-ownable"> Ownership and Ownable</h2>
@@ -3142,7 +3253,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/en/metis/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/metis/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Metis</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="metis"> Metis</h1>
 <p>Metis is the contract standard implementation and example case library led by Patract. In this warehouse, contract language frameworks such as ink!, Ask! that can run on <code>pallet-contracts</code> will be provided with the implementation of corresponding contract standards and common cases.</p>
 <p>Metis is similar to OpenZepplin-contracts in the Ethereum ecosystem, providing contract developers with reusable wheels without having to write contract code from scratch. Developers who are new to Polkadot's ecological trial contract development can quickly build common applications with the help of the code in this warehouse after learning simple basic knowledge.</p>
@@ -3246,7 +3357,7 @@ Why not use <code>trait</code> to implement cross-contract calls, but need <code
       <link>https://patractlabs.github.io/substrate-contracts-book/en/metis/tokens/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/metis/tokens/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ERC20</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="erc20"> ERC20</h1>
 <p>metis provides <a href="https://github.com/patractlabs/metis/tree/master/traits/token/erc20" target="_blank" rel="noopener noreferrer">trait_definition</a> and <a href="https://github.com/patractlabs/metis/tree/master/traits/token/erc20" target="_blank" rel="noopener noreferrer">calling stub between contracts</a> that fully complies with the <code>ERC20</code> standard. com/patractlabs/metis/tree/master/stubs/token/erc20)
 And the standard implementation of <a href="https://github.com/patractlabs/metis/tree/master/impls/token/erc20" target="_blank" rel="noopener noreferrer">erc20 contract</a>.</p>
@@ -3622,7 +3733,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/pallet-contracts/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/pallet-contracts/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">pallet-contracts 合约模块</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="pallet-contracts-合约模块"> pallet-contracts 合约模块</h1>
 <p><code>pallet-contracts</code>合约模块, 一般称呼为<a href="https://substrate.dev/docs/en/knowledgebase/smart-contracts/contracts-pallet" target="_blank" rel="noopener noreferrer">“Contracts Pallet”</a> 或者 “FRAME Contracts pallet”，又或者称呼为“Substrate Smart Contracts”，是parity官方研发的Wasm合约模块。</p>
 <p>依据Substrate knowledgebase的介绍，Contracts Pallet具备如下特性：</p>
@@ -3640,7 +3751,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/getting-starter/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/getting-starter/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Getting started</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="getting-started"> Getting started</h2>
 <p>First of all, please make sure you include <code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.patrastore.io/sdk/store-sdk.min.js&quot;&gt;&lt;/script&gt;</code> in the html, In order to ensure that the SDK can work normally, you need to quote it before the business code. A better way is to put it in the <code>head</code> tag of html.</p>
 <p>Make sure you have a certain understanding of the <a href="https://polkadot.js.org/docs/extension" target="_blank" rel="noopener noreferrer">document</a> of <code>@polkadot/extension-dapp</code>, we will also post a demo below.</p>
@@ -3730,25 +3841,25 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
 ]]></content:encoded>
     </item>
     <item>
-      <title>Overview</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/overview/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/overview/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Overview</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h2 id="overview"> Overview</h2>
-<p>The communication between PatraStore and Dapp uses PostMessage to communicate. For the convenience of developers, we provide a set of SDK. This set of SDK implements the protocol in <a href="https://github.com/polkadot-js/extension" target="_blank" rel="noopener noreferrer">polkadot-js/extension</a>, so our SDK can be fully compatible with [@polkadot/extension-dapp](https 😕/www.npmjs.com/package/@polkadot/extension-dapp).</p>
-<p>Developers can easily import PatraStore's SDK. We provide CDN service to host the SDK. You only need to include <code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.patrastore.io/sdk in the code. /store-sdk.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>Introduction</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Introduction</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="introduction"> Introduction</h2>
 <p>PatraStore embeds Dapp through iFrame, PatraStore will provide Dapp with Signer and Provider functions.</p>
 <p>Reading this document requires a certain understanding of <a href="https://polkadot.js.org/docs/" target="_blank" rel="noopener noreferrer">pokadot-js</a>.</p>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Overview</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/overview/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/overview/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Overview</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h2 id="overview"> Overview</h2>
+<p>The communication between PatraStore and Dapp uses PostMessage to communicate. For the convenience of developers, we provide a set of SDK. This set of SDK implements the protocol in <a href="https://github.com/polkadot-js/extension" target="_blank" rel="noopener noreferrer">polkadot-js/extension</a>, so our SDK can be fully compatible with [@polkadot/extension-dapp](https 😕/www.npmjs.com/package/@polkadot/extension-dapp).</p>
+<p>Developers can easily import PatraStore's SDK. We provide CDN service to host the SDK. You only need to include <code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.patrastore.io/sdk in the code. /store-sdk.min.js&quot;&gt;&lt;/script&gt;</code>.</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -3756,7 +3867,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/publish-dapps/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/patra-store/publish-dapps/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Publish DApp</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="publish-dapp"> Publish DApp</h2>
 <p>Currently we do not support hosting DApps. Developers need to deploy DApps and upload information (domain name, type, picture, account, etc.) on PatraStore.</p>
 <p>Make sure that the front end of the DApp you develop includes our <a href="./getting-starter.html">SDK</a>, otherwise the DApp will not work properly in PatraStore.</p>
@@ -3779,7 +3890,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/patract/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/patract/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="patract"> Patract</h1>
 <p><img src="./imgs/overview.jpg" alt="overview"></p>
 <p>Patract 做的东西具体包括:</p>
@@ -3814,7 +3925,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/configuration/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/configuration/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Configure</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="configure"> Configure</h1>
 <p>When you run Redspot, it will search for the closest redspot.config.js file starting from the current working directory. This file is usually located in the root directory of the project.</p>
 <p>This file contains the entire Redspot setup (e.g. configuration, plugins, custom tasks, etc.).</p>
@@ -3918,7 +4029,7 @@ You can check ink! Source code (https://github.com/paritytech/ink/blob/master/cr
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/console/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/console/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Console</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="console"> Console</h1>
 <p>Redspot provides a powerful console that allows developers to simply use commands and contracts to do operations, or call scripts located in the <code>scripts</code> directory to do mechanized repetitive work, etc.</p>
 <p>Redspot's console has many other rich features.</p>
@@ -3986,7 +4097,7 @@ ret<span>.</span>events
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Redspot</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot"> Redspot</h1>
 <p>Redspot is a contract integration builder that allows developers to simplify the process of testing and interacting with contracts by projecting the development of contracts such as ink! The Redspot system allows developers to build rich plugins that extend Redspot's functionality, minimizing the burden on contract developers and automating the execution of repetitive processes.</p>
 <p>Redspot is designed to be similar to Truffle in the Ethereum ecosystem, but with a broader set of extensions than Truffle.</p>
@@ -3999,7 +4110,7 @@ ret<span>.</span>events
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/overview/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/overview/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Introduction</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="introduction"> Introduction</h2>
 <h2 id="redspot-s-architecture"> Redspot's architecture</h2>
 <p>Redspot is designed around the concept of Tasks and Plugins. most of Redspot's functionality comes from plugins, and as a developer you are free to choose which plugins you want to use.</p>
@@ -4026,7 +4137,7 @@ ret<span>.</span>events
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Plugins</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="plugins"> Plugins</h1>
 <p>The core functionality of Redspot includes the Redspot runtime environment and the tasks of compiling contracts, running tests, and running scripts.</p>
 <p>Other functions such as test suites with contracts, contract interaction, accessing contracts, setting up different chain configurations, etc. are provided by plugins. Users can choose which plugins they want to use. Introducing a plugin is simple. Add it as an npm dependency. Then add to <code>redspot.config.ts</code>.</p>
@@ -4386,7 +4497,7 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-chai/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-chai/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/chai</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot-chai"> @redspot/chai</h1>
 ]]></content:encoded>
     </item>
@@ -4395,7 +4506,7 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-gas-reporter/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-gas-reporter/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/gas-reporter</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot-gas-reporter"> @redspot/gas-reporter</h1>
 ]]></content:encoded>
     </item>
@@ -4404,7 +4515,7 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/plugin/redspot-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot-patract"> @redspot/patract</h1>
 ]]></content:encoded>
     </item>
@@ -4413,7 +4524,7 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/q-and-a/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/q-and-a/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Q &amp; A</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="q-a"> Q &amp; A</h1>
 <h1 id="q-a-2"> Q &amp; A</h1>
 <h3 id="how-to-upgrade-redspot"> How to upgrade Redspot</h3>
@@ -4489,7 +4600,7 @@ contract<span>.</span>tx<span>[</span><span>"baseErc20,transfer"</span><span>]</
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/runtime-environment/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/runtime-environment/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Runtime Environment</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="runtime-environment"> Runtime Environment</h1>
 <p>The RedSpot Runtime Environment (RSE) contains all of Redspot's publicly available features.</p>
 <p>When you import Redspot (import &quot;redspot&quot;), you get an RSE environment.</p>
@@ -4670,7 +4781,7 @@ network<span>.</span><span>getSigners</span><span>(</span><span>)</span><span>.<
       <link>https://patractlabs.github.io/substrate-contracts-book/en/redspot/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/redspot/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <h2 id="environment-preparation"> Environment preparation</h2>
 <h3 id="installing-node"> Installing Node</h3>
@@ -5195,7 +5306,7 @@ For global options help run: redspot help
       <link>https://patractlabs.github.io/substrate-contracts-book/en/solang/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/solang/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Solang</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="solang"> Solang</h1>
 ]]></content:encoded>
     </item>
@@ -5204,7 +5315,7 @@ For global options help run: redspot help
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/benchmark/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/benchmark/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Benchmark</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="benchmark"> Benchmark</h1>
 <p>We have constructed <a href="https://github.com/patractlabs/zkmega/tree/master/crates/arkworks/src/tests" target="_blank" rel="noopener noreferrer">the tests of zkMega curves</a> in <a href="https://github.com/patractlabs/substrate/blob/features/curve-benchmark/bin/node-template/pallets/template/src/lib.rs" target="_blank" rel="noopener noreferrer">pallet-template</a> which imports the
 curves from zkMega directly(<em>Wasm</em>) and with <a href="https://github.com/patractlabs/substrate/blob/features/curve-benchmark/bin/node-template/io/src/lib.rs" target="_blank" rel="noopener noreferrer">runtime-interface</a>(<em>Native</em>).</p>
@@ -5391,7 +5502,7 @@ cargo build -p jupiter-dev --all-features --release
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/contract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/contract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Contract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="contract"> Contract</h1>
 <blockquote>
 <p>Currently we (Patract) support zkMega in testnet Jupiter (<a href="https://github.com/patractlabs/jupiter" target="_blank" rel="noopener noreferrer">https://github.com/patractlabs/jupiter</a>) and contract debug
@@ -5444,7 +5555,7 @@ mod altbn128 {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/example/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/example/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Example</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="example"> Example</h1>
 <h2 id="call-curves-in-ink"> Call curves in ink!</h2>
 <table>
@@ -5527,7 +5638,7 @@ mod altbn128 {
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">zkMega</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="zkmega"> zkMega</h1>
 <p>zkMega is a zero-knowledge proof tool set building for the Polkadot ecology.</p>
 <ul>
@@ -5571,7 +5682,7 @@ Ethereum has not yet supported it.</p>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/metis/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/metis/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Metis</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="metis"> Metis</h1>
 <blockquote>
 <p>TODO</p>
@@ -5583,7 +5694,7 @@ Ethereum has not yet supported it.</p>
       <link>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/en/zkmega/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <h2 id="the-chain-based-on-substrate-introduces-zkmega-s-zero-knowledge-primitives"> The chain based on Substrate introduces 　zkMega's zero-knowledge primitives</h2>
 <p>The chain integration zkMega with <code>pallet-contracts</code> can refer to Jupiter's integration method: [https://github.com/patractlabs/jupiter/blob/master/primitives/chain-extension/src/lib.rs](https:/ /github.com/patractlabs/jupiter/blob/master/primitives/chain-extension/src/lib.rs)</p>
@@ -5641,7 +5752,7 @@ env<span>.</span><span>charge_weight</span><span>(</span>simple_weight<span>)</s
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/execution_info/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/execution_info/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa 合约执行日志信息解释</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-合约执行日志信息解释"> Europa 合约执行日志信息解释</h1>
 <p>当前Europa的<code>pallet-contract</code>中记录合约执行信息的结构体如下所示。注释简要说明了每个属性代表记录的信息：</p>
 <div><pre><code><span>/// Record the contract execution context.</span>
@@ -5802,7 +5913,7 @@ env<span>.</span><span>charge_weight</span><span>(</span>simple_weight<span>)</s
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa"> Europa</h1>
 <p>Europa是一个运行<code>FRAME Contracts pallet</code>并<strong>模拟节点的沙盒环境</strong>，同时也是一个运行Substrate runtime的框架。</p>
 <ol>
@@ -5852,7 +5963,7 @@ Nov <span>12</span> <span>15</span>:53:27.699  INFO       key:26aa394eea5630e07c
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/sample/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/sample/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa 调试示例</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-调试示例"> Europa 调试示例</h1>
 <h2 id="duplicate-topics"> Duplicate topics</h2>
 <ol>
@@ -6004,7 +6115,7 @@ $ <span>git</span> checkout 8e8fe09565ca6d2fad7701d68ff13f12deda7eed -b tmp
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-tutorial"> Europa tutorial</h1>
 <p>Europa 作为一个模拟具备合约功能的节点沙盒环境，其接口（主要是rpc）对于大部分第三方工具都保持兼容，因此可以将Europa视为一个独立的节点进行操作。</p>
 <h2 id="搭建开发环境"> 搭建开发环境</h2>
@@ -6190,7 +6301,7 @@ $ cargo +nightly contract build --debug
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/wasm_backtrace/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/wasm_backtrace/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa 的Wasm Backtrace</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-的wasm-backtrace"> Europa 的Wasm Backtrace</h1>
 <p><code>pallet-contracts</code>的执行包含“合约模型”中的执行与Wasm中的执行。其中</p>
 <ul>
@@ -6301,7 +6412,7 @@ europa --tmp <span># run europa in normal way</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/europa/wasm_executor/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/europa/wasm_executor/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Europa Wasm executor</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="europa-wasm-executor"> Europa Wasm executor</h1>
 <p>TODO：未完成</p>
 <p>Europa 提供了不同的 Wasm 执行器执行合约。当前提供了<code>wasmi</code>与<code>wasmtime</code>。</p>
@@ -6312,7 +6423,7 @@ europa --tmp <span># run europa in normal way</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/himalia/go-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/himalia/go-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">go-patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="go-patract"> go-patract</h1>
 <h2 id="intruduction"> Intruduction</h2>
 <p>Most contract behaviors are highly related to context. In addition to interacting with the chain, user-oriented contract applications also need to provide users with current relevant context status information:</p>
@@ -6372,7 +6483,7 @@ europa --tmp <span># run europa in normal way</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/himalia/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/himalia/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Himalia</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="himalia"> Himalia</h1>
 <p>Himalia 是 Patract 构建的一系列不同语言的访问链<code>pallet-contracts</code>合约模块的sdk库的总称。对于Substrate而言，已经存在了一些面向不同语言的访问链的sdk。但是由于<code>pallet-contracts</code>模块的特殊性，需要继续构建基于访问链的sdk上的访问合约模块的sdk。其特殊性主要表现在：</p>
 <ul>
@@ -6397,7 +6508,7 @@ europa --tmp <span># run europa in normal way</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/himalia/py-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/himalia/py-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">py-patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="py-patract"> py-patract</h1>
 <p>PatractPy is a contract SDK to support the development of Python scripts that interact with contracts, including automated scripts to support testing. Unlike PatractGo, PatractPy is mainly for script development, so PatractPy mainly completes contract-related RPC interfaces, and completes contract deployment and instantiation-related operations.</p>
 <p>PatractPy will provide support for <a href="https://github.com/patractlabs/europa" target="_blank" rel="noopener noreferrer">europa</a> env, which is a good environment for contract exec sandbox,
@@ -6657,7 +6768,7 @@ observer<span>.</span>scanEvents<span>(</span>from_num<span>,</span> to_num<span
       <link>https://patractlabs.github.io/substrate-contracts-book/himalia/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/himalia/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <p>Himalia 用于与链的合约部分交互的sdk，需要首先启动一个节点才能进行后续的执行过程。</p>
 <p>对于有<code>pallet-contracts</code>功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的<a href="./europa.html">文档</a>。</p>
@@ -6803,7 +6914,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/call-contracts/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/call-contracts/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 跨合约调用</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-跨合约调用"> ink! 跨合约调用</h1>
 ]]></content:encoded>
     </item>
@@ -6812,7 +6923,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/cargo-contract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/cargo-contract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">cargo-contract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="cargo-contract"> cargo-contract</h1>
 ]]></content:encoded>
     </item>
@@ -6821,7 +6932,7 @@ valueParam <span>:=</span> <span>struct</span> <span>{</span>
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/edsl-basic/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/edsl-basic/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! eDSL基础元素</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-edsl基础元素"> ink! eDSL基础元素</h1>
 <p>ink! eDSL设计的元素与Solidity的元素其实比较近似，因为Contracts Pallet的合约模型结构和EVM的合约模型就是比较近似的。</p>
 <p>因此ink!的设计可以找到很多和Solidity相似的影子（Substrate 的 Runtime 设计同理）。后文描述ink特性时会尝试跟Solidity的特性进行对比，方便读者理解。</p>
@@ -7067,7 +7178,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/framework/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/framework/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 框架</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-框架"> ink! 框架</h1>
 <p>ink!的所有主体功能都实现于 <a href="https://github.com/paritytech/ink/tree/master/crates" target="_blank" rel="noopener noreferrer"><code>ink/crates</code></a> 目录下：</p>
 <ul>
@@ -7096,27 +7207,8 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/ink-solidity/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/ink-solidity/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 与solidity的对比</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink-与solidity的对比"> ink! 与solidity的对比</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>ink! 当前的坑</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/ink/trap/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/ink/trap/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 当前的坑</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="ink-当前的坑"> ink! 当前的坑</h1>
-]]></content:encoded>
-    </item>
-    <item>
-      <title>ink! tutorial</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/ink/tutorial/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/ink/tutorial/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="ink-tutorial"> ink! tutorial</h1>
-<p>TODO</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -7124,7 +7216,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/ink/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/ink/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="ink"> ink</h1>
 <p>ink! is an eDSL to write WebAssembly based smart contracts using the Rust programming language. The compilation target are blockchains built on the Substrate framework.</p>
 <p>ink! 是 parity 官方编写的，可以提供一种 eDSL 的方式编写 Rust 合约，并编译为 Wasm 运行于 Contracts Pallet 模块上。</p>
@@ -7156,11 +7248,30 @@ self.env().emit_event(...);
       <enclosure url="https://paritytech.github.io/ink-docs/img/how-it-works.svg" type="image/svg+xml"/>
     </item>
     <item>
+      <title>ink! 当前的坑</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/ink/trap/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/ink/trap/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! 当前的坑</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="ink-当前的坑"> ink! 当前的坑</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>ink! tutorial</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/ink/tutorial/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/ink/tutorial/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ink! tutorial</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="ink-tutorial"> ink! tutorial</h1>
+<p>TODO</p>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Substrate 合约书</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Substrate 合约书</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="substrate-合约书"> Substrate 合约书</h1>
 <h2 id="介绍"> 介绍</h2>
 <p>本书用于介绍 Substrate 中与合约体系相关的一系列知识。</p>
@@ -7205,7 +7316,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/metis/access-control/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/metis/access-control/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Access Control</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="access-control"> Access Control</h1>
 <p>虽然智能合约应用是去中心化的，但在合约中实现必要的中心化访问控制可以使合约更加安全。</p>
 <h2 id="ownership-and-ownable"> Ownership and Ownable</h2>
@@ -7285,7 +7396,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/metis/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/metis/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Metis</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="metis"> Metis</h1>
 <p>Metis 是 Patract 主导的合约标准实现及示例案例库。在这个仓库里，将会对 ink!, Ask! 等能运行于<code>pallet-contracts</code>的合约语言框架提供对应的合约标准的实现及通用案例。</p>
 <p>Metis 类似于 Ethereum 生态中的 OpenZepplin-contracts，给合约开发者提供可复用的轮子，不必从零开始编写合约代码。新接触波卡生态尝试合约开发的开发者，在经过简单基础知识的学习后，可以借助本仓库的代码快速搭建出常见的应用。</p>
@@ -7389,7 +7500,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/metis/tokens/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/metis/tokens/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">ERC20</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="erc20"> ERC20</h1>
 <p>metis 提供了完全符合 <code>ERC20</code> 标准的 <a href="https://github.com/patractlabs/metis/tree/master/traits/token/erc20" target="_blank" rel="noopener noreferrer">trait_definition</a> 、<a href="https://github.com/patractlabs/metis/tree/master/stubs/token/erc20" target="_blank" rel="noopener noreferrer">合约间调用 stub</a>
 以及 <a href="https://github.com/patractlabs/metis/tree/master/impls/token/erc20" target="_blank" rel="noopener noreferrer">erc20合约</a> 的标准实现。</p>
@@ -7765,7 +7876,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/pallet-contracts/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/pallet-contracts/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">pallet-contracts 合约模块</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="pallet-contracts-合约模块"> pallet-contracts 合约模块</h1>
 <p><code>pallet-contracts</code>合约模块, 一般称呼为<a href="https://substrate.dev/docs/en/knowledgebase/smart-contracts/contracts-pallet" target="_blank" rel="noopener noreferrer">“Contracts Pallet”</a> 或者 “FRAME Contracts pallet”，又或者称呼为“Substrate Smart Contracts”，是parity官方研发的Wasm合约模块。</p>
 <p>依据Substrate knowledgebase的介绍，Contracts Pallet具备如下特性：</p>
@@ -7783,7 +7894,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/patra-store/getting-starter/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/patra-store/getting-starter/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Getting started</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="getting-started"> Getting started</h2>
 <p>首先，请确保您在html中引入了<code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.patrastore.io/sdk/store-sdk.min.js&quot;&gt;&lt;/script&gt;</code>，为了确保sdk可以正常工作，需要您在业务代码之前引用，比较好的方式是放在html的<code>head</code>标签中。</p>
 <p>确保对<code>@polkadot/extension-dapp</code>的<a href="https://polkadot.js.org/docs/extension" target="_blank" rel="noopener noreferrer">文档</a>有一定的了解，我们在下方也会出Demo。</p>
@@ -7877,7 +7988,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/patra-store/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/patra-store/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">介绍</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="介绍"> 介绍</h2>
 <p>PatraStore是通过iFrame的方式嵌入Dapp，PatraStore会为Dapp提供Signer，Provider的功能。</p>
 <p>阅读本文档需要对<a href="https://polkadot.js.org/docs/" target="_blank" rel="noopener noreferrer">pokadot-js</a>有一定的了解。</p>
@@ -7888,7 +7999,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/patra-store/overview/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/patra-store/overview/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Overview</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="overview"> Overview</h2>
 <p>PatraStore和Dapp的通信是利用PostMessage的方式进行通信，为了方便开发者们，我们提供了一套SDK。这套SDK实现了<a href="https://github.com/polkadot-js/extension" target="_blank" rel="noopener noreferrer">polkadot-js/extension</a>中的协议，因此，使用我们的sdk可以完全兼容<a href="https://www.npmjs.com/package/@polkadot/extension-dapp" target="_blank" rel="noopener noreferrer">@polkadot/extension-dapp</a>。</p>
 <p>开发者可以很方便的引入PatraStore的sdk，我们提供cdn服务托管了sdk，您只需在代码中引入<code>&lt;script type=&quot;text/javascript&quot; src=&quot;https://static.patrastore.io/sdk/store-sdk.min.js&quot;&gt;&lt;/script&gt;</code>即可。</p>
@@ -7899,7 +8010,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/patra-store/publish-dapps/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/patra-store/publish-dapps/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">发布DApp</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h2 id="发布dapp"> 发布DApp</h2>
 <p>目前我们不支持托管DApp，需要开发者部署好DApp，然后在PatraStore上面上传一下资料（域名，类型，图片，账户等信息）。</p>
 <p>确保您开发的DApp前端引入了我们的<a href="./getting-starter.html">SDK</a>，否则DApp在PatraStore中无法正常工作。</p>
@@ -7922,7 +8033,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/patract/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/patract/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="patract"> Patract</h1>
 <p><img src="./imgs/overview.jpg" alt="overview"></p>
 <p>Patract 做的东西具体包括:</p>
@@ -7957,7 +8068,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/configuration/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/configuration/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">配置</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="配置"> 配置</h1>
 <p>运行Redspot时，它将从当前工作目录开始搜索最接近的redspot.config.js文件。该文件通常位于项目的根目录中。</p>
 <p>此文件中包含整个Redspot设置（例如配置，插件和自定义任务等）。</p>
@@ -8061,7 +8172,7 @@ self.env().emit_event(...);
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/console/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/console/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">控制台console</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="控制台console"> 控制台console</h1>
 <p>Redspot 提供了一个功能强大的控制台，允许开发者简单的使用命令与合约做操作，或调用位于<code>scripts</code>目录下的脚本做机械化的重复工作等等。</p>
 <p>Redspot 的控制台还有很多丰富的特性：</p>
@@ -8129,7 +8240,7 @@ ret<span>.</span>events
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Redspot</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot"> Redspot</h1>
 <p>Redspot是让ink!，Ask!等合约开发项目化，简化开发者对合约的测试和交互过程的合约集成构建工具。Redspot 的功能覆盖整个合约开发环节（开发-调试-测试-部署），并且可以允许开发者构建丰富的插件以扩展Redspot的功能，最大程度简化合约开发者的负担，自动化执行重复的过程。</p>
 <p>Redspot的设计目标类似Ethereum 生态中的Truffle，但是会比 Truffle 具备更广泛的扩展功能。</p>
@@ -8138,334 +8249,11 @@ ret<span>.</span>events
 ]]></content:encoded>
     </item>
     <item>
-      <title>插件</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">插件</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="插件"> 插件</h1>
-<p>Redspot 的核心功能包括 Redspot runtime environment 和编译合约，运行测试，运行脚本这几个任务。</p>
-<p>其他诸如与合约的测试套件，合约交互，访问合约，设置不同的链的配置，等功能均有插件提供。用户可以自行选择需要使用的插件。引入一个插件很简单。将它作为一个 npm 的依赖添加。然后在 <code>redspot.config.ts</code> 中加入：</p>
-<div><pre><code><span>import</span> <span>{</span> RedspotUserConfig <span>}</span> <span>from</span> <span>'redspot/types'</span><span>;</span>
-<span>import</span> <span>'@redspot/patract'</span><span>;</span> <span>// 引入 @redspot/patract 插件</span>
-<span>import</span> <span>'@redspot/chai'</span><span>;</span> <span>// 引入 @redspot/chai 插件</span>
-
-<span>export</span> <span>default</span> <span>{</span>
- <span>...</span>
-<span>}</span> <span>as</span> RedspotUserConfig<span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>下面我们介绍一下官方提供的几个插件：</p>
-<h2 id="redspot-patract"> @redspot/patract</h2>
-<p>该插件会扩展 Redspot runtime environment ，并添加 patract 属性，可以这样访问 patract 实例：</p>
-<div><pre><code><span>import</span> <span>{</span> patract <span>}</span> <span>from</span> <span>'redspot'</span> 
-</code></pre>
-<div><span>1</span><br></div></div><p>patract 的类型定义如下：</p>
-<div><pre><code><span>interface</span> <span>Patract</span> <span>{</span>
-     Contract<span>:</span> Contract<span>;</span>
-     ContractFactory<span>:</span> ContractFactory<span>;</span>
-    <span>/**
-     * Generating Contract Instance from Contract Addresses
-     *
-     * @param contractName Contract name
-     * @param address contract address
-     * @param signer The account used to sign, or the first account in the user configured if it is undefined.
-     * @returns Contract Instance
-     */</span>
-    <span>getContractAt</span><span>(</span>
-      contractName<span>:</span> <span>string</span><span>,</span>
-      address<span>:</span> AccountId <span>|</span> <span>string</span><span>,</span>
-      signer<span>?</span><span>:</span> Signer
-    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>Contract<span>></span><span>;</span>
-    <span>/**
-     * Return the contract factory
-     *
-     * @param contractName Contract name
-     * @param signer The account used to sign, or the first account in the user configured if it is undefined.
-     * @returns Contract Factory Instance
-     */</span>
-    <span>getContractFactory</span><span>(</span>
-      contractName<span>:</span> <span>string</span><span>,</span>
-      signer<span>?</span><span>:</span> Signer
-    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>ContractFactory<span>></span><span>;</span>
-    <span>/**
-     *  Generate a random account and transfer token to it
-     *
-     * @param from This account will be transferred to the new account
-     * @param amount The amount transferred to the new account
-     * @returns New Account
-     */</span>
-    <span>getRandomSigner</span><span>(</span>
-      <span>from</span><span>?</span><span>:</span> Signer<span>,</span>
-      amount<span>?</span><span>:</span> <span>BN</span> <span>|</span> <span>number</span> <span>|</span> <span>string</span> <span>|</span> BigInt
-    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>Signer<span>></span><span>;</span>
-  
-  <span>}</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br></div></div><h4 id="getrandomsigner-from-amount-promise-signer"> <code>getRandomSigner(from, amount): Promise&lt;Signer&gt;</code></h4>
-<p>getRandomSigner 是一个工具函数，用于创建生成随机的signer，并且从 from 传递一些初始的金额给它。</p>
-<h4 id="getcontractfactory-contractname-signer-promise-contractfactory"> <code>getContractFactory(contractName, signer?): Promise&lt;ContractFactory&gt;</code></h4>
-<p>该函数将通过合约名字和 signer ，创建一个 contractFactory 的实例。</p>
-<p>注意合约必须已编译成功。能够在 artifacts 找到对于的 metadata 文件。</p>
-<h4 id="getcontractat-contractname-address-signer-promise-contract"> <code>getContractAt(contractName, address, signer): Promise&lt;Contract&gt;</code></h4>
-<p>通过合约名字，合约地址和 signer，创建一个 Contract 实例。</p>
-<p>注意合约必须已编译成功。能够在 artifacts 找到对于的 metadata 文件。</p>
-<p>###ContractFactory</p>
-<p>ContractFactory 主要用于合约的部署：</p>
-<div><pre><code><span>import</span> <span>{</span> patract <span>}</span> <span>from</span> <span>'redspot'</span>
-<span>const</span> <span>{</span> getContractFactory<span>,</span> getRandomSigner <span>}</span> <span>=</span> patract<span>;</span>
-
-<span>const</span> signers <span>=</span> <span>await</span> <span>getSigners</span><span>(</span><span>)</span><span>;</span>
-<span>const</span> contractFactory <span>=</span> <span>await</span> <span>getContractFactory</span><span>(</span><span>'erc20'</span><span>,</span> signers<span>[</span><span>0</span><span>]</span><span>)</span><span>;</span>
-<span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="new-contractfactory-address-contractmetadata-api-signer"> <code>new ContractFactory(address, contractMetadata, api, signer)</code></h4>
-<p>通过合约地址，metadata，api  和  signer 创建一个 contractFactory  实例。</p>
-<h4 id="contractfactory-deploy-constructororid-args-overrides-promise-contract"> <code>contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise&lt;Contract&gt;</code></h4>
-<p>constructorOrId 是需要调用的合约的 contructor 的名字，注意对于一些使用了 <code>trait</code> 的合约，contructor  的名字应该是类似这样：</p>
-<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br></div></div><p>args 是你所使用的 contructor 需要传入参数列表。</p>
-<p>overrides 是可选项，可以用于指定 gasLimit, value, signer, salt 等。</p>
-<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>,</span> <span>{</span>
-  gaslimit<span>:</span> <span>'1000000000000000000'</span><span>,</span>
-  salt<span>:</span> <span>'jkqwezlkwklqreqw'</span><span>,</span>
-  signer<span>:</span> signers<span>[</span><span>1</span><span>]</span><span>,</span>
-  value<span>:</span> <span>'3213321000000000000000000'</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>gasLimit 指这次交易能够使用的最大的 gas 值。</p>
-<p>salt 用于合约的地址的生成。部署人，部署参数和 salt 一致的话，将会生成同一个合约地址。</p>
-<p>signer 创建 contractFactory 时，会有一个 signer 参数，用于默认的交易签名。 signer 项目可以覆盖默认的签名账户。</p>
-<p>value 指传递给即将创建的合约的金额。</p>
-<p>请注意，<code>@redspot/patract</code> 不会处理数字金额精度，需要用户自行处理。</p>
-<h4 id="contractfactory-deployed-constructororid-args-overrides-promise-contract"> <code>contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise&lt;Contract&gt;</code></h4>
-<p>该方法和 <code>contractFactory.deploy</code> 类似，唯一的区别是，<code>deployed</code> 会预先检查即将生成的合约地址是否存在，如果存在不会去尝试部署，而是直接使用该合约地址创建 <code>Contract</code> 实例。</p>
-<h4 id="contractfactory-instantiate-constructororid-args-overrides-promise-contractaddress"> <code>contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise&lt;ContractAddress&gt;</code></h4>
-<p>如果 wasm 已上传到链上，你可以直接调用 <code>contractFactory.instantiate</code> 实例化合约。它的参数与 <code>deploy</code> 一致，但返回的是合约地址。</p>
-<h4 id="contractfactory-instantiate-constructororid-args-overrides-promise-contractaddress-2"> <code>contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise&lt;ContractAddress&gt;</code></h4>
-<p>如果 wasm 已上传到链上，你可以直接调用 <code>contractFactory.instantiate</code> 实例化合约。它的参数与 <code>deploy</code> 一致，但返回的是合约地址。</p>
-<h4 id="contractfactory-attach-address-contract"> <code>contractFactory.attach(address)：Contract</code></h4>
-<p>使用指定的合约地址生成 <code>Contract</code> 实例</p>
-<p>####<code>contractFactory.connect(signer)：contractFactory</code></p>
-<p>使用指定的 signer，创建一个新的 contractFactory 实例</p>
-<h3 id="contract"> Contract</h3>
-<h4 id="new-contract-address-contractmetadata-api-signer"> <code>new Contract(address, contractMetadata, api, signer)</code></h4>
-<p>通过合约地址，合约的metadata，api  和  signer 创建一个 contractFactory  实例。</p>
-<h4 id="contract-query-messagename-args-overrides"> <code>contract.query.MessageName(...args[, overrides])</code></h4>
-<p>与 polkadotjs 中类似， contract.query[MessageName] 能够调用 <code>contracts.call</code> rpc。如在 erc20 合约中，获取账户余额：</p>
-<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div><p>返回值的类型如下：</p>
-<div><pre><code><span>export</span> <span>interface</span> <span>ContractCallOutcome</span> <span>{</span>
-    debugMessage<span>:</span> Text<span>;</span>
-    gasConsumed<span>:</span> u64<span>;</span>
-    output<span>:</span> Codec <span>|</span> <span>null</span><span>;</span>
-    result<span>:</span> ContractExecResultResult<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>它和 polkadotjs api-contract 中是一致。</p>
-<p>overrides 是可选项，可以用于指定 gasLimit, value 等。</p>
-<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>,</span> <span>{</span>
-	gasLimit：<span>'1231231231233123123'</span>
-  value<span>:</span> <span>'3213321000000000000000000'</span>
-  signer： signers<span>[</span><span>1</span><span>]</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>gasLimit value 指的是 <code>contracts.call</code> rpc 中的 gasLimit 和 value 。signer 可以指定 <code>contracts.call</code> 的 origin 地址。</p>
-<h4 id="contract-estimategas-messagename-args-overrides"> <code>contract.estimateGas.MessageName(...args[, overrides])</code></h4>
-<p>该函数与 <code>contract.query.MessageName</code> 类似，但返回值是预估将要消耗的 gas</p>
-<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>estimateGas<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
-result <span>// BN(232130000000)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><h4 id="contract-tx-messagename-args-overrides"> <code>contract.tx.MessageName(...args[,overrides])</code></h4>
-<p>通过  <code>contract.tx.MessageName</code> 可以执行合约的交易。 如：</p>
-<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>someddress<span>,</span> <span>7</span><span>)</span>
-</code></pre>
-<div><span>1</span><br></div></div><p>和 polkadotjs 不同，该函数会返回一个 promise ， 会等到 交易上链，或者出错才被 resolved。</p>
-<p>返回值类型如下：</p>
-<div><pre><code><span>export</span> <span>interface</span> <span>TransactionResponse</span> <span>{</span>
-  <span>from</span><span>:</span> <span>string</span><span>;</span>
-  txHash<span>?</span><span>:</span> <span>string</span><span>;</span>
-  blockHash<span>?</span><span>:</span> <span>string</span><span>;</span>
-  error<span>?</span><span>:</span> <span>{</span>
-    message<span>?</span><span>:</span> <span>any</span><span>;</span>
-    data<span>?</span><span>:</span> <span>any</span><span>;</span>
-  <span>}</span><span>;</span>
-  result<span>:</span> SubmittableResult<span>;</span>
-  events<span>?</span><span>:</span> DecodedEvent<span>[</span><span>]</span><span>;</span>
-<span>}</span>
-
-<span>export</span> <span>interface</span> <span>DecodedEvent</span> <span>{</span>
-  args<span>:</span> Codec<span>[</span><span>]</span><span>;</span>
-  name<span>:</span> <span>string</span><span>;</span>
-  event<span>:</span> AbiEvent<span>;</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><p>你可以直接通过 <code>result.events</code> 获取已解析的合约的事件。如果执行出错，你可以通过 <code>result.error.message</code> 获取错误信息。</p>
-<p>overrides 是可选项，可以用于指定 gasLimit，value，signer  等。</p>
-<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>someddress<span>,</span> <span>7</span><span>,</span> <span>{</span>
-  gasLimit：<span>'1231231231233123123'</span>
-  value<span>:</span> <span>'3213321000000000000000000'</span>
-  signer： signers<span>[</span><span>1</span><span>]</span>
-<span>}</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>ggasLimit 指这次交易能够使用的最大的 gas 值。</p>
-<p>value 指传递给即将创建的合约的金额。</p>
-<p>signer 用于覆盖默认的 signer。</p>
-<h4 id="contract-attach-address-contract"> <code>contract.attach(address)：Contract</code></h4>
-<p>使用指定的合约地址生成 <code>Contract</code> 实例</p>
-<p>####<code>contract.connect(signer)：contractFactory</code></p>
-<p>使用指定的 signer，创建一个新的 contract 实例</p>
-<h2 id="redspot-chai"> @redspot/chai</h2>
-<p>该插件提供了一组便于编写合约测试用例的匹配器，灵感来自于 <a href="https://ethereum-waffle.readthedocs.io/en/latest/matchers.html" target="_blank" rel="noopener noreferrer">waffle</a> 。</p>
-<p>引入 @redspot/chai。该插件会自动修改 chai 匹配器，无需手动调用。</p>
-<div><pre><code>// redspot.config.ts
-
-import { RedspotUserConfig } from &#39;redspot/types&#39;;
-import &#39;@redspot/chai&#39;; 
-
-export default {
- ...
-} as RedspotUserConfig;
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>使用 @redspot/chai 的完整例子：</p>
-<div><pre><code><span>import</span> <span>BN</span> <span>from</span> <span>'bn.js'</span><span>;</span>
-<span>import</span> <span>{</span> expect <span>}</span> <span>from</span> <span>'chai'</span><span>;</span>
-<span>import</span> <span>{</span> patract<span>,</span> network<span>,</span> artifacts <span>}</span> <span>from</span> <span>'redspot'</span><span>;</span>
-
-<span>const</span> <span>{</span> getContractFactory<span>,</span> getRandomSigner <span>}</span> <span>=</span> patract<span>;</span>
-
-<span>const</span> <span>{</span> api<span>,</span> getSigners <span>}</span> <span>=</span> network<span>;</span>
-
-<span>describe</span><span>(</span><span>'ERC20'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-  <span>after</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>return</span> api<span>.</span><span>disconnect</span><span>(</span><span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-
-  <span>async</span> <span>function</span> <span>setup</span><span>(</span><span>)</span> <span>{</span>
-    <span>const</span> one <span>=</span> <span>new</span> <span><span>BN</span></span><span>(</span><span>10</span><span>)</span><span>.</span><span>pow</span><span>(</span><span>new</span> <span><span>BN</span></span><span>(</span>api<span>.</span>registry<span>.</span>chainDecimals<span>[</span><span>0</span><span>]</span><span>)</span><span>)</span><span>;</span>
-    <span>const</span> signers <span>=</span> <span>await</span> <span>getSigners</span><span>(</span><span>)</span><span>;</span>
-    <span>const</span> Alice <span>=</span> signers<span>[</span><span>0</span><span>]</span><span>;</span>
-    <span>const</span> sender <span>=</span> Alice<span>;</span>
-    <span>const</span> contractFactory <span>=</span> <span>await</span> <span>getContractFactory</span><span>(</span><span>'erc20'</span><span>,</span> sender<span>)</span><span>;</span>
-    <span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
-    <span>const</span> abi <span>=</span> artifacts<span>.</span><span>readArtifact</span><span>(</span><span>'erc20'</span><span>)</span><span>;</span>
-    <span>const</span> receiver <span>=</span> <span>await</span> <span>getRandomSigner</span><span>(</span><span>)</span><span>;</span>
-
-    <span>return</span> <span>{</span> sender<span>,</span> contractFactory<span>,</span> contract<span>,</span> abi<span>,</span> receiver<span>,</span> Alice<span>,</span> one <span>}</span><span>;</span>
-  <span>}</span>
-
-  <span>it</span><span>(</span><span>'Assigns initial balance'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>const</span> <span>{</span> contract<span>,</span> sender <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
-    <span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>sender<span>.</span>address<span>)</span><span>;</span>
-    <span>expect</span><span>(</span>result<span>.</span>output<span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>1000</span><span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-
-  <span>it</span><span>(</span><span>'Transfer adds amount to destination account'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>const</span> <span>{</span> contract<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
-    <span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
-      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
-    <span>)</span><span>.</span>to<span>.</span><span>changeTokenBalance</span><span>(</span>contract<span>,</span> receiver<span>,</span> <span>7</span><span>)</span><span>;</span>
-
-    <span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
-      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
-    <span>)</span><span>.</span>to<span>.</span><span>changeTokenBalances</span><span>(</span>contract<span>,</span> <span>[</span>contract<span>.</span>signer<span>,</span> receiver<span>]</span><span>,</span> <span>[</span><span>-</span><span>7</span><span>,</span> <span>7</span><span>]</span><span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-
-  <span>it</span><span>(</span><span>'Transfer emits event'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>const</span> <span>{</span> contract<span>,</span> sender<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
-
-    <span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
-      <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
-      <span>.</span><span>withArgs</span><span>(</span>sender<span>.</span>address<span>,</span> receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-
-  <span>it</span><span>(</span><span>'Can not transfer above the amount'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>const</span> <span>{</span> contract<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
-
-    <span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>1007</span><span>)</span><span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>
-      contract<span>,</span>
-      <span>'Transfer'</span>
-    <span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-
-  <span>it</span><span>(</span><span>'Can not transfer from empty account'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
-    <span>const</span> <span>{</span> contract<span>,</span> Alice<span>,</span> one<span>,</span> sender <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
-
-    <span>const</span> emptyAccount <span>=</span> <span>await</span> <span>getRandomSigner</span><span>(</span>Alice<span>,</span> one<span>.</span><span>muln</span><span>(</span><span>10000</span><span>)</span><span>)</span><span>;</span>
-
-    <span>await</span> <span>expect</span><span>(</span>
-      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>sender<span>.</span>address<span>,</span> <span>7</span><span>,</span> <span>{</span>
-        signer<span>:</span> emptyAccount
-      <span>}</span><span>)</span>
-    <span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span><span>;</span>
-  <span>}</span><span>)</span><span>;</span>
-<span>}</span><span>)</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br></div></div><p>chai 还有更多的内置的用法，参见 chai 文档： https://www.chaijs.com/。</p>
-<h3 id="equal"> equal</h3>
-<p>@redspot/chai 会修改默认的 equal 的匹配方式。默认的 equal 不支持匹配对象。但 @redspot/chai 可以：</p>
-<div><pre><code><span>expect</span><span>(</span><span>new</span> <span><span>BN</span></span><span>(</span><span>1000</span><span>)</span><span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>1000</span><span>)</span> <span>// true</span>
-<span>expect</span><span>(</span>AccountId<span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>'5Gdjkw....'</span><span>)</span> <span>// true</span>
-<span>expect</span><span>(</span><span>Uint8Array</span><span>(</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]</span><span>)</span><span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>'0x010203'</span><span>)</span> <span>// true</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>对于 BN 类型，equal 对调用 <code>new BN(expected).eq(actual)</code> 判断是否相等</p>
-<p>对于 polkadotjs 中定义的类型，equal 会调用 <code>Type.eq(actual)</code> 判断是否相等</p>
-<p>对于 uint8Array 类型，equal 会将他们都转化为 hex ，再比较是否相等</p>
-<p>其他类型则采用默认的判断方式，判断是否相等</p>
-<h3 id="changetokenbalance"> changeTokenBalance</h3>
-<p>该匹配器可以检测 erc20 的余额变化，内部会调用 balanceOf 接口判断余额。由于 erc20-trait 的获取余额接口是 <code>baseErc20,balanceOf</code></p>
-<p>所以并不适用于 erc20-trait 。</p>
-<div><pre><code><span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
-  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
-<span>)</span><span>.</span>to<span>.</span><span>changeTokenBalance</span><span>(</span>contract<span>,</span> receiver<span>,</span> <span>7</span><span>)</span><span>;</span>
-
-<span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
-  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
-<span>)</span><span>.</span>to<span>.</span><span>changeTokenBalances</span><span>(</span>contract<span>,</span> <span>[</span>contract<span>.</span>signer<span>,</span> receiver<span>]</span><span>,</span> <span>[</span><span>-</span><span>7</span><span>,</span> <span>7</span><span>]</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h3 id="emit"> emit</h3>
-<p>该匹配器可以检测合约是否发出事件，如检测是否有 Transfer 事件被 emit：</p>
-<div><pre><code><span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
-    <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br></div></div><p>检测该事件是否包含指定的参数：</p>
-<div><pre><code><span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
-    <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
-    <span>.</span><span>withArgs</span><span>(</span>sender<span>.</span>address<span>,</span> receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>不期待发出事件</p>
-<div><pre><code><span>await</span> <span>expect</span><span>(</span>
-  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>sender<span>.</span>address<span>,</span> <span>7</span><span>,</span> <span>{</span>
-    signer<span>:</span> emptyAccount
-  <span>}</span><span>)</span>
-<span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span><span>;</span>
-
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="redspot-gas-reporter"> @redspot/gas-reporter</h2>
-<p>该插件会在测试完成时，打印出所调用的合约的交易的 gas 使用量：</p>
-<p><img src="https://user-images.githubusercontent.com/7029338/101343840-7700ab00-38e9-11eb-80a0-c6b6d38a9640.png" alt=""></p>
-<p>和 @redspot/chai 一样，只需要在引入 @redspot/gas-reporter 后，在 redspot.config.ts 中加入：</p>
-<div><pre><code>// redspot.config.ts
-
-import { RedspotUserConfig } from &#39;redspot/types&#39;;
-import &#39;@redspot/gas-reporter&#39;; 
-
-export default {
- ...
-} as RedspotUserConfig;
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>即可自动运行。</p>
-]]></content:encoded>
-      <enclosure url="https://user-images.githubusercontent.com/7029338/101343840-7700ab00-38e9-11eb-80a0-c6b6d38a9640.png" type="image/png"/>
-    </item>
-    <item>
       <title>@redspot/gas-reporter</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-gas-reporter/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-gas-reporter/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/gas-reporter</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot-gas-reporter"> @redspot/gas-reporter</h1>
 ]]></content:encoded>
     </item>
@@ -8474,8 +8262,83 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-patract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-patract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/patract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="redspot-patract"> @redspot/patract</h1>
+]]></content:encoded>
+    </item>
+    <item>
+      <title>Q &amp; A</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/q-and-a/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/q-and-a/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Q &amp; A</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="q-a"> Q &amp; A</h1>
+<h3 id="如何升级-redspot"> 如何升级 Redspot</h3>
+<p>redspot 仅仅是一本普通的 npm package 。所以升级方式和其他 npm package 一样。</p>
+<p><code>npm upgrade</code> 升级所有依赖</p>
+<p><code>npm upgrade redspot</code> 仅升级 redspot</p>
+<p>如果你使用的是 yarn</p>
+<p><code>yarn upgrade-interactive --latest</code>  将所有依赖升级到稳定版</p>
+<p>你可以可以直接手动更改 package.json 中的版本号，然后重新安装依赖 ：</p>
+<div><pre><code><span>{</span>
+  <span>"name"</span><span>:</span> <span>"erc20"</span><span>,</span>
+  <span>"version"</span><span>:</span> <span>"0.1.0"</span><span>,</span>
+  <span>"private"</span><span>:</span> <span>true</span><span>,</span>
+  <span>"dependencies"</span><span>:</span> <span>{</span>
+    <span>"@redspot/chai"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
+    <span>"@redspot/gas-reporter"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
+    <span>"@redspot/patract"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
+    <span>"@types/chai"</span><span>:</span> <span>"^4.2.14"</span><span>,</span>
+    <span>"@types/mocha"</span><span>:</span> <span>"^8.0.3"</span><span>,</span>
+    <span>"chai"</span><span>:</span> <span>"^4.2.0"</span><span>,</span>
+    <span>"redspot"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
+    <span>"typescript"</span><span>:</span> <span>"^4.0.2"</span>
+  <span>}</span><span>,</span>
+  <span>"scripts"</span><span>:</span> <span>{</span>
+    <span>"build"</span><span>:</span> <span>"npx redspot compile"</span><span>,</span>
+    <span>"test"</span><span>:</span> <span>"npx redspot test"</span>
+  <span>}</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><p>注意，最好同时将所有的插件升级到最新版。</p>
+<h3 id="使用-erc20-trait-时-无法调用合约"> 使用 erc20-trait 时，无法调用合约</h3>
+<p>由于 erc20-trait 多了命名空间，所以在调用的时候也必须加上命名空间。例子：</p>
+<div><pre><code><span>// erc20</span>
+contractFactory<span>.</span><span>deploy</span><span>(</span><span>"new"</span><span>,</span> <span>"1000000"</span><span>)</span>
+<span>// erc20-trait</span>
+contractFactory<span>.</span><span>deploy</span><span>(</span><span>"baseErc20,new"</span><span>,</span> <span>"1000000"</span><span>)</span>
+
+<span>// erc20</span>
+contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
+<span>// erc20-trait</span>
+contract<span>.</span>query<span>[</span><span>"baseErc20,balanceOf"</span><span>]</span><span>(</span>someaddress<span>)</span>
+
+<span>// erc20</span>
+contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
+<span>// erc20-trait</span>
+contract<span>.</span>tx<span>[</span><span>"baseErc20,transfer"</span><span>]</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h3 id="如何保证线上私钥的安全-避免上传到-github"> 如何保证线上私钥的安全，避免上传到 github</h3>
+<p>可以使用环境变量配置 account，如：</p>
+<div><pre><code><span>// redspot.config.ts</span>
+<span>import</span> <span>{</span> RedspotUserConfig <span>}</span> <span>from</span> <span>'redspot/types'</span><span>;</span>
+
+
+<span>export</span> <span>default</span> <span>{</span>
+ <span>...</span>
+  network<span>:</span> <span>{</span>
+    mainnet<span>:</span> <span>{</span>
+      <span>...</span>
+      account<span>:</span> <span>[</span>process<span>.</span>env<span>.</span><span>ACCOUNT</span><span>]</span>
+      <span>...</span>
+    <span>}</span>
+  <span>}</span>
+<span>}</span> <span>as</span> RedspotUserConfig<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><p>运行脚本：</p>
+<div><pre><code><span>REDSPOT_NETWORK</span><span>=</span>mainnet <span>ACCOUNT</span><span>=</span><span>"//Alice"</span> npx redspot run ./scripts/deploy.ts
+</code></pre>
+<div><span>1</span><br></div></div><p>你也可以使用 <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">dotenv </a> 等工具。</p>
 ]]></content:encoded>
     </item>
     <item>
@@ -8483,7 +8346,7 @@ export default {
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/runtime-environment/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/runtime-environment/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Runtime Environment</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="runtime-environment"> Runtime Environment</h1>
 <p>RedSpot 运行时环境(RSE)包含了 Redspot 所有公开的功能。</p>
 <p>当你导入 Redspot (import &quot;redspot&quot;)的时候，即获得了一个 RSE 环境。</p>
@@ -8660,86 +8523,11 @@ network<span>.</span><span>getSigners</span><span>(</span><span>)</span><span>.<
 ]]></content:encoded>
     </item>
     <item>
-      <title>Q &amp; A</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/q-and-a/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/q-and-a/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Q &amp; A</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="q-a"> Q &amp; A</h1>
-<h3 id="如何升级-redspot"> 如何升级 Redspot</h3>
-<p>redspot 仅仅是一本普通的 npm package 。所以升级方式和其他 npm package 一样。</p>
-<p><code>npm upgrade</code> 升级所有依赖</p>
-<p><code>npm upgrade redspot</code> 仅升级 redspot</p>
-<p>如果你使用的是 yarn</p>
-<p><code>yarn upgrade-interactive --latest</code>  将所有依赖升级到稳定版</p>
-<p>你可以可以直接手动更改 package.json 中的版本号，然后重新安装依赖 ：</p>
-<div><pre><code><span>{</span>
-  <span>"name"</span><span>:</span> <span>"erc20"</span><span>,</span>
-  <span>"version"</span><span>:</span> <span>"0.1.0"</span><span>,</span>
-  <span>"private"</span><span>:</span> <span>true</span><span>,</span>
-  <span>"dependencies"</span><span>:</span> <span>{</span>
-    <span>"@redspot/chai"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
-    <span>"@redspot/gas-reporter"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
-    <span>"@redspot/patract"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
-    <span>"@types/chai"</span><span>:</span> <span>"^4.2.14"</span><span>,</span>
-    <span>"@types/mocha"</span><span>:</span> <span>"^8.0.3"</span><span>,</span>
-    <span>"chai"</span><span>:</span> <span>"^4.2.0"</span><span>,</span>
-    <span>"redspot"</span><span>:</span> <span>"^0.10.2-1"</span><span>,</span>
-    <span>"typescript"</span><span>:</span> <span>"^4.0.2"</span>
-  <span>}</span><span>,</span>
-  <span>"scripts"</span><span>:</span> <span>{</span>
-    <span>"build"</span><span>:</span> <span>"npx redspot compile"</span><span>,</span>
-    <span>"test"</span><span>:</span> <span>"npx redspot test"</span>
-  <span>}</span>
-<span>}</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br></div></div><p>注意，最好同时将所有的插件升级到最新版。</p>
-<h3 id="使用-erc20-trait-时-无法调用合约"> 使用 erc20-trait 时，无法调用合约</h3>
-<p>由于 erc20-trait 多了命名空间，所以在调用的时候也必须加上命名空间。例子：</p>
-<div><pre><code><span>// erc20</span>
-contractFactory<span>.</span><span>deploy</span><span>(</span><span>"new"</span><span>,</span> <span>"1000000"</span><span>)</span>
-<span>// erc20-trait</span>
-contractFactory<span>.</span><span>deploy</span><span>(</span><span>"baseErc20,new"</span><span>,</span> <span>"1000000"</span><span>)</span>
-
-<span>// erc20</span>
-contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
-<span>// erc20-trait</span>
-contract<span>.</span>query<span>[</span><span>"baseErc20,balanceOf"</span><span>]</span><span>(</span>someaddress<span>)</span>
-
-<span>// erc20</span>
-contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
-<span>// erc20-trait</span>
-contract<span>.</span>tx<span>[</span><span>"baseErc20,transfer"</span><span>]</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><h3 id="如何保证线上私钥的安全-避免上传到-github"> 如何保证线上私钥的安全，避免上传到 github</h3>
-<p>可以使用环境变量配置 account，如：</p>
-<div><pre><code><span>// redspot.config.ts</span>
-<span>import</span> <span>{</span> RedspotUserConfig <span>}</span> <span>from</span> <span>'redspot/types'</span><span>;</span>
-
-
-<span>export</span> <span>default</span> <span>{</span>
- <span>...</span>
-  network<span>:</span> <span>{</span>
-    mainnet<span>:</span> <span>{</span>
-      <span>...</span>
-      account<span>:</span> <span>[</span>process<span>.</span>env<span>.</span><span>ACCOUNT</span><span>]</span>
-      <span>...</span>
-    <span>}</span>
-  <span>}</span>
-<span>}</span> <span>as</span> RedspotUserConfig<span>;</span>
-</code></pre>
-<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br></div></div><p>运行脚本：</p>
-<div><pre><code><span>REDSPOT_NETWORK</span><span>=</span>mainnet <span>ACCOUNT</span><span>=</span><span>"//Alice"</span> npx redspot run ./scripts/deploy.ts
-</code></pre>
-<div><span>1</span><br></div></div><p>你也可以使用 <a href="https://github.com/motdotla/dotenv" target="_blank" rel="noopener noreferrer">dotenv </a> 等工具。</p>
-]]></content:encoded>
-    </item>
-    <item>
       <title>tutorial</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <h2 id="环境准备"> 环境准备</h2>
 <h3 id="安装-node"> 安装 Node</h3>
@@ -9258,7 +9046,7 @@ For global options help run: redspot help
       <link>https://patractlabs.github.io/substrate-contracts-book/solang/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/solang/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Solang</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="solang"> Solang</h1>
 ]]></content:encoded>
     </item>
@@ -9267,7 +9055,7 @@ For global options help run: redspot help
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/benchmark/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/benchmark/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Benchmark</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="benchmark"> Benchmark</h1>
 <p>We have constructed <a href="https://github.com/patractlabs/zkmega/tree/master/crates/arkworks/src/tests" target="_blank" rel="noopener noreferrer">the tests of zkMega curves</a> in <a href="https://github.com/patractlabs/substrate/blob/features/curve-benchmark/bin/node-template/pallets/template/src/lib.rs" target="_blank" rel="noopener noreferrer">pallet-template</a> which imports the
 curves from zkMega directly(<em>Wasm</em>) and with <a href="https://github.com/patractlabs/substrate/blob/features/curve-benchmark/bin/node-template/io/src/lib.rs" target="_blank" rel="noopener noreferrer">runtime-interface</a>(<em>Native</em>).</p>
@@ -9454,7 +9242,7 @@ cargo build -p jupiter-dev --all-features --release
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/contract/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/contract/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Contract</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="contract"> Contract</h1>
 <blockquote>
 <p>Currently we (Patract) support zkMega in testnet Jupiter (<a href="https://github.com/patractlabs/jupiter" target="_blank" rel="noopener noreferrer">https://github.com/patractlabs/jupiter</a>) and contract debug
@@ -9507,7 +9295,7 @@ mod altbn128 {
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/example/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/example/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Example</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="example"> Example</h1>
 <h2 id="call-curves-in-ink"> Call curves in ink!</h2>
 <table>
@@ -9590,7 +9378,7 @@ mod altbn128 {
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/introduction/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/introduction/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">zkMega</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="zkmega"> zkMega</h1>
 <p>zkMega is a zero-knowledge proof tool set building for the Polkadot ecology.</p>
 <ul>
@@ -9630,11 +9418,20 @@ Ethereum has not yet supported it.</p>
 ]]></content:encoded>
     </item>
     <item>
+      <title>@redspot/chai</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-chai/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-chai/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/chai</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="redspot-chai"> @redspot/chai</h1>
+]]></content:encoded>
+    </item>
+    <item>
       <title>Metis</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/metis/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/metis/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">Metis</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="metis"> Metis</h1>
 <blockquote>
 <p>TODO</p>
@@ -9646,7 +9443,7 @@ Ethereum has not yet supported it.</p>
       <link>https://patractlabs.github.io/substrate-contracts-book/zkmega/tutorial/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/zkmega/tutorial/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">tutorial</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="tutorial"> tutorial</h1>
 <h2 id="基于-substrate-的链引入-zkmega-的零知识原语"> 基于 Substrate 的链引入　zkMega 的零知识原语</h2>
 <p>具备<code>pallet-contracts</code>的链集成 zkMega 可以参照 Jupiter 的集成方式: <a href="https://github.com/patractlabs/jupiter/blob/master/primitives/chain-extension/src/lib.rs" target="_blank" rel="noopener noreferrer">https://github.com/patractlabs/jupiter/blob/master/primitives/chain-extension/src/lib.rs</a></p>
@@ -9700,11 +9497,334 @@ env<span>.</span><span>charge_weight</span><span>(</span>simple_weight<span>)</s
 <div><span>1</span><br><span>2</span><br></div></div>]]></content:encoded>
     </item>
     <item>
+      <title>插件</title>
+      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/</link>
+      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/</guid>
+      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">插件</source>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
+      <content:encoded><![CDATA[<h1 id="插件"> 插件</h1>
+<p>Redspot 的核心功能包括 Redspot runtime environment 和编译合约，运行测试，运行脚本这几个任务。</p>
+<p>其他诸如与合约的测试套件，合约交互，访问合约，设置不同的链的配置，等功能均有插件提供。用户可以自行选择需要使用的插件。引入一个插件很简单。将它作为一个 npm 的依赖添加。然后在 <code>redspot.config.ts</code> 中加入：</p>
+<div><pre><code><span>import</span> <span>{</span> RedspotUserConfig <span>}</span> <span>from</span> <span>'redspot/types'</span><span>;</span>
+<span>import</span> <span>'@redspot/patract'</span><span>;</span> <span>// 引入 @redspot/patract 插件</span>
+<span>import</span> <span>'@redspot/chai'</span><span>;</span> <span>// 引入 @redspot/chai 插件</span>
+
+<span>export</span> <span>default</span> <span>{</span>
+ <span>...</span>
+<span>}</span> <span>as</span> RedspotUserConfig<span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><p>下面我们介绍一下官方提供的几个插件：</p>
+<h2 id="redspot-patract"> @redspot/patract</h2>
+<p>该插件会扩展 Redspot runtime environment ，并添加 patract 属性，可以这样访问 patract 实例：</p>
+<div><pre><code><span>import</span> <span>{</span> patract <span>}</span> <span>from</span> <span>'redspot'</span> 
+</code></pre>
+<div><span>1</span><br></div></div><p>patract 的类型定义如下：</p>
+<div><pre><code><span>interface</span> <span>Patract</span> <span>{</span>
+     Contract<span>:</span> Contract<span>;</span>
+     ContractFactory<span>:</span> ContractFactory<span>;</span>
+    <span>/**
+     * Generating Contract Instance from Contract Addresses
+     *
+     * @param contractName Contract name
+     * @param address contract address
+     * @param signer The account used to sign, or the first account in the user configured if it is undefined.
+     * @returns Contract Instance
+     */</span>
+    <span>getContractAt</span><span>(</span>
+      contractName<span>:</span> <span>string</span><span>,</span>
+      address<span>:</span> AccountId <span>|</span> <span>string</span><span>,</span>
+      signer<span>?</span><span>:</span> Signer
+    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>Contract<span>></span><span>;</span>
+    <span>/**
+     * Return the contract factory
+     *
+     * @param contractName Contract name
+     * @param signer The account used to sign, or the first account in the user configured if it is undefined.
+     * @returns Contract Factory Instance
+     */</span>
+    <span>getContractFactory</span><span>(</span>
+      contractName<span>:</span> <span>string</span><span>,</span>
+      signer<span>?</span><span>:</span> Signer
+    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>ContractFactory<span>></span><span>;</span>
+    <span>/**
+     *  Generate a random account and transfer token to it
+     *
+     * @param from This account will be transferred to the new account
+     * @param amount The amount transferred to the new account
+     * @returns New Account
+     */</span>
+    <span>getRandomSigner</span><span>(</span>
+      <span>from</span><span>?</span><span>:</span> Signer<span>,</span>
+      amount<span>?</span><span>:</span> <span>BN</span> <span>|</span> <span>number</span> <span>|</span> <span>string</span> <span>|</span> BigInt
+    <span>)</span><span>:</span> <span>Promise</span><span>&lt;</span>Signer<span>></span><span>;</span>
+  
+  <span>}</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br></div></div><h4 id="getrandomsigner-from-amount-promise-signer"> <code>getRandomSigner(from, amount): Promise&lt;Signer&gt;</code></h4>
+<p>getRandomSigner 是一个工具函数，用于创建生成随机的signer，并且从 from 传递一些初始的金额给它。</p>
+<h4 id="getcontractfactory-contractname-signer-promise-contractfactory"> <code>getContractFactory(contractName, signer?): Promise&lt;ContractFactory&gt;</code></h4>
+<p>该函数将通过合约名字和 signer ，创建一个 contractFactory 的实例。</p>
+<p>注意合约必须已编译成功。能够在 artifacts 找到对于的 metadata 文件。</p>
+<h4 id="getcontractat-contractname-address-signer-promise-contract"> <code>getContractAt(contractName, address, signer): Promise&lt;Contract&gt;</code></h4>
+<p>通过合约名字，合约地址和 signer，创建一个 Contract 实例。</p>
+<p>注意合约必须已编译成功。能够在 artifacts 找到对于的 metadata 文件。</p>
+<p>###ContractFactory</p>
+<p>ContractFactory 主要用于合约的部署：</p>
+<div><pre><code><span>import</span> <span>{</span> patract <span>}</span> <span>from</span> <span>'redspot'</span>
+<span>const</span> <span>{</span> getContractFactory<span>,</span> getRandomSigner <span>}</span> <span>=</span> patract<span>;</span>
+
+<span>const</span> signers <span>=</span> <span>await</span> <span>getSigners</span><span>(</span><span>)</span><span>;</span>
+<span>const</span> contractFactory <span>=</span> <span>await</span> <span>getContractFactory</span><span>(</span><span>'erc20'</span><span>,</span> signers<span>[</span><span>0</span><span>]</span><span>)</span><span>;</span>
+<span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h4 id="new-contractfactory-address-contractmetadata-api-signer"> <code>new ContractFactory(address, contractMetadata, api, signer)</code></h4>
+<p>通过合约地址，metadata，api  和  signer 创建一个 contractFactory  实例。</p>
+<h4 id="contractfactory-deploy-constructororid-args-overrides-promise-contract"> <code>contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise&lt;Contract&gt;</code></h4>
+<p>constructorOrId 是需要调用的合约的 contructor 的名字，注意对于一些使用了 <code>trait</code> 的合约，contructor  的名字应该是类似这样：</p>
+<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>args 是你所使用的 contructor 需要传入参数列表。</p>
+<p>overrides 是可选项，可以用于指定 gasLimit, value, signer, salt 等。</p>
+<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>,</span> <span>{</span>
+  gaslimit<span>:</span> <span>'1000000000000000000'</span><span>,</span>
+  salt<span>:</span> <span>'jkqwezlkwklqreqw'</span><span>,</span>
+  signer<span>:</span> signers<span>[</span><span>1</span><span>]</span><span>,</span>
+  value<span>:</span> <span>'3213321000000000000000000'</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>gasLimit 指这次交易能够使用的最大的 gas 值。</p>
+<p>salt 用于合约的地址的生成。部署人，部署参数和 salt 一致的话，将会生成同一个合约地址。</p>
+<p>signer 创建 contractFactory 时，会有一个 signer 参数，用于默认的交易签名。 signer 项目可以覆盖默认的签名账户。</p>
+<p>value 指传递给即将创建的合约的金额。</p>
+<p>请注意，<code>@redspot/patract</code> 不会处理数字金额精度，需要用户自行处理。</p>
+<h4 id="contractfactory-deployed-constructororid-args-overrides-promise-contract"> <code>contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise&lt;Contract&gt;</code></h4>
+<p>该方法和 <code>contractFactory.deploy</code> 类似，唯一的区别是，<code>deployed</code> 会预先检查即将生成的合约地址是否存在，如果存在不会去尝试部署，而是直接使用该合约地址创建 <code>Contract</code> 实例。</p>
+<h4 id="contractfactory-instantiate-constructororid-args-overrides-promise-contractaddress"> <code>contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise&lt;ContractAddress&gt;</code></h4>
+<p>如果 wasm 已上传到链上，你可以直接调用 <code>contractFactory.instantiate</code> 实例化合约。它的参数与 <code>deploy</code> 一致，但返回的是合约地址。</p>
+<h4 id="contractfactory-instantiate-constructororid-args-overrides-promise-contractaddress-2"> <code>contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise&lt;ContractAddress&gt;</code></h4>
+<p>如果 wasm 已上传到链上，你可以直接调用 <code>contractFactory.instantiate</code> 实例化合约。它的参数与 <code>deploy</code> 一致，但返回的是合约地址。</p>
+<h4 id="contractfactory-attach-address-contract"> <code>contractFactory.attach(address)：Contract</code></h4>
+<p>使用指定的合约地址生成 <code>Contract</code> 实例</p>
+<p>####<code>contractFactory.connect(signer)：contractFactory</code></p>
+<p>使用指定的 signer，创建一个新的 contractFactory 实例</p>
+<h3 id="contract"> Contract</h3>
+<h4 id="new-contract-address-contractmetadata-api-signer"> <code>new Contract(address, contractMetadata, api, signer)</code></h4>
+<p>通过合约地址，合约的metadata，api  和  signer 创建一个 contractFactory  实例。</p>
+<h4 id="contract-query-messagename-args-overrides"> <code>contract.query.MessageName(...args[, overrides])</code></h4>
+<p>与 polkadotjs 中类似， contract.query[MessageName] 能够调用 <code>contracts.call</code> rpc。如在 erc20 合约中，获取账户余额：</p>
+<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>返回值的类型如下：</p>
+<div><pre><code><span>export</span> <span>interface</span> <span>ContractCallOutcome</span> <span>{</span>
+    debugMessage<span>:</span> Text<span>;</span>
+    gasConsumed<span>:</span> u64<span>;</span>
+    output<span>:</span> Codec <span>|</span> <span>null</span><span>;</span>
+    result<span>:</span> ContractExecResultResult<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><p>它和 polkadotjs api-contract 中是一致。</p>
+<p>overrides 是可选项，可以用于指定 gasLimit, value 等。</p>
+<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span><span>'baseErc20,new'</span><span>,</span> <span>'1000'</span><span>,</span> <span>{</span>
+	gasLimit：<span>'1231231231233123123'</span>
+  value<span>:</span> <span>'3213321000000000000000000'</span>
+  signer： signers<span>[</span><span>1</span><span>]</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>gasLimit value 指的是 <code>contracts.call</code> rpc 中的 gasLimit 和 value 。signer 可以指定 <code>contracts.call</code> 的 origin 地址。</p>
+<h4 id="contract-estimategas-messagename-args-overrides"> <code>contract.estimateGas.MessageName(...args[, overrides])</code></h4>
+<p>该函数与 <code>contract.query.MessageName</code> 类似，但返回值是预估将要消耗的 gas</p>
+<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>estimateGas<span>.</span><span>balanceOf</span><span>(</span>someaddress<span>)</span>
+result <span>// BN(232130000000)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><h4 id="contract-tx-messagename-args-overrides"> <code>contract.tx.MessageName(...args[,overrides])</code></h4>
+<p>通过  <code>contract.tx.MessageName</code> 可以执行合约的交易。 如：</p>
+<div><pre><code><span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>someddress<span>,</span> <span>7</span><span>)</span>
+</code></pre>
+<div><span>1</span><br></div></div><p>和 polkadotjs 不同，该函数会返回一个 promise ， 会等到 交易上链，或者出错才被 resolved。</p>
+<p>返回值类型如下：</p>
+<div><pre><code><span>export</span> <span>interface</span> <span>TransactionResponse</span> <span>{</span>
+  <span>from</span><span>:</span> <span>string</span><span>;</span>
+  txHash<span>?</span><span>:</span> <span>string</span><span>;</span>
+  blockHash<span>?</span><span>:</span> <span>string</span><span>;</span>
+  error<span>?</span><span>:</span> <span>{</span>
+    message<span>?</span><span>:</span> <span>any</span><span>;</span>
+    data<span>?</span><span>:</span> <span>any</span><span>;</span>
+  <span>}</span><span>;</span>
+  result<span>:</span> SubmittableResult<span>;</span>
+  events<span>?</span><span>:</span> DecodedEvent<span>[</span><span>]</span><span>;</span>
+<span>}</span>
+
+<span>export</span> <span>interface</span> <span>DecodedEvent</span> <span>{</span>
+  args<span>:</span> Codec<span>[</span><span>]</span><span>;</span>
+  name<span>:</span> <span>string</span><span>;</span>
+  event<span>:</span> AbiEvent<span>;</span>
+<span>}</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br></div></div><p>你可以直接通过 <code>result.events</code> 获取已解析的合约的事件。如果执行出错，你可以通过 <code>result.error.message</code> 获取错误信息。</p>
+<p>overrides 是可选项，可以用于指定 gasLimit，value，signer  等。</p>
+<div><pre><code><span>const</span> contract <span>=</span> <span>await</span> contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>someddress<span>,</span> <span>7</span><span>,</span> <span>{</span>
+  gasLimit：<span>'1231231231233123123'</span>
+  value<span>:</span> <span>'3213321000000000000000000'</span>
+  signer： signers<span>[</span><span>1</span><span>]</span>
+<span>}</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br></div></div><p>ggasLimit 指这次交易能够使用的最大的 gas 值。</p>
+<p>value 指传递给即将创建的合约的金额。</p>
+<p>signer 用于覆盖默认的 signer。</p>
+<h4 id="contract-attach-address-contract"> <code>contract.attach(address)：Contract</code></h4>
+<p>使用指定的合约地址生成 <code>Contract</code> 实例</p>
+<p>####<code>contract.connect(signer)：contractFactory</code></p>
+<p>使用指定的 signer，创建一个新的 contract 实例</p>
+<h2 id="redspot-chai"> @redspot/chai</h2>
+<p>该插件提供了一组便于编写合约测试用例的匹配器，灵感来自于 <a href="https://ethereum-waffle.readthedocs.io/en/latest/matchers.html" target="_blank" rel="noopener noreferrer">waffle</a> 。</p>
+<p>引入 @redspot/chai。该插件会自动修改 chai 匹配器，无需手动调用。</p>
+<div><pre><code>// redspot.config.ts
+
+import { RedspotUserConfig } from &#39;redspot/types&#39;;
+import &#39;@redspot/chai&#39;; 
+
+export default {
+ ...
+} as RedspotUserConfig;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>使用 @redspot/chai 的完整例子：</p>
+<div><pre><code><span>import</span> <span>BN</span> <span>from</span> <span>'bn.js'</span><span>;</span>
+<span>import</span> <span>{</span> expect <span>}</span> <span>from</span> <span>'chai'</span><span>;</span>
+<span>import</span> <span>{</span> patract<span>,</span> network<span>,</span> artifacts <span>}</span> <span>from</span> <span>'redspot'</span><span>;</span>
+
+<span>const</span> <span>{</span> getContractFactory<span>,</span> getRandomSigner <span>}</span> <span>=</span> patract<span>;</span>
+
+<span>const</span> <span>{</span> api<span>,</span> getSigners <span>}</span> <span>=</span> network<span>;</span>
+
+<span>describe</span><span>(</span><span>'ERC20'</span><span>,</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+  <span>after</span><span>(</span><span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>return</span> api<span>.</span><span>disconnect</span><span>(</span><span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+
+  <span>async</span> <span>function</span> <span>setup</span><span>(</span><span>)</span> <span>{</span>
+    <span>const</span> one <span>=</span> <span>new</span> <span><span>BN</span></span><span>(</span><span>10</span><span>)</span><span>.</span><span>pow</span><span>(</span><span>new</span> <span><span>BN</span></span><span>(</span>api<span>.</span>registry<span>.</span>chainDecimals<span>[</span><span>0</span><span>]</span><span>)</span><span>)</span><span>;</span>
+    <span>const</span> signers <span>=</span> <span>await</span> <span>getSigners</span><span>(</span><span>)</span><span>;</span>
+    <span>const</span> Alice <span>=</span> signers<span>[</span><span>0</span><span>]</span><span>;</span>
+    <span>const</span> sender <span>=</span> Alice<span>;</span>
+    <span>const</span> contractFactory <span>=</span> <span>await</span> <span>getContractFactory</span><span>(</span><span>'erc20'</span><span>,</span> sender<span>)</span><span>;</span>
+    <span>const</span> contract <span>=</span> <span>await</span> contractFactory<span>.</span><span>deploy</span><span>(</span><span>'new'</span><span>,</span> <span>'1000'</span><span>)</span><span>;</span>
+    <span>const</span> abi <span>=</span> artifacts<span>.</span><span>readArtifact</span><span>(</span><span>'erc20'</span><span>)</span><span>;</span>
+    <span>const</span> receiver <span>=</span> <span>await</span> <span>getRandomSigner</span><span>(</span><span>)</span><span>;</span>
+
+    <span>return</span> <span>{</span> sender<span>,</span> contractFactory<span>,</span> contract<span>,</span> abi<span>,</span> receiver<span>,</span> Alice<span>,</span> one <span>}</span><span>;</span>
+  <span>}</span>
+
+  <span>it</span><span>(</span><span>'Assigns initial balance'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>const</span> <span>{</span> contract<span>,</span> sender <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
+    <span>const</span> result <span>=</span> <span>await</span> contract<span>.</span>query<span>.</span><span>balanceOf</span><span>(</span>sender<span>.</span>address<span>)</span><span>;</span>
+    <span>expect</span><span>(</span>result<span>.</span>output<span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>1000</span><span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+
+  <span>it</span><span>(</span><span>'Transfer adds amount to destination account'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>const</span> <span>{</span> contract<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
+    <span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
+      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
+    <span>)</span><span>.</span>to<span>.</span><span>changeTokenBalance</span><span>(</span>contract<span>,</span> receiver<span>,</span> <span>7</span><span>)</span><span>;</span>
+
+    <span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
+      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
+    <span>)</span><span>.</span>to<span>.</span><span>changeTokenBalances</span><span>(</span>contract<span>,</span> <span>[</span>contract<span>.</span>signer<span>,</span> receiver<span>]</span><span>,</span> <span>[</span><span>-</span><span>7</span><span>,</span> <span>7</span><span>]</span><span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+
+  <span>it</span><span>(</span><span>'Transfer emits event'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>const</span> <span>{</span> contract<span>,</span> sender<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
+
+    <span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
+      <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
+      <span>.</span><span>withArgs</span><span>(</span>sender<span>.</span>address<span>,</span> receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+
+  <span>it</span><span>(</span><span>'Can not transfer above the amount'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>const</span> <span>{</span> contract<span>,</span> receiver <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
+
+    <span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>1007</span><span>)</span><span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>
+      contract<span>,</span>
+      <span>'Transfer'</span>
+    <span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+
+  <span>it</span><span>(</span><span>'Can not transfer from empty account'</span><span>,</span> <span>async</span> <span>(</span><span>)</span> <span>=></span> <span>{</span>
+    <span>const</span> <span>{</span> contract<span>,</span> Alice<span>,</span> one<span>,</span> sender <span>}</span> <span>=</span> <span>await</span> <span>setup</span><span>(</span><span>)</span><span>;</span>
+
+    <span>const</span> emptyAccount <span>=</span> <span>await</span> <span>getRandomSigner</span><span>(</span>Alice<span>,</span> one<span>.</span><span>muln</span><span>(</span><span>10000</span><span>)</span><span>)</span><span>;</span>
+
+    <span>await</span> <span>expect</span><span>(</span>
+      contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>sender<span>.</span>address<span>,</span> <span>7</span><span>,</span> <span>{</span>
+        signer<span>:</span> emptyAccount
+      <span>}</span><span>)</span>
+    <span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span><span>;</span>
+  <span>}</span><span>)</span><span>;</span>
+<span>}</span><span>)</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br><span>9</span><br><span>10</span><br><span>11</span><br><span>12</span><br><span>13</span><br><span>14</span><br><span>15</span><br><span>16</span><br><span>17</span><br><span>18</span><br><span>19</span><br><span>20</span><br><span>21</span><br><span>22</span><br><span>23</span><br><span>24</span><br><span>25</span><br><span>26</span><br><span>27</span><br><span>28</span><br><span>29</span><br><span>30</span><br><span>31</span><br><span>32</span><br><span>33</span><br><span>34</span><br><span>35</span><br><span>36</span><br><span>37</span><br><span>38</span><br><span>39</span><br><span>40</span><br><span>41</span><br><span>42</span><br><span>43</span><br><span>44</span><br><span>45</span><br><span>46</span><br><span>47</span><br><span>48</span><br><span>49</span><br><span>50</span><br><span>51</span><br><span>52</span><br><span>53</span><br><span>54</span><br><span>55</span><br><span>56</span><br><span>57</span><br><span>58</span><br><span>59</span><br><span>60</span><br><span>61</span><br><span>62</span><br><span>63</span><br><span>64</span><br><span>65</span><br><span>66</span><br><span>67</span><br><span>68</span><br><span>69</span><br><span>70</span><br><span>71</span><br><span>72</span><br><span>73</span><br></div></div><p>chai 还有更多的内置的用法，参见 chai 文档： https://www.chaijs.com/。</p>
+<h3 id="equal"> equal</h3>
+<p>@redspot/chai 会修改默认的 equal 的匹配方式。默认的 equal 不支持匹配对象。但 @redspot/chai 可以：</p>
+<div><pre><code><span>expect</span><span>(</span><span>new</span> <span><span>BN</span></span><span>(</span><span>1000</span><span>)</span><span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>1000</span><span>)</span> <span>// true</span>
+<span>expect</span><span>(</span>AccountId<span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>'5Gdjkw....'</span><span>)</span> <span>// true</span>
+<span>expect</span><span>(</span><span>Uint8Array</span><span>(</span><span>[</span><span>1</span><span>,</span><span>2</span><span>,</span><span>3</span><span>]</span><span>)</span><span>)</span><span>.</span>to<span>.</span><span>equal</span><span>(</span><span>'0x010203'</span><span>)</span> <span>// true</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>对于 BN 类型，equal 对调用 <code>new BN(expected).eq(actual)</code> 判断是否相等</p>
+<p>对于 polkadotjs 中定义的类型，equal 会调用 <code>Type.eq(actual)</code> 判断是否相等</p>
+<p>对于 uint8Array 类型，equal 会将他们都转化为 hex ，再比较是否相等</p>
+<p>其他类型则采用默认的判断方式，判断是否相等</p>
+<h3 id="changetokenbalance"> changeTokenBalance</h3>
+<p>该匹配器可以检测 erc20 的余额变化，内部会调用 balanceOf 接口判断余额。由于 erc20-trait 的获取余额接口是 <code>baseErc20,balanceOf</code></p>
+<p>所以并不适用于 erc20-trait 。</p>
+<div><pre><code><span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
+  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
+<span>)</span><span>.</span>to<span>.</span><span>changeTokenBalance</span><span>(</span>contract<span>,</span> receiver<span>,</span> <span>7</span><span>)</span><span>;</span>
+
+<span>await</span> <span>expect</span><span>(</span><span>(</span><span>)</span> <span>=></span>
+  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span>
+<span>)</span><span>.</span>to<span>.</span><span>changeTokenBalances</span><span>(</span>contract<span>,</span> <span>[</span>contract<span>.</span>signer<span>,</span> receiver<span>]</span><span>,</span> <span>[</span><span>-</span><span>7</span><span>,</span> <span>7</span><span>]</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div><h3 id="emit"> emit</h3>
+<p>该匹配器可以检测合约是否发出事件，如检测是否有 Transfer 事件被 emit：</p>
+<div><pre><code><span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
+    <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br></div></div><p>检测该事件是否包含指定的参数：</p>
+<div><pre><code><span>await</span> <span>expect</span><span>(</span>contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>)</span>
+    <span>.</span>to<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span>
+    <span>.</span><span>withArgs</span><span>(</span>sender<span>.</span>address<span>,</span> receiver<span>.</span>address<span>,</span> <span>7</span><span>)</span><span>;</span>
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br></div></div><p>不期待发出事件</p>
+<div><pre><code><span>await</span> <span>expect</span><span>(</span>
+  contract<span>.</span>tx<span>.</span><span>transfer</span><span>(</span>sender<span>.</span>address<span>,</span> <span>7</span><span>,</span> <span>{</span>
+    signer<span>:</span> emptyAccount
+  <span>}</span><span>)</span>
+<span>)</span><span>.</span>to<span>.</span>not<span>.</span><span>emit</span><span>(</span>contract<span>,</span> <span>'Transfer'</span><span>)</span><span>;</span>
+
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br></div></div><h2 id="redspot-gas-reporter"> @redspot/gas-reporter</h2>
+<p>该插件会在测试完成时，打印出所调用的合约的交易的 gas 使用量：</p>
+<p><img src="https://user-images.githubusercontent.com/7029338/101343840-7700ab00-38e9-11eb-80a0-c6b6d38a9640.png" alt=""></p>
+<p>和 @redspot/chai 一样，只需要在引入 @redspot/gas-reporter 后，在 redspot.config.ts 中加入：</p>
+<div><pre><code>// redspot.config.ts
+
+import { RedspotUserConfig } from &#39;redspot/types&#39;;
+import &#39;@redspot/gas-reporter&#39;; 
+
+export default {
+ ...
+} as RedspotUserConfig;
+</code></pre>
+<div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br><span>8</span><br></div></div><p>即可自动运行。</p>
+]]></content:encoded>
+      <enclosure url="https://user-images.githubusercontent.com/7029338/101343840-7700ab00-38e9-11eb-80a0-c6b6d38a9640.png" type="image/png"/>
+    </item>
+    <item>
       <title>介绍</title>
       <link>https://patractlabs.github.io/substrate-contracts-book/redspot/overview/</link>
       <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/overview/</guid>
       <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">介绍</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
+      <pubDate>Thu, 01 Apr 2021 10:15:47 GMT</pubDate>
       <content:encoded><![CDATA[<h1 id="介绍"> 介绍</h1>
 <h2 id="redspot-的架构"> Redspot 的架构</h2>
 <p>Redspot是围绕任务（Tasks）和插件（Plugins）的概念设计的。Redspot的大部分功能来自插件，作为开发人员，您可以自由选择要使用的插件。</p>
@@ -9725,15 +9845,6 @@ env<span>.</span><span>charge_weight</span><span>(</span>simple_weight<span>)</s
 <span>}</span> <span>as</span> RedspotUserConfig<span>;</span>
 </code></pre>
 <div><span>1</span><br><span>2</span><br><span>3</span><br><span>4</span><br><span>5</span><br><span>6</span><br><span>7</span><br></div></div>]]></content:encoded>
-    </item>
-    <item>
-      <title>@redspot/chai</title>
-      <link>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-chai/</link>
-      <guid>https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-chai/</guid>
-      <source url="https://patractlabs.github.io/substrate-contracts-book/rss.xml">@redspot/chai</source>
-      <pubDate>Thu, 01 Apr 2021 09:48:12 GMT</pubDate>
-      <content:encoded><![CDATA[<h1 id="redspot-chai"> @redspot/chai</h1>
-]]></content:encoded>
     </item>
   </channel>
 </rss>
