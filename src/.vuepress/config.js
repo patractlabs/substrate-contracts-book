@@ -4,6 +4,7 @@ module.exports = config({
   blog: false,
   comment: false,
 
+  base: '/substrate-contracts-book/',
   dest: './dist',
 
   head: [
@@ -27,7 +28,7 @@ module.exports = config({
 
   themeConfig: {
     logo: '/logo.svg',
-    hostname: 'https://www.patract.io',
+    hostname: 'https://patractlabs.github.io',
     baseLang: 'zh-CN',
     themeColor: {
       blue: '#007CDB',
