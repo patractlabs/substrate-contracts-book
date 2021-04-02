@@ -1,28 +1,10 @@
-name: Master
+name: Theme
 on:
   push:
     branches:
-      - master
+      - theme
 
 jobs:
-  github_page:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Use Node.js 15.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 15.x
-    - run: yarn install
-    - run: yarn build:gh_pages
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.0
-      with:
-        branch: gh-pages
-        folder: dist
-
   vercel:
     runs-on: ubuntu-latest
     steps:

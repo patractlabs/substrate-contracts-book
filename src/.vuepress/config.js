@@ -1,7 +1,7 @@
 module.exports = {
   theme: 'reco',
 
-  base: '/substrate-contracts-book/',
+  base: process.env.BASE_PATH || '/',
   dest: './dist',
 
   head: [
@@ -26,7 +26,6 @@ module.exports = {
 
   themeConfig: {
     logo: '/logo.svg',
-    hostname: 'https://patractlabs.github.io',
     lastUpdated: true,
     editLinks: true,
     sidebar: 'auto',
