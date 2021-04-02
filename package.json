@@ -7,8 +7,9 @@
   "author": "patractlabs",
   "license": "MIT",
   "dependencies": {
+    "typescript": "^4.2.3",
     "vuepress": "^1.8.2",
-    "vuepress-theme-hope": "^1.13.1"
+    "vuepress-theme-hope": "^1.13.4"
   },
   "scripts": {
     "dev": "vuepress dev src",

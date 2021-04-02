@@ -1,6 +1,6 @@
-// const { config } = require('vuepress-theme-hope');
+const { config } = require('vuepress-theme-hope');
 
-module.exports = {
+module.exports = config({
   // blog: false,
   // comment: false,
 
@@ -107,4 +107,4 @@ module.exports = {
   //     }
   //   }
   // }
-};
+});
