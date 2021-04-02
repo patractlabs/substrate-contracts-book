@@ -1,3 +1,0 @@
-# ink! tutorial
-
-TODO
