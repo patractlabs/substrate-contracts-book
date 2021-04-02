@@ -1,61 +1,34 @@
-# Summary
+---
+blog: true
+home: true
+heroFullScreen: true
+icon: home
+title: Blog Home
+heroImage: /logo.svg
+heroText: the name of your blog
+tagline: You can put your slogan here
+project:
+  - type: project
+    name: project name
+    desc: project detailed description
+    link: your project link
 
-- [介绍](./introduction.md)
-    - [合约综述](./contracts/overview.md)
-    - [合约模型](./contracts/model.md)
-    - [合约语言（框架）](./contracts/language.md)
-    - [Wasm初步](./contracts/wasm_first_step.md)
-- [pallet-contracts 合约模块](./pallet-contracts/introduction.md)
-- [ink!](./ink/introduction.md)
-    - [ink! tutorial](./ink/tutorial.md)
-    - [ink! 框架](./ink/framework.md)
-    - [ink! eDSL基础元素](./ink/edsl-basic.md)
-    - [ink! 跨合约调用](./ink/call-contracts.md)
-    - [ink! 与solidity的对比](./ink/ink-solidity.md)
-    - [cargo-contract](./ink/cargo-contract.md)
-    - [ink! 当前的坑](./ink/trap.md)
-- [Ask!](./ask/introduction.md)
-    - [tutorial](./ask/tutorial.md)
-    - [设计](./ask/design.md)
-    - [基础](./ask/basics.md)
-    - [example](./ask/example.md)
-- [Solang](./solang/introduction.md)
-- [Redspot](./redspot/introduction.md)
-    - [tutorial](./redspot/tutorial.md)
-    - [介绍](./redspot/overview.md)
-    - [配置](./redspot/configuration.md)
-    - [Runtime Environment](./redspot/runtime-environment.md)
-    - [控制台console](./redspot/console.md)
-    - [Q & A](./redspot/q-and-a.md)
-    - [plugin](./redspot/plugin.md)
-        - [@redspot/chai](./redspot/plugin/redspot-chai.md)
-        - [@redspot/gas-reporter](./redspot/plugin/redspot-gas-reporter.md)
-        - [@redspot/patract](./redspot/plugin/redspot-patract.md)
-- [Europa](./europa/introduction.md)
-    - [tutorial](./europa/tutorial.md)
-    - [合约执行日志信息解释](./europa/execution_info.md)
-    - [根据信息定位问题示例](./europa/sample.md)
-    - [Wasm executor](./europa/wasm_executor.md)
-    - [Wasm Backtrace](./europa/wasm_backtrace.md)
-- [zkMega](./zkmega/introduction.md)
-    - [tutorial](./zkmega/tutorial.md)
-    - [零知识合约](./zkmega/contract.md)
-    - [使用案例](./zkmega/example.md)
-    - [benchmark](./zkmega/benchmark.md)
-- [Himalia](./himalia/introduction.md)
-    - [tutorial](./himalia/tutorial.md)
-    - [go-patract](./himalia/go-patract.md)
-    - [py-patract](./himalia/py-patract.md)
-- [Metis](./metis/introduction.md)
-    - [Tokens](./metis/tokens.md)
-    - [Access Control](./metis/access-control.md)
-- [Carpo](./carpo/introduction.md)
-- [Patract](./patract/introduction.md)
-- [Elara](./elara/introduction.md)
-    - [tutorial](./elara/tutorial.md)
-    - [设计](./elara/design.md)
-    - [API](./elara/API.md)
-- [PatraStore](./patra-store/introduction.md)
-    - [Overview](./patra-store/overview.md)
-    - [Getting Starter](./patra-store/getting-starter.md)
-    - [发布DApp](./patra-store/publish-dapps.md)
+  - type: link
+    name: link name
+    desc: link detailed description
+    link: link address
+
+  - type: book
+    name: book name
+    desc: Detailed description of the book
+    link: link to your book
+
+  - type: article
+    name: article name
+    desc: Detailed description of the article
+    link: link to your article
+
+footer: customize your footer text
+---
+
+For related configuration documents, please see [blog homepage](https://vuepress-theme-hope.github.io/guide/layout/blog/)
