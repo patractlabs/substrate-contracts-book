@@ -1,11 +1,11 @@
 const { config } = require('vuepress-theme-hope');
 
 module.exports = config({
-  blog: false,
-  comment: false,
+  // blog: false,
+  // comment: false,
 
-  base: '/substrate-contracts-book/',
-  dest: './dist',
+  // base: '/substrate-contracts-book/',
+  // dest: './dist',
 
   // head: [
   //   [
