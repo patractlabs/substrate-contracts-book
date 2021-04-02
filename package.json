@@ -8,10 +8,11 @@
   "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.8.2",
-    "vuepress-theme-hope": "^1.13.1"
+    "vuepress-theme-hope": "^1.13.4"
   },
   "scripts": {
-    "dev": "vuepress dev src",
-    "build": "vuepress build src"
+    "dev": "vuepress dev",
+    "build": "vuepress build",
+    "build:gh_pages": "BASE_PATH=/substrate-contracts-book/ vuepress build src"
   }
 }
