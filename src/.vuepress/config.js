@@ -1,110 +1,81 @@
-const { config } = require('vuepress-theme-hope');
+module.exports = {
+  theme: 'reco',
 
-module.exports = config({
-  blog: false,
-  comment: false,
-
-  base: '/substrate-contracts-book/',
+  base: process.env.BASE_PATH || '/',
   dest: './dist',
 
   head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }],
     [
-      'script',
-      { src: 'https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js' }
-    ],
-    [
-      'script',
+      'meta',
       {
-        src:
-          'https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js'
+        name: 'viewport',
+        content: 'width=device-width,initial-scale=1,user-scalable=no'
       }
-    ],
-    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }],
-    [
-      'script',
-      { src: 'https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js' }
     ]
   ],
 
+  locales: {
+    '/': {
+      lang: 'zh-CN'
+    },
+    '/en/': {
+      lang: 'en-US'
+    }
+  },
+
   themeConfig: {
     logo: '/logo.svg',
-    hostname: 'https://patractlabs.github.io',
-    baseLang: 'zh-CN',
-    themeColor: {
-      blue: '#007CDB',
-      green: '#3eaf7c'
-    },
+    lastUpdated: true,
+    editLinks: true,
+    sidebar: 'auto',
 
     author: 'patractlabs',
     repo: 'https://github.com/patractlabs/substrate-contracts-book',
 
     locales: {
       '/': {
+        label: '简体中文',
         nav: [
           {
             text: '主页',
             link: 'https://patract.io',
             target: '_self',
             rel: '',
-            icon: 'home'
+            icon: 'reco-home'
           },
           {
             text: '博客',
             link: 'https://blog.patract.io',
             target: '_self',
             rel: '',
-            icon: 'blog'
+            icon: 'reco-blog'
           },
           { text: 'Doc', link: '/', icon: '' }
         ],
-
         sidebar: require('./config/sidebar-zh')
       },
       '/en/': {
+        label: 'English',
         nav: [
           {
             text: 'Official Home',
             link: 'https://patract.io',
             target: '_self',
             rel: '',
-            icon: 'home'
+            icon: 'reco-home'
           },
           {
             text: 'Blog',
             link: 'https://blog.patract.io',
             target: '_self',
             rel: '',
-            icon: 'blog'
+            icon: 'reco-blog'
           },
           { text: 'Doc', link: '/en/' }
         ],
         sidebar: require('./config/sidebar-en')
       }
-    },
-
-    pageInfo: ['author', 'time', 'category', 'reading-time'],
-
-    footer: {
-      display: true,
-      content: 'PatractLabs'
-    },
-
-    copyright: true,
-
-    mdEnhance: {
-      enableAll: true,
-      presentation: {
-        plugins: [
-          'highlight',
-          'math',
-          'search',
-          'notes',
-          'zoom',
-          'anything',
-          'audio',
-          'chalkboard'
-        ]
-      }
     }
   }
-});
+};
