@@ -3,313 +3,55 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>VuePress</title>
+    <title>Timeline</title>
     <meta name="generator" content="VuePress 1.8.2">
-    <script src="https://cdn.jsdelivr.net/npm/react/umd/react.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/react-dom/umd/react-dom.production.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone/babel.min.js"></script>
-    <link rel="alternate" type="application/atom+xml" href="https://patractlabs.github.io/substrate-contracts-book/atom.xml" title=" Atom Feed">
-    <link rel="alternate" type="application/json" href="https://patractlabs.github.io/substrate-contracts-book/feed.json" title=" JSON Feed">
-    <link rel="alternate" type="application/rss+xml" href="https://patractlabs.github.io/substrate-contracts-book/rss.xml" title=" RSS Feed">
-    <link rel="manifest" href="/substrate-contracts-book/manifest.webmanifest" crossorigin="use-credentials">
+    <link rel="icon" href="/substrate-contracts-book/favicon.ico">
     <meta name="description" content="">
-    <meta property="og:url" content="/substrate-contracts-book/timeline/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="zh-CN">
-    <meta property="og:locale:alternate" content="en-US">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="article:author" content="patractlabs">
-    <meta name="theme-color" content="#46bd87">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
     
-    <link rel="preload" href="/substrate-contracts-book/assets/css/0.styles.50204389.css" as="style"><link rel="preload" href="/substrate-contracts-book/assets/js/app.44f7d283.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/layout-Blog.2fb8f0e2.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.dd92595a.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.d464c7d8.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout.fa83db2a.js" as="script"><link rel="prefetch" href="/substrate-contracts-book/assets/js/86.d2391560.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/87.ac464de4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/88.4413ae31.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/89.bc68f1fa.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/90.f3d154c9.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/layout-Layout.c63f724a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/layout-NotFound.ac6e8532.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/layout-Slide.84640c11.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-@redspotchai.953006cd.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-@redspotgas-reporter.3b7d4f02.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-@redspotpatract.79f11d2f.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-APIaccess.b512ae95.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-API接入.16718933.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-AccessControl.2d4b892b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Ask!.b71c95e6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Benchmark.c977ad37.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-BriefintroductionofWasm.a98489a0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Carpo.00ac3db4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Configure.ca622aa6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Console.46fc353c.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Contract.7d54cef2.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ContractSystemOverview.358b293a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Contractlanguage(framework).ed542758.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Contractmodel.cdce2b9e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Design.0d95eb46.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-DesignBrief.fd24ba87.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ERC20.e08cae37.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Elara.4bd9b391.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europa'sWasmBacktrace.045b9005.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europa.4adcf6b7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-EuropaWasmexecutor.89825ed5.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europacontractexecutionloginformationinterpretation.5163c492.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europadebuggingexample.b489fa23.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europatutorial.0c50089a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europa合约执行日志信息解释.a8bbf738.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europa的WasmBacktrace.da10194b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Europa调试示例.54e17ef0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Example.ce00b7a2.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Gettingstarted.c6943ee9.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Himalia.5e553ed0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Introduction.c1075aea.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Metis.9015dabf.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Overview.8ab37d6b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Patract.f3b87e59.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Plugins.548dfeac.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-PublishDApp.d5b0ce03.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-QA.1a508bbc.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Redspot.b43e709f.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-RuntimeEnvironment.56ebcb2a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Solang.21b0522b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-SubstrateContractsBook.07c4c4c8.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Substrate合约书.1205a625.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Summary.7d8b8318.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Tutorial.c42349d6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-Wasm简要介绍.cf2b7a3f.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-cargo-contract.fa1eb96a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-example.88d4aff7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-go-patract.c9a22806.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!Framework.30ee7030.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!eDSLbasicelements.7a41db2d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!eDSL基础元素.5737f07d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!tutorial.0f0cc6b9.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!与solidity的对比.a8bd4eef.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!当前的坑.84ff09a4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!框架.64df940e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink!跨合约调用.2c874de7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-ink.25c683e4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-pallet-contracts合约模块.d2f9cbf8.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-py-patract.46ab376d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-tutorial.f0f97281.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-zkMega.7f0ce666.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-介绍.5f6e2c47.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-发布DApp.d83b035a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-合约模型.79cb41d0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-合约综述.4bbe1f4a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-合约语言（框架）.a13bb584.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-基础.28cd9964.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-控制台console.dacb0430.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-插件.3d2aa0a8.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-设计.9de8d662.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-设计简述.213c6fb3.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/page-配置.8d3f8252.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/vendors~flowchart.abe9e88a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/vendors~photo-swipe.dd9b6b8a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/vendors~reveal.71721ccb.js">
-    <link rel="stylesheet" href="/substrate-contracts-book/assets/css/0.styles.50204389.css">
+    <link rel="preload" href="/substrate-contracts-book/assets/css/0.styles.5cd22634.css" as="style"><link rel="preload" href="/substrate-contracts-book/assets/js/app.0f08da00.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/9.88a5da26.js" as="script"><link rel="preload" href="/substrate-contracts-book/assets/js/1.293685b3.js" as="script"><link rel="prefetch" href="/substrate-contracts-book/assets/js/10.405f91d4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/100.19b18773.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/101.5bfdf610.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/102.a0aa2241.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/103.a8513947.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/104.2d2a2600.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/105.4fc06ec4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/106.ddae3f73.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/107.a4f9baf8.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/108.1e44596d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/109.1b287c85.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/11.9675e5bf.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/110.fc5c0994.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/111.0f2d27db.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/112.40d09bfd.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/113.dcb50888.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/114.3e52d0c9.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/115.73a2c6a0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/116.5717eaf3.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/117.a11e606a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/118.f2fe72cc.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/119.4c637907.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/12.da8a7a28.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/120.162b774a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/121.51b4c0f3.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/122.6f6990b3.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/123.6cdf11d0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/124.061dea18.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/125.eea0b61c.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/126.80add765.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/127.3d892556.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/128.7a585813.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/129.8bad99ec.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/13.906c9bce.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/130.a5b45b5b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/131.160b41a4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/14.a246a85c.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/15.21c25257.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/16.49e2534d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/17.7531fb9f.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/18.3d2c61e6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/19.7ca42431.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/20.e8710999.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/21.d499b7df.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/22.4e30bcfb.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/23.f5c2e26e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/24.8bdb5e03.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/25.2243c7db.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/26.f25fd05a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/27.ab5e990a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/28.2a10ad31.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/29.7bbe5712.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/3.5d94f222.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/30.578d758f.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/31.55a95cf0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/32.e92210ad.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/33.63815826.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/34.9b6698a5.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/35.4c199290.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/36.06e9c669.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/37.d624b0b4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/38.323da7ec.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/39.1b727b1b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/4.bc849752.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/40.d8dc9a8e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/41.98f82626.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/42.fd51edc6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/43.ec2f8565.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/44.5268e123.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/45.8c8ccef9.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/46.5b95b4f7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/47.72376a1e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/48.1a5ad0c1.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/49.20f948a6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/5.07d757d6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/50.b7f92dd7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/51.f2708633.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/52.cca982d7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/53.d9e03821.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/54.715b9574.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/55.ca3ed628.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/56.4ded589e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/57.3e9b8bb7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/58.1dbe8f53.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/59.716efd0d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/6.4ad5d8b7.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/60.c74dedcd.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/61.2ff478dc.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/62.93f90f01.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/63.82c82414.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/64.ecbcf63b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/65.64acc219.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/66.0eee9a58.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/67.d171d61b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/68.59c0f201.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/69.cd806e1a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/7.af21c7ee.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/70.a5aebdd4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/71.0fa1153b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/72.450de6b0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/73.3db5d17a.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/74.35592528.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/75.315bc37e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/76.3af1de86.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/77.ea2b2297.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/78.51b3070b.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/79.62e6d278.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/8.1cf9ca37.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/80.b7da9753.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/81.7af8b81d.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/82.436ff846.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/83.a6196470.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/84.cf1664cc.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/85.530a0095.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/86.3e9fef1e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/87.501dcfe3.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/88.a8f22aa6.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/89.bedfb7ae.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/90.0e0adb55.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/91.09c7dc91.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/92.46f7dbf0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/93.4ba591a5.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/94.86c92cf0.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/95.28ff97b4.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/96.4f0ea685.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/97.f61f4b83.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/98.87d7bb4e.js"><link rel="prefetch" href="/substrate-contracts-book/assets/js/99.1d0049e6.js">
+    <link rel="stylesheet" href="/substrate-contracts-book/assets/css/0.styles.5cd22634.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container has-navbar has-anchor"><header class="navbar"><button class="sidebar-button"><span class="icon"></span></button> <a href="/substrate-contracts-book/" class="home-link router-link-active"><img src="/substrate-contracts-book/logo.svg" alt="" class="logo"> <!----> <!----></a> <div class="links"><button class="color-button"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="skin-icon"><path d="M224 800c0 9.6 3.2 44.8 6.4 54.4 6.4 48-48 76.8-48 76.8s80 41.6 147.2 0 134.4-134.4
-        38.4-195.2c-22.4-12.8-41.6-19.2-57.6-19.2C259.2 716.8 227.2 761.6 224 800zM560 675.2l-32
-        51.2c-51.2 51.2-83.2 32-83.2 32 25.6 67.2 0 112-12.8 128 25.6 6.4 51.2 9.6 80 9.6 54.4 0
-        102.4-9.6 150.4-32l0 0c3.2 0 3.2-3.2 3.2-3.2 22.4-16 12.8-35.2
-        6.4-44.8-9.6-12.8-12.8-25.6-12.8-41.6 0-54.4 60.8-99.2 137.6-99.2 6.4 0 12.8 0 22.4
-        0 12.8 0 38.4 9.6 48-25.6 0-3.2 0-3.2 3.2-6.4 0-3.2 3.2-6.4 3.2-6.4 6.4-16 6.4-16 6.4-19.2
-        9.6-35.2 16-73.6 16-115.2 0-105.6-41.6-198.4-108.8-268.8C704 396.8 560 675.2 560 675.2zM224
-        419.2c0-28.8 22.4-51.2 51.2-51.2 28.8 0 51.2 22.4 51.2 51.2 0 28.8-22.4 51.2-51.2 51.2C246.4
-        470.4 224 448 224 419.2zM320 284.8c0-22.4 19.2-41.6 41.6-41.6 22.4 0 41.6 19.2 41.6 41.6 0
-        22.4-19.2 41.6-41.6 41.6C339.2 326.4 320 307.2 320 284.8zM457.6 208c0-12.8 12.8-25.6 25.6-25.6
-        12.8 0 25.6 12.8 25.6 25.6 0 12.8-12.8 25.6-25.6 25.6C470.4 233.6 457.6 220.8 457.6 208zM128
-        505.6C128 592 153.6 672 201.6 736c28.8-60.8 112-60.8 124.8-60.8-16-51.2 16-99.2
-        16-99.2l316.8-422.4c-48-19.2-99.2-32-150.4-32C297.6 118.4 128 291.2 128 505.6zM764.8
-        86.4c-22.4 19.2-390.4 518.4-390.4 518.4-22.4 28.8-12.8 76.8 22.4 99.2l9.6 6.4c35.2 22.4
-        80 12.8 99.2-25.6 0 0 6.4-12.8 9.6-19.2 54.4-105.6 275.2-524.8 288-553.6
-        6.4-19.2-3.2-32-19.2-32C777.6 76.8 771.2 80 764.8 86.4z"></path></svg> <div class="color-picker-menu" style="display:none;"><div class="theme-options"><ul class="themecolor-select"><label for="themecolor-select">主题色:</label> <li><a href="#" class="default-theme"></a></li> </ul> <div class="darkmode-toggle"><label for="darkmode-toggle" class="desc">主题模式:</label> <div class="darkmode-switch"><div class="item day"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon light-icon"><path d="M512 256a42.667 42.667 0 0 0 42.667-42.667V128a42.667 42.667 0 0 0-85.334 0v85.333A42.667 42.667 0 0 0 512 256zm384 213.333h-85.333a42.667 42.667 0 0 0 0 85.334H896a42.667 42.667 0 0 0 0-85.334zM256 512a42.667 42.667 0 0 0-42.667-42.667H128a42.667 42.667 0 0 0 0 85.334h85.333A42.667 42.667 0 0 0 256 512zm9.387-298.667a42.667 42.667 0 0 0-59.307 62.72l61.44 59.307a42.667 42.667 0 0 0 31.147 11.947 42.667 42.667 0 0 0 30.72-13.227 42.667 42.667 0 0 0 0-60.16zm459.946 133.974a42.667 42.667 0 0 0 29.44-11.947l61.44-59.307a42.667 42.667 0 0 0-57.6-62.72l-61.44 60.587a42.667 42.667 0 0 0 0 60.16 42.667 42.667 0 0 0 28.16 13.227zM512 768a42.667 42.667 0 0 0-42.667 42.667V896a42.667 42.667 0 0 0 85.334 0v-85.333A42.667 42.667 0 0 0 512 768zm244.48-79.36a42.667 42.667 0 0 0-59.307 61.44l61.44 60.587a42.667 42.667 0 0 0 29.44 11.946 42.667 42.667 0 0 0 30.72-12.8 42.667 42.667 0 0 0 0-60.586zm-488.96 0-61.44 59.307a42.667 42.667 0 0 0 0 60.586 42.667 42.667 0 0 0 30.72 12.8 42.667 42.667 0 0 0 28.587-10.666l61.44-59.307a42.667 42.667 0 0 0-59.307-61.44zM512 341.333A170.667 170.667 0 1 0 682.667 512 170.667 170.667 0 0 0 512 341.333z" fill="currentColor"></path></svg></div> <div class="item auto active"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon auto-icon"><path d="M460.864 539.072H564.8L510.592 376l-49.728 163.072zM872 362.368V149.504H659.648L510.528 0l-149.12 149.504H149.12v212.928L0 511.872l149.12 149.504v212.928h212.352l149.12 149.504 149.12-149.504h212.352V661.376l149.12-149.504L872 362.368zM614.464 693.12l-31.616-90.624H438.272l-31.616 90.624h-85.888l144.576-407.68h90.368l144.576 407.68h-85.824zm0 0" fill="currentColor"></path></svg></div> <div class="item night"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon dark-icon"><path d="M935.539 630.402c-11.43-11.432-28.674-14.739-43.531-8.354-46.734 20.103-96.363 30.297-147.508 30.297-99.59 0-193.221-38.784-263.64-109.203-108.637-108.637-139.61-270.022-78.908-411.148a39.497 39.497 0 0 0-51.886-51.887c-52.637 22.64-100.017 54.81-140.826 95.616-85.346 85.346-132.346 198.821-132.346 319.52 0 120.7 47.001 234.172 132.347 319.519S408.063 947.11 528.76 947.11c120.7 0 234.172-47.003 319.52-132.351 40.809-40.81 72.978-88.19 95.616-140.826a39.497 39.497 0 0 0-8.356-43.532z" fill="currentColor"></path></svg></div></div> <!----></div></div></div></button> <div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://patract.io" target="_self" class="nav-link external"><i class="iconfont icon-home"></i>
+    <div id="app" data-server-rendered="true"><div class="theme-container timeline-wrapper no-sidebar" data-v-1156296a data-v-3ab56744><div data-v-1156296a><div id="loader-wrapper" class="loading-wrapper" data-v-d48f4d20 data-v-1156296a data-v-1156296a><div class="loader-main" data-v-d48f4d20><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div><div data-v-d48f4d20></div></div> <!----> <!----></div> <div class="password-shadow password-wrapper-out" style="display:none;" data-v-4e82dffc data-v-1156296a data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc></h3> <p class="description" data-v-4e82dffc data-v-4e82dffc></p> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>patractlabs</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div class="hide" data-v-1156296a><header class="navbar" data-v-1156296a><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/substrate-contracts-book/" class="home-link router-link-active"><img src="/substrate-contracts-book/logo.svg" alt="" class="logo"> <!----></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="https://patract.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-home"></i>
   主页
-  <!----></a></div><div class="nav-item"><a href="https://blog.patract.io" target="_self" class="nav-link external"><i class="iconfont icon-blog"></i>
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://blog.patract.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-blog"></i>
   博客
-  <!----></a></div><div class="nav-item"><a href="/substrate-contracts-book/" class="nav-link router-link-active"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/substrate-contracts-book/" class="nav-link"><i></i>
   Doc
-</a></div></nav> <div class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon i18n-icon" style="width:1rem;height:1rem;vertical-align:middle;margin-left:1rem;"><path d="M639.981 344.075c14.805 44.45 34.542 79.023 69.084 113.596 29.603-29.634 49.34-69.146 64.145-113.596H639.981zM314.33 591.024h128.29l-64.145-172.865-64.145 172.865z" fill="currentColor"></path> <path d="M807.746 116.882H215.643c-54.274 0-98.681 44.45-98.681 98.78v592.677c0 54.329 44.407 98.78 98.68 98.78h592.104c54.273 0 98.681-44.451 98.681-98.78V215.66c0-54.329-39.475-98.78-98.68-98.78zM565.971 754.01c-9.866 9.878-19.738 9.878-29.603 9.878-4.94 0-14.805 0-19.738-4.939-4.939-4.939-9.872 0-9.872-4.939s-4.932-9.878-9.865-19.756c-4.94-9.878-4.94-14.817-9.872-24.695L467.29 655.23H294.592l-19.737 54.33c-9.866 19.755-14.805 34.572-19.738 44.45-4.939 9.878-14.804 9.878-29.603 9.878-9.871 0-19.737-4.939-29.609-9.878-9.865-9.878-14.798-14.817-14.798-24.695 0-4.939 0-9.878 4.933-19.756 4.939-9.878 4.939-14.817 9.865-24.695l108.553-276.583c4.939-9.878 4.939-19.756 9.872-29.633 4.932-9.878 9.865-19.756 14.798-24.695 4.939-4.94 9.872-14.817 19.737-19.756 9.872-4.94 19.738-4.94 29.61-4.94 9.865 0 19.73 0 29.603 4.94 9.865 4.939 14.804 9.878 19.737 19.756 4.933 4.939 9.866 14.817 14.798 24.695 4.94 9.877 9.872 19.755 14.805 34.572l108.553 271.644c9.865 19.756 14.804 34.573 14.804 44.451-4.939 4.94-9.872 14.817-14.804 24.695zm271.378-192.62c-54.273-19.756-93.748-44.451-128.29-74.085-34.536 34.573-78.943 59.268-133.223 74.085l-14.798-24.695c54.273-14.817 98.68-34.573 133.223-69.146-34.542-34.573-64.145-79.024-74.017-128.413h-49.34V319.38h133.228c-9.877-14.817-19.743-34.573-29.609-49.39l14.799-4.94c9.871 14.818 24.676 34.574 34.542 54.33h123.35v24.695h-49.34c-14.798 49.39-39.468 93.84-69.077 123.474 34.541 29.634 74.01 54.329 128.29 69.146l-19.738 24.695z" fill="currentColor"></path></svg> <span class="arrow down"></span></button> <ul class="nav-dropdown"><li class="dropdown-item"><a href="/substrate-contracts-book/timeline/" aria-current="page" class="nav-link router-link-exact-active router-link-active active"><!---->
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Languages
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/substrate-contracts-book/timeline/" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
   简体中文
-</a></li><li class="dropdown-item"><a href="/substrate-contracts-book/en/" class="nav-link"><!---->
+</a></li><li class="dropdown-item"><!----> <a href="/substrate-contracts-book/en/" class="nav-link"><i class="undefined"></i>
   English
-</a></li></ul></div></div></div> <a rel="noopener noreferrer" href="https://github.com/patractlabs/substrate-contracts-book" target="_blank" class="repo-link can-hide">
-  GitHub
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <nav class="sidebar-nav-links"><div class="nav-item"><a href="https://patract.io" target="_self" class="nav-link external"><i class="iconfont icon-home"></i>
+</a></li></ul></div></div> <a href="https://github.com/patractlabs/substrate-contracts-book" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask" data-v-1156296a></div> <aside class="sidebar" data-v-1156296a><div class="personal-info-wrapper" data-v-828910c6 data-v-1156296a><!----> <h3 class="name" data-v-828910c6>
+    patractlabs
+  </h3> <div class="num" data-v-828910c6><div data-v-828910c6><h3 data-v-828910c6>122</h3> <h6 data-v-828910c6>文章</h6></div> <div data-v-828910c6><h3 data-v-828910c6>0</h3> <h6 data-v-828910c6>标签</h6></div></div> <ul class="social-links" data-v-828910c6></ul> <hr data-v-828910c6></div> <nav class="nav-links"><div class="nav-item"><a href="https://patract.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-home"></i>
   主页
-  <!----></a></div><div class="nav-item"><a href="https://blog.patract.io" target="_self" class="nav-link external"><i class="iconfont icon-blog"></i>
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="https://blog.patract.io" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="iconfont reco-blog"></i>
   博客
-  <!----></a></div><div class="nav-item"><a href="/substrate-contracts-book/" class="nav-link router-link-active"><!---->
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><a href="/substrate-contracts-book/" class="nav-link"><i></i>
   Doc
-</a></div> <a rel="noopener noreferrer" href="https://github.com/patractlabs/substrate-contracts-book" target="_blank" class="repo-link">
-  GitHub
-  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <!----> <aside class="blog-info-wrapper"><div vocab="https://schema.org/" typeof="Person" class="blogger-info"><div data-balloon-pos="" class="blogger"><img property="image" alt="Blogger Avatar" src="/substrate-contracts-book/logo.svg" class="avatar round"> <div property="name" class="name">patractlabs</div> <!----></div> <div class="num-wrapper"><div><div class="num">122</div> <div>文章</div></div> <div><div class="num">0</div> <div>分类</div></div> <div><div class="num">0</div> <div>标签</div></div> <div><div class="num">122</div> <div>时间轴</div></div></div> <!----></div> <div class="blog-info-list"><div class="switch-wrapper"><button class="switch-button"><div aria-label="文章" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" class="icon article-icon"><path d="M853.333 938.667H170.667A42.667 42.667 0 0 1 128 896V128a42.667 42.667 0 0 1 42.667-42.667h682.666A42.667 42.667 0 0 1 896 128v768a42.667 42.667 0 0 1-42.667 42.667zm-42.666-85.334V170.667H213.333v682.666h597.334zM298.667 256h170.666v170.667H298.667V256zm0 256h426.666v85.333H298.667V512zm0 170.667h426.666V768H298.667v-85.333zm256-384h170.666V384H554.667v-85.333z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="分类" data-balloon-pos="up" class="icon-wapper active"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon category-icon"><path d="M148.41 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H148.41c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.311-40.31zm-.854 446.486H429.73c22.263 0 40.311 18.048 40.311 40.31v282.176c0 22.263-18.048 40.312-40.31 40.312H147.555c-22.263 0-40.311-18.049-40.311-40.312V593.79c0-22.263 18.048-40.311 40.31-40.311zm446.371-446.486h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H593.927c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.31-40.31zm136.293 813.51H623.926c-40.925 0-74.22-33.388-74.22-74.425V623.992c0-41.038 33.387-74.424 74.425-74.424h222.085c41.038 0 74.424 33.226 74.424 74.067v114.233c0 10.244-8.304 18.548-18.547 18.548s-18.548-8.304-18.548-18.548V623.635c0-20.388-16.746-36.974-37.33-36.974H624.13c-20.585 0-37.331 16.747-37.331 37.33v222.086c0 20.585 16.654 37.331 37.126 37.331H730.22c10.243 0 18.547 8.304 18.547 18.547 0 10.244-8.304 18.547-18.547 18.547z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="标签" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon tag-icon"><path d="M939.902 458.563 910.17 144.567c-1.507-16.272-14.465-29.13-30.737-30.737L565.438 84.098h-.402c-3.215 0-5.726 1.005-7.634 2.913l-470.39 470.39a10.004 10.004 0 0 0 0 14.164l365.423 365.424c1.909 1.908 4.42 2.913 7.132 2.913s5.223-1.005 7.132-2.913l470.39-470.39c2.01-2.11 3.014-5.023 2.813-8.036zm-240.067-72.121c-35.458 0-64.286-28.828-64.286-64.286s28.828-64.285 64.286-64.285 64.286 28.828 64.286 64.285-28.829 64.286-64.286 64.286z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="时间轴" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon time-icon"><path d="M511.997 70.568c-243.797 0-441.429 197.633-441.429 441.435 0 243.797 197.632 441.429 441.43 441.429S953.431 755.8 953.431 512.002c0-243.796-197.637-441.434-441.435-441.434zm150.158 609.093-15.605 15.61c-8.621 8.615-22.596 8.615-31.215 0L472.197 552.126c-4.95-4.944-4.34-14.888-4.34-24.677V247.14c0-12.19 9.882-22.07 22.07-22.07h22.07c12.19 0 22.07 9.882 22.07 22.07v273.218l128.088 128.088c8.62 8.62 8.62 22.595 0 31.215zm0 0" fill="currentColor"></path></svg></div></button></div> <!----> <div class="category-wrapper"><!----> <hr> <ul class="category-list-wrapper"></ul></div> <!----> <!----></div></aside></aside>  <main class="page blog"><div class="blog-page-wrapper"><main class="blog-page"><div class="timeline-wrapper"><ul class="timeline-content"><li class="desc">昨日不在</li> <div class="anchor-place-holder"><aside id="anchor"><div class="anchor-wrapper"><ul class="anchor-list"><li class="anchor"><a href="/substrate-contracts-book/timeline/#2021" class="anchor-link heading2"><div>2021</div></a></li></ul></div></aside></div> <li><h3 id="2021" class="year"><span>2021</span></h3> <ul class="year-wrapper"><li><span class="date">4/1</span> <span class="title">
-              基础
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Summary
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              设计
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              example
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Ask!
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Carpo
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              合约语言（框架）
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              合约模型
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              合约综述
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Wasm简要介绍
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              API 接入
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              设计简述
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Elara
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Summary
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              基础
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Design
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              example
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Ask!
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Carpo
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Contract language (framework)
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Contract model
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Contract System Overview
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Brief introduction of Wasm
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              API access
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Design Brief
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Elara
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa contract execution log information interpretation
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa debugging example
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa's Wasm Backtrace
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa Wasm executor
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              go-patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Himalia
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              py-patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 跨合约调用
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              cargo-contract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! eDSL basic elements
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! Framework
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 与solidity的对比
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 当前的坑
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Substrate Contracts Book
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Access Control
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Metis
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ERC20
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              pallet-contracts 合约模块
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Getting started
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Introduction
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Overview
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Publish DApp
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Configure
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Console
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Redspot
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Introduction
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Plugins
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/chai
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/gas-reporter
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Q &amp; A
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Runtime Environment
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Solang
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Benchmark
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Contract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Example
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              zkMega
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Metis
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa 合约执行日志信息解释
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa 调试示例
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa 的Wasm Backtrace
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Europa Wasm executor
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              go-patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Himalia
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              py-patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 跨合约调用
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              cargo-contract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! eDSL基础元素
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 框架
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 与solidity的对比
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! 当前的坑
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ink! tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Substrate 合约书
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Access Control
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Metis
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              ERC20
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              pallet-contracts 合约模块
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Getting started
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              介绍
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Overview
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              发布DApp
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              配置
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              控制台console
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Redspot
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/gas-reporter
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/patract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Q &amp; A
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Runtime Environment
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Solang
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Benchmark
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Contract
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Example
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              zkMega
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              @redspot/chai
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              Metis
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              tutorial
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              插件
-            </span></li><li><span class="date">4/1</span> <span class="title">
-              介绍
-            </span></li></ul></li></ul></div> <!----></main> <aside class="blog-info-wrapper"><div vocab="https://schema.org/" typeof="Person" class="blogger-info"><div data-balloon-pos="" class="blogger"><img property="image" alt="Blogger Avatar" src="/substrate-contracts-book/logo.svg" class="avatar round"> <div property="name" class="name">patractlabs</div> <!----></div> <div class="num-wrapper"><div><div class="num">122</div> <div>文章</div></div> <div><div class="num">0</div> <div>分类</div></div> <div><div class="num">0</div> <div>标签</div></div> <div><div class="num">122</div> <div>时间轴</div></div></div> <!----></div> <div class="blog-info-list"><div class="switch-wrapper"><button class="switch-button"><div aria-label="文章" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" class="icon article-icon"><path d="M853.333 938.667H170.667A42.667 42.667 0 0 1 128 896V128a42.667 42.667 0 0 1 42.667-42.667h682.666A42.667 42.667 0 0 1 896 128v768a42.667 42.667 0 0 1-42.667 42.667zm-42.666-85.334V170.667H213.333v682.666h597.334zM298.667 256h170.666v170.667H298.667V256zm0 256h426.666v85.333H298.667V512zm0 170.667h426.666V768H298.667v-85.333zm256-384h170.666V384H554.667v-85.333z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="分类" data-balloon-pos="up" class="icon-wapper active"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon category-icon"><path d="M148.41 106.992h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H148.41c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.311-40.31zm-.854 446.486H429.73c22.263 0 40.311 18.048 40.311 40.31v282.176c0 22.263-18.048 40.312-40.31 40.312H147.555c-22.263 0-40.311-18.049-40.311-40.312V593.79c0-22.263 18.048-40.311 40.31-40.311zm446.371-446.486h282.176c22.263 0 40.31 18.048 40.31 40.31V429.48c0 22.263-18.047 40.31-40.31 40.31H593.927c-22.263 0-40.311-18.047-40.311-40.31V147.302c0-22.263 18.048-40.31 40.31-40.31zm136.293 813.51H623.926c-40.925 0-74.22-33.388-74.22-74.425V623.992c0-41.038 33.387-74.424 74.425-74.424h222.085c41.038 0 74.424 33.226 74.424 74.067v114.233c0 10.244-8.304 18.548-18.547 18.548s-18.548-8.304-18.548-18.548V623.635c0-20.388-16.746-36.974-37.33-36.974H624.13c-20.585 0-37.331 16.747-37.331 37.33v222.086c0 20.585 16.654 37.331 37.126 37.331H730.22c10.243 0 18.547 8.304 18.547 18.547 0 10.244-8.304 18.547-18.547 18.547z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="标签" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon tag-icon"><path d="M939.902 458.563 910.17 144.567c-1.507-16.272-14.465-29.13-30.737-30.737L565.438 84.098h-.402c-3.215 0-5.726 1.005-7.634 2.913l-470.39 470.39a10.004 10.004 0 0 0 0 14.164l365.423 365.424c1.909 1.908 4.42 2.913 7.132 2.913s5.223-1.005 7.132-2.913l470.39-470.39c2.01-2.11 3.014-5.023 2.813-8.036zm-240.067-72.121c-35.458 0-64.286-28.828-64.286-64.286s28.828-64.285 64.286-64.285 64.286 28.828 64.286 64.285-28.829 64.286-64.286 64.286z" fill="currentColor"></path></svg></div></button> <button class="switch-button"><div aria-label="时间轴" data-balloon-pos="up" class="icon-wapper"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" class="icon time-icon"><path d="M511.997 70.568c-243.797 0-441.429 197.633-441.429 441.435 0 243.797 197.632 441.429 441.43 441.429S953.431 755.8 953.431 512.002c0-243.796-197.637-441.434-441.435-441.434zm150.158 609.093-15.605 15.61c-8.621 8.615-22.596 8.615-31.215 0L472.197 552.126c-4.95-4.944-4.34-14.888-4.34-24.677V247.14c0-12.19 9.882-22.07 22.07-22.07h22.07c12.19 0 22.07 9.882 22.07 22.07v273.218l128.088 128.088c8.62 8.62 8.62 22.595 0 31.215zm0 0" fill="currentColor"></path></svg></div></button></div> <!----> <div class="category-wrapper"><!----> <hr> <ul class="category-list-wrapper"></ul></div> <!----> <!----></div></aside></div></main> <footer class="footer-wrapper"><!----> <div class="footer">PatractLabs</div> <div class="copyright">Copyright © 2020 patractlabs</div></footer></div><div class="global-ui"><!----><!----><div id="pwa-install"><!----> <div id="install-modal-wrapper" style="display:none;"><div class="background"></div> <div class="install-modal"><div class="header"><button aria-label="Close" class="close-button"><svg width="23" height="22" xmlns="http://www.w3.org/2000/svg" class="icon close-icon"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.12.358a1.224 1.224 0 011.729 0l8.92 8.914L20.686.358a1.224 1.224 0 011.73 1.728L13.497 11l8.92 8.913a1.222 1.222 0 11-1.73 1.729l-8.919-8.913-8.92 8.913a1.224 1.224 0 01-1.729-1.729L10.04 11l-8.92-8.914a1.222 1.222 0 010-1.728z" fill="currentColor"></path></svg></button> <div class="logo"><!----> <div class="title"><h1></h1> <p class="desc">该应用可以安装在您的 PC 或移动设备上。这将使该 Web 应用程序外观和行为与其他应用程序相同。它将在出现在应用程序列表中，并可以固定到主屏幕，开始菜单或任务栏。此 Web 应用程序还将能够与其他应用程序和您的操作系统安全地进行交互。</p></div></div></div> <div class="content"><div class="highlight"><!----> <!----></div> <div class="description"><h3>详情</h3> <p></p></div></div> <div class="button-wrapper"><button class="install-button">
-        安装 <span></span></button> <button class="cancel-button">
-        取消
-      </button></div></div></div></div><div tabindex="-1" role="dialog" aria-hidden="true" class="pswp"><div class="pswp__bg"></div> <div class="pswp__scroll-wrap"><div class="pswp__container"><div class="pswp__item"></div> <div class="pswp__item"></div> <div class="pswp__item"></div></div> <div class="pswp__ui pswp__ui--hidden"><div class="pswp__top-bar"><div class="pswp__counter"></div> <button title="Close (Esc)" class="pswp__button pswp__button--close"></button> <button title="Share" class="pswp__button pswp__button--share"></button> <button title="Toggle fullscreen" class="pswp__button pswp__button--fs"></button> <button title="Zoom in/out" class="pswp__button pswp__button--zoom"></button> <div class="pswp__preloader"><div class="pswp__preloader__icn"><div class="pswp__preloader__cut"><div class="pswp__preloader__donut"></div></div></div></div></div> <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap"><div class="pswp__share-tooltip"></div></div> <button title="Previous (arrow left)" class="pswp__button pswp__button--arrow--left"></button> <button title="Next (arrow right)" class="pswp__button pswp__button--arrow--right"></button> <div class="pswp__caption"><div class="pswp__caption__center"></div></div></div></div></div></div></div>
-    <script src="/substrate-contracts-book/assets/js/app.44f7d283.js" defer></script><script src="/substrate-contracts-book/assets/js/layout-Blog.2fb8f0e2.js" defer></script><script src="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound.dd92595a.js" defer></script><script src="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout~layout-NotFound~layout-Slide.d464c7d8.js" defer></script><script src="/substrate-contracts-book/assets/js/vendors~layout-Blog~layout-Layout.fa83db2a.js" defer></script>
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      Languages
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/substrate-contracts-book/timeline/" aria-current="page" class="nav-link router-link-exact-active router-link-active"><i class="undefined"></i>
+  简体中文
+</a></li><li class="dropdown-item"><!----> <a href="/substrate-contracts-book/en/" class="nav-link"><i class="undefined"></i>
+  English
+</a></li></ul></div></div> <a href="https://github.com/patractlabs/substrate-contracts-book" target="_blank" rel="noopener noreferrer" class="repo-link"><i class="iconfont reco-github"></i>
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav> <!----> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-4e82dffc data-v-1156296a><h3 class="title" data-v-4e82dffc data-v-4e82dffc>Timeline</h3> <!----> <label id="box" class="inputBox" data-v-4e82dffc data-v-4e82dffc><input type="password" value="" data-v-4e82dffc> <span data-v-4e82dffc>Konck! Knock!</span> <button data-v-4e82dffc>OK</button></label> <div class="footer" data-v-4e82dffc data-v-4e82dffc><span data-v-4e82dffc><i class="iconfont reco-theme" data-v-4e82dffc></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-4e82dffc>vuePress-theme-reco</a></span> <span data-v-4e82dffc><i class="iconfont reco-copyright" data-v-4e82dffc></i> <a data-v-4e82dffc><span data-v-4e82dffc>patractlabs</span>
+            
+          <!---->
+          2021
+        </a></span></div></div> <div data-v-1156296a><ul class="timeline-content" data-v-1156296a data-v-3ab56744><li class="desc" style="display:none;" data-v-3ab56744 data-v-3ab56744>昨日重现！</li> </ul></div></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-c6073ba8 data-v-c6073ba8><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-c6073ba8><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-c6073ba8></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-c6073ba8></path></svg></div></div></div>
+    <script src="/substrate-contracts-book/assets/js/app.0f08da00.js" defer></script><script src="/substrate-contracts-book/assets/js/9.88a5da26.js" defer></script><script src="/substrate-contracts-book/assets/js/1.293685b3.js" defer></script>
   </body>
 </html>
