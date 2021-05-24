@@ -18,5 +18,6 @@ Here is a brief comparison of features between ink! and ask!:
 | Supported Types       | Docs                        | Docs                                  |
 | Has Interfaces?       | Yes (Rust Traits)           | Yes                                   |
 | Has Inheritance?      | No                          | Yes                                   |
+| Support unit test?    | Yes                         | No                                    |
 
 <!-- TODO -->
