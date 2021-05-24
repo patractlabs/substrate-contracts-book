@@ -1,6 +1,4 @@
-# Ask!
-
-![](https://camo.githubusercontent.com/207ae88065c356df521ad4c6cff4a68ef91ae963a9c65893dd0d9d991a4e00a8/68747470733a2f2f706174726163742e6e6574776f726b2f696d616765732f706174726163742d61736b2e706e67)
+# Ask! 智能合约编程
 
 Ask! 是由 Patract 设计的基于 AssemblyScript 编程语言，能运行于`pallet-contracts`模块上的 Wasm 合约语言框架。
 
