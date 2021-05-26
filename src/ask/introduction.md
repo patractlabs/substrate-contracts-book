@@ -10,7 +10,7 @@ Ask! 实现方式类似于 ink! 采取 rust 宏设计，通过 eDSL 来实现智
 > ink! 描述合约的外部调用接口采用 `#[ink(constructor)]`, `#[ink(message)]` 对合约结构体的方法进行修饰。
 > 在 Ask! 中，将会采用 `@constructor`，`@message` 等装饰器来装饰智能合约类定义的方法来实现类似的功能。
 
-## Ask! 编译部分运作方式
+## Ask! 编译运作方式
 
 Ask! 通过编写 AssemblyScript 的 transform 来介入编译流程，如下：
 
