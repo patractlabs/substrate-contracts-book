@@ -33,7 +33,7 @@ Europa的环境与正常使用节点调试合约的环境无异，唯一的差�
 * 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) （可选，若需要Wasm合约执行崩溃时的backtrace时才需要）
 
   ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
   ```
 
   如果开发者已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式：
