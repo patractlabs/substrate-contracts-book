@@ -33,7 +33,7 @@ The environment of Europa is the same as the environment of normal use of node d
 * Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) (optional, only needed if the Wasm contract executes backtrace when it crashes)
 
   ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
   ```
 
   If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation:
