@@ -24,6 +24,7 @@
     - [tutorial](./redspot/tutorial.md)
     - [介绍](./redspot/overview.md)
     - [配置](./redspot/configuration.md)
+    - [Tasks](./redspot/tasks.md)
     - [Runtime Environment](./redspot/runtime-environment.md)
     - [控制台console](./redspot/console.md)
     - [Q & A](./redspot/q-and-a.md)

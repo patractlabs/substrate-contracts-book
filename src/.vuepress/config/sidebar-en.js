@@ -38,6 +38,7 @@ module.exports = [
       '/en/redspot/tutorial',
       '/en/redspot/overview',
       '/en/redspot/configuration',
+      '/en/redspot/tasks',
       '/en/redspot/runtime-environment',
       '/en/redspot/console',
       '/en/redspot/q-and-a',
@@ -48,7 +49,8 @@ module.exports = [
         children: [
           '/en/redspot/plugin/redspot-chai',
           '/en/redspot/plugin/redspot-gas-reporter',
-          '/en/redspot/plugin/redspot-patract'
+          '/en/redspot/plugin/redspot-patract',
+          '/en/redspot/plugin/redspot-explorer',
         ]
       }
     ]

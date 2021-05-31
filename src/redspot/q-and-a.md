@@ -10,9 +10,9 @@ redspot 仅仅是一本普通的 npm package 。所以升级方式和其他 npm 
 
 如果你使用的是 yarn
 
-`yarn upgrade-interactive --latest`  将所有依赖升级到稳定版
+`yarn upgrade-interactive --latest` 将所有依赖升级到稳定版
 
-你可以可以直接手动更改 package.json 中的版本号，然后重新安装依赖 ：
+如果你想要使用最新的测试版，推荐手动更改 package.json 中的版本号，然后重新安装依赖 ：
 
 ```json
 {
@@ -36,9 +36,29 @@ redspot 仅仅是一本普通的 npm package 。所以升级方式和其他 npm 
 }
 ```
 
-注意，最好同时将所有的插件升级到最新版。
+注意，最好同时将所有的插件升级到最新版。避免有依赖问题。
 
+### 如何指定 @polkadot/api 和 @polkadot/api-contract 的版本
 
+redspot 内部依赖 @polkadot/api 和 @polkadot/api-contract。如果需要单独升级可以在 package.json 添加 "resolutions"：
+
+```json
+/// package.json
+...
+"resolutions": {
+  "@polkadot/api": "4.6.3",
+  "@polkadot/api-contract": "4.6.3",
+},
+...
+```
+
+这样就可以强制指定版本。具体参考 [https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions](https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions)
+
+但是请注意，不能保证升级升级后的 @polkadot/api 和 @polkadot/contract 的兼容性。
+
+### 如何在 redspot 中访问到 @polkadot/api 的实例
+
+可以通过 network.api 访问，请参考 [network.api](./runtime-environment.html#network)
 
 ### 使用 erc20-trait 时，无法调用合约
 
@@ -60,8 +80,6 @@ contract.tx.transfer(receiver.address, 7))
 // erc20-trait
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
-
-
 
 ### 如何保证线上私钥的安全，避免上传到 github
 
@@ -92,3 +110,4 @@ REDSPOT_NETWORK=mainnet ACCOUNT="//Alice" npx redspot run ./scripts/deploy.ts
 
 你也可以使用 [dotenv ](https://github.com/motdotla/dotenv) 等工具。
 
+此外，[redspot-explorer](./plugin/redspot-explorer.md) 插件支持使用浏览器中的 polkadot extensions 签名。
