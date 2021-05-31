@@ -16,7 +16,9 @@ export default {
 
 我们现在有以下这些插件：
 
-- [@redspot/patract](./plugin/redspot-patract.md)
 - [@redspot/chai](./plugin/redspot-chai.md)
-- [@redspot/gas-reporter](./plugin/redspot-gas-reporter.md)
+- [@redspot/decimals](./plugin/redspot-decimals.md)
 - [@redspot/explorer](./plugin/redspot-explorer.md)
+- [@redspot/gas-reporter](./plugin/redspot-gas-reporter.md)
+- [@redspot/known-types](./plugin/redspot-known-types.md)
+- [@redspot/patract](./plugin/redspot-patract.md)
