@@ -47,6 +47,8 @@ module.exports = [
         path: '/en/redspot/plugin',
         collapsable: false,
         children: [
+          '/en/redspot/plugin/redspot-decimals',
+          '/en/redspot/plugin/redspot-known-types',
           '/en/redspot/plugin/redspot-chai',
           '/en/redspot/plugin/redspot-gas-reporter',
           '/en/redspot/plugin/redspot-patract',

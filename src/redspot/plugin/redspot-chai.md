@@ -8,7 +8,7 @@
 // redspot.config.ts
 
 import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/chai'; 
+import '@redspot/chai';
 
 export default {
  ...
@@ -90,23 +90,18 @@ describe('ERC20', () => {
     ).to.not.emit(contract, 'Transfer');
   });
 });
-
 ```
 
-
-
 chai 还有更多的内置的用法，参见 chai 文档： https://www.chaijs.com/。
-
-
 
 ## equal
 
 @redspot/chai 会修改默认的 equal 的匹配方式。默认的 equal 不支持匹配对象。但 @redspot/chai 可以：
 
 ```typescript
-expect(new BN(1000)).to.equal(1000) // true
-expect(AccountId).to.equal('5Gdjkw....') // true
-expect(Uint8Array([1,2,3])).to.equal('0x010203') // true
+expect(new BN(1000)).to.equal(1000); // true
+expect(AccountId).to.equal('5Gdjkw....'); // true
+expect(Uint8Array([1, 2, 3])).to.equal('0x010203'); // true
 ```
 
 对于 BN 类型，equal 对调用 `new BN(expected).eq(actual)` 判断是否相等
@@ -117,13 +112,10 @@ expect(Uint8Array([1,2,3])).to.equal('0x010203') // true
 
 其他类型则采用默认的判断方式，判断是否相等
 
-
-
 ## changeTokenBalance
 
-该匹配器可以检测 erc20 的余额变化，内部会调用 balanceOf 接口判断余额。由于 erc20-trait 的获取余额接口是 `baseErc20,balanceOf` 
-
-所以并不适用于 erc20-trait 。
+该匹配器可以检测 erc20 的余额变化，内部会调用 balanceOf 接口判断余额。
+请注意，由于 erc20-trait 的获取余额接口是 `baseErc20,balanceOf`, 所以 `changeTokenBalance` 并不适用于 erc20-trait 。
 
 ```typescript
 await expect(() =>
@@ -135,23 +127,23 @@ await expect(() =>
 ).to.changeTokenBalances(contract, [contract.signer, receiver], [-7, 7]);
 ```
 
-
-
 ## emit
 
 该匹配器可以检测合约是否发出事件，如检测是否有 Transfer 事件被 emit：
 
 ```typescript
-await expect(contract.tx.transfer(receiver.address, 7))
-    .to.emit(contract, 'Transfer')
+await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
+  contract,
+  'Transfer'
+);
 ```
 
 检测该事件是否包含指定的参数：
 
 ```typescript
 await expect(contract.tx.transfer(receiver.address, 7))
-    .to.emit(contract, 'Transfer')
-    .withArgs(sender.address, receiver.address, 7);
+  .to.emit(contract, 'Transfer')
+  .withArgs(sender.address, receiver.address, 7);
 ```
 
 不期待发出事件
@@ -162,6 +154,4 @@ await expect(
     signer: emptyAccount
   })
 ).to.not.emit(contract, 'Transfer');
-
 ```
-

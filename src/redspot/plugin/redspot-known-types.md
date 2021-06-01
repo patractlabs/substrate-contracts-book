@@ -8,13 +8,13 @@ redspot known types 是一个自动添加已知的链的 types 的插件。
 
 安装依赖：
 
-```bash=
+```bash
 $ yarn add @redspot/known-types
 ```
 
 然后在 `redspot.config` 文件中，引入插件：
 
-```javascript=
+```javascript
 ...
 import "@redspot/known-types"
 

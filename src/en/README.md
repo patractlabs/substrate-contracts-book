@@ -29,6 +29,7 @@
     - [console](./redspot/console.md)
     - [Q & A](./redspot/q-and-a.md)
     - [plugin](./redspot/plugin.md)
+        - [@redspot/decimals](./redspot/plugin/redspot-decimals.md)
         - [@redspot/chai](./redspot/plugin/redspot-chai.md)
         - [@redspot/gas-reporter](./redspot/plugin/redspot-gas-reporter.md)
         - [@redspot/patract](./redspot/plugin/redspot-patract.md)

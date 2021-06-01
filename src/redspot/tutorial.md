@@ -1,12 +1,12 @@
-# tutorial
+# Tutorial
 
 ## 环境准备
 ### 安装 Node
-我们要求node 版本>= 14.0，如果不是，则可以访问nodejs网站并了解如何安装或升级。或者我们建议您使用nvm安装Node。Windows用户可以改用nvm-windows。
+我们要求 node 版本 >= 14.0，如果不是，则可以访问 nodejs 网站并了解如何安装或升级。或者我们建议您使用 nvm 安装 Node。Windows 用户可以改用 nvm-windows。
 
 
 ### ink! 合约编译的工具链
-1. rust 环境。由于 ink! 合约需要rust 的 Wasm 工具链，且当前Wasm只能在nightly工具链下运行，因此开发者需要先准备 Wasm 编译环境：
+1. rust 环境。由于 ink! 合约需要 rust 的 Wasm 工具链，且当前Wasm只能在nightly工具链下运行，因此开发者需要先准备 Wasm 编译环境：
 
     ```bash
     rustup install nightly
@@ -14,14 +14,14 @@
     rustup target add wasm32-unknown-unknown --toolchain nightly
     ```
 
-2. ink! 编译合约的工具`cargo-contract`
+2. ink! 编译合约的工具 `cargo-contract`
 
     请注意以下命令安装的是parity默认提供的官方 `cargo-contract` （当前最新为0.10.0版本）.
     ```bash
     cargo install cargo-contract --force
     ```
 
-    若与Europa的话可以采用由 Patract 提供的 `cargo-contract`，这个版中中提供了一个`-d/--debug`的可选命令
+    若与 Europa 的话可以采用由 Patract 提供的 `cargo-contract`，这个版中中提供了一个 `-d/--debug` 的可选命令
     ```bash
     cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
     ```
