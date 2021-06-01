@@ -132,7 +132,7 @@ value 指传递给即将创建的合约的金额。
 
 使用指定的合约地址生成 `Contract` 实例
 
-####`contractFactory.connect(signer)：contractFactory`
+### `contractFactory.connect(signer)：contractFactory`
 
 使用指定的 signer，创建一个新的 contractFactory 实例
 
