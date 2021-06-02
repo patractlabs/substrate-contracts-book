@@ -54,7 +54,7 @@ class MyContract {
 }
 ```
 
-注意：`@constructor`必须是 public 的，否则会出现编译错误。
+注意： 默认构造函数/`@constructor`必须是 public 的，否则会出现编译错误。
 
 ### 读取存储值
 

@@ -97,16 +97,16 @@ class Flipper {
 
 ### 编译
 
-假设我们在 Ask! 项目的**根目录**下编译合约，当前合约的路径位于`examples/solar/solar.ts`（也可以替换为自己合约文件的路径），则编译命令是：
+假设我们在 Ask! 项目的**根目录**下编译合约，当前合约的路径位于`examples/flipper/flipper.ts`（也可以替换为自己合约文件的路径），则编译命令是：
 
 ```bash
-npx ask examples/solar/solar.ts
+npx ask examples/flipper/flipper.ts
 ```
 
 执行了这个命令后，会在合约文件的目录下生成一个扩展文件 `extension.ts`，且合约的编译产物位于合约文件目录下的`target`目录。
 
 - `metadata.json`描述了这个合约的 ABI，它可以提供给支持该规范的链或工具。
-- `flipper.wasm` 是最终的 wasm 合约代码，部署到相应的链上即可执行。
+- `target.wasm` 是最终的 wasm 合约代码，部署到相应的链上即可执行。
 
 ### 链上环境测试
 
