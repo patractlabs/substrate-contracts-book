@@ -16,25 +16,15 @@
 
 2. ink! 编译合约的工具 `cargo-contract`
 
-    请注意以下命令安装的是parity默认提供的官方 `cargo-contract` （当前最新为0.10.0版本）.
+    请注意以下命令安装的是parity默认提供的官方 `cargo-contract` ：
     ```bash
     cargo install cargo-contract --force
     ```
 
-    若与 Europa 的话可以采用由 Patract 提供的 `cargo-contract`，这个版中中提供了一个 `-d/--debug` 的可选命令
-    ```bash
-    cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
-    ```
+    > 注意：使用cargo-contract时，必须在当前的环境中准备好 `wasm-opt`，更多详细的信息可以参考 [cargo-contract](https://github.com/paritytech/cargo-contract)
+    
 
-    当前若安装 `cargo-contract` 的时候没有添加feature `binaryen-as-dependency`，则需要在当前环境中准备`wasm-opt`。
-
-3. 安装 `wasm-opt` （可选）
-
-wasm-opt 来自仓库 [https://github.com/WebAssembly/binaryen](https://github.com/WebAssembly/binaryen)。开发者可以直接在release中下载到对应平台的最新的编译产物。通过直接下载的编译产物请放置在能被任意访问的PATH路径下。
-
-或者开发者也可以通过系统命令安装`wasm-opt`
-
-TODO 确定不同平台的安装方式
+若不希望在本机上安装rust，及cargo-contract环境，可以使用 docker 拉取镜像进行环境准备。详情请参考[Task#Compile](./tasks#compile) 部分。
 
 ### 准备能运行合约的区块链节点
 
@@ -61,7 +51,7 @@ cargo install europa --git https://github.com/patractlabs/europa --locked --forc
 europa --tmp
 ```
 
-Europa 不同的版本及其他信息请参阅该项目的Readme。
+Europa 不同的版本及其他信息请参阅该项目的[Readme](https://github.com/patractlabs/europa)。
 
 #### 3. Canvas
 
@@ -73,8 +63,6 @@ Canvas [https://github.com/paritytech/canvas-node](https://github.com/paritytech
 cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --force --locked
 canvas --dev --tmp
 ```
-
-
 
 ## 创建 Redspot 项目
 
@@ -102,8 +90,6 @@ yarn install
 ```
 
 默认的模版是已经配置了 typescript 。也推荐大家使用 typescript 进行开发。即使没有 typescript 经验，typescript 也是兼容 javascript 的，不定义任何类型，也可以正常运行，并且仍然能够拥有 typescript 强大的类型提示和错误提示功能。
-
-
 
 ### 集成到已有的合约项目中
 
@@ -285,8 +271,6 @@ npx redspot run ./deploy.ts --no-compile
 ```
 Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
 ```
-
-
 
 #### 测试合约
 

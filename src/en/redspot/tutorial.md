@@ -7,33 +7,22 @@ We require node version >= 14.0, if not, you can visit the nodejs website and le
 ### ink! Toolchain for contract compilation
 1. rust environment. Since the ink! contract requires rust's Wasm toolchain, and Wasm currently only runs under the nightly toolchain, developers need to prepare the Wasm compilation environment first: 
 
-  ```bash
-  rustup install nightly
-  rustup component add rust-src --toolchain nightly
-  rustup target add wasm32-unknown-unknown --toolchain nightly
-  ```
+    ```bash
+    rustup install nightly
+    rustup component add rust-src --toolchain nightly
+    rustup target add wasm32-unknown-unknown --toolchain nightly
+    ```
 
-The tool to compile the contract `cargo-contract`.
+2. The tool to compile the contract is `cargo-contract`.
+   Please note that the following command installs the official `cargo-contract` provided by parity by default.
 
-    Please note that the following command installs the official `cargo-contract` provided by parity by default (currently the latest version is 0.10.0).
-    ``bash
+    ```bash
     cargo install cargo-contract --force
     ```
 
-    With Europa you can use the `cargo-contract` provided by Patract, which provides an optional `-d/--debug` command
-    ``bash
-    cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
-    ```
+	>  Notice you need to prepare `wasm-opt` in your current environment, more details refers to [cargo-contract](https://github.com/paritytech/cargo-contract)
 
-    If you installed `cargo-contract` without feature `binaryen-as-dependency`, you need to prepare `wasm-opt` in your current environment.
-
-3. install `wasm-opt` (optional)
-
-wasm-opt comes from the repository [https://github.com/WebAssembly/binaryen](https://github.com/WebAssembly/binaryen). Developers can download the latest compilation product for the corresponding platform directly from the release. Direct downloads should be placed in a PATH path that can be accessed from anywhere.
-
-Alternatively, developers can install `wasm-opt` via the system command
-
-TODO Determine the installation method for different platforms
+If you do not want to prepare `rust` and `cargo-contract` in your computer, you can use docker to compile contract. More details refer to [Tasks#Compile](./tasks#compile).
 
 ### Prepare a blockchain node that can run contracts
 
@@ -60,7 +49,7 @@ cargo install europa --git https://github.com/patractlabs/europa --locked --forc
 europa --tmp
 ```
 
-For different versions of Europa and other information, see the Readme for this project.
+For different versions of Europa and other information, see the [Readme for this project](https://github.com/patractlabs/europa).
 
 #### 3. Canvas
 
@@ -99,8 +88,6 @@ yarn install
 ```
 
 The default template is already configured with typescript. It is also recommended that you use typescript for development. Even if you have no experience with typescript, typescript is javascript-compatible, works without any type definition, and still has the powerful type hinting and error hinting features of typescript.
-
-
 
 ### Integration into existing contract projects
 
