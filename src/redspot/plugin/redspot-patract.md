@@ -238,6 +238,6 @@ signer 用于覆盖默认的 signer。
 
 使用指定的合约地址生成 `Contract` 实例
 
-### `contract.connect(signer)：contractFactory`
+### `contract.connect(signer)：Contract`
 
 使用指定的 signer，创建一个新的 contract 实例
