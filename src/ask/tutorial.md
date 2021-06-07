@@ -1,4 +1,4 @@
-# Tutorial
+# 入门
 
 > 当前 Ask! 只进行到了 Kusama 国库议案的第二期的开发，功能还未稳定，因此还未发布到 npm 等公开仓库中。
 
@@ -103,7 +103,7 @@ class Flipper {
 npx ask examples/flipper/flipper.ts
 ```
 
-执行了这个命令后，会在合约文件的目录下生成一个扩展文件 `extension.ts`，且合约的编译产物位于合约文件目录下的`target`目录。
+执行了这个命令后，会在合约文件的目录下生成一个目录 `extension`，里面存放的是展开后的代码，而合约的编译产物位于合约文件目录下的`target`目录：
 
 - `metadata.json`描述了这个合约的 ABI，它可以提供给支持该规范的链或工具。
 - `target.wasm` 是最终的 wasm 合约代码，部署到相应的链上即可执行。

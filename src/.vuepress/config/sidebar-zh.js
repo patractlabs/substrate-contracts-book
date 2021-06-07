@@ -26,6 +26,20 @@ module.exports = [
     ]
   },
   {
+    title: 'ask!',
+    path: '/ask/introduction',
+    collapsable: false,
+    children: [
+      '/ask/tutorial',
+      '/ask/design',
+      '/ask/basics',
+      '/ask/decorators',
+      '/ask/storage-data-structure',
+      '/ask/ask-cli',
+      '/ask/ask-vs-ink',
+    ]
+  },
+  {
     title: 'Solang',
     path: '/solang/introduction',
     collapsable: false

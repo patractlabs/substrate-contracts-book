@@ -1,4 +1,4 @@
-# Basic
+# 基础
 
 Ask! 提供了 `ask-lang` 包，它包含了合约常用存储类型的实现，智能合约底层原语的封装等。
 
@@ -54,7 +54,7 @@ class MyContract {
 }
 ```
 
-注意： 默认构造函数/`@constructor`必须是 public 的，否则会出现编译错误。
+注意： 默认构造函数/`@constructor`必须是 public 的，否则会出现编译错误。 合约函数的参数和返回值必须是基本类型或者实现Codec编码的类型。
 
 ### 读取存储值
 
@@ -66,17 +66,33 @@ Ask! 为`@message`方法提供了`mutates`属性，默认为`true`。当设置�
 
 <!-- TODO -->
 
-### 事件 Events
+### Events
 
-<!-- TODO -->
+智能合约可以定义在合约执行期间可以发出的事件，第三方工具可以使用发出事件来查询有关合约执行和状态的信息。Event 的字段必须实现`Codec`接口，它们会作为 event data 被收集起来，而 `@topic` 装饰的字段还会作为事件的索引。
+
+### Example
+
+```ts
+@event
+class Transfer {
+  @topic
+  from: AccountId;
+  @topic
+  to: AccountId;
+
+  value: u128;
+
+  constructor(from: AccountId, to: AccountId, value: u128) {
+    this.from = from;
+    this.to = to;
+    this.value = value;
+  }
+}
+```
+
+当实例化`@event`类时，内部会自动调用`deposit_event`。
 
 ### 跨合约调用
-
-<!-- TODO -->
-
-### 合约测试
-
-<!-- TODO -->
 
 ### 链环境函数
 

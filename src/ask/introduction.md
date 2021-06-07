@@ -14,7 +14,7 @@ Ask! 实现方式类似于 ink! 采取 rust 宏设计，通过 eDSL 来实现智
 
 Ask! 通过编写 AssemblyScript 的 transform 来介入编译流程，如下：
 
-![ask-design](./ask-design.png)
+![ask-design](./img/ask-design.png)
 
 ## Ask! 开发进度
 
