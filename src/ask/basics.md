@@ -92,8 +92,11 @@ class Transfer {
 
 当实例化`@event`类时，内部会自动调用`deposit_event`。
 
-### 跨合约调用
-
 ### 链环境函数
 
-<!-- TODO: Crypto/Gas/Address/... -->
+Ask! 提供一些类，它们的方法提供了链提供的能力的API：
+
+- Crypto，提供了加密相关的 API
+- Gas，提供了 Gas 相关的 API
+- AccountId 提供了账户相关的 API
+- Msg 提供了 消息相关的 API
