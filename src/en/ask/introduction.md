@@ -1,5 +1,3 @@
-# Ask! 智能合约编程
-
 # Ask! Smart Contract Programming
 
 Ask! is a Wasm contract language framework designed by Patract based on AssemblyScript and running on the `pallet-contracts` module.

@@ -1,4 +1,4 @@
-# 基础
+# Basics
 
 Ask! provides the `ask-lang` package, which contains the implementation of common storage types for contracts, and the encapsulation of the underlying primitives of smart contracts.
 
@@ -59,8 +59,6 @@ As can be seen from the previous code, the storage and contract of Ask! can be d
 ### Modify the storage value
 
 Ask! provides the `mutates` property for the `@message` method, which defaults to `true`. When set to `false`, the method will refuse to modify the stored value at runtime.
-
-<!-- TODO -->
 
 ### Events
 
