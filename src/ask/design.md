@@ -2,11 +2,11 @@
 
 ## Ask! 设计总览
 
-AssemblyScript 使用 asc 编译器将 AssemblyScript 文件编译为 WebAssembly 字节码。 但是无法直接生成符合 `pallet-contract` ABI 的 wasm 字节码和`metadata.json`元信息文件文件,因此需要编写 AS transform 介入编译器编译流程，在合适的位置生成 ABI 相关的代码并导出，在类型信息确定之后生成 `metadata.json`。
+AssemblyScript 使用 asc 编译器将 AssemblyScript 文件编译为 WebAssembly 字节码。 但是无法直接生成符合 `pallet-contract` ABI 的 wasm 字节码和`metadata.json`元信息文件,因此需要编写 AS transform 介入编译器编译流程，在合适的位置生成 ABI 相关的代码并导出，在类型信息确定之后生成 `metadata.json`。
 
 ## 设计思路
 
-Ask! 将提供 `ask-transform`（在以下描述中简称为 `transform`）和 `ask-lang` 两个库。
+Ask! 提供了 `ask-transform`（在以下描述中简称为 `transform`）和 `ask-lang` 两个库。
 此外，我们在后续将提供一个名为 `ask-cli` 的构建工具（类似于 ink!的`cargo-contract`），用于帮助建立和管理用 Ask！编写的 Wasm 智能合约。
 
 Ask! 的功能按照如下实现：

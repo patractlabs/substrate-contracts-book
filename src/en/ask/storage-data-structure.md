@@ -1,11 +1,13 @@
-# 存储
+# Storage
 
-<!-- TODO: 原理描述 -->
+At present, in addition to the basic types, ask! provides SpreadStorableMap/SpreadStorableArray/PackedStorableMap/PackedStorableArray storage collection types for users to use.
+Users can use it by importing `ask-lang`.
 
-目前除了基本类型外，ask! 提供了 SpreadStorableMap/SpreadStorableArray/PackedStorableMap/PackedStorableArray 存储集合类型供用户使用。
-用户可以通过导入`ask-lang` 来使用。
+SpreadStorableMap storage provides a Map that stores K/V pairs dispersedly, while SpreadStorableArray storage provides an Array that stores array elements dispersedly.
+PackedStorableMap storage provides a Map for packing and storing K/V pairs, while PackedStorableArray storage provides an Array for packing and storing the entire array.
 
-SpreadStorableMap 存储提供了一种分散存储 K/V 对的 Map，而 PackedStorableMap 存储提供了打包存储 K/V 对的 Map。
-SpreadStorableArray 存储则提供了分散存储数组元素的 Array，而 PackedStorableArray 存储则提供了打包存储整个数组的 Array。
+SpreadStorableMap and PackedStorableMap only provide two storage methods. How to use them depends on the specific contract implementation, which mainly affects the storage performance.
 
-Spread 存储和 Packed 存储对应的数据结构拥有相同的接口。
+The same applies to SpreadStorableArray/PackedStorableArray.
+
+The general principle of use is: When you need to store a large amount of data, you should always use Spread; when you need to store a small amount of data and need to access most of the content (such as search/statistic logic), it may be better to choose Packed.
