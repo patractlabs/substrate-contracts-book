@@ -1,21 +1,23 @@
-# Ask!
+# Ask! 智能合约编程
 
-![](https://camo.githubusercontent.com/207ae88065c356df521ad4c6cff4a68ef91ae963a9c65893dd0d9d991a4e00a8/68747470733a2f2f706174726163742e6e6574776f726b2f696d616765732f706174726163742d61736b2e706e67)
+Ask! 是由 Patract 设计的基于 AssemblyScript 编程语言，能运行于`pallet-contracts`模块上的 Wasm 合约语言框架。
 
-Ask! is a Wasm contract language framework designed by Patract, built on AssemblyScript and able to run on the `pallet-contracts` module.
+尽管 AssemblyScript 语法只是 TypeScript 语法的一个（非严格）子集，但是目前存在大量使用 TypeScript 作为开发语言的开发人员，因此这些开发人员学习 AssemblyScript 的成本相对低。 因此，Patract 认为 基于 AssemblyScript 的 Ask! 项目具有很好的应用开发前景。与基于 Rust 的 ink! 相比，Patract 认为 Ask! 可以有效降低合同开发者的门槛，吸引 TypeScript 开发者来开发智能合约，使智能合约生态系统更加丰富。
 
-Although AssemblyScript is only a subset of typescript, there are many developers who use typescript as a development language, so the cost of learning AssemblyScript for these developers is very low. Therefore, Patract believes that the Ask! project has good application development prospects. Compared with the Rust-based ink!, Patract believes that the typescript-based Ask! can effectively lower the threshold for contract developers and enrich the contract development ecosystem.
+Ask! 实现方式类似于 ink! 采取 rust 宏设计，通过 eDSL 来实现智能合约。通过在 AssemblyScript （后文称作 AS）中编写编译器 Transform 来提供自定义的装饰器（在其他语言也称为注解），在 AS 的语法基础上提供了能适用于`pallet-contracts`合约模型上的功能。通过注解的这种实现方式，尽量隐藏了与合约相关的细节。另一方面 Ask! 的实现将借鉴部分 ink! 的思路，力图在最终实现上将会**最大程度保证与 ink! 合约的兼容**。
 
-Ask! uses and ink! takes a similar approach to macro design eDSL. By providing annotations in AssemblyScript (hereinafter referred to as AS), it provides functions that can be applied to the `pallet-contracts` contract model based on the syntax of AS. Through the implementation of annotations, the details related to the contract are hidden as much as possible. On the other hand, the realization of Ask! will be close to ink!, and **the final realization will ensure compatibility with the ink! contract to the greatest extent**.
+> 例如：
+> ink! 描述合约的外部调用接口采用 `#[ink(constructor)]`, `#[ink(message)]` 对合约结构体的方法进行修饰。
+> 在 Ask! 中，将会采用 `@constructor`，`@message` 等装饰器来装饰智能合约类定义的方法来实现类似的功能。
 
-> for example：
-> ink! describes the external call interface of the contract using `#[ink(constructor)]`, `#[ink(message)]` to modify the method of the contract structure.
->
-> In Ask!, annotations such as `@constructor` and `@action` will be used to modify contract class methods to achieve similar functions.
+## Ask! 编译运作方式
 
+Ask! 通过编写 AssemblyScript 的 transform 来介入编译流程，如下：
 
-## Ask! Development progress
+![ask-design](./img/ask-design.png)
 
-**Ask! is currently under development, and currently only the v0.1 version of the Kusama financial proposal has been completed. Many current designs may undergo incompatibility changes in the future. **
+## Ask! 开发进度
 
-TODO： 添加议案链接及报告链接。
+**Ask! 当前还在开发当中，当前只完成了 Kusama 财政议案的 v0.2 版。当前的很多设计将来都有可能发生不兼容性改变。**
+
+<!-- TODO： 添加议案链接及报告链接。 -->

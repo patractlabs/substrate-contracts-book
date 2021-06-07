@@ -1,33 +1,26 @@
-# Design
+# 设计
 
-## Ask! Design Overview
+## Ask! 设计总览
 
-AssemblyScript uses the asc compiler to compile TypeScript (TS) files into WebAssembly bytecode. However, asc is a general-purpose compilation tool, and the smart contract structure cannot be used to directly compile TS files into WASM bytecode and metadata information. Therefore, in order for asc to recognize and parse the contract-related annotations and specific grammar provided by Ask!, asc needs to be modified.
+AssemblyScript 使用 asc 编译器将 AssemblyScript 文件编译为 WebAssembly 字节码。 但是无法直接生成符合 `pallet-contract` ABI 的 wasm 字节码和`metadata.json`元信息文件文件,因此需要编写 AS transform 介入编译器编译流程，在合适的位置生成 ABI 相关的代码并导出，在类型信息确定之后生成 `metadata.json`。
 
-## Design
+## 设计思路
 
-ask! will provide two components, `Contract Framework` (referred to as `Framework` in the following description) and `Contract PreProcessor` (referred to as `PreProcessor` in the following description). In addition, we will also provide a support tool called ask-cli (similar to ink!'s `cargo-contract`) to help build and manage Ask! Wasm smart contract written.
+Ask! 将提供 `ask-transform`（在以下描述中简称为 `transform`）和 `ask-lang` 两个库。
+此外，我们在后续将提供一个名为 `ask-cli` 的构建工具（类似于 ink!的`cargo-contract`），用于帮助建立和管理用 Ask！编写的 Wasm 智能合约。
 
-The functions of Ask! are implemented as follows:
+Ask! 的功能按照如下实现：
 
-* The main function of `Framework` is to provide advanced packaging for on-chain APIs, and then provide specifications for writing contracts through annotation types. It needs to complete the following tasks:
+- `ask-lang`的主要功能是为编写智能合约提供高层 API，包括`pallet-contract`原语高层封装/scale 编码/KV 存储抽象/常用的基本类型/通用的 interfaces。用户可以通过装饰器来自动派生这些基本类的组合。
+- `ask-transform`的主要功能是根据 Ask! 代码里使用的装饰器，生成符合`pallet-contract` 规范的代码和`metadata.json`元信息文件文件。这个部分需要完成以下任务：
 
-    * Define the annotation-based contract writing specification
-    * Define the description specification of the contract interface in the metadata
-    * Encapsulate the detailed information of the data interaction between the contract and the chain, such as the definition of the key generation rules in the contract storage and the storage read and write
-    * Encapsulate functional components on the chain, such as Balance, AccountId, Block, Crypto, etc.
-    * Compile the AS contract into Wasm code according to the semantics of the contract, and include the link symbol of the interactive interface with the FRAME contract.
+  - 解析合约接口和参数，并生成元数据文件
+  - 解析自定义合约装饰器，生成相应的逻辑代码
+  - 根据存储的定义按照一定流程读/写合约存储
 
-* The main function of `PreProcessor` is to parse the annotations defined in the framework and generate corresponding logic codes for these annotations. According to the contract interface specification in the framework, a metadata file is generated. This part needs to complete the following tasks:
+<!-- TODO: 未实现 -->
+<!-- - `ask-cli`的主要功能是在 cli 中管理 Ask!项目，其中包括以下功能：
 
-    * Parse the annotations in the contract and generate the corresponding logic code
-    * Analyze contract interfaces and parameters, and generate metadata files
-    * Parse the custom contract grammar (syntactic sugar) and generate the corresponding logic code
-    * Automatically store and load data
-
-* The main function of `ask-cli` is to manage the Ask! project in cli, which includes the following functions:
-
-    * Create ask! contract template.
-    * Simplify ask! During the project compilation process, the detailed information of the preprocessing and compilation process is hidden.
-    * Manage the version dependency of `Framework`, `PreProcessor` and Compiler.
-    * Check the legality of the generated Wasm code.
+  - 创建 ask!合约模板。
+  - 使用额外的工具如 wasm-opt 来优化 wasm 代码
+  - 检查所生成的 Wasm 代码的合法性。 -->
