@@ -46,7 +46,18 @@ class Flipper {
 
 ## @doc
 
-`@doc` 用于为`metadata.json`生成的信息提供文档。它可以为`@contract`/`@event`/`@message`/`@constructor`声明添加文档注释。
+`@doc` 用于为`metadata.json`生成的信息提供文档。它可以为`@contract`/`@event`/`@message`/`@constructor`声明添加文档注释
+
+Example:
+
+```ts
+
+@contract
+@doc(desc = "MyToken conract that implement erc20 contract")
+class MyToken {
+  // ...
+}
+```
 
 ## @message
 
