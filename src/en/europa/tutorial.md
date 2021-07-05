@@ -33,13 +33,13 @@ The environment of Europa is the same as the environment of normal use of node d
 * Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) (optional, only needed if the Wasm contract executes backtrace when it crashes)
 
   ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
+  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
   ```
 
   If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation:
   
   ```bash
-  $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+  $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
   $ cd cargo-contract
   $ cargo build --release
   ```
@@ -49,7 +49,7 @@ The environment of Europa is the same as the environment of normal use of node d
   The `--debug` option is provided by Patract's `cargo-contract`. If you use the `cargo-contract` provided by parity, you do not need the `--debug` option in the following commands.
 
   ```bash
-  $ cargo-contract build --debug
+  $ RUSTUP_TOOLCHAIN=nightly cargo-contract contract build --debug
   # or
   $ cargo +nightly contract build --debug
   ```

@@ -21,17 +21,17 @@ On the other hand, the original code will be optimized during the release compil
 1. Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract)
 
     ```
-    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
     ```
 
-    > Since the current version of parity's `cargo-contract` is `v0.10.0`, our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
+    > Since the current version of parity's `cargo-contract` is `tag-v0.12.1`, our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
 
     The `cargo-contract` installed in this way will **overwrite** the installed `cargo-contract`. Therefore, please pay attention to which warehouse the `cargo-contract` in the current environment comes from to prevent interference when locating problems.
 
     Excuting an order:
     ```bash
     $ cargo install --list | grep cargo-contract
-    cargo-contract v0.10.0 (https://github.com/patractlabs/cargo-contract?branch=v0.10.0#106081f1):
+    cargo-contract v0.12.1 (https://github.com/patractlabs/cargo-contract.git?branch=tag-v0.12.1#0d682762):
     cargo-contract
     ```
     The results listed can be used to determine what source the `cargo-contract` installation in the current environment comes from. For example, the above result is from Patract. If there is no parenthesis and the content in it, it means it is from `crates.io`.
@@ -39,7 +39,7 @@ On the other hand, the original code will be optimized during the release compil
 2. If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation.
 
     ```bash
-    $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+    $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
     $ cd cargo-contract
     $ cargo build --release
     ```
