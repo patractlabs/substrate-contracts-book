@@ -49,7 +49,7 @@ The environment of Europa is the same as the environment of normal use of node d
   The `--debug` option is provided by Patract's `cargo-contract`. If you use the `cargo-contract` provided by parity, you do not need the `--debug` option in the following commands.
 
   ```bash
-  $ cargo-contract build --debug
+  $ RUSTUP_TOOLCHAIN=nightly cargo-contract contract build --debug
   # or
   $ cargo +nightly contract build --debug
   ```
