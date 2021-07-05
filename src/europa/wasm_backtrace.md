@@ -24,7 +24,7 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name sect
     $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.12.1 --force
     ```
 
-    > 由于当前 parity 的 `cargo-contract` 发布的版本为 `v0.10.0`，因此我们Patract 基于这个版本添加了功能。若将来`cargo-contract`继续升级，Patract 也会继续维护。
+    > 由于当前 parity 的 `cargo-contract` 发布的版本为 `v0.12.1`，因此我们Patract 基于这个版本添加了功能。若将来`cargo-contract`继续升级，Patract 也会继续维护。
 
     通过这种方式安装的 `cargo-contract` 将会**覆盖**已安装过的的`cargo-contract`。因此请注意留意当前环境中的`cargo-contract`来自哪个仓库，以防止定位问题时收到干扰。
 
