@@ -21,7 +21,7 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name sect
 1. 安装 [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract)
 
     ```
-    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.12.1 --force
     ```
 
     > 由于当前 parity 的 `cargo-contract` 发布的版本为 `v0.10.0`，因此我们Patract 基于这个版本添加了功能。若将来`cargo-contract`继续升级，Patract 也会继续维护。
@@ -31,7 +31,7 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name sect
     执行命令：
     ```bash
     $ cargo install --list | grep cargo-contract
-    cargo-contract v0.10.0 (https://github.com/patractlabs/cargo-contract?branch=v0.10.0#106081f1):
+    cargo-contract v0.12.1 (https://github.com/patractlabs/cargo-contract.git?branch=tag-v0.12.1#0d682762):
     cargo-contract
     ```
     可通过列出的结果判定当前环境中的`cargo-contract`安装来自什么源。例如上面的结果即来自Patract。若没有括号及其中的内容则表示来自`crates.io`。
@@ -39,7 +39,7 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有“name sect
 2. 如果开发者已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式。
 
     ```bash
-    $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+    $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
     $ cd cargo-contract
     $ cargo build --release
     ```
