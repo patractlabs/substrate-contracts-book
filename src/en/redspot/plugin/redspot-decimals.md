@@ -1,33 +1,34 @@
-# @redspot/decimals
+# @redspot_decimals plug-in
 
-`@redspot/decimals` is an automatic digital accuray conversion plugin，for example converting `1 DOT` to `10000000000`.
+## Background Information
 
-At the moment, the plugin implements the following functions.
+@redspot/decimals is a plug-in that can automatically convert number precision, for example, it can convert 1 DOT to 10000000000.
 
-Fixed decimal.
+## Realize the function
 
-- `1 DOT` => `10 ** 10`
-- `1 KSM` => `10 ** 12`
+Fixed decimal
 
-Automatic chain `tokenDecimal` acquisition.
+* `1 DOT`=>`10 ** 10`
+* `1 KSM`=>`10 ** 12`
 
-- `1 UNIT` => `10 ** tokenDecimal` 
+Obtain the tokenDecimal of the chain automatically
 
+* `1 UNIT`=>`10 ** tokenDecimal`
+## How to use the plug-in?
 
-Install:
-
-```shell
+1. Use the following command to install the plug-in.
+```plain
 yarn add @redspot/decimals
 ```
 
-And add the following statement to your `redspot.config.ts`:
-
-```shell
+2. Import the plug-in in redspot.config.ts, and then you can use the plug-in.
+```typescript
 import '@redspot/decimals'
 ```
 
-Usage when deploying contracts:
+## Example of use
 
+* Used when deploying contracts
 ```typescript
 const contract = await contractFactory.deployed('new', '10000', {
   gasLimit: '400000000000',
@@ -35,16 +36,15 @@ const contract = await contractFactory.deployed('new', '10000', {
 });
 ```
 
-Usage in transfers:
-
+* Use in transfer
 ```typescript
 import { network } from 'redspot';
-
 const { api } = network;
-
 async function run() {
   await api.isReady;
-
   api.tx.balances.transfer(address, '1 UNIT')
 }
 ```
+
+
+

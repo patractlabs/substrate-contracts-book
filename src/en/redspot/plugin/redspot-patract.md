@@ -1,12 +1,14 @@
-# @redspot/patract
+# @redspot_patract plug-in
 
-This plugin extends the Redspot runtime environment and adds the patract attribute, which allows you to access patract instances like this.
+## Background Information
+
+@redspot/patract is similar to @polkadot/contract, used to access contracts, send transactions, etc. But @redspot/patract's API is easier to use. The plug-in will extend the Redspot runtime environment and add the patract attribute, so you can access the patract instance.
 
 ```typescript
 import { patract } from 'redspot';
 ```
 
-The type definition of patract is as follows.
+## Type definition of patract
 
 ```typescript
 interface Patract {
@@ -37,7 +39,7 @@ interface Patract {
     signer?: Signer
   ): Promise<ContractFactory>;
   /**
-   * Generate a random account and transfer token to it
+   *  Generate a random account and transfer token to it
    *
    * @param from This account will be transferred to the new account
    * @param amount The amount transferred to the new account
@@ -50,105 +52,70 @@ interface Patract {
 }
 ```
 
-### `getRandomSigner(from, amount): Promise<Signer>`
+The parameter description is as follows.
 
-getRandomSigner is a utility function that creates a random signer to be generated and passes some initial amount to it from from.
+| Parameter                                                    | Description                                                  |
+| :----------------------------------------------------------- | :----------------------------------------------------------- |
+| getRandomSigner(from, amount): Promise<Signer>               | getRandomSigner is a utility function used to create a random signer and pass some initial amount fromfromto it. |
+| getContractFactory(contractName, signer?): Promise<ContractFactory> | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
+| getContractAt(contractName, address, signer): Promise<Contract> | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 
-### `getContractFactory(contractName, signer?): Promise<ContractFactory>`
+## **ContractFactory**
 
-This function will create an instance of contractFactory with the contract name and signer.
-
-Note that the contract must have been compiled successfully. You can find the metadata file for this in artifacts.
-
-### `getContractAt(contractName, address, signer): Promise<Contract>`
-
-Creates a Contract instance with a contract name, contract address and signer.
-
-Note that the contract must have been compiled successfully. You can find the metadata file for it in artifacts.
-
-## ContractFactory
-
-The ContractFactory is mainly used for contract deployment.
+ContractFactory is mainly used for contract deployment.
 
 ```typescript
 import { patract } from 'redspot';
 const { getContractFactory, getRandomSigner } = patract;
-
 const signers = await getSigners();
 const contractFactory = await getContractFactory('erc20', signers[0]);
 const contract = await contractFactory.deploy('new', '1000');
 ```
 
-### `new ContractFactory(address, contractMetadata, api, signer)`
-
-Create a contractFactory instance with contract address, metadata, api and signer.
-
-### `contractFactory.deploy(constructorOrId, . . args[ , overrides ]): Promise<Contract>`
-
-constructorOrId is the name of the contructor of the contract to be called. Note that for some contracts that use `trait`, the name of the contructor should be something like this.
-
+* `new ContractFactory(address, contractMetadata, api, signer)`：you can create a contractFactory instance by contract address, metadata, API and signer.
+* contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>：constructorOrId is the name of the constructor of the contract that needs to be called. Note that for some contracts that use traits, the name of the constructor is similar to the following.
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000');
 ```
 
-args is the list of arguments you need to pass to the contructor you are using.
+args is the list of parameters that the contructor you use needs to pass in.
 
-overrides are optional and can be used to specify gasLimit, value, signer, salt, etc.
+Overrides are optional and can be used to specify gasLimit, value, signer, salt, etc.
 
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000', {
-  gaslimit: '10000000000000000000000',
+  gaslimit: '1000000000000000000',
   salt: 'jkqwezlkwklqreqw',
   signer: signers[1],
-  value: '32133210000000000000000000000'
+  value: '3213321000000000000000000'
 });
 ```
 
-gasLimit is the maximum gas value that can be used for this transaction.
+gasLimit refers to the maximum gas value that can be used in this transaction.
 
-salt is used to generate the address of the contract. The same contract address will be generated if the deployer, deployment parameters and salt are the same.
+The salt is used to generate the address of the contract. If the deployer, deployment parameters and salt are the same, the same contract address will be generated.
 
-signer When creating a contractFactory, there is a signer parameter that is used for the default transaction signature. The signer item can override the default signature account.
+When the signer creates a contractFactory, there will be a signer parameter, which is used for the default transaction signature. The signer project can override the default signing account.
 
-value is the amount to be passed to the contract to be created.
+value refers to the amount passed to the contract to be created.
 
-Note that `@redspot/patract` will not handle numeric amount precision and needs to be handled by the user.
+**Note** The @redspot/patract plugin will not handle the accuracy of the digital amount, you need to handle it yourself.
 
-### `contractFactory.deployed(constructorOrId, . .args[ , overrides ]): Promise<Contract>`
+* `contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：This method is similar to contractFactory.deploy, the only difference is that deployed will check in advance whether the address of the contract to be generated exists, if it exists, then Will not try to deploy, but directly use the contract address to create a Contract instance.
+* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：If Wasm has been uploaded to the chain, you can directly call`contractFactory.instantiate`to instantiate the contract. Its parameters are the same as deploy, but it returns the contract address.
+* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：If Wasm has been uploaded to the chain, you can directly call`contractFactory.instantiate`to instantiate the contract. Its parameters are the same as deploy, but it returns the contract address.
+* `contractFactory.attach(address)：Contract`:Use the specified contract address to generate Contract instances.
+* `contractFactory.connect(signer)：contractFactory`：use the specified signer to create a new contractFactory instance.
 
-This method is similar to `contractFactory.deploy`, the only difference is that `deployed` checks in advance if the contract address to be generated exists, and if it does, does not try to deploy it, but instead creates a `Contract` instance directly using that contract address.
+**Contract**
 
-### `contractFactory.instantiate(constructorOrId, . .args[ , overrides ]): Promise<ContractAddress>`
-
-If wasm has been uploaded to the chain, you can call `contractFactory.instantiate` directly to instantiate the contract. It takes the same arguments as `deploy`, but returns the contract address.
-
-### `contractFactory.instantiate(constructorOrId, . .args[ , overrides ]): Promise<ContractAddress>`
-
-If wasm has been uploaded to the chain, you can call `contractFactory.instantiate` directly to instantiate the contract. It takes the same arguments as `deploy`, but returns the contract address.
-
-### `contractFactory.attach(address):Contract`
-
-Generates a `Contract` instance using the specified contract address
-
-### `contractFactory.connect(signer): ContractFactory`
-
-Create a new contractFactory instance with the specified signer
-
-## Contract
-
-### `new Contract(address, contractMetadata, api, signer)`
-
-Creates a contractFactory instance with the contract address, contractMetadata, api and signer.
-
-### `contract.query.MessageName(. .args[, overrides])`
-
-Similar to in polkadotjs, contract.query[MessageName] can call `contracts.call` rpc. For example, in the erc20 contract, to get the account balance.
-
+* `new Contract(address, contractMetadata, api, signer)`：Create a contractFactory instance through the contract address, contract metadata, API and signer.
+* `contract.query.MessageName(...args[, overrides])`：Similar to Polkadot.js, contract.query[MessageName] can call contracts.callrpc. For example, in the erc20 contract, the account balance is obtained.
 ```typescript
 const result = await contract.query.balanceOf(someaddress);
 ```
 
-The return value is of the following type.
+The type of return value is as follows.
 
 ```typescript
 export interface ContractCallOutcome {
@@ -159,40 +126,32 @@ export interface ContractCallOutcome {
 }
 ```
 
-It is the same as in polkadotjs api-contract.
-
-overrides are optional and can be used to specify gasLimit, value, etc.
+It is consistent with Polkadot.js api-contract. Overrides are optional and can be used to specify gasLimit, value, etc.
 
 ```typescript
 const contract = await contract.query.balanceOf('baseErc20,new', '1000', {
-	gasLimit: '1231231231231233123123'
-  value: '32133210000000000000000000000'
-  signer: signers[1]
+        gasLimit：'1231231231233123123'
+  value: '3213321000000000000000000'
+  signer： signers[1]
 });
 ```
 
-gasLimit value refers to the gasLimit and value in the `contracts.call` rpc. signer can specify the origin address of `contracts.call`.
+The gasLimit value refers to the gasLimit and value in contracts.call RPC. The signer can specify the origin address of contracts.call.
 
-### `contract.estimateGas.MessageName(.. . args[, overrides])`
-
-This function is similar to `contract.query.MessageName`, but the return value is the estimated gas to be consumed
-
+* `contract.estimateGas.MessageName(...args[, overrides])`：This function is similar to`contract.query.MessageName`, but the return value is the estimated gas that will be consumed.
 ```typescript
 const result = await contract.estimateGas.balanceOf(someaddress);
 result; // BN(232130000000)
 ```
 
-### `contract.tx.MessageName(. .args[,overrides])`
-
-With `contract.tx.MessageName` you can execute the contract's transactions. For example.
-
+* `contract.tx.MessageName(...args[,overrides])`：Contract transactions can be executed through`contract.tx.MessageName`, the example is as follows.
 ```typescript
 const result = await contract.tx.transfer(someddress, 7);
 ```
 
-Unlike polkadotjs, this function returns a promise that will wait until the transaction is up, or until an error occurs before it is resolved.
+Unlike Polkadot.js, this function returns a promise. The resolve of the promise will not be called until the transaction is on the chain or the transaction execution error occurs.
 
-The return value type is as follows.
+The return value types are as follows.
 
 ```typescript
 export interface TransactionResponse {
@@ -206,7 +165,6 @@ export interface TransactionResponse {
   result: SubmittableResult;
   events?: DecodedEvent[];
 }
-
 export interface DecodedEvent {
   args: Codec[];
   name: string;
@@ -214,28 +172,24 @@ export interface DecodedEvent {
 }
 ```
 
-You can get the events of the parsed contract directly via `result.events`. If the execution goes wrong, you can get the error message via `result.error.message`.
+You can get the parsed contract events directly through`result.events`. If there is an error in execution, you can get the error message through`result.error.message`.
 
-overrides are optional and can be used to specify gasLimit, value, signer, etc.
+Overrides are optional and can be used to specify gasLimit, value, signer, etc.
 
 ```typescript
 const contract = await contract.tx.transfer(someddress, 7, {
-  gasLimit: '1231231231231233123123'
-  value: '32133210000000000000000000000'
-  signer: signers[1]
+  gasLimit：'1231231231233123123'
+  value: '3213321000000000000000000'
+  signer： signers[1]
 });
 ```
 
-gasLimit refers to the maximum value of gas that can be used for this transaction.
+| Parameter | Description                                                |
+|:----|:----|
+|gasLimit|The maximum gas value that can be used in this transaction|
+|value|Amount passed to the contract to be created|
+|signer|Used to override the default signer|
 
-value refers to the amount to be passed to the contract to be created.
 
-signer is used to override the default signer.
-
-### `contract.attach(address): Contract`
-
-Generates a `Contract` instance using the specified contract address
-
-### `contract.connect(signer): contractFactory`
-
-Create a new contract instance with the specified signer
+* `contract.attach(address)：Contract`：Use the specified contract address to generate a Contract instance.
+* `contract.connect(signer)：Contract`：Use the specified signer to create a new Contract instance.

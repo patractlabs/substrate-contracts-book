@@ -1,78 +1,78 @@
 # Europa tutorial
 
-Europa is a simulated node sandbox environment with contract functions, and its interface (mainly rpc) is compatible with most third-party tools, so Europa can be regarded as an independent node for operation.
+## Background Information
 
-## Set up development environment
+Europa is a simulated node sandbox environment with contract functions. Its interfaces (mainly RPC) are compatible with most third-party tools, so Europa can be regarded as an independent node for operation.
 
-The environment of Europa is the same as the environment of normal use of node debugging contracts. The only difference is that if you need to print the backtrace of Wasm, you need to use a fork version of `cargo-contract` provided by Patract until parity (official)`cargo- contract` before merging the features submitted by Patract. If you don't need to print the Wasm backtract when the contract execution crashes, just use the official `cargo-contract`.
+## Set up a development environment
+
+Europa's environment is roughly the same as that of normal use of node debugging contracts. The only difference is that if you need to print Wasm's backtrace, you need to use a fork version of cargo-contract provided by Patract until the official cargo-contract merges the functions submitted by Patract. If you don't need to print the Wasm backtract when the contract execution crashes, just use the official cargo-contract.
 
 * Compile and run Europa node
+```bash
+$ git clone --recurse-submodules https://github.com/patractlabs/europa.git
+## or do following commands
+$ git clone https://github.com/patractlabs/europa.git
+$ cd europa/vendor
+$ git submodule update --init --recursive
+```
 
-  ```bash
-  $ git clone --recurse-submodules https://github.com/patractlabs/europa.git
-  ## or do following commands
-  $ git clone https://github.com/patractlabs/europa.git
-  $ cd europa/vendor
-  $ git submodule update --init --recursive
-  ```
+You can also install Europa directly using `cargo install`, but you need to add `--locked` to use the Substrate version that Europa currently depends on.
 
-  You can also install Europa directly using `cargo install`. (Note to add `--locked` to use the Substrate version that Europa currently depends on)
+```bash
+$ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
+```
 
-  ```bash
-  $ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
-  ```
+Run Europa
 
-  Run Europa:
+```bash
+$ ./target/release/europa --log=runtime=debug -d ./europa_database
+# If there is no need to retain data, you can also use `--tmp` to run Europa
+$ ./target/release/europa --log=runtime=debug --tmp
+```
 
-  ```bash
-  $ ./target/release/europa --log=runtime=debug -d ./europa_database
-  # If there is no need to retain data, you can also use `--tmp` to run Europa
-  $ ./target/release/europa --log=runtime=debug --tmp
-  ```
+* Install PatractLabs's cargo-contract (optional, only needed if the Wasm contract executes the backtrace when it crashes).
+```plain
+$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
+```
 
-* Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract) (optional, only needed if the Wasm contract executes backtrace when it crashes)
+If you have already installed the official cargo-contract and do not want to overwrite the installation, you can take the way of  manual compilation.
 
-  ```
-  $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
-  ```
+```bash
+$ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+$ cd cargo-contract
+$ cargo build --release
+```
 
-  If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation:
-  
-  ```bash
-  $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
-  $ cd cargo-contract
-  $ cargo build --release
-  ```
+* Compile the contract
 
-* Compile contract
+The `--debug` option is provided by the cargo-contract of Patract. If the official cargo-contract is used, the `--debug `option is not required in the following execution commands.
 
-  The `--debug` option is provided by Patract's `cargo-contract`. If you use the `cargo-contract` provided by parity, you do not need the `--debug` option in the following commands.
+```bash
+$ cargo-contract build --debug
+# or
+$ cargo +nightly contract build --debug
+```
 
-  ```bash
-  $ RUSTUP_TOOLCHAIN=nightly cargo-contract contract build --debug
-  # or
-  $ cargo +nightly contract build --debug
-  ```
-  
-  `-d/--debug` can **replace** the original `*.wasm` and `*.contract` files in the `target/ink` directory. The replaced Wasm and Contract files close the compilation process Code optimization conditions, and include the "name section" part to help analyze the information of the wasm call stack.
-  
-  > If the contract is compiled without using the `cargo-contract` in the Patract warehouse and carrying the `-d/--debug` parameter when compiling the contract, the following log may appear when a wasm panic occurs during the execution of the contract:
-  >
-  > ```
-  > wasm_error: Error::WasmiExecution(Trap(Trap {kind: Unreachable }))
-  > wasm backtrace:
-  > | <unknown>[...]
-  > | <unknown>[...]
-  > ╰─><unknown>[...]
-  > ```
-  
-  > The compiled product produced after adding `-d/--debug` is generally several hundred times larger than the original product (for example, the original product 2.5k, the new product 700k), because the new product is not optimized and retains a lot of debugging information. Therefore, the developer can roughly determine whether it is the product after adding the `-d/--debug` option by the product size.
+`-d/--debug` can replace the original `*.wasm` and `*.contract  `files in the `target/ink` directory. The replaced Wasm and Contract files close the code optimization conditions during the compilation process, and include the name section part, used to help analyze Wasm call stack information.
 
-## Deploy contract
+If the cargo-contract in the Patract repository is not used when compiling the contract, and the contract is compiled with the `-d/--debug` parameter, if a Wasm panic occurs during the execution of the contract, the following log information may appear.
 
-Developers can use [Redspot](https://redspot.patract.io/zh-CN/tutorial/) or [Substrate Protal](https://polkadot.js.org/apps/#/explorer) to deploy contracts .
+```plain
+wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
+   wasm backtrace:
+   |  <unknown>[...]
+   |  <unknown>[...]
+   ╰─><unknown>[...]
+```
 
-Note that Europa's `extending types` are as follows:
+The compiled file generated after adding `-d/--debug` is generally several hundred times the original file. Because the new file is not optimized, and a lot of debugging information is retained. Therefore, you can roughly judge whether it is a file generated after adding the `-d/--debug` option by the file size.
+
+## **Deployment contract**
+
+You can use [Redspot](https://redspot.patract.io/zh-CN/tutorial/) or [Substrate Protal](https://polkadot.js.org/apps/#/explorer) to deploy contracts.
+
+The extending types of Europa are as follows.
 
 ```json
 {
@@ -83,21 +83,20 @@ Note that Europa's `extending types` are as follows:
 
 For example, use Redspot to deploy, use apps to execute transactions and view status.
 
-Redspot deploys a contract:
-
+1. Use Redspot to deploy a contract.
 ```bash
 $ npx redspot run scripts/deploy.js
 ```
 
-Get the successfully deployed contract address, and add an existing contract to apps:
+2. Obtain the successfully deployed contract address and add an existing contract to apps.
 
-![add_exist](./imgs/add_exist.png)
+   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\europa\imgs\add_exist.png)
 
-## Analysis log
+## **Analyze the log**
 
-In the process of deploying and executing the contract using Europa, the following detailed information will be printed. This information is the information in the execution of the contract, which can conveniently help developers locate problems in the contract. With this information, the execution process of the contract is no longer a black box.
+During the process of deploying and executing the contract with Europa, detailed logs will be printed, and you can quickly locate problems in the contract based on these logs. Through these logs, the execution process of the contract is no longer a black box.
 
-Examples of log printing effects:
+An example of log printing is as follows.
 
 ```bash
 1: NestedRuntime {
@@ -124,40 +123,42 @@ Examples of log printing effects:
 }
 ```
 
-### Contract execution log
+## **Contract execution log**
 
-For the log cases listed above, we can simply analyze the following information:
+According to the above log content, the following information can be analyzed.
 
-* `ext_result`: It can surface the execution result of this contract call execution (call through transaction and rpc call belong to contract call);
-* `caller`: The public key of the caller is displayed, and the contract calling contract is the public key of the parent contract (consistent with the EVM model);
-* `self_account`: The address of this contract on the surface;
-* `selector`: The selector of the method being called. Through this attribute, it can be judged which method of the contract is called this time;
-* `args`, `value`, `gas_limit`, `gas_limit`, etc. indicate the relevant parameters and gas consumption of this execution;
-* `env_trace` and `sandbox_result_ok`: surface the interaction information between contract Wasm execution and `pallet-contracts`, and the final result of Wasm executor (Wasm executor result and contract execution result are different concepts)
-* `nest`: Describes the relationship between the contract calling the contract. Since this is empty, it appears that this call only involves the execution of one contract. See the following text for details;
+* `ext_result`：The execution result of contract call execution (through transaction call and RPC call belong to contract call).
+* `caller`：The public key of the caller, and the contract calling contract is the public key of the parent contract (consistent with the EVM model).
+* `self_account`：The address of this contract.
+* `selector`: The selector of the called method can be used to judge which method of the contract this call is based on this attribute.
+* `args`、`value`、`gas_limit`、`gas_limit`：The related parameters and gas consumption of this execution are indicated.
+* `env_trace、sandbox_result_ok`：The interaction information between contract Wasm execution and pallet-contracts, and the final result of Wasm executor (Wasm executor result and contract execution result are different concepts).
+* `nest`：Describes the relationship between the contract calling the contract. Since this is empty, it appears that this call only involves the execution of one contract. See the following text for details.
 
-It can be seen that the contract log provided by Europa can clearly surface many detailed information in a contract call. If the developer of the contract has a better understanding of the contract module `pallet-contracts`, a lot of important debugging information can be obtained to assist in locating contract problems. If the contract developer knows less about the contract module, information such as `selector`, `caller`, `nest`, etc. can also bring great help to the contract development process and reduce the time for debugging the contract.
+According to the contract log provided by Europa, you can see the detailed process of a contract call. If you have a good understanding of the contract module pallet-contracts, you can get a lot of important debugging information to assist in locating contract problems. If you don't know much about the contract module, information such as selector, caller, nest can also be of great help to you, reducing the time to debug the contract.
 
-**Note that when viewing messages in contracts on apps, apps will automatically call the read-only messages of the contract to obtain some values ​​of the current contract, causing Europa to display some logs of read calls, which interferes with normal judgment. Therefore, developers need to distinguish clearly which log is what they need. ** If you use a third-party client that sends requests that can be controlled by yourself, there is no concern in this regard.
+**Note** When viewing messages in contracts on apps, apps will automatically call the read-only messages of the contract to obtain some values of the current contract, causing Europa to display some logs of read calls, which interferes with normal judgment. So you need to distinguish clearly which piece of log is what you need. If you use a third-party client whose sending request can be controlled by itself, there is no concern in this regard.
 
-> When the developer uses apps to send a request, he identifies the small tip that needs to be logged in Europa:
->
-> `1: NestedRuntime {}` There is a `selector` field under the block, which indicates the selector used for this contract execution. Developers can find out what the selector corresponding to the currently called method name is in the `messages` section of metadata.json, for example:
-> ```json
-> "messages": [
->     {
->       "name": [
->         "flip"
->       ],
->       "selector": "0x633aa551"
->     }
-> ]
-> ```
-> Therefore, you can compare the `selector` field with the `selector` in the log to determine the part of the log corresponding to the current contract call issued through apps.
+## How to identify the required log in Europa when sending a request using apps?
 
-### wasmi panic backtrace
+There is a `selector` field under the `NestedRuntime {}` block, which indicates the selector used for this contract execution. You can find out what the selector corresponding to the currently called method name is in the `messages` section of metadata.json. The example is as follows.
 
-Suppose the method of writing a contract in `ink!` is as follows:
+```json
+"messages": [
+    {
+      "name": [
+        "flip"
+      ],
+      "selector": "0x633aa551"
+    }
+]
+```
+
+Therefore, the selector field can be compared with the selector in the log to judge the part of the log corresponding to the current contract call issued through apps.
+
+## wasmi panic backtrace
+
+Suppose the method of writing a contract in ink! is as follows.
 
 ```rust
 #[ink(message)]
@@ -169,11 +170,11 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 }
 ```
 
-When this method is called, EuropThe following log will be printed in a (please note that the current contract needs to use Patract's `cargo-contract` to print Wasm's Backtrace):
+When this method is called, the following log will be printed in Europa.
 
 ```bash
 1: NestedRuntime {
-	ext_result: [failed] ExecError { error: DispatchError::Module {index:5, error:17, message: Some("ContractTrapped"), orign: ErrorOrigin::Caller }}
+        ext_result: [failed] ExecError { error: DispatchError::Module {index:5, error:17, message: Some("ContractTrapped"), orign: ErrorOrigin::Caller }}
     caller: d43593c715fdd31c61141abd04a99fd6822...(5GrwvaEF...),
     self_account: b6484f58b7b939e93fff7dc10a654af7e.... (5GBi41bY...),
     selector: 0xfae3a09d,
@@ -188,10 +189,10 @@ When this method is called, EuropThe following log will be printed in a (please 
         # ...
         seal_caller(Some(0xd43593c715fdd31c61141abd...)),
         seal_hash_blake256((Some(0x696e6b20686173....), Some(0x0873b31b7a3cf....))),
-      	# ...  
+              # ...  
         seal_deposit_event((Some([0x45726332303a....00000000000]), Some(0x000..))),
     ],
-	trap_reason: TrapReason::SupervisorError(DispatchError::Module { index: 5, error: 17, message: Some("ContractTrapped") }),
+        trap_reason: TrapReason::SupervisorError(DispatchError::Module { index: 5, error: 17, message: Some("ContractTrapped") }),
     wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
         wasm backtrace: 
         |  core::panicking::panic[28]
@@ -209,22 +210,25 @@ When this method is called, EuropThe following log will be printed in a (please 
 }
 ```
 
-From Europa's log, we can analyze the following calling process:
+**Note** The current contract needs to use Patract's `cargo-contract` to print Wasm's Backtrace.
+
+From Europa's log, the following calling process can be analyzed.
 
 ```bash
-call -> dispatch_using_mode -> ... -> transfer -> panic
+call -> dispatch_using_mode -> ... -> transfer -> panic 
 ```
 
-Therefore, the contract developer can locate the cause of the panic because of the occurrence of the panic in the transfer function.
+Therefore, you can locate the cause of the panic because of the panic in the transfer function.
 
-The above is a simple log analysis description, more special cases will be introduced in the following "Examples" chapter.
+## **Custom ChainExtensions**
 
-## Custom ChainExtensions
+### **ink logger**
 
-### ink logger
+Check the [ink-log](https://github.com/patractlabs/ink-log)。
 
-Check [ink-log](https://github.com/patractlabs/ink-log).
+### **ZKP feature**
 
-### ZKP feature
+Check the [zkMega](https://github.com/patractlabs/zkmega)，For examples of related contracts, see [metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
 
-Check [zkMega](https://github.com/patractlabs/zkMega), related contract example [metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16).
+
+

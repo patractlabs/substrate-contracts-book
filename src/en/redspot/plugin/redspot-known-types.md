@@ -1,28 +1,27 @@
-# @redspot/known-types
+# @redspot_known-types plug-in
 
-@redspot/known-types is a plugin that adds the types of known chains automatically.
+## Background Information
 
-In polkadot, it is a hassle to add types since they have to be done manually not automatically. And sometimes there are compatibility issues with different chain versions to deal with. The purpose of @redspot/known-types is to solve the problem of types of different chains.
+redspot known types is a plug-in that can automatically add known types of chains. In polkadot, adding types is very troublesome, must be added manually, and cannot be automatically generated, and sometimes also has to deal with the compatibility of different chain versions. The appearance of the redspot known types plugin is to solve the problem of different types of chains.
 
-Most of the chains have submitted types on polkadot apps, and all the types definitions are in the npm package `@polkadot/apps-config`. So we will partially reference the types definitions in `@polkadot/apps-config`. But `@polkadot/apps-config` lacks the types definition for the development environment. We will then fill in this part manually. Currently the supported chains are Canvas, Jupiter, Europa, Edgeware, Plasm, Clover.
+Most chains have submitted types on polkadot apps, and all types definitions are in the npm package `@polkadot/apps-config`. We will partially quote the types definitions in `@polkadot/apps-config`. But`@polkadot/apps-config` lacks the type definition of the development environment, we will manually supplement this part. Currently supported chains are Canvas, Jupiter, Europa, Edgeware, Plasm and Clover.
 
-Install dependencies
+## How to use the plug-in?
 
+1. Install dependencies.
 ```bash
 $ yarn add @redspot/known-types
 ```
 
-Import plugin in `redspot.config` file:
-
+2. Import the plug-in in redspot.config.ts.
 ```javascript
 ...
 import "@redspot/known-types"
-
 ...
-
 export default {
   ...
 };
 ```
 
-Now there is no need for any extra config to contect to the nextwork like Canvas, Jupiter, Europa, etc.
+3. Then try to connect to the network of Canvas, Jupiter, Europa and other chains without adding additional type configuration.
+
