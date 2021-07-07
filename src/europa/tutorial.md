@@ -35,7 +35,7 @@ $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contra
 如果您已经安装了官方的`cargo-contract`且不想覆盖安装，可以采取手动编译的方式。
 
 ```bash
-$ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+$ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
 $ cd cargo-contract
 $ cargo build --release
 ```
@@ -44,7 +44,7 @@ $ cargo build --release
 `--debug`选项由Patract的`cargo-contract`提供，若使用官方提供的`cargo-contract`则以下执行命令中都不需要`--debug`的选项。
 
 ```bash
-$ cargo-contract build --debug
+$ RUSTUP_TOOLCHAIN=nightly cargo-contract contract build --debug
 # or
 $ cargo +nightly contract build --debug
 ```

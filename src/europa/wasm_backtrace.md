@@ -18,22 +18,22 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有`name sectio
 
 * 安装Patract 仓库下的`cargo-contract`。
 ```bash
-$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
 ```
-**注意**当前官方的`cargo-contract`发布的版本为v0.10.0，Patract基于这个版本添加了功能。如果将来`cargo-contract`继续升级，Patract 也会继续维护。
+**注意**当前官方的`cargo-contract`发布的版本为v0.12.1，Patract基于这个版本添加了功能。如果将来`cargo-contract`继续升级，Patract 也会继续维护。
 通过这种方式安装的`cargo-contract`会覆盖已安装过的的`cargo-contract`。因此请明晰当前环境中的`cargo-contract`来自哪个仓库，以防止定位问题时受到干扰。
 
 执行以下命令，可通过列出的结果判定当前环境中的`cargo-contract`安装来源。例如下面的结果即来自Patract。如果没有括号及其中的内容则表示来自`crates.io`。
 
 ```bash
 $ cargo install --list | grep cargo-contract
-cargo-contract v0.10.0 (https://github.com/patractlabs/cargo-contract?branch=v0.10.0#106081f1):
+cargo-contract v0.12.1 (https://github.com/patractlabs/cargo-contract.git?branch=tag-v0.12.1#0d682762):
 cargo-contract
 ```
 
 * 如果您已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式。
 ```bash
-$ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+$ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
 $ cd cargo-contract
 $ cargo build --release
 ```
