@@ -1,1 +1,1 @@
-# ink! 与solidity的对比
+# Compare ink! and solidity
