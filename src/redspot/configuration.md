@@ -110,6 +110,9 @@ accounts 默认为 ["//Alice", "//Bob", "//Charlie", "//Dave", "//Eve", "//Ferdi
 ### `[network].types`
 type 是`polkadotjs`中定义的概念。如果对此有任何疑问，您可以在此处[`types.extend`](https://polkadot.js.org/docs/api/start/types.extend/)看到。 您还可以设置`[network].typesbundle`，`[network].typesSpec`等。 通常，如果遇到类似于“No such variant in enum MultiSignature”的错误，也许应该考虑在 type 中添加 `{ Address: "AccountId", LookupSource: "AccountId"}`， 请参阅 [impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics)。
 
+### `[network].rpc`
+和 types 类似，rpc 用来指定 polkadot js 的自定义 rpc。详情请见[rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom)。
+
 ## contract
 
 在 contract 中，你可以设置编译器的选项，目前支持 [ink](https://github.com/paritytech/ink) 和 [solang](https://github.com/hyperledger-labs/solang)。你也可以将 ink合约 和 solang合约放在同一项目下一起编译。

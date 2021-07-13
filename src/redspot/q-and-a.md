@@ -60,6 +60,44 @@ redspot 内部依赖 @polkadot/api 和 @polkadot/api-contract。如果需要单�
 
 可以通过 network.api 访问，请参考 [network.api](./runtime-environment.html#network)
 
+### 如何指定链的 types 和 rpc
+
+部分链可以通过 [@redspot/known-types](./plugin/redspot-known-types.md) 自动配置(不支持 rpc)。也可以通过 redspot.config 手动配置：
+```typescript
+// redspot.config.ts
+import { RedspotUserConfig } from 'redspot/types';
+
+
+export default {
+ ...
+  network: {
+    mainnet: {
+      ...
+      account: [process.env.ACCOUNT]
+      types: {
+        ...
+      },
+      rpc: {
+        europa: {
+          forwardToHeight: {
+            description: '',
+            params: [
+              {
+                name: 'height',
+                type: 'u32'
+              }
+            ],
+            type: 'Bytes'
+          },
+        }
+        ...
+      }
+      ...
+    }
+  }
+} as RedspotUserConfig;
+```
+
 ### 使用 erc20-trait 时，无法调用合约
 
 由于 erc20-trait 多了命名空间，所以在调用的时候也必须加上命名空间。例子：
