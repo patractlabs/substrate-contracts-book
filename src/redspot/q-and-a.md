@@ -9,7 +9,9 @@ Redspot 仅仅是一个普通的 npm package ，升级方式和其他 npm packag
 
 如果您使用的是 yarn，那么您可执行以下命令将所有依赖升级到稳定版。
 
-`yarn upgrade-interactive --latest`
+```bash
+yarn upgrade-interactive --latest
+```
 
 如果您想要使用最新的测试版，推荐手动更改 package.json 中的版本号，然后重新安装依赖。
 
@@ -55,7 +57,7 @@ Redspot内部依赖 @polkadot/api 和 @polkadot/api-contract。如果您需要�
 
 ## **如何在 redspot 中访问到 @polkadot/api 的实例？**
 
-您可通过[network.api](https://patractlabs.github.io/substrate-contracts-book/redspot/runtime-environment.html#network)访问。
+您可通过[network.api](./runtime-environment.html#Network)访问。
 
 ## **使用 erc20-trait 时，无法调用合约怎么办？**
 
@@ -102,7 +104,7 @@ export default {
 REDSPOT_NETWORK=mainnet ACCOUNT="//Alice" npx redspot run ./scripts/deploy.ts
 ```
 
-您也可以使用[dotenv](https://github.com/motdotla/dotenv)等工具。此外，[redspot-explorer](https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-explorer.html)插件支持使用浏览器中的 polkadot extensions 签名。
+您也可以使用[dotenv](https://github.com/motdotla/dotenv)等工具。此外，[redspot-explorer](./plugin/redspot-explorer.html)插件支持使用浏览器中的 polkadot extensions 签名。
 
 
 

@@ -37,7 +37,7 @@
 * 在区块链中应该避免使用float，因为浮点数可能产生不确定性行为。因此在合约/runtime开发中，如果需要使用浮点数，或者出现溢出数字乘除的时，需要引入定点数来处理。因此在ink!的合约中可以引入Substrate runtime提供的定点数的库来处理。
 * 由于`pallet-contracts`的合约模型与EVM基本相同，因此`pallet-contracts`的合约存储也是由K/V构成。那么合约模型框架就需要处理标准库里提供的各类集合类型。因此在ink!中将标准库中可能用到的集合类型重写了一遍，添加了能将集合元素类型处理成K/V数据的过程。因此在ink!的合约存储中，如果设计了集合类型，那么只能使用ink!标准库中提供的类型。而另一方面由于ink!的返回值需要导出metadata令第三方处理，而当前的metadata的接口实现只给标准库中的集合实现，因此ink!方法的返回值的集合只能使用标准库的集合类型。代码示例如下。
 
-    ```plain
+    ```rust
     #[ink::contract]
     mod test {
         // 引入 ink 实现的 Vec
@@ -67,7 +67,7 @@
 
 ## `pallet-contracts`与对应的合约语言
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\contracts\imgs\language_2.jpg)
+![](./imgs/language_2.jpg)
 
 有了合约语言的模型的概念后，我们可以把合约模型框架嵌套在Substrate的Wasm合约系统上了。
 

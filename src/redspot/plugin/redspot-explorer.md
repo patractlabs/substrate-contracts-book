@@ -40,7 +40,7 @@
 
 ## 使用步骤
 
-1.先安装@redspot/explorer插件。
+1.先安装`@redspot/explorer`插件。
 
     $ yarn add @redspot/explorer
 
@@ -48,11 +48,11 @@
 
     import "@redspot/explorer";
 
-3.运行redspot explorer。 
+3.运行`redspot explorer`。 
 
     npx redspot explorer
 
-**注意** 在运行redspot explorer的时候，会在本地启动一个服务，请不要终止该进程。并且，在每次redspot.config更改时，请手动重启该服务。 
+**注意** 在运行`redspot explorer`的时候，会在本地启动一个服务，请不要终止该进程。并且，在每次redspot.config更改时，请手动重启该服务。 
 
 4.然后打开[默认的网址](http://127.0.0.1:8011)，打开切换网络，可以看到，能够选择Redspot中配置的网络信息。
 

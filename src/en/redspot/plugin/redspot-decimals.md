@@ -17,7 +17,7 @@ Obtain the tokenDecimal of the chain automatically
 ## How to use the plug-in?
 
 1. Use the following command to install the plug-in.
-    ```plain
+    ```bash
     yarn add @redspot/decimals
     ```
 

@@ -8,7 +8,7 @@ The plug-in provides a set of matchers that are easy to write contract test case
 
 Before using，please import @redspot/chai plugin. The plug-in will automatically modify the chai matcher, so you don't need to call it manually.
 
-```plain
+```typescript
 // redspot.config.ts
 import { RedspotUserConfig } from 'redspot/types';
 import '@redspot/chai';

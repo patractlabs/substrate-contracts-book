@@ -2,7 +2,7 @@
 
 ## 背景信息
 
-在 Redspot 的项目的根目录下，执行以下命令可查看当前 Redspot 支持的任务（[Tasks](https://patractlabs.github.io/substrate-contracts-book/redspot/overview.html#Tasks)）。
+在 Redspot 的项目的根目录下，执行以下命令可查看当前 Redspot 支持的任务（[Tasks](./overview.html)）。
 
 ```bash
 npx redspot
@@ -10,7 +10,7 @@ npx redspot
 
 运行`npx redspot --help`命令查看帮助信息。
 
-```plain
+```bash
 Redspot version 0.11.4
 Usage: redspot [GLOBAL OPTIONS] <TASK> [TASK OPTIONS]
 GLOBAL OPTIONS:
@@ -37,7 +37,7 @@ AVAILABLE TASKS:
 To get help for a specific task run: npx redspot help [task]
 ```
 帮助信息分为两个部分：GLOBAL OPTIONS和TASKS。通过TASK，您可以调用 Redspot 内置的任务或自定义的任务。例如执行`npx redspot compile`命令可以运行编译合约命令。通常每个任务都会提供自己的参数配置。可以通过执行`npx redspot compile --help`命令查看帮助信息。
-```plain
+```bash
 Redspot version 0.10.1
 Usage: redspot [GLOBAL OPTIONS] compile [...sourcePattern]
 POSITIONAL ARGUMENTS:
@@ -57,7 +57,7 @@ For global options help run: redspot help
 
 运行`npx redspot compile`命令可进行合约编译。目前支持[ink](https://github.com/paritytech/ink)合约和[Solang](https://github.com/hyperledger-labs/solang)合约的编译。编译ink合约时，请确保您已经安装了[cargo-contract](https://github.com/paritytech/cargo-contract)。编译Solang合约时，请确保您已经安装了[Solang](https://solang.readthedocs.io/en/latest/installing.html#building-solang-from-crates-io)。在redspot.config.ts中，您可以配置编译的选项。
 
-```plain
+```bash
 {
         ...
         contract: {
@@ -86,7 +86,7 @@ compile命令接收sourcePattern参数，可以覆盖配置文件中的sources ,
 
 Redspot支持ink合约使用Docker编译。配置信息如下所示。
 
-```plain
+```bash
 ...
 export default {
   ...
@@ -107,7 +107,7 @@ export default {
 
 在运行编译命令之前，请确保本机已安装Docker。运行以下命令 ：
 
-```plain
+```bash
 $ npx redspot compile
 ```
 
@@ -115,7 +115,7 @@ $ npx redspot compile
 
 现在会默认使用Docker 编译。如果您要更改默认行为，请添加`--docker false`参数。
 
-```plain
+```bash
 $ npx redspot compile --docker false
 ```
 
@@ -127,19 +127,19 @@ $ npx redspot compile --docker false
 
 您可以通过以下命令运行测试网。
 
-```plain
+```bash
 $ npx redspot testnet
 ```
 
 实际上，它的作用是仅仅只是运行命令。
 
-```plain
+```bash
 $ docker run -p 9944:9944 --rm redspot/contract /bin/bash -c "canvas --tmp --dev --ws-port=9944 --ws-external"  
 ```
 
 如果您要修改默认的运行命令，可以添加command参数。
 
-```plain
+```bash
 $ npx redspot testnet --command 'docker run -p 9945:9944 --rm redspot/contract /bin/bash -c "canvas --tmp --dev --ws-port=9944 --ws-external"'
 ```
 
@@ -170,7 +170,7 @@ export default {
 
 自动化测试在编写合约中至关重要。您可使用Redspot进行单元测试。在运行测试命令前，您需要确保已经正确配置了需要连接的节点。Test的相关配置信息如下。
 
-```plain
+```typescript
 {
         defaultNetwork: "development", // 默认连接的网络
         ...

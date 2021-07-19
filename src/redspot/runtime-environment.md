@@ -1,6 +1,6 @@
-# 运行环境
+# Runtime Environment
 
-RedSpot 运行时环境（RSE）包含了Redspot所有公开的功能。当您导入Redspot时，就获得了一个 RSE环境。
+RedSpot 运行时环境（即RedspotRuntimeEnvironment，下文简称RSE）包含了Redspot所有公开的功能。当您导入Redspot时，就获得了一个 RSE环境。
 
 ## **访问RSE**
 
@@ -54,7 +54,7 @@ console.log(config.defaultNetwork);
 
 当前运行的命令的全局参数。
 
-```plain
+```bash
 > redspotArguments
 {
   network: undefined,
@@ -104,7 +104,7 @@ export interface Network {
 
 获取所有signer。
 
-```plain
+```typescript
 import { network } from 'redspot';
 network.getSigners().then(signers => {
   console.log(signers[0].address);
@@ -113,7 +113,7 @@ network.getSigners().then(signers => {
 
 实际上signer与Polkadot.js的signer是兼容的。signer的类型定义如下。
 
-```plain
+```typescript
 export interface Signer {
   address: string;
   api: ApiPromise;

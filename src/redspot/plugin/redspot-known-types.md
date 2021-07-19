@@ -9,7 +9,7 @@ redspot known types是一个可以自动添加已知的链的types的插件。�
 如何使用插件？
 
 1. 安装依赖。
-    ```sh
+    ```bash
     $ yarn add @redspot/known-types
     ```
 

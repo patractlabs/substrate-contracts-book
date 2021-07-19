@@ -18,12 +18,12 @@
 如何使用插件？
 
 1. 使用以下命令安装插件。
-    ```shell
+    ```bash
     yarn add @redspot/decimals
     ```
 
 2. 在`redspot.config.ts`中导入插件，然后就可以使用该插件了。
-    ```plain
+    ```typescript
     import '@redspot/decimals'
     ```
 

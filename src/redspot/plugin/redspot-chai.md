@@ -8,7 +8,7 @@
 
 引入@redspot/chai插件。该插件会自动修改chai匹配器，您无需手动调用。
 
-```plain
+```typescript
 // redspot.config.ts
 import { RedspotUserConfig } from 'redspot/types';
 import '@redspot/chai';
@@ -86,7 +86,7 @@ describe('ERC20', () => {
 
 @redspot/chai插件会修改默认的equal的匹配方式。默认的equal不支持匹配对象。但是 @redspot/chai插件可以。
 
-```plain
+```typescript
 expect(new BN(1000)).to.equal(1000); // true
 expect(AccountId).to.equal('5Gdjkw....'); // true
 expect(Uint8Array([1, 2, 3])).to.equal('0x010203'); // true

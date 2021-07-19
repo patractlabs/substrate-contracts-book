@@ -39,18 +39,18 @@ Compared with polkadot apps, the main optimizations are as follows:
 ## Steps for usage
 
 1. Install the @redspot/explorer plugin first.
-```plain
+```bash
 $ yarn add @redspot/explorer
 ```
 2. Then import the plugin in redspot.config.ts.
-```plain
+```typescript
 ...
 import "@redspot/explorer";
 ...
 ```
 
 3. Run edspot explorer.
-```plain
+```bash
 npx redspot explorer
 ```
 
@@ -67,7 +67,7 @@ npx redspot explorer
 6. Then you can use your account in the polkadot extension to conduct transactions. Copy your account address in polkadot extension.
 
 7. Then change the deploy.ts script.
-```plain
+```typescript
 import { network, patract } from 'redspot';
 const { getContractFactory } = patract;
 const { api } = network;

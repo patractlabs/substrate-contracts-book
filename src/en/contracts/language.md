@@ -38,21 +38,21 @@ Take ink! as an example:
 
 * The use of float should be avoided in the blockchain, because floating-point numbers may produce indeterminate behavior. Therefore, in contract/runtime development, if you need to use floating-point numbers, or when overflowing numbers are multiplied and divided, you need to introduce fixed-point numbers to deal with. Therefore, the fixed-point library provided by Substrate runtime can be introduced into the ink! contract for processing.
 * Since the contract model of `pallet-contracts` is basically the same as EVM, the contract storage of `pallet-contracts` is also composed of K/V. Then the contract model framework needs to deal with the various collection types provided in the standard library. Therefore, the collection types that may be used in the standard library are rewritten in ink!, and the process of processing the collection element types into K/V data is added. Therefore, in the ink! contract storage, if a collection type is designed, then only the types provided in the ink! standard library can be used. On the other hand, since the return value of ink! needs to export metadata for third-party processing, and the current metadata interface implementation is only implemented for the collection in the standard library, so the collection of the return value of the ink! method can only use the collection type of the standard library. The code example is as follows.
-```plain
+```rust
 #[ink::contract]
 mod test {
-    // 引入 ink 实现的 Vec
+    // Introduce Vec realized by ink
     use ink_storage::collections::Vec as StorageVec;
-    // 引入标准库的Vec
+    // Introduce the Vec of the standard library
     use ink_prelude::vec::Vec;
     #[ink(storage)]
     pub struct Test {
-        owners: StorageVec<AccountId>, // 只能使用 ink的Vec
+        owners: StorageVec<AccountId>, // Only ink's Vec can be used
     }
     impl Test {
         #[ink(message)]
         pub fn get_owners(&self) -> Vec<AccountId> {
-            // 将 ink 实现的 Vec 转换为 标准库实现的 Vec
+            // Convert Vec implemented by ink to Vec implemented by standard library
             self.owners.iter().map(Clone::clone).collect()
         }
     }

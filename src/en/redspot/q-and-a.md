@@ -9,7 +9,9 @@ Redspot is just a normal npm package, and the upgrade method is the same as othe
 
 If you are using yarn, you can execute the following command to upgrade all dependencies to the stable version.
 
-`yarn upgrade-interactive --latest`
+```bash
+yarn upgrade-interactive --latest
+```
 
 If you want to use the latest beta version, it is recommended to manually change the version number in package.json and then reinstall the dependencies.
 
@@ -55,7 +57,7 @@ In this way, you can force the specified version. See [package.json](https://cla
 
 ## **How to access the instance of @polkadot/api in redspot?**
 
-You can access it by [network.api](https://patractlabs.github.io/substrate-contracts-book/redspot/runtime-environment.html#network).
+You can access it by [network.api](./runtime-environment.html#Network).
 
 ## **What should I do if I cannot call the contract when using erc20-trait?**
 
@@ -102,7 +104,7 @@ Run script
 REDSPOT_NETWORK=mainnet ACCOUNT="//Alice" npx redspot run ./scripts/deploy.ts
 ```
 
-You can also use tools for example [dotenv](https://github.com/motdotla/dotenv). In addition, the [redspot-explorer](https://patractlabs.github.io/substrate-contracts-book/redspot/plugin/redspot-explorer.html) plug-in supports signatures using polkadot extensions in the browser.
+You can also use tools for example [dotenv](https://github.com/motdotla/dotenv). In addition, the [redspot-explorer](./plugin/redspot-explorer.html) plug-in supports signatures using polkadot extensions in the browser.
 
 
 

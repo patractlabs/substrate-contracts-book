@@ -11,14 +11,14 @@
 ### **ink! Toolchain for contract compilation**
 
 * Rust environment. Since the ink! contract requires Rust's Wasm toolchain, and Wasm can only run under the nightly toolchain, so you need to prepare the Wasm compilation environment first.
-    ```sh
+    ```bash
     rustup install nightly
     rustup component add rust-src --toolchain nightly
     rustup target add wasm32-unknown-unknown --toolchain nightly
     ```
 
 * ink! cargo-contract, a tool for compiling contracts. You can install the official cargo-contract provided by default with the following command.
-    ```sh
+    ```bash
     cargo install cargo-contract --force
     ```
 
@@ -44,7 +44,7 @@ For information about the differences between these three types of nodes and com
 
 You can install and start Europa with the following commands.
 
-```sh
+```bash
 cargo install europa --git https://github.com/patractlabs/europa --locked --force
 europa --tmp
 ```
@@ -55,7 +55,7 @@ For different versions of Europa and other information, please refer to the proj
 
 [Canvas](https://github.com/paritytech/canvas-node) is an official contract test chain with pallet-contracts module provided by the government. This test chain is a testnet maintained by the official ink! & pallet-contracts development team. For how to participate in the canvas network, please refer to the Readme module of the project. If you just want to run the test node locally, you can execute the following command.
 
-```sh
+```bash
 cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --force --locked
 canvas --dev --tmp
 ```
@@ -68,7 +68,7 @@ Redspot provides contract development templates that allow you to quickly build 
 
 If you want to create a new project from a template, you can choose to use npx. npx is a package executor that comes with npm (npm 5.2+). Executing the following command will pull the latest Redspot and use erc20 as a template to build the Redspot project.
 
-```plain
+```bash
 npx redspot-new erc20
 ```
 
@@ -78,7 +78,7 @@ If a project is created by Redspot, then there will be a redspot.config.ts file 
 
 If you have obtained the built Redspot project through Github, example, or other means, you can enter the project directory and execute the yarn install command to restore the Redspot environment used by the Redspot project. The example is as follows.
 
-```sh
+```bash
 # copy the delegator multi-contract example from redspot repo to local dir
 cp -r ./redpost/example/delegator ./
 cd delegator
@@ -178,12 +178,12 @@ Redspot can be easily integrated into existing contract projects. Let's take the
     ```
 
 3. Install npm dependencies. It is recommended that you use [yarn](https://classic.yarnpkg.com/en/docs/install) as the package manager.
-    ```plain
+    ```bash
     yarn or npm install
     ```
 
 4. Run the `npx redspot compile` command in the root directory of the project to compile all contracts in the examples directory.
-    ```plain
+    ```bash
     npx redspot compile examples/erc20
     ```
 
@@ -302,13 +302,13 @@ describe('ERC20', () => {
 
 Run the test command.
 
-```plain
+```bash
 npx redspot test --no-compile
 ```
 
 You will get results similar to the following.
 
-```plain
+```bash
 ✓ Can not transfer from empty account (17912ms)
   4 passing (46s)
 ```

@@ -2,7 +2,7 @@
 
 ## Background Information
 
-In the root directory of the Redspot project, execute the following command to view the [tasks](https://patractlabs.github.io/substrate-contracts-book/redspot/overview.html#Tasks) currently supported by Redspot.
+In the root directory of the Redspot project, execute the following command to view the [tasks](./overview.html) currently supported by Redspot.
 
 ```bash
 npx redspot
@@ -10,7 +10,7 @@ npx redspot
 
 Run the `npx redspot --help` command to view the help information.
 
-```plain
+```bash
 Redspot version 0.11.4
 Usage: redspot [GLOBAL OPTIONS] <TASK> [TASK OPTIONS]
 GLOBAL OPTIONS:
@@ -39,7 +39,7 @@ To get help for a specific task run: npx redspot help [task]
 
 The help information is divided into two parts，GLOBAL OPTIONS and TASKS. Through TASK, you can call Redspot's built-in tasks or custom tasks. For example, execute the `npx redspot compile ` command to run the compile contract command. Usually each task will provide its own parameter configuration. You can view the help information by executing the `npx redspot compile --help` command.
 
-```plain
+```bash
 Redspot version 0.10.1
 Usage: redspot [GLOBAL OPTIONS] compile [...sourcePattern]
 POSITIONAL ARGUMENTS:
@@ -61,7 +61,7 @@ Several built-in tasks will be introduced in the future.
 
 Run the `npx redspot compile `command to compile the contract. Currently supports the compilation of [ink](https://github.com/paritytech/ink) contracts and [Solang](https://github.com/hyperledger-labs/solang) contracts. When compiling the ink contract, please make sure you have installed [cargo-contract](https://github.com/paritytech/cargo-contract). When compiling the Solang contract, please make sure you have installed [Solang](https://solang.readthedocs.io/en/latest/installing.html#building-solang-from-crates-io). In redspot.config.ts, you can configure compilation options.
 
-```plain
+```typescript
 {
         ...
         contract: {
@@ -90,7 +90,7 @@ After the compilation is complete, the files generated after compilation can be 
 
 Redspot supports the use of Docker to compile ink contracts. The configuration information is shown below.
 
-```plain
+```bash
 ...
 export default {
   ...
@@ -111,7 +111,7 @@ export default {
 
 Before running the compile command, make sure that Docker is installed on the machine. Run the following command.
 
-```plain
+```bash
 $ npx redspot compile
 ```
 
@@ -119,7 +119,7 @@ $ npx redspot compile
 
 Now it will be compiled with Docker by default. If you want to change the default behavior, please add the `--docker false` parameter.
 
-```plain
+```bash
 $ npx redspot compile --docker false
 ```
 
@@ -131,25 +131,25 @@ If the machine has a Docker environment. A testnet can be run by Docker. The can
 
 You can run the testnet with the following command.
 
-```plain
+```bash
 $ npx redspot testnet
 ```
 
 In fact, its role is just to run the command.
 
-```plain
+```bash
 $ docker run -p 9944:9944 --rm redspot/contract /bin/bash -c "canvas --tmp --dev --ws-port=9944 --ws-external"  
 ```
 
 If you want to modify the default running command, you can add the `command ` parameter.
 
-```plain
+```bash
 $ npx redspot testnet --command 'docker run -p 9945:9944 --rm redspot/contract /bin/bash -c "canvas --tmp --dev --ws-port=9944 --ws-external"'
 ```
 
 Or modify the redspot.config file.
 
-```plain
+```typescript
 ...
 export default {
   ...
@@ -174,7 +174,7 @@ export default {
 
 Automated testing is crucial in writing contracts. You can use Redspot for unit testing. Before running the test command, you need to ensure that the nodes to be connected have been configured correctly. The relevant configuration information of Test is as follows.
 
-```plain
+```bash
 {
         defaultNetwork: "development", // the default network to connect to
         ...

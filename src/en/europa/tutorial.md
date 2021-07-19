@@ -20,7 +20,7 @@ Europa's environment is roughly the same as that of normal use of node debugging
 
 You can also install Europa directly using `cargo install`, but you need to add `--locked` to use the Substrate version that Europa currently depends on.
 
-```sh
+```bash
 $ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
 ```
 
@@ -33,7 +33,7 @@ $ ./target/release/europa --log=runtime=debug --tmp
 ```
 
 * Install PatractLabs's cargo-contract (optional, only needed if the Wasm contract executes the backtrace when it crashes)
-    ```plain
+    ```bash
     $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
     ```
 
@@ -59,7 +59,7 @@ $ cargo +nightly contract build --debug
 
 If the cargo-contract in the Patract repository is not used when compiling the contract, and the contract is compiled with the `-d/--debug` parameter, if a Wasm panic occurs during the execution of the contract, the following log information may appear.
 
-```plain
+```bash
 wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
    wasm backtrace:
    |  <unknown>[...]

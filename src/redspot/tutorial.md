@@ -11,14 +11,14 @@
 ### **ink! 合约编译的工具链**
 
 * Rust环境。由于ink!合约需要Rust的Wasm工具链，且当前Wasm只能在nightly工具链下运行，因此您需要先准备Wasm编译环境。
-```sh
+```bash
 rustup install nightly
 rustup component add rust-src --toolchain nightly
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
 * ink! 编译合约的工具`cargo-contract`。您可使用以下命令安装默认提供的官方`cargo-contract`。
-```sh
+```bash
 cargo install cargo-contract --force
 ```
 
@@ -44,7 +44,7 @@ cargo install cargo-contract --force
 
 您可以通过以下命令安装并启动Europa。
 
-```sh
+```bash
 cargo install europa --git https://github.com/patractlabs/europa --locked --force
 europa --tmp
 ```
@@ -55,7 +55,7 @@ Europa 不同的版本及其他信息，请参见该项目的[Readme](https://gi
 
 [Canvas](https://github.com/paritytech/canvas-node)是由官方提供的具备`pallet-contracts`模块的合约测试链，这个测试链是一个官方`ink`! &`pallet-contracts`开发组维护的测试网。参与canvas 络的方式请参见该项目的Readme模块。若您只是为了在本地运行测试节点，可以执行以下命令。
 
-```sh
+```bash
 cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --force --locked
 canvas --dev --tmp
 ```
@@ -78,7 +78,7 @@ npx redspot-new erc20
 
 如果您通过Github、example或其他途径获取到了已构建好的Redspot项目，您可以进入到该项目目录下并执行`yarn install`命令恢复该Redspot项目使用的Redspot环境。示例如下。
 
-```sh
+```bash
 # copy the delegator multi-contract example from redspot repo to local dir
 cp -r ./redpost/example/delegator ./
 cd delegator
@@ -94,7 +94,7 @@ Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[
 #### **编译合约**
 
 1. 克隆 ink 仓库并打开 ink 目录。
-    ```plain
+    ```bash
     git clone https://github.com/paritytech/ink.git
     cd ink
     ```
@@ -298,7 +298,7 @@ Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[
 
 运行测试命令。
 
-```plain
+```bash
 npx redspot test --no-compile
 ```
 
@@ -308,7 +308,5 @@ npx redspot test --no-compile
     ✓ Can not transfer from empty account (17912ms)
       4 passing (46s)
 
-查看更多内置信息，请参见[tasks](https://patractlabs.github.io/substrate-contracts-book/redspot/tasks.html)。
-
-
+查看更多内置信息，请参见[tasks](./tasks.html)。
 

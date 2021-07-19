@@ -6,7 +6,7 @@ The RedSpot Runtime Environment (RSE) contains all the publicly available functi
 
 Env has the following attributes.
 
-```plain
+```typescript
 RuntimeEnvironment {
                 config; // the user's configuration file 
     redspotArguments; // global arguments to run the command, including network , logLevel, etc.
@@ -18,7 +18,7 @@ RuntimeEnvironment {
 
 In the Redspot console, these properties of env will be injected into global variables, and you can directly access them.
 
-```plain
+```bash
 > network.name
 'development'
 ```
@@ -55,7 +55,7 @@ console.log(config.defaultNetwork);
 
 Global parameters of the currently running command.
 
-```plain
+```bash
 > redspotArguments
 {
   network: undefined,

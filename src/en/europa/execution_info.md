@@ -89,29 +89,29 @@ Examples of mutual calls between contracts are as follows.
 
 * In contract A, call contract C after calling contract B.
 
-  ![call_other_1](https://patractlabs.github.io/substrate-contracts-book/assets/img/call_other_1.5616f10c.png)
+  ![](./imgs/call_other_1.png)
 
 The log is as follows.
 
-```bash
+```sh
 1: NestedRuntime {
-self_account: A,
-nest:[
-2: NestedRuntime {
-self_account: B,
-nest:[],
-},
-2: NestedRuntime {
-self_account: C,
-nest:[],
-}
-]
+	self_account: A,
+	nest:[
+		2: NestedRuntime {
+			self_account: B,
+			nest:[],
+		},
+		2: NestedRuntime {
+			self_account: C,
+			nest:[],
+		}
+	]
 }
 ```
 
 * In contract A, call contract B, in contract B, call contract C
 
-  ![call_other_2](https://patractlabs.github.io/substrate-contracts-book/assets/img/call_other_2.647505f1.png)
+  ![](./imgs/call_other_2.png)
 
 
 The log is as follows.
