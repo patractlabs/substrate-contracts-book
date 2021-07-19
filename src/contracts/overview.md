@@ -41,7 +41,7 @@ EOS采用了Wasm作为合约的虚拟机，当时也是EOS的优势。相比于�
 
 `pallet-evm`和`pallet-contracts`，就是需要在一个沙盒环境中运行另一个沙盒，如下图所示。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\contracts\imgs\overview_module.jpg)
+![](./imgs/overview_module.jpg)
 
 * 图左是以太坊模型，表示每运行一个合约，需要在链的平台上启动一个以太坊虚拟机去运行。
 * 图右是Substrate模型，Substrate链的业务逻辑在Wasm虚拟机中运行。

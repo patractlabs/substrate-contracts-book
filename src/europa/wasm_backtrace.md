@@ -17,11 +17,11 @@ Wasm能够打印Backtrace，要求合约编译出的Wasm文件里有`name sectio
 ## 安装Patract仓库下的`cargo-contract`
 
 * 安装Patract 仓库下的`cargo-contract`。
-```bash
-$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
-```
-**注意**当前官方的`cargo-contract`发布的版本为v0.12.1，Patract基于这个版本添加了功能。如果将来`cargo-contract`继续升级，Patract 也会继续维护。
-通过这种方式安装的`cargo-contract`会覆盖已安装过的的`cargo-contract`。因此请明晰当前环境中的`cargo-contract`来自哪个仓库，以防止定位问题时受到干扰。
+    ```bash
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
+    ```
+    **注意 **当前官方的`cargo-contract`发布的版本为v0.12.1，Patract基于这个版本添加了功能。如果将来`cargo-contract`继续升级，Patract 也会继续维护。
+    通过这种方式安装的`cargo-contract`会覆盖已安装过的的`cargo-contract`。因此请明晰当前环境中的`cargo-contract`来自哪个仓库，以防止定位问题时受到干扰。
 
 执行以下命令，可通过列出的结果判定当前环境中的`cargo-contract`安装来源。例如下面的结果即来自Patract。如果没有括号及其中的内容则表示来自`crates.io`。
 
@@ -32,12 +32,12 @@ cargo-contract
 ```
 
 * 如果您已经安装了官方的`cargo-contract`并且不想覆盖安装，可以采取手动编译的方式。
-```bash
-$ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
-$ cd cargo-contract
-$ cargo build --release
-```
-编译好后可以将编译产生的的文件移动到一个可以被全局访问的路径并重命名，以防和已安装过的`cargo-contract`发生冲突。
+    ```bash
+    $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
+    $ cd cargo-contract
+    $ cargo build --release
+    ```
+    编译好后可以将编译产生的的文件移动到一个可以被全局访问的路径并重命名，以防和已安装过的`cargo-contract`发生冲突。
 ```bash
 $ cp target/release/cargo-contract <to any path>/patract-cargo-contract
 ```
@@ -56,7 +56,7 @@ $ cargo +nightly contract build
 ```bash
 $ cargo +nightly contract build --debug
 ```
-**注意**通过这种模式生成的编译文件，一般情况下其大小是原文件的几百倍。因此您可以通过生成文件的大小粗略判定是通过那种编译方式生成的编译文件。
+**注意** 通过这种模式生成的编译文件，一般情况下其大小是原文件的几百倍。因此您可以通过生成文件的大小粗略判定是通过那种编译方式生成的编译文件。
 示例如下。
 
 ```bash

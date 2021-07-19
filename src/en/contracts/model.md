@@ -4,7 +4,7 @@
 
 The contract sandbox only represents the environment in which the contract is run, but how the contract is run, how the contract interacts with the contract, and how the contract interacts with the data of the chain. These problems belong to the contract model problem. In other words, the contract model refers to the model in which the contract runs in the contract sandbox/virtual machine.
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\contracts\imgs\engcontract_model (1).jpg)
+![](./imgs/engcontract_model_1.jpg)
 
 As shown in the figure above, the contract model and the contract virtual machine can be decoupled in nature, and the relationship only exists whether the contract virtual machine supports the contract model required by the upper layer. To facilitate the understanding of the contract model, you can refer to the following examples.
 

@@ -9,19 +9,19 @@ Most chains have submitted types on polkadot apps, and all types definitions are
 ## How to use the plug-in?
 
 1. Install dependencies.
-```bash
-$ yarn add @redspot/known-types
-```
+    ```bash
+    $ yarn add @redspot/known-types
+    ```
 
 2. Import the plug-in in redspot.config.ts.
-```javascript
-...
-import "@redspot/known-types"
-...
-export default {
-  ...
-};
-```
+    ```javascript
+    ...
+    import "@redspot/known-types"
+    ...
+    export default {
+      ...
+    };
+    ```
 
 3. Then try to connect to the network of Canvas, Jupiter, Europa and other chains without adding additional type configuration.
 

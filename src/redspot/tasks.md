@@ -41,7 +41,7 @@ To get help for a specific task run: npx redspot help [task]
 Redspot version 0.10.1
 Usage: redspot [GLOBAL OPTIONS] compile [...sourcePattern]
 POSITIONAL ARGUMENTS:
-  sourcePattern        A glob string that is matched against (default: [])
+  sourcePattern A glob string that is matched against (default: [])
 compile: Compiles the entire project, building all artifacts
 For global options help run: redspot help
 ```
@@ -61,20 +61,20 @@ For global options help run: redspot help
 {
         ...
         contract: {
-    ink: {
-      toolchain: 'nightly', // 设置 cargo-contract 编译时的 toolchain
-      sources: ['contracts/**/*'] // 配置查找合约文件的目录
-    },
-    solang: {
-      sources: ['contracts/**/*.sol'] // 配置查找合约文件的目录
-    }
-  },
-  paths: {
-          ...
-    artifacts: 'artifacts' // 指定存放合约编译产物的目录
-    ...
-  }，
-  ...
+        ink: {
+          toolchain: 'nightly', // 设置 cargo-contract 编译时的 toolchain
+          sources: ['contracts/**/*'] // 配置查找合约文件的目录
+        },
+        solang: {
+          sources: ['contracts/**/*.sol'] // 配置查找合约文件的目录
+       }
+      },
+      paths: {
+              ...
+        artifacts: 'artifacts' // 指定存放合约编译产物的目录
+        ...
+      }，
+      ...
 }
 ```
 
@@ -111,7 +111,7 @@ export default {
 $ npx redspot compile
 ```
 
-**注意**当使用Docker编译时，可能受网络环境影响，例如中国大陆需要VPN代理，会导致编译时间过长。 如果中途使用`ctrl+c`退出当前编译命令，Docker容器并不会自动停止删除。
+**注意 **当使用Docker编译时，可能受网络环境影响，例如中国大陆需要VPN代理，会导致编译时间过长。 如果中途使用`ctrl+c`退出当前编译命令，Docker容器并不会自动停止删除。
 
 现在会默认使用Docker 编译。如果您要更改默认行为，请添加`--docker false`参数。
 
@@ -119,7 +119,7 @@ $ npx redspot compile
 $ npx redspot compile --docker false
 ```
 
-**注意**如果遇到权限错误，请将redspot.config文件中的`docker.sudo`设为 true。这样将会使用sudo运行Docker。或请参见[Docker 官方文档](https://docs.docker.com/engine/install/linux-postinstall/)配置权限。
+**注意 **如果遇到权限错误，请将redspot.config文件中的`docker.sudo`设为 true。这样将会使用sudo运行Docker。或请参见[Docker 官方文档](https://docs.docker.com/engine/install/linux-postinstall/)配置权限。
 
 ## **TestNet**
 

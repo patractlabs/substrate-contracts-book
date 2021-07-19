@@ -9,7 +9,7 @@ Europa是一个运行`FRAME Contracts pallet`并模拟节点的沙盒环境，�
 * Europa移除了一些不必要的功能模块，例如Wasm executor、p2p等，仅保留了native的执行环境。
 * 使用了`manual_seal`的出块方式，当收到新交易时就触发出块，使您不必受共识出块的影响，能更专注于合约的开发调试与日志分析。
 * 提供了`state-kv`数据库，记录了每个区块的状态变更。
-```bash
+```sh
 # print the modified state kvs for block 1
 $ ./target/debug/europa state-kv 1 -d europa_database
 Nov 12 15:53:27.699  INFO modified state for block:0x6c119a8f7de42e330aca8b9d3587937aacbbc203cc21650b60644c2f2d33e7fb    

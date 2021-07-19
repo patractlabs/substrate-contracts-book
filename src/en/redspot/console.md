@@ -82,7 +82,7 @@ Then use the following commands to automate a series of processes.
 
 In summary, the auxiliary functions of the console are as follows.
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\contracts\imgs\engprocess.jpg)
+![](./imgs/engprocess.jpg)
 
 
 

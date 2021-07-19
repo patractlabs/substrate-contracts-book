@@ -3,25 +3,25 @@
 ## **Duplicate topics**
 
 1. checkout `ink!` to commit `8e8fe09565ca6d2fad7701d68ff13f12deda7eed`.
-```bash
-$ cd ink
-$ git checkout 8e8fe09565ca6d2fad7701d68ff13f12deda7eed -b tmp
-```
+    ```bash
+    $ cd ink
+    $ git checkout 8e8fe09565ca6d2fad7701d68ff13f12deda7eed -b tmp
+    ```
 
 2. Change the value to 0_u128 in the Transfer event under ink/examples/erc20/lib.rs:L90.
-```rust
-#[ink(constructor)]
-pub fn new(initial_supply: Balance) -> Self {
-     //...
-     Self::env().emit_event(Transfer {
-        from: None,
-        to: Some(caller),
-        // change this from `initial_supply` to `0_u128`
-        value: 0_u128.into() // initial_supply,
-     });
-     instance
-}
-```
+    ```rust
+    #[ink(constructor)]
+    pub fn new(initial_supply: Balance) -> Self {
+         //...
+         Self::env().emit_event(Transfer {
+            from: None,
+            to: Some(caller),
+            // change this from `initial_supply` to `0_u128`
+            value: 0_u128.into() // initial_supply,
+         });
+         instance
+    }
+    ```
 
 3. Execute `cargo +nightly contract build --debug` to compile the contract.
 4. Use [Redspot](https://redspot.patract.io/en/tutorial/) or [Polkadot/Substrate Portal](https://polkadot.js.org/apps/#/explorer) to deploy the contract.
@@ -30,27 +30,27 @@ pub fn new(initial_supply: Balance) -> Self {
 
 During the deployment process, you will encounter `DuplicateTopics` and the Europa log is as follows.
 
-```bash
+```sh
 1: NestedRuntime {
     #...
     env_trace: [
         seal_input(Some(0xd183512b0)),
-                #...    
-                seal_deposit_event((Some([0x45726332303a3a5472616e736....]), None)),
+		#...    
+		seal_deposit_event((Some([0x45726332303a3a5472616e736....]), None)),
     ],
     trap_reason: TrapReason::SupervisorError(DispatchError::Module { index: 5, error: 23, message: Some("DuplicateTopics") }),
     wasm_error: Error::WasmiExecution(Trap(Trap { kind: Host(DummyHostError) }))
-            wasm backtrace: 
-            |  ink_env::engine::on_chain::ext::deposit_event[1623]
-            |  ink_env::engine::on_chain::impls::<impl ink_env::backend::TypedEnvBackend for ink_env::engine::on_chain::EnvInstance>::emit_event[1564]
-            |  ink_env::api::emit_event::{{closure}}[1563]
-            |  <ink_env::engine::on_chain::EnvInstance as ink_env::engine::OnInstance>::on_instance[1562]
-            |  ink_env::api::emit_event[1561]
-            |  erc20::erc20::_::<impl ink_lang::events::EmitEvent<erc20::erc20::Erc20> for ink_lang::env_access::EnvAccess<<erc20::erc20::Erc20 as ink_lang::env_access::ContractEnv>::Env>>::emit_event[1685]
+    	wasm backtrace: 
+    	|  ink_env::engine::on_chain::ext::deposit_event[1623]
+    	|  ink_env::engine::on_chain::impls::<impl ink_env::backend::TypedEnvBackend for ink_env::engine::on_chain::EnvInstance>::emit_event[1564]
+    	|  ink_env::api::emit_event::{{closure}}[1563]
+    	|  <ink_env::engine::on_chain::EnvInstance as ink_env::engine::OnInstance>::on_instance[1562]
+    	|  ink_env::api::emit_event[1561]
+    	|  erc20::erc20::_::<impl ink_lang::events::EmitEvent<erc20::erc20::Erc20> for ink_lang::env_access::EnvAccess<<erc20::erc20::Erc20 as ink_lang::env_access::ContractEnv>::Env>>::emit_event[1685]
         # ...
         # ...
-            |  deploy[1691]
-            ╰─><unknown>[2385]
+    	|  deploy[1691]
+    	╰─><unknown>[2385]
     ,
     nest: [],
 }

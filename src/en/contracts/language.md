@@ -6,7 +6,7 @@ Corresponding to the concept of contract model, the concept of contract language
 
 ## Correspondence between contract language and contract model
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\contracts\imgs\language_1.jpg)
+![](./imgs/language_1.jpg)
 
 As shown in the figure above, the upper part describes the relationship between EVM and Solidity. EVM and Solidity proposed earlier, and their model is consistent with the usual model relationship between computer virtual machine and language. The lower part is the correspondence between the language part after separating the contract model. Here, I will focus on the lower part of the figure. In the upper part, you can analyze it based on your own experience in Ethereum  contract development compared with the introduction later.
 
@@ -41,21 +41,21 @@ Take ink! as an example:
 ```plain
 #[ink::contract]
 mod test {
-// Introduce Vec realized by ink
-use ink_storage::collections::Vec as StorageVec;
-// Introduce the Vec of the standard library
-use ink_prelude::vec::Vec;
-#[ink(storage)]
-pub struct Test {
-owners: StorageVec<AccountId>, // Only ink's Vec can be used
-}
-impl Test {
-#[ink(message)]
-pub fn get_owners(&self) -> Vec<AccountId> {
-// Convert Vec implemented by ink to Vec implemented by standard library
-self.owners.iter().map(Clone::clone).collect()
-}
-}
+    // 引入 ink 实现的 Vec
+    use ink_storage::collections::Vec as StorageVec;
+    // 引入标准库的Vec
+    use ink_prelude::vec::Vec;
+    #[ink(storage)]
+    pub struct Test {
+        owners: StorageVec<AccountId>, // 只能使用 ink的Vec
+    }
+    impl Test {
+        #[ink(message)]
+        pub fn get_owners(&self) -> Vec<AccountId> {
+            // 将 ink 实现的 Vec 转换为 标准库实现的 Vec
+            self.owners.iter().map(Clone::clone).collect()
+        }
+    }
 }
 ```
 
@@ -68,7 +68,7 @@ Because Solidity itself is positioned as a language designed for contract writin
 
 ## **Pallet-contracts and the corresponding contract language**
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\contracts\imgs\englanguage_2.jpg)
+![](./imgs/englanguage_2.jpg)
 
 With the concept of the contract language model, we can nest the contract model framework on Substrate's Wasm contract system.
 

@@ -9,17 +9,18 @@ Europa is a simulated node sandbox environment with contract functions. Its inte
 Europa's environment is roughly the same as that of normal use of node debugging contracts. The only difference is that if you need to print Wasm's backtrace, you need to use a fork version of cargo-contract provided by Patract until the official cargo-contract merges the functions submitted by Patract. If you don't need to print the Wasm backtract when the contract execution crashes, just use the official cargo-contract.
 
 * Compile and run Europa node
-```bash
-$ git clone --recurse-submodules https://github.com/patractlabs/europa.git
-## or do following commands
-$ git clone https://github.com/patractlabs/europa.git
-$ cd europa/vendor
-$ git submodule update --init --recursive
-```
+  
+    ```bash
+    $ git clone --recurse-submodules https://github.com/patractlabs/europa.git
+    ## or do following commands
+    $ git clone https://github.com/patractlabs/europa.git
+    $ cd europa/vendor
+    $ git submodule update --init --recursive
+    ```
 
 You can also install Europa directly using `cargo install`, but you need to add `--locked` to use the Substrate version that Europa currently depends on.
 
-```bash
+```sh
 $ cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
 ```
 
@@ -31,10 +32,10 @@ $ ./target/release/europa --log=runtime=debug -d ./europa_database
 $ ./target/release/europa --log=runtime=debug --tmp
 ```
 
-* Install PatractLabs's cargo-contract (optional, only needed if the Wasm contract executes the backtrace when it crashes).
-```plain
-$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
-```
+* Install PatractLabs's cargo-contract (optional, only needed if the Wasm contract executes the backtrace when it crashes)
+    ```plain
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
+    ```
 
 If you have already installed the official cargo-contract and do not want to overwrite the installation, you can take the way of  manual compilation.
 
@@ -84,13 +85,13 @@ The extending types of Europa are as follows.
 For example, use Redspot to deploy, use apps to execute transactions and view status.
 
 1. Use Redspot to deploy a contract.
-```bash
-$ npx redspot run scripts/deploy.js
-```
+    ```bash
+    $ npx redspot run scripts/deploy.js
+    ```
 
 2. Obtain the successfully deployed contract address and add an existing contract to apps.
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\europa\imgs\add_exist.png)
+   ![](./imgs/add_exist.png)
 
 ## **Analyze the log**
 

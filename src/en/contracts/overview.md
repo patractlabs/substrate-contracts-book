@@ -47,7 +47,7 @@ Most of the business logic of the chain will run in the sandbox system, and the 
 
 `Pallet-evm` and `pallet-contracts` need to run another sandbox in a sandbox environment, as shown in the figure below.
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\contracts\imgs\overview_module.jpg)
+![](./imgs/overview_module.jpg)
 
 
 * On the left is the Ethereum model, which means that every time a contract is run, an Ethereum virtual machine needs to be started on the chain platform to run it.

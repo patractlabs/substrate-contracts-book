@@ -98,7 +98,7 @@ signer创建contractFactory时，会有一个signer参数，用于默认的交�
 
 value指传递给即将创建的合约的金额。
 
-**注意**`@redspot/patract`插件不会处理数字金额精度，需要您自行处理。
+**注意** `@redspot/patract`插件不会处理数字金额精度，需要您自行处理。
 
 * `contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：该方法和`contractFactory.deploy`类似，唯一的区别是`deployed`会预先检查即将生成的合约地址是否存在，如果存在，那么不会去尝试部署，而是直接使用该合约地址创建Contract实例。
 * `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：如果Wasm已上传到链上，您可以直接调用`contractFactory.instantiate`实例化合约。它的参数与`deploy`一致，但返回的是合约地址。
@@ -137,15 +137,15 @@ const contract = await contract.query.balanceOf('baseErc20,new', '1000', {
 gasLimit value指的是`contracts.call`RPC 中的gasLimit和value 。signer可以指定`contracts.call`的origin地址。
 
 * `contract.estimateGas.MessageName(...args[, overrides])`：该函数与`contract.query.MessageName`类似，但返回值是预估将要消耗的gas。
-```typescript
-const result = await contract.estimateGas.balanceOf(someaddress);
-result; // BN(232130000000)
-```
+    ```typescript
+    const result = await contract.estimateGas.balanceOf(someaddress);
+    result; // BN(232130000000)
+    ```
 
 * `contract.tx.MessageName(...args[,overrides])`：通过`contract.tx.MessageName`可以执行合约的交易，示例如下。
-```typescript
-const result = await contract.tx.transfer(someddress, 7);
-```
+    ```typescript
+    const result = await contract.tx.transfer(someddress, 7);
+    ```
 
 和Polkadot.js不同，该函数会返回一个promise 。等到交易上链，或交易执行出错后该promise的resolve才会被调用。
 

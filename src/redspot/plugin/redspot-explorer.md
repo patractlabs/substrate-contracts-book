@@ -10,17 +10,11 @@
 
 ## 优化内容
 
-
-
 和polkadot apps相比, 主要进行了以下优化：
 
 1.重新设计了布局和菜单，更加专注于合约模块。完善了polkadot apps的夜间模式、调整了UI和配色，删除对合约开发无用的页面，并合并了一些工具页面。 
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\1.png)
-
-
-
-
+![](./image/1.png)
 
 2.redspot config中配置的网络，会被注入到explorer中。 
 
@@ -46,41 +40,29 @@
 
 ## 使用步骤
 
-
-
 1.先安装@redspot/explorer插件。
 
-```Plain Text
-$ yarn add @redspot/explorer
-```
+    $ yarn add @redspot/explorer
 
 2.然后在`redspot.config.ts`中导入插件。
 
-```
-...
+    import "@redspot/explorer";
 
-import "@redspot/explorer";
+3.运行redspot explorer。 
 
-...
-```
-
-3.运行edspot explorer。 
-
-```
-npx redspot explorer
-```
+    npx redspot explorer
 
 **注意** 在运行redspot explorer的时候，会在本地启动一个服务，请不要终止该进程。并且，在每次redspot.config更改时，请手动重启该服务。 
 
 4.然后打开[默认的网址](http://127.0.0.1:8011)，打开切换网络，可以看到，能够选择Redspot中配置的网络信息。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\2.png)
+![](./image/2.png)
 
 
 
 5.在**accounts** 页面，可以看到redspot.config中配置的账号。 
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\3.png)
+![](./image/3.png)
 
 6.然后可以使用自己的polkadot extension中的账号，进行交易。复制您在polkadot extension中的账号地址。 
 
@@ -126,42 +108,44 @@ run().catch(err => {
 
 8.运行脚本`$ npx redspot run ./scripts/deploy.ts`， 然后此时会调用polkadot extension进行签名。检查浏览器里面的polkadot extension （explorer页面必须是打开的）。 
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\8.png)
+![](./image/8.png)
 
 9.部署合约。部署成功后，检查**explorer**页面。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\9png.png)
+![](./image/9png.png)
 
 会出现链上的事件，可以查看contracts.instantiateWithCode事件。
 
 这里会有合约message和合约event的解析。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\91.png)
+![](./image/91.png)
 
 10.检查contracts的**codes**页面，这里会自动出现本地编译好的合约的code。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\10.png)
+![](./image/10.png)
 
 11.然后检查contracts的**contracts**页面，可以查看到刚刚部署好的合约。 
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\111.png)
+![](./image/111.png)
 
 12.切换到**Console**页面，运行脚本和编译合约。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\12.png)
+![](./image/12.png)
 
 13.点击**compile contract** ，出现此提示表示编译成功。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\13.png)
+![](./image/13.png)
 
 如果编译时间过长，请切换到运行 `npx redspot explorer`命令的终端，查看日志提示。
 
 14.点击**run**运行脚本，右边控制台会输出运行日志信息。 
 
+![](./image/14.png)
+
 15.现在合约成功，切换到**contracts**页面进行，可以看到，刚刚部署成功的合约。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\15.png)
+![](./image/15.png)
 
 16.点击**extrinsics**按钮（即图中recent contracts中的每一行中的蓝色的extrinsics），可以在跳出来的页面中看到当前合约的相关交易信息。   
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\plugin\image\16.png)
+![](./image/16.png)

@@ -35,7 +35,7 @@ Redspot 仅仅是一个普通的 npm package ，升级方式和其他 npm packag
 }
 ```
 
-**注意**升级时最好同时将所有的插件升级到最新版，避免产生依赖问题。
+**注意 **升级时最好同时将所有的插件升级到最新版，避免产生依赖问题。
 
 ## **如何指定 @polkadot/api 和 @polkadot/api-contract 的版本？**
 

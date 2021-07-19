@@ -114,26 +114,26 @@ await expect(() =>
 该匹配器可以检测合约是否发出事件，使用示例如下：
 
 * 检测是否有Transfer事件被emit
-```typescript
-await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
-  contract,
-  'Transfer'
-);
-```
+    ```typescript
+    await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
+      contract,
+      'Transfer'
+    );
+    ```
 
 * 检测该事件是否包含指定的参数
-```typescript
-await expect(contract.tx.transfer(receiver.address, 7))
-  .to.emit(contract, 'Transfer')
-  .withArgs(sender.address, receiver.address, 7);
-```
+    ```typescript
+    await expect(contract.tx.transfer(receiver.address, 7))
+      .to.emit(contract, 'Transfer')
+      .withArgs(sender.address, receiver.address, 7);
+    ```
 
 * 不期待发出事件
-```typescript
-await expect(
-  contract.tx.transfer(sender.address, 7, {
-    signer: emptyAccount
-  })
-).to.not.emit(contract, 'Transfer');
-```
+    ```typescript
+    await expect(
+      contract.tx.transfer(sender.address, 7, {
+        signer: emptyAccount
+      })
+    ).to.not.emit(contract, 'Transfer');
+    ```
 

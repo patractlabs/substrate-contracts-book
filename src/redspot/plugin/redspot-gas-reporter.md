@@ -11,14 +11,14 @@
 
 1. 导入@redspot/gas-reporter 插件。
 2. 在`redspot.config.ts`中加入此插件，即可自动运行。
-```plain
-// redspot.config.ts
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/gas-reporter';
-export default {
- ...
-} as RedspotUserConfig;
-```
+    ```plain
+    // redspot.config.ts
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/gas-reporter';
+    export default {
+     ...
+    } as RedspotUserConfig;
+    ```
 
 
 

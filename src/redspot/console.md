@@ -81,7 +81,7 @@ ret.events
 
 综上所述，控制台辅助的功能如下。
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\redspot\imgs\process.jpg)
+![](./imgs/process.jpg)
 
 
 

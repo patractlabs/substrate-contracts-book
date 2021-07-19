@@ -17,9 +17,9 @@ On the other hand, the original code will be optimized during the compilation of
 ## Install `cargo-contract` under Patract repository
 
 * Install [cargo-contract](https://github.com/patractlabs/cargo-contract) under Patract repository.
-```plain
-$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
-```
+    ```plain
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.10.0 --force
+    ```
 
 **Note** Since the current version of Parity's `cargo-contract` is `v0.10.0` , our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
 
@@ -34,11 +34,11 @@ cargo-contract
 ```
 
 * If you have installed the official `cargo-contract `and does not want to overwrite the installation, you can use manual compilation.
-```bash
-$ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
-$ cd cargo-contract
-$ cargo build --release
-```
+    ```bash
+    $ git clone https://github.com/patractlabs/cargo-contract --branch=v0.10.0
+    $ cd cargo-contract
+    $ cargo build --release
+    ```
 
 After compilation, you can move the compiled product to any path that can be accessed globally, and rename it ,in case it conflicts with the installed cargo-contract.
 

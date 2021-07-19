@@ -115,26 +115,26 @@ await expect(() =>
 The matcher can detect whether the contract emits an event. An example of its use is as follows.
 
 * Detect whether a Transfer event is emitted
-```typescript
-await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
-  contract,
-  'Transfer'
-);
-```
+    ```typescript
+    await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
+      contract,
+      'Transfer'
+    );
+    ```
 
 * Detect whether the event contains the specified parameters
-```typescript
-await expect(contract.tx.transfer(receiver.address, 7))
-  .to.emit(contract, 'Transfer')
-  .withArgs(sender.address, receiver.address, 7);
-```
+    ```typescript
+    await expect(contract.tx.transfer(receiver.address, 7))
+      .to.emit(contract, 'Transfer')
+      .withArgs(sender.address, receiver.address, 7);
+    ```
 
 * Don't expect to emit events
-```typescript
-await expect(
-  contract.tx.transfer(sender.address, 7, {
-    signer: emptyAccount
-  })
-).to.not.emit(contract, 'Transfer');
-```
+    ```typescript
+    await expect(
+      contract.tx.transfer(sender.address, 7, {
+        signer: emptyAccount
+      })
+    ).to.not.emit(contract, 'Transfer');
+    ```
 

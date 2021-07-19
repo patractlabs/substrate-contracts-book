@@ -10,7 +10,7 @@ Compared with polkadot apps, the main optimizations are as follows:
 
 1. The layout and menu have been redesigned, focusing more on the contract module. Improved the night mode of polkadot apps, adjusted the UI and color scheme, deleted pages that were useless for contract development, and merged some tool pages.
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\1.png)
+   ![](./image/1.png)
 
    
 
@@ -58,11 +58,11 @@ npx redspot explorer
 
 4. Then open the [default website](http://127.0.0.1:8011), open the switch network, you can see that you can select the network information configured in Redspot.
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\2.png)
+   ![](./image/2.png)
 
 5. On the **accounts** page, you can see the accounts configured in redspot.config.
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\3.png)
+   ![](./image/3.png)
 
 6. Then you can use your account in the polkadot extension to conduct transactions. Copy your account address in polkadot extension.
 
@@ -96,48 +96,48 @@ run().catch(err => {
 
 8. Run the script `$ npx redspot run ./scripts/deploy.ts`, and then call the polkadot extensio n for signing. Check the polkadot extension in the browser (the explorer page must be open).
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\8.png)
+   ![](./image/8.png)
 
 9. Deploy the contract. After the deployment is successful, check the **explorer **page.
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\9png.png)
+   ![](./image/9png.png)
 
 There will be an event on the chain, you can view the contracts.instantiateWithCode event.
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\91.png)
+![](./image/91.png)
 
 
 There will be an analysis of contract message and contract event.
 
 10. Check the **codes** page of contracts, the code of the locally compiled contract will automatically appear here.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\10.png)
+    ![](./image/10.png)
 
 11. Then check the **contracts** page of contracts, you can view the contract just deployed.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\111.png)
+    ![](./image/111.png)
 
 12. Switch to the **Console** page, run the script and compile the contract.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\12.png)
+    ![](./image/12.png)
 
 13. Click **compile contract**, and this prompt appears to indicate that the compilation was successful.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\13.png)
+    ![](./image/13.png)
 
 If the compilation time is too long, please switch to the terminal running the `npx redspot explorer` command and check t he log prompt.
 
 14. Click **run** to run the script, and the console on the right will output the run log information.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\14.png)
+    ![](./image/14.png)
 
 15. Now that the contract is successful, switch to the **contracts **page to proceed. You can see that the contract has just been deployed successfully.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\15.png)
+    ![](./image/15.png)
 
 16. Click the **extrinsics** button (that is, the blue extrinsics in each row of the recent contracts in the figure), and you can see the relevant transaction information of the current contract on the page that pops up.
 
-    ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\en\redspot\plugin\image\16.png)
+    ![](./image/16.png)
 
 
 

@@ -9,19 +9,19 @@ redspot known types是一个可以自动添加已知的链的types的插件。�
 如何使用插件？
 
 1. 安装依赖。
-```bash
-$ yarn add @redspot/known-types
-```
+    ```sh
+    $ yarn add @redspot/known-types
+    ```
 
 2. 在`redspot.config.ts`中导入插件。
-```javascript
-...
-import "@redspot/known-types"
-...
-export default {
-  ...
-};
-```
+    ```javascript
+    ...
+    import "@redspot/known-types"
+    ...
+    export default {
+      ...
+    };
+    ```
 
 3. 然后尝试连接Canvas、Jupiter、Europa等链的网络，无需添加额外的types配置。
 

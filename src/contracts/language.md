@@ -1,10 +1,10 @@
 ## 背景信息
 
-与合约模型的概念相对应的，可以衍生出合约语言的概念。[上一章节中](https://patractlabs.feishu.cn/docs/doccnfsZ6peJ3oqifCQRAQ27Azb)我们已经拆分出了合约沙盒与合约模型的结构层次。在实际应用中，一些新型的合约平台并不像EVM那样发明了一套新的Solidity合约语言，而是选择了一些现有的语言，例如Rust、C++、AssemblyScript等语言。并基于这门语言在hack语法解析、宏等维度上给现有语言添加上合约相关的约束和功能逻辑等。因此许多情况下会以框架、库等形态存在，例如Frame Contract Pallet的Rust合约语言框架ink!。而这种框架、库又不是平时程序开发中使用库的维度，有一些合约语言需要修改到编译器维度，因此我们有时候也称其为合约语言框架。
+与合约模型的概念相对应的，可以衍生出合约语言的概念。在上一章节中我们已经拆分出了合约沙盒与合约模型的结构层次。在实际应用中，一些新型的合约平台并不像EVM那样发明了一套新的Solidity合约语言，而是选择了一些现有的语言，例如Rust、C++、AssemblyScript等语言。并基于这门语言在hack语法解析、宏等维度上给现有语言添加上合约相关的约束和功能逻辑等。因此许多情况下会以框架、库等形态存在，例如Frame Contract Pallet的Rust合约语言框架ink!。而这种框架、库又不是平时程序开发中使用库的维度，有一些合约语言需要修改到编译器维度，因此我们有时候也称其为合约语言框架。
 
 ## **合约语言与合约模型的对应关系**
 
-![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\contracts\imgs\language_1.jpg)
+![](./imgs/language_1.jpg)
 
 如上图所示，上半部分描述了EVM与Solidity之间的关系。EVM和Solidity提出的时间较早，且其模型与通常的计算机虚拟机与语言的模型关系是一致的。而下半部分是在分离了合约模型后，语言部分的对应关系。在这里重点介绍图中下半部分，上半部分您可以根据自己在以太坊合约开发的经验对比后文的介绍进行分析。
 
@@ -36,26 +36,27 @@
 
 * 在区块链中应该避免使用float，因为浮点数可能产生不确定性行为。因此在合约/runtime开发中，如果需要使用浮点数，或者出现溢出数字乘除的时，需要引入定点数来处理。因此在ink!的合约中可以引入Substrate runtime提供的定点数的库来处理。
 * 由于`pallet-contracts`的合约模型与EVM基本相同，因此`pallet-contracts`的合约存储也是由K/V构成。那么合约模型框架就需要处理标准库里提供的各类集合类型。因此在ink!中将标准库中可能用到的集合类型重写了一遍，添加了能将集合元素类型处理成K/V数据的过程。因此在ink!的合约存储中，如果设计了集合类型，那么只能使用ink!标准库中提供的类型。而另一方面由于ink!的返回值需要导出metadata令第三方处理，而当前的metadata的接口实现只给标准库中的集合实现，因此ink!方法的返回值的集合只能使用标准库的集合类型。代码示例如下。
-```plain
-#[ink::contract]
-mod test {
-// 引入 ink 实现的 Vec
-use ink_storage::collections::Vec as StorageVec;
-// 引入标准库的Vec
-use ink_prelude::vec::Vec;
-#[ink(storage)]
-pub struct Test {
-owners: StorageVec<AccountId>, // 只能使用 ink的Vec
-}
-impl Test {
-#[ink(message)]
-pub fn get_owners(&self) -> Vec<AccountId> {
-// 将 ink 实现的 Vec 转换为 标准库实现的 Vec
-self.owners.iter().map(Clone::clone).collect()
-}
-}
-}
-```
+
+    ```plain
+    #[ink::contract]
+    mod test {
+        // 引入 ink 实现的 Vec
+        use ink_storage::collections::Vec as StorageVec;
+        // 引入标准库的Vec
+        use ink_prelude::vec::Vec;
+        #[ink(storage)]
+        pub struct Test {
+            owners: StorageVec<AccountId>, // 只能使用 ink的Vec
+        }
+        impl Test {
+            #[ink(message)]
+            pub fn get_owners(&self) -> Vec<AccountId> {
+                // 将 ink 实现的 Vec 转换为 标准库实现的 Vec
+                self.owners.iter().map(Clone::clone).collect()
+            }
+        }
+    }
+    ```
 
 综上所述，在模型结构上：
 
@@ -70,11 +71,11 @@ self.owners.iter().map(Clone::clone).collect()
 
 有了合约语言的模型的概念后，我们可以把合约模型框架嵌套在Substrate的Wasm合约系统上了。
 
-ink!整套系统的实现，是与`pallet-contracts`的合约模型相对应的。ink! 3.0通过过程宏（2.0通过神声明宏）的系统，将对应于`pallet-contracts`的功能逻辑引入到了Rust中。因此这套系统里的S语言就是Rust，而T语言就是Wasm字节码。ink!借助于辅助工具`cargo-contract`，把使用了ink!框架的Rust代码编译成为了合约的Wasm字节码。而Wasm字节码在链上运行的环境就是wasmi，将来也会引入Wasmtime等JIT形式的运行环境。
+ink!整套系统的实现，是与`pallet-contracts`的合约模型相对应的。ink! 3.0通过过程宏（2.0通过声明宏）的系统，将对应于`pallet-contracts`的功能逻辑引入到了Rust中。因此这套系统里的S语言就是Rust，而T语言就是Wasm字节码。ink!借助于辅助工具`cargo-contract`，把使用了ink!框架的Rust代码编译成为了合约的Wasm字节码。而Wasm字节码在链上运行的环境就是wasmi，将来也会引入Wasmtime等JIT形式的运行环境。
 
 而因为`pallet-contracts`的执行环境是Wasm字节码，所以能够编译成Wasm字节码的的语言配套上符合`pallet-contracts`合约模型的合约语言，都可以产生能运行于`pallet-contracts`这个合约平台上的合约。对`pallet-contracts`而言，完全可以设计出不同语言的合约体系供您选择，您可以使用不同的语言开发Wasm合约。
 
-更多信息
+## 更多信息
 
 当前支持运行于`pallet-contracts`的合约语言除了对于Rust的ink!之外，还有以下项目：
 

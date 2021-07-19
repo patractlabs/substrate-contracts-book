@@ -15,17 +15,17 @@ Redspot installs some plug-ins by default. If you need to install or upgrade the
 For example, install @redspot/patract and @redspot/chai plug-ins.
 
 1. Execute the following command in the project root directory.
-```sh
-yarn add @redspot/patract @redspot/chai
-```
+    ```sh
+    yarn add @redspot/patract @redspot/chai
+    ```
 
 2. Import the plug-in in the redspot configuration file redspot.config.js in the project directory.
-```typescript
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract';
-import '@redspot/chai';
-export default {
- ...
-} as RedspotUserConfig;
-```
+    ```typescript
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/patract';
+    import '@redspot/chai';
+    export default {
+     ...
+    } as RedspotUserConfig;
+    ```
 

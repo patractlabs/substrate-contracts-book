@@ -11,16 +11,16 @@
 ### **ink! Toolchain for contract compilation**
 
 * Rust environment. Since the ink! contract requires Rust's Wasm toolchain, and Wasm can only run under the nightly toolchain, so you need to prepare the Wasm compilation environment first.
-```sh
-rustup install nightly
-rustup component add rust-src --toolchain nightly
-rustup target add wasm32-unknown-unknown --toolchain nightly
-```
+    ```sh
+    rustup install nightly
+    rustup component add rust-src --toolchain nightly
+    rustup target add wasm32-unknown-unknown --toolchain nightly
+    ```
 
 * ink! cargo-contract, a tool for compiling contracts. You can install the official cargo-contract provided by default with the following command.
-```sh
-cargo install cargo-contract --force
-```
+    ```sh
+    cargo install cargo-contract --force
+    ```
 
 **Note** When using cargo-contract, wasm-opt must be prepared in the current environment. For details, please refer to [cargo-contract](https://github.com/paritytech/cargo-contract).
 
@@ -94,98 +94,98 @@ Redspot can be easily integrated into existing contract projects. Let's take the
 #### Compile the contract
 
 1. Clone the ink warehouse and open the ink directory.
-```plain
-git clone https://github.com/paritytech/ink.git
-cd ink
-```
+    ```plain
+    git clone https://github.com/paritytech/ink.git
+    cd ink
+    ```
 2. Create the following three files in the root directory of ink.
 * **redspot.config.ts**
-```typescript
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract'; // import @redspot/patract plugin
-import '@redspot/chai'; // import @redspot/chai plugin
-export default {
-  defaultNetwork: 'development', // default network
-  contract: {
-    ink: {
-      toolchain: 'nightly',      // specify the toolchain version for contract compliation
-      sources: ['examples/**/*'] // the directory where contracts locate
-    }
-  },
-  networks: {
-    // development network configuration
-    development: {
-      endpoint: 'ws://127.0.0.1:9944',
-      types: {},
-      gasLimit: '400000000000', // default gasLimit
-      explorerUrl:
-        'https://polkadot.js.org/apps/#/explorer/query/?rpc=ws://127.0.0.1:9944/'
-    },
-  },
-  mocha: {
-    timeout: 60000
-  }
-} as RedspotUserConfig;
-```
+    ```typescript
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/patract'; // import @redspot/patract plugin
+    import '@redspot/chai'; // import @redspot/chai plugin
+    export default {
+      defaultNetwork: 'development', // default network
+      contract: {
+        ink: {
+          toolchain: 'nightly',      // specify the toolchain version for contract compliation
+          sources: ['examples/**/*'] // the directory where contracts locate
+        }
+      },
+      networks: {
+        // development network configuration
+        development: {
+          endpoint: 'ws://127.0.0.1:9944',
+          types: {},
+          gasLimit: '400000000000', // default gasLimit
+          explorerUrl:
+            'https://polkadot.js.org/apps/#/explorer/query/?rpc=ws://127.0.0.1:9944/'
+        },
+      },
+      mocha: {
+        timeout: 60000
+      }
+    } as RedspotUserConfig;
+    ```
 
 * **package.json**
-```json
-{
-  "name": "examples",
-  "version": "0.1.0",
-  "private": true,
-  "resolutions": {
-    "@polkadot/api": "^3.10.2",
-    "@polkadot/api-contract": "^3.10.2"
-  },
-  "dependencies": {
-    "@redspot/chai": "^0.10.1",
-    "@redspot/patract": "^0.10.1",
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.0.3",
-    "chai": "^4.2.0",
-    "redspot": "^0.10.1",
-    "typescript": "^4.0.2"
-  },
-  "scripts": {
-    "build": "npx redspot compile",
-    "test": "npx redspot test"
-  }
-}
-```
+    ```json
+    {
+      "name": "examples",
+      "version": "0.1.0",
+      "private": true,
+      "resolutions": {
+        "@polkadot/api": "^3.10.2",
+        "@polkadot/api-contract": "^3.10.2"
+      },
+      "dependencies": {
+        "@redspot/chai": "^0.10.1",
+        "@redspot/patract": "^0.10.1",
+        "@types/chai": "^4.2.14",
+        "@types/mocha": "^8.0.3",
+        "chai": "^4.2.0",
+        "redspot": "^0.10.1",
+        "typescript": "^4.0.2"
+      },
+      "scripts": {
+        "build": "npx redspot compile",
+        "test": "npx redspot test"
+      }
+    }
+    ```
 
 * **tsconfig.json**
-```json
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "noImplicitAny": false
-  },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "./redspot.config.ts",
-  ]
-}
-```
+    ```json
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "noImplicitAny": false
+      },
+      "include": [
+        "**/*.ts"
+      ],
+      "exclude": [
+        "node_modules"
+      ],
+      "files": [
+        "./redspot.config.ts",
+      ]
+    }
+    ```
 
 3. Install npm dependencies. It is recommended that you use [yarn](https://classic.yarnpkg.com/en/docs/install) as the package manager.
-```plain
-yarn or npm install
-```
+    ```plain
+    yarn or npm install
+    ```
 
 4. Run the `npx redspot compile` command in the root directory of the project to compile all contracts in the examples directory.
-```plain
-npx redspot compile examples/erc20
-```
+    ```plain
+    npx redspot compile examples/erc20
+    ```
 
 This command will specify to compile the erc20 contract. After the compilation is complete, you can find the information generated by the compilation in the artifacts directory.
 
@@ -194,58 +194,56 @@ This command will specify to compile the erc20 contract. After the compilation i
 Now you can run a deployment script through Redspot.
 
 1. Create a deploy.ts file in the root directory of ink.
-```typescript
-import { network, patract } from "redspot";
-const { getContractFactory } = patract;
-const { getSigners, api } = network;
-async function run() {
-    console.log("deploy erc20");
-    await api.isReady;
-    console.log("deploy erc201");
-    const signers = await getSigners();
-    const signer = signers[0];
-    const contractFactory = await getContractFactory("erc20", signer);
-    const contract = await contractFactory.deploy("new", "1000000", {
-        gasLimit: "200000000000",
-        value: "10000000000000000",
+    ```typescript
+    import { network, patract } from "redspot";
+    const { getContractFactory } = patract;
+    const { getSigners, api } = network;
+    async function run() {
+        console.log("deploy erc20");
+        await api.isReady;
+        console.log("deploy erc201");
+        const signers = await getSigners();
+        const signer = signers[0];
+        const contractFactory = await getContractFactory("erc20", signer);
+        const contract = await contractFactory.deploy("new", "1000000", {
+            gasLimit: "200000000000",
+            value: "10000000000000000",
+        });
+        console.log(
+            "Deploy successfully. The contract address: ",
+            contract.address.toString()
+        );
+        api.disconnect();
+    }
+    run().catch((err) => {
+        console.log(err);
     });
-    console.log(
-        "Deploy successfully. The contract address: ",
-        contract.address.toString()
-    );
-    api.disconnect();
-}
-run().catch((err) => {
-    console.log(err);
-});
-```
+    ```
 
 2. Make sure that the network has been configured correctly in redspot.config.ts.
-```typescript
-{
-        ...
-        networks: {
-    development: {
-      endpoint: 'ws://127.0.0.1:9944', // 
-      types: {},
-      ...
-    },
-  },
-}
-```
+    ```typescript
+    {
+            ...
+            networks: {
+        development: {
+          endpoint: 'ws://127.0.0.1:9944', // 
+          types: {},
+          ...
+        },
+      },
+    }
+    ```
 
 3. Add`--no-compile`to prevent repeated compilation and run the deploy.ts file.
-```plain
-npx redspot run ./deploy.ts --no-compile
-```
+    ```plain
+    npx redspot run ./deploy.ts --no-compile
+    ```
 
 #### Result verification
 
 After the contract is successfully deployed, you can get information similar to this.
 
-```plain
-Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
-```
+    Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
 
 #### **Test contract**
 

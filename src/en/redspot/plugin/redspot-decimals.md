@@ -17,34 +17,34 @@ Obtain the tokenDecimal of the chain automatically
 ## How to use the plug-in?
 
 1. Use the following command to install the plug-in.
-```plain
-yarn add @redspot/decimals
-```
+    ```plain
+    yarn add @redspot/decimals
+    ```
 
 2. Import the plug-in in redspot.config.ts, and then you can use the plug-in.
-```typescript
-import '@redspot/decimals'
-```
+    ```typescript
+    import '@redspot/decimals'
+    ```
 
 ## Example of use
 
 * Used when deploying contracts
-```typescript
-const contract = await contractFactory.deployed('new', '10000', {
-  gasLimit: '400000000000',
-  value: '10000 UNIT'
-});
-```
+    ```typescript
+    const contract = await contractFactory.deployed('new', '10000', {
+      gasLimit: '400000000000',
+      value: '10000 UNIT'
+    });
+    ```
 
 * Use in transfer
-```typescript
-import { network } from 'redspot';
-const { api } = network;
-async function run() {
-  await api.isReady;
-  api.tx.balances.transfer(address, '1 UNIT')
-}
-```
+    ```typescript
+    import { network } from 'redspot';
+    const { api } = network;
+    async function run() {
+      await api.isReady;
+      api.tx.balances.transfer(address, '1 UNIT')
+    }
+    ```
 
 
 

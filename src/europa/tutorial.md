@@ -84,9 +84,9 @@ $ npx redspot run scripts/deploy.js
 ```
 2. 获取到部署成功的合约地址，在apps上添加一个已存在的合约。
 
-   ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\europa\imgs\add_exist.png)
+   ![](./imgs/add_exist.png)
 
-**分析日志**
+## **分析日志**
 
 使用Europa部署及执行合约的过程中会有详细日志的打印，您可以根据这些日志快速定位出合约中出现的问题。通过这些日志，合约的执行过程就不再是一个黑盒。
 
@@ -117,7 +117,7 @@ $ npx redspot run scripts/deploy.js
 }
 ```
 
-## **Contract执行日志**
+### **Contract执行日志**
 
 根据上文日志，可以分析出以下信息。
 
@@ -131,7 +131,7 @@ $ npx redspot run scripts/deploy.js
 
 根据Europa提供的合约日志，您可以看出一次合约调用的详细过程。如果您对合约模块`pallet-contracts`比较了解，则可以获得许多重要的调试信息以辅助定位合约问题。若您对合约模块了解较少，`selector`、`caller`、`nest`等信息也能给您带来很大帮助，减少调试合约的时间。
 
-**注意**当在apps上查看contracts中的messages时，apps会自动调用合约只读的messages获取当前合约的一些值，导致Europa会出现一些读取调用的日志，干扰正常判断。因此您需要辨别清楚哪块日志才是自己所需要的。 若使用发送请求都是能被自己控制的第三方客户端，则没有这方面的顾虑。
+**注意** 当在apps上查看contracts中的messages时，apps会自动调用合约只读的messages获取当前合约的一些值，导致Europa会出现一些读取调用的日志，干扰正常判断。因此您需要辨别清楚哪块日志才是自己所需要的。 若使用发送请求都是能被自己控制的第三方客户端，则没有这方面的顾虑。
 
 ### 使用apps发送请求时，如何在Europa中辨别出需要的日志？
 
@@ -204,7 +204,7 @@ pub fn transfer(&mut self, to: AccountId, value: Balance) -> Result<()> {
 }
 ```
 
-**注意**当前该合约需要使用Patract的`cargo-contract`才能打印Wasm的Backtrace。
+**注意** 当前该合约需要使用Patract的`cargo-contract`才能打印Wasm的Backtrace。
 
 从Europa的日志中，可以分析出如下调用过程。
 

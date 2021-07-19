@@ -90,7 +90,7 @@ pub struct NestedRuntime {
 
 * 在合约A中，调用合约B之后再调用合约C。
 
-  ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\europa\imgs\call_other_1.png)
+  ![](./imgs/call_other_1.png)
 
 
 
@@ -100,21 +100,21 @@ pub struct NestedRuntime {
 1: NestedRuntime {
         self_account: A,
         nest:[
-                2: NestedRuntime {
-                        self_account: B,
-                        nest:[],
-                },
-                2: NestedRuntime {
-                        self_account: C,
-                        nest:[],
-                }
+             2: NestedRuntime {
+                     self_account: B,
+                     nest:[],
+             },
+             2: NestedRuntime {
+                     self_account: C,
+                     nest:[],
+             }
         ]
 }
 ```
 
 * 在合约A中，调用合约B，在合约B中，调用合约C。
 
-  ![](C:\Users\lizhaoyang\workspace\substrate-contracts-book\src\europa\imgs\call_other_2.png)
+  ![](./imgs/call_other_2.png)
 
 日志如下：
 
@@ -125,9 +125,9 @@ pub struct NestedRuntime {
                 2: NestedRuntime {
                         self_account: B,
                         nest:[
-                                3: NestedRuntime {
-                                self_account: C,
-                                nest:[],
+                             3: NestedRuntime {
+                             self_account: C,
+                             nest:[],
                         }
                         ],
                 }  

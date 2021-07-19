@@ -22,7 +22,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 cargo install cargo-contract --force
 ```
 
-**注意**使用`cargo-contrac`t时，必须在当前的环境中准备好`wasm-opt`，详情请参见[cargo-contract](https://github.com/paritytech/cargo-contract)。
+**注意** 使用`cargo-contrac`t时，必须在当前的环境中准备好`wasm-opt`，详情请参见[cargo-contract](https://github.com/paritytech/cargo-contract)。
 
 如果您不希望在本机上安装Rust、cargo-contract环境，您可以使用Docker拉取镜像进行环境准备。详情请参见[Tasks](https://docs.patract.io/redspot/tasks.html)部分。
 
@@ -72,7 +72,7 @@ Redspot 提供合约开发模版，可以让您快速搭建起一个项目。目
 npx redspot-new erc20
 ```
 
-**注意**因为当前 ink! 变动比较频繁，所以Redspot还未提供从模板创建项目的功能。您如果需要其他项目模板，可以从Redspot的[项目仓库](https://github.com/patractlabs/redspot)中的example目录中拷贝到任意目录下，并更改项目名称等配置信息。example目录下的所有案例都已经是Redspot项目结构，因此您不需要再执行`npx redspot-new`命令创建项目。
+**注意 **因为当前 ink! 变动比较频繁，所以Redspot还未提供从模板创建项目的功能。您如果需要其他项目模板，可以从Redspot的[项目仓库](https://github.com/patractlabs/redspot)中的example目录中拷贝到任意目录下，并更改项目名称等配置信息。example目录下的所有案例都已经是Redspot项目结构，因此您不需要再执行`npx redspot-new`命令创建项目。
 
 如果一个项目由Redspot创建，那么该项目根目录下会存在一个`redspot.config.ts`文件，以此为标志这个项目是Redspot。同时相同目录下的`package.json`则控制了这个项目对应的Redspot的版本。
 
@@ -94,211 +94,207 @@ Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[
 #### **编译合约**
 
 1. 克隆 ink 仓库并打开 ink 目录。
-```plain
-git clone https://github.com/paritytech/ink.git
-cd ink
-```
+    ```plain
+    git clone https://github.com/paritytech/ink.git
+    cd ink
+    ```
 2. 在 ink 的根目录中创建以下三个文件。
 * **redspot.config.ts**
-```typescript
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract'; // 引入 @redspot/patract 插件
-import '@redspot/chai'; // 引入 @redspot/chai 插件
-export default {
-  defaultNetwork: 'development', // 默认的 network
-  contract: {
-    ink: {
-      toolchain: 'nightly',      // 指定编译合约时的 toolchain 版本
-      sources: ['examples/**/*'] // 合约所在的目录
-    }
-  },
-  networks: {
-    // development 网络的配置
-    development: {
-      endpoint: 'ws://127.0.0.1:9944',
-      types: {},
-      gasLimit: '400000000000', // 设置默认的gasLimit
-      explorerUrl:
-        'https://polkadot.js.org/apps/#/explorer/query/?rpc=ws://127.0.0.1:9944/'
-    },
-  },
-  mocha: {
-    timeout: 60000
-  }
-} as RedspotUserConfig;
-```
+    ```typescript
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/patract'; // 引入 @redspot/patract 插件
+    import '@redspot/chai'; // 引入 @redspot/chai 插件
+    export default {
+      defaultNetwork: 'development', // 默认的 network
+      contract: {
+        ink: {
+          toolchain: 'nightly',      // 指定编译合约时的 toolchain 版本
+          sources: ['examples/**/*'] // 合约所在的目录
+        }
+      },
+      networks: {
+        // development 网络的配置
+        development: {
+          endpoint: 'ws://127.0.0.1:9944',
+          types: {},
+          gasLimit: '400000000000', // 设置默认的gasLimit
+          explorerUrl:
+            'https://polkadot.js.org/apps/#/explorer/query/?rpc=ws://127.0.0.1:9944/'
+        },
+      },
+      mocha: {
+        timeout: 60000
+      }
+    } as RedspotUserConfig;
+    ```
 
 * **package.json**
-```json
-{
-  "name": "examples",
-  "version": "0.1.0",
-  "private": true,
-  "resolutions": {
-    "@polkadot/api": "^3.10.2",
-    "@polkadot/api-contract": "^3.10.2"
-  },
-  "dependencies": {
-    "@redspot/chai": "^0.10.1",
-    "@redspot/patract": "^0.10.1",
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.0.3",
-    "chai": "^4.2.0",
-    "redspot": "^0.10.1",
-    "typescript": "^4.0.2"
-  },
-  "scripts": {
-    "build": "npx redspot compile",
-    "test": "npx redspot test"
-  }
-}
-```
+    ```json
+    {
+      "name": "examples",
+      "version": "0.1.0",
+      "private": true,
+      "resolutions": {
+        "@polkadot/api": "^3.10.2",
+        "@polkadot/api-contract": "^3.10.2"
+      },
+      "dependencies": {
+        "@redspot/chai": "^0.10.1",
+        "@redspot/patract": "^0.10.1",
+        "@types/chai": "^4.2.14",
+        "@types/mocha": "^8.0.3",
+        "chai": "^4.2.0",
+        "redspot": "^0.10.1",
+        "typescript": "^4.0.2"
+      },
+      "scripts": {
+        "build": "npx redspot compile",
+        "test": "npx redspot test"
+      }
+    }
+    ```
 
 * **tsconfig.json**
-```json
-{
-  "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "outDir": "dist",
-    "noImplicitAny": false
-  },
-  "include": [
-    "**/*.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ],
-  "files": [
-    "./redspot.config.ts",
-  ]
-}
-```
+    ```json
+    {
+      "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "outDir": "dist",
+        "noImplicitAny": false
+      },
+      "include": [
+        "**/*.ts"
+      ],
+      "exclude": [
+        "node_modules"
+      ],
+      "files": [
+        "./redspot.config.ts",
+      ]
+    }
+    ```
 
 3. 安装 npm 依赖，在这里推荐您使用[yarn](https://classic.yarnpkg.com/en/docs/install)作为包管理器。
-```plain
-yarn 或者 npm install
-```
+    ```plain
+    yarn 或者 npm install
+    ```
 
 4. 在项目的根目录下运行`npx redspot compile`命令，编译examples目录下的所有合约。
-```plain
-npx redspot compile examples/erc20
-```
-该命令会指定编译 erc20 合约。编译完成后，您可在artifacts目录下找到编译产生的信息。
+    ```plain
+    npx redspot compile examples/erc20
+    ```
+    该命令会指定编译 erc20 合约。编译完成后，您可在artifacts目录下找到编译产生的信息。
 #### **部署合约**
 
 现在您可以通过 Redspot 运行一个部署脚本了。
 
 1. 在 ink 根目录创建deploy.ts文件。
-```typescript
-import { network, patract } from "redspot";
-const { getContractFactory } = patract;
-const { getSigners, api } = network;
-async function run() {
-    console.log("deploy erc20");
-    await api.isReady;
-    console.log("deploy erc201");
-    const signers = await getSigners();
-    const signer = signers[0];
-    const contractFactory = await getContractFactory("erc20", signer);
-    const contract = await contractFactory.deploy("new", "1000000", {
-        gasLimit: "200000000000",
-        value: "10000000000000000",
+    ```typescript
+    import { network, patract } from "redspot";
+    const { getContractFactory } = patract;
+    const { getSigners, api } = network;
+    async function run() {
+        console.log("deploy erc20");
+        await api.isReady;
+        console.log("deploy erc201");
+        const signers = await getSigners();
+        const signer = signers[0];
+        const contractFactory = await getContractFactory("erc20", signer);
+        const contract = await contractFactory.deploy("new", "1000000", {
+            gasLimit: "200000000000",
+            value: "10000000000000000",
+        });
+        console.log(
+            "Deploy successfully. The contract address: ",
+            contract.address.toString()
+        );
+        api.disconnect();
+    }
+    run().catch((err) => {
+        console.log(err);
     });
-    console.log(
-        "Deploy successfully. The contract address: ",
-        contract.address.toString()
-    );
-    api.disconnect();
-}
-run().catch((err) => {
-    console.log(err);
-});
-```
+    ```
 
 2. 确保已经在redspot.config.ts 中正确配置了网络。
-```typescript
-{
-        ...
-        networks: {
-    development: {
-      endpoint: 'ws://127.0.0.1:9944', // 
-      types: {},
-      ...
-    },
-  },
-}
-```
+    ```typescript
+    {
+            ...
+            networks: {
+        development: {
+          endpoint: 'ws://127.0.0.1:9944', // 
+          types: {},
+          ...
+        },
+      },
+    }
+    ```
 
 3. 加上`--no-compile`防止重复编译，运行 deploy.ts 文件。
-```bash
-npx redspot run ./deploy.ts --no-compile
-```
+    ```bash
+    npx redspot run ./deploy.ts --no-compile
+    ```
 
 #### 结果验证
 
 合约部署成功后，您可以得到类似这样的信息。
 
-```plain
-Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
-```
+    Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
 
 #### **测试合约**
 
 在 tests 目录下新增 erc20.test.ts 文件，用来测试 erc20 合约。
 
-```typescript
-import BN from 'bn.js';
-import { expect } from 'chai';
-import { patract, network, artifacts } from 'redspot';
-const { getContractFactory, getRandomSigner } = patract;
-const { api, getSigners } = network;
-describe('ERC20', () => {
-  after(() => {
-    return api.disconnect();
-  });
-  async function setup() {
-    const one = new BN(10).pow(new BN(api.registry.chainDecimals[0]));
-    const signers = await getSigners();
-    const Alice = signers[0];
-    const sender = Alice;
-    const contractFactory = await getContractFactory('erc20', sender);
-    const contract = await contractFactory.deploy('new', '1000');
-    const abi = artifacts.readArtifact('erc20');
-    const receiver = await getRandomSigner();
-    return { sender, contractFactory, contract, abi, receiver, Alice, one };
-  }
-  it('Assigns initial balance', async () => {
-    const { contract, sender } = await setup();
-    const result = await contract.query.balanceOf(sender.address);
-    expect(result.output).to.equal(1000);
-  });
-  it('Transfer emits event', async () => {
-    const { contract, sender, receiver } = await setup();
-    await expect(contract.tx.transfer(receiver.address, 7))
-      .to.emit(contract, 'Transfer')
-      .withArgs(sender.address, receiver.address, 7);
-  });
-  it('Can not transfer above the amount', async () => {
-    const { contract, receiver } = await setup();
-    await expect(contract.tx.transfer(receiver.address, 1007)).to.not.emit(
-      contract,
-      'Transfer'
-    );
-  });
-  it('Can not transfer from empty account', async () => {
-    const { contract, Alice, one, sender } = await setup();
-    const emptyAccount = await getRandomSigner(Alice, one.muln(10000));
-    await expect(
-      contract.tx.transfer(sender.address, 7, {
-        signer: emptyAccount
-      })
-    ).to.not.emit(contract, 'Transfer');
-  });
-});
-```
+    import BN from 'bn.js';
+    import { expect } from 'chai';
+    import { patract, network, artifacts } from 'redspot';
+    const { getContractFactory, getRandomSigner } = patract;
+    const { api, getSigners } = network;
+    describe('ERC20', () => {
+      after(() => {
+        return api.disconnect();
+      });
+      async function setup() {
+        const one = new BN(10).pow(new BN(api.registry.chainDecimals[0]));
+        const signers = await getSigners();
+        const Alice = signers[0];
+        const sender = Alice;
+        const contractFactory = await getContractFactory('erc20', sender);
+        const contract = await contractFactory.deploy('new', '1000');
+        const abi = artifacts.readArtifact('erc20');
+        const receiver = await getRandomSigner();
+        return { sender, contractFactory, contract, abi, receiver, Alice, one };
+      }
+      it('Assigns initial balance', async () => {
+        const { contract, sender } = await setup();
+        const result = await contract.query.balanceOf(sender.address);
+        expect(result.output).to.equal(1000);
+      });
+      it('Transfer emits event', async () => {
+        const { contract, sender, receiver } = await setup();
+        await expect(contract.tx.transfer(receiver.address, 7))
+          .to.emit(contract, 'Transfer')
+          .withArgs(sender.address, receiver.address, 7);
+      });
+      it('Can not transfer above the amount', async () => {
+        const { contract, receiver } = await setup();
+        await expect(contract.tx.transfer(receiver.address, 1007)).to.not.emit(
+          contract,
+          'Transfer'
+        );
+      });
+      it('Can not transfer from empty account', async () => {
+        const { contract, Alice, one, sender } = await setup();
+        const emptyAccount = await getRandomSigner(Alice, one.muln(10000));
+        await expect(
+          contract.tx.transfer(sender.address, 7, {
+            signer: emptyAccount
+          })
+        ).to.not.emit(contract, 'Transfer');
+      });
+    });
 
 运行测试命令。
 
@@ -308,10 +304,9 @@ npx redspot test --no-compile
 
 您将会得到以下类似结果。
 
-```plain
-✓ Can not transfer from empty account (17912ms)
-  4 passing (46s)
-```
+    ```
+    ✓ Can not transfer from empty account (17912ms)
+      4 passing (46s)
 
 查看更多内置信息，请参见[tasks](https://patractlabs.github.io/substrate-contracts-book/redspot/tasks.html)。
 
