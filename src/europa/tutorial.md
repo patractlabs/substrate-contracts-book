@@ -29,7 +29,7 @@ $ ./target/release/europa --log=runtime=debug --tmp
 
 * 安装[PatractLabs's cargo-contract](https://github.com/patractlabs/cargo-contract)（可选，若需要Wasm合约执行崩溃时的backtrace时才需要）。
 ```plain
-$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.0 --force
+$ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
 ```
 
 如果您已经安装了官方的`cargo-contract`且不想覆盖安装，可以采取手动编译的方式。
