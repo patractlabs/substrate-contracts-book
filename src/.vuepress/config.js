@@ -12,6 +12,13 @@ module.exports = {
         name: 'viewport',
         content: 'width=device-width,initial-scale=1,user-scalable=no'
       }
+    ],
+    [
+      'meta',
+      {
+        content: 'https://www.patract.io/social-preview.png',
+        property: 'og:image'
+      }
     ]
   ],
 
