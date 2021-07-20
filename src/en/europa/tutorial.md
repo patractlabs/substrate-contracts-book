@@ -69,7 +69,7 @@ wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
 
 The compiled file generated after adding `-d/--debug` is generally several hundred times the original file. Because the new file is not optimized, and a lot of debugging information is retained. Therefore, you can roughly judge whether it is a file generated after adding the `-d/--debug` option by the file size.
 
-## **Deployment contract**
+## Deployment contract
 
 You can use [Redspot](https://redspot.patract.io/zh-CN/tutorial/) or [Substrate Protal](https://polkadot.js.org/apps/#/explorer) to deploy contracts.
 
@@ -93,7 +93,7 @@ For example, use Redspot to deploy, use apps to execute transactions and view st
 
    ![](./imgs/add_exist.png)
 
-## **Analyze the log**
+## Analyze the log
 
 During the process of deploying and executing the contract with Europa, detailed logs will be printed, and you can quickly locate problems in the contract based on these logs. Through these logs, the execution process of the contract is no longer a black box.
 
@@ -124,7 +124,7 @@ An example of log printing is as follows.
 }
 ```
 
-## **Contract execution log**
+## Contract execution log
 
 According to the above log content, the following information can be analyzed.
 
@@ -221,13 +221,13 @@ call -> dispatch_using_mode -> ... -> transfer -> panic
 
 Therefore, you can locate the cause of the panic because of the panic in the transfer function.
 
-## **Custom ChainExtensions**
+## Custom ChainExtensions
 
-### **ink logger**
+### ink logger
 
 Check the [ink-log](https://github.com/patractlabs/ink-log)。
 
-### **ZKP feature**
+### ZKP feature
 
 Check the [zkMega](https://github.com/patractlabs/zkmega)，For examples of related contracts, see [metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
 

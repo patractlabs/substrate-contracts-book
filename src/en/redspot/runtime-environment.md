@@ -2,7 +2,7 @@
 
 The RedSpot Runtime Environment (RSE) contains all the publicly available functions of Redspot. When you import Redspot, you get an RSE environment.
 
-## **Accessing RSE**
+## Accessing RSE
 
 Env has the following attributes.
 
@@ -29,7 +29,7 @@ In `.js` or `.ts` files, you can access RSE by `import env from 'redspot'`.
 import { config, redspotArguments, run, network, artifacts } from 'redspot';
 ```
 
-## **Extending RSE**
+## Extending RSE
 
 You can extend RSE through some plug-ins and add some additional properties or methods to RSE. For example, the `@redspot/patract` plugin extends RSE and provides examples of patract. When the patract plugin is introduced, you can access the patract instance in the following way.
 
@@ -40,7 +40,7 @@ console.log(patract);
 
 Next, we will introduce each attribute of the built-in RSE in detail.
 
-### **config**
+### config
 
 config contains all the configuration options in redspot.config.ts，and contains the default settings, it is a Json object.
 
@@ -51,7 +51,7 @@ import { config } from 'redspot';
 console.log(config.defaultNetwork);
 ```
 
-### **redspotArguments**
+### redspotArguments
 
 Global parameters of the currently running command.
 
@@ -70,7 +70,7 @@ Global parameters of the currently running command.
 }
 ```
 
-### **run**
+### run
 
 Through the run function, you can call tasks in `.js` or`.ts` files.
 
@@ -80,7 +80,7 @@ run('test'); // run the test command
 run('test', { testFiles: './tests/erc20.test.ts' }); // pass in parameters
 ```
 
-### **Network**
+### Network
 
 Network contains the information about the network you are currently running. API keyring, signer and other information can be obtained through Network. The type of Network is defined as follows.
 
@@ -147,7 +147,7 @@ const signer = network.createSigner(pair);
 ```
 
 * network.gasLimit :It comes from gaslimt in config and is parsed into bn type.
-### **artifacts**
+### artifacts
 
 Through artifacts, you can access and manage Abi. Its type is defined as follows.
 

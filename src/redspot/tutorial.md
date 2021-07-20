@@ -1,14 +1,14 @@
 # Redspot 教程
 
-## **环境准备**
+## 环境准备
 
-### **安装Node.js**
+### 安装Node.js
 
 * 本地安装Node.js ，且 Node.js 版本 ≥14.0。您可访问[Node.js](http://nodejs.cn/)官网完成安装或升级。
 
 **注意**建议您使用nvm安装Node.js，Windows 用户可改用nvm-windows。
 
-### **ink! 合约编译的工具链**
+### ink! 合约编译的工具链
 
 * Rust环境。由于ink!合约需要Rust的Wasm工具链，且当前Wasm只能在nightly工具链下运行，因此您需要先准备Wasm编译环境。
 ```bash
@@ -26,7 +26,7 @@ cargo install cargo-contract --force
 
 如果您不希望在本机上安装Rust、cargo-contract环境，您可以使用Docker拉取镜像进行环境准备。详情请参见[Tasks](https://docs.patract.io/redspot/tasks.html)部分。
 
-### **准备能运行合约的区块链节点**
+### 准备能运行合约的区块链节点
 
 * **Jupiter**
 
@@ -60,9 +60,9 @@ cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --
 canvas --dev --tmp
 ```
 
-## **创建 Redspot 项目**
+## 创建 Redspot 项目
 
-### **从模版安装**
+### 从模版安装
 
 Redspot 提供合约开发模版，可以让您快速搭建起一个项目。目前仅支持安装 erc20 合约的模版。
 
@@ -87,11 +87,11 @@ yarn install
 
 默认的模版是已经配置了typescript 。也推荐您使用typescript进行开发。typescript兼容Javascript 的，不定义任何类型，也可以正常运行，并且仍能够拥有typescript强大的类型提示和错误提示功能。
 
-### **集成到已有的合约项目中**
+### 集成到已有的合约项目中
 
 Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[ink](https://github.com/paritytech/ink)仓库中的examples目录下的合约为例。
 
-#### **编译合约**
+#### 编译合约
 
 1. 克隆 ink 仓库并打开 ink 目录。
     ```bash
@@ -187,7 +187,7 @@ Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[
     npx redspot compile examples/erc20
     ```
     该命令会指定编译 erc20 合约。编译完成后，您可在artifacts目录下找到编译产生的信息。
-#### **部署合约**
+#### 部署合约
 
 现在您可以通过 Redspot 运行一个部署脚本了。
 
@@ -243,7 +243,7 @@ Redspot可以轻松地集成到已存在的合约项目中。我们以官方的[
 
     Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
 
-#### **测试合约**
+#### 测试合约
 
 在 tests 目录下新增 erc20.test.ts 文件，用来测试 erc20 合约。
 

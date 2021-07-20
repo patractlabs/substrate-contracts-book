@@ -59,7 +59,7 @@ interface Patract {
 | getContractFactory(contractName, signer?): Promise<ContractFactory> | 该函数将通过合约名和signer ，创建一个contractFactory 的实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
 | getContractAt(contractName, address, signer): Promise<Contract> | 通过合约名、合约地址和 signer，创建一个Contract实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
 
-## **ContractFactory**
+## ContractFactory
 
 ContractFactory 主要用于合约的部署。
 
@@ -105,7 +105,7 @@ value指传递给即将创建的合约的金额。
 * `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：如果Wasm已上传到链上，您可以直接调用`contractFactory.instantiate`实例化合约。它的参数与`deploy`一致，但返回的是合约地址。
 * `contractFactory.attach(address)：Contract`:使用指定的合约地址生成`Contract`实例。
 * `contractFactory.connect(signer)：contractFactory`：使用指定的signer，创建一个新的contractFactory 实例。
-## **Contract**
+## Contract
 
 * `new Contract(address, contractMetadata, api, signer)`：通过合约地址、合约的 metadata、API和signer创建一个contractFactory实例。
 * `contract.query.MessageName(...args[, overrides])`：与Polkadot.js中类似， contract.query[MessageName] 能够调用`contracts.call`rpc。例如在erc20合约中，获取账户余额。

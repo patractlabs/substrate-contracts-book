@@ -53,7 +53,7 @@ For global options help run: redspot help
 
 下文将来介绍内置的几个任务。
 
-## **Compile**
+## Compile
 
 运行`npx redspot compile`命令可进行合约编译。目前支持[ink](https://github.com/paritytech/ink)合约和[Solang](https://github.com/hyperledger-labs/solang)合约的编译。编译ink合约时，请确保您已经安装了[cargo-contract](https://github.com/paritytech/cargo-contract)。编译Solang合约时，请确保您已经安装了[Solang](https://solang.readthedocs.io/en/latest/installing.html#building-solang-from-crates-io)。在redspot.config.ts中，您可以配置编译的选项。
 
@@ -121,7 +121,7 @@ $ npx redspot compile --docker false
 
 **注意 **如果遇到权限错误，请将redspot.config文件中的`docker.sudo`设为 true。这样将会使用sudo运行Docker。或请参见[Docker 官方文档](https://docs.docker.com/engine/install/linux-postinstall/)配置权限。
 
-## **TestNet**
+## TestNet
 
 如果本机有Docker环境。可以通过Docker运行一个测试网。当前内置了canvas测试网。
 
@@ -166,7 +166,7 @@ export default {
 };
 ```
 
-## **Test**
+## Test
 
 自动化测试在编写合约中至关重要。您可使用Redspot进行单元测试。在运行测试命令前，您需要确保已经正确配置了需要连接的节点。Test的相关配置信息如下。
 
@@ -263,7 +263,7 @@ describe('ERC20', () => {
 `TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --timeout 60000`
 
 * 使用ts-node编译运行typescript代码，需要加上`-r ts-node/register`。`TS_NODE_TRANSPILE_ONLY=true`设置ts-node运行时忽略typescript类型错误。
-## **Run**
+## Run**
 
 Run 命令可以用来运行任一typescript文件。设置`--no-compile`可以避免自动运行编译命令`npx redspot run --no-compile`。
 
@@ -299,7 +299,7 @@ run().catch(err => {
 
 这里使用了[@redspot/patract插件](https://docs.patract.io/redspot/plugin/redspot-patract.html)。
 
-## **Console**
+## Console
 
 您可以通过运行`npx redspot console`命令来启动一个Node的[REPL](https://nodejs.dev/learn/how-to-use-the-nodejs-repl)控制台。它内置了Redspot Runtime Environment ，您在其中可以访问Redspot提供的插件、配置、任务。我们会在后面有一个详细的说明。
 

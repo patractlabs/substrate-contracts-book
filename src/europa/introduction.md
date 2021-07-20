@@ -4,7 +4,7 @@ Europa是一个运行`FRAME Contracts pallet`并模拟节点的沙盒环境，�
 
 * 将Europa作为合约调试的沙盒时，Europa修改了`FRAME Contracts pallet`模块以跟踪合约执行过程，能够给您提供丰富的合约执行中的信息，让合约的执行过程不再是一个黑盒，帮助合约您调试Wasm合约。
 * 使用Europa作为Substrate的框架时，您可以在不受Wasm编译问题的干扰下做Substrate Runtime开发（多用于实验性功能）。
-## **作为Substrate runtime的框架**
+## 作为Substrate runtime的框架
 
 * Europa移除了一些不必要的功能模块，例如Wasm executor、p2p等，仅保留了native的执行环境。
 * 使用了`manual_seal`的出块方式，当收到新交易时就触发出块，使您不必受共识出块的影响，能更专注于合约的开发调试与日志分析。

@@ -4,7 +4,7 @@ Redspot provides a powerful console that allows you to use commands and contract
 
 * Provides powerful Tab completion capabilities.
 * The console records the command history. You can view the cache/console-history.txt file to get the history execution commands, or you can find the required history commands by pressing the`↑`button. In the future, the console will also provide the function of shortcut keys indexing history commands.
-## **Start the console**
+## Start the console
 
 ```bash
 $ npx redspot console
@@ -26,7 +26,7 @@ If you run the the `.help` command to see the corresponding help information.
 > 
 ```
 
-## **Common commands**
+## Common commands
 
 The console imports the components for contract interaction under the Redspot library by default, such as：
 
@@ -35,7 +35,7 @@ The console imports the components for contract interaction under the Redspot li
 
 Consistent with the scripts in the scripts directory, many functions can be called through these components, such as interacting with the contract, querying information, and viewing the network.
 
-## **Common workflow**
+## Common workflow
 
 If you want to debug the erc20 contract, after the contract is compiled, you can see the erc20.json and erc20.wasm files in the artifacts directory. Operations related to loading the contract need to be marked with the file name here.
 

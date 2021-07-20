@@ -66,7 +66,7 @@ In summary, in the model structure:
 
 Because Solidity itself is positioned as a language designed for contract writing, many contract-related functions can be designed as keywords. If a language itself is not designed for contracts, then a contract language corresponding to the contract model needs to be designed based on this contract. Because it is adding new functions to this language, it is generally difficult to integrate with the language itself deeply. The final result is related to the ability of this language to expand the syntax tree. If the language itself provides more flexible interfaces (macros, plug-ins, etc.) for modifying or adding syntax trees, then the contract language can achieve more functions. If the language itself provides few such extensibility functions, then the contract language can only consider modifying the syntax required by the compiler and extensions to support the contract model, so that the final language becomes a dialect of the original language. Therefore, the former can exist in the form of a library/framework, while the latter becomes a new language, which is why this model is called a contract language.
 
-## **Pallet-contracts and the corresponding contract language**
+## Pallet-contracts and the corresponding contract language
 
 ![](./imgs/englanguage_2.jpg)
 

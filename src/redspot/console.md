@@ -4,7 +4,7 @@ Redspot提供了一个功能强大的控制台，允许您使用命令与合约�
 
 * 提供了强大的Tab补全能力。
 * 控制台记录了命令历史，您可查看`cache/console-history.txt`文件获取历史执行命令，也可以通过`↑`按键找到需要的历史命令，将来控制台也会提供快捷键索引历史命令的功能。
-## **启动控制台**
+## 启动控制台
 
 ```bash
 $ npx redspot console
@@ -23,7 +23,7 @@ $ npx redspot console --no-compile
 .save     Save all evaluated commands in this REPL session to a file
 > 
 ```
-## **常用命令**
+## 常用命令
 
 控制台默认导入了Redspot库下的供合约交互的组件，例如：
 
@@ -32,7 +32,7 @@ $ npx redspot console --no-compile
 
 与在scripts目录下的脚本一致，通过这些组件可以调用许多功能，例如和合约交互、查询信息、查看网络等。
 
-## **常用工作流**
+## 常用工作流
 
 如果您要调试erc20合约，那么在合约编译好后，可以在artifacts目录下看到erc20.json和erc20.wasm文件。加载合约相关的操作需要以这里的文件名为标示。
 

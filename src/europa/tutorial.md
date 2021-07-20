@@ -4,7 +4,7 @@
 
 Europa作为一个模拟具备合约功能的节点沙盒环境，其接口（主要是RPC）对于大部分第三方工具都保持兼容，因此可以将Europa视为一个独立的节点进行操作。
 
-## **搭建开发环境**
+## 搭建开发环境
 
 Europa的环境与正常使用节点调试合约的环境大致相同，唯一的差别在于如果需要打印Wasm的backtrace时，需要使用Patract提供的一个fork版本的`cargo-contract`，直到官方的`cargo-contract`合并Patract提交的功能之前。如果不需要打印合约执行崩溃时的Wasm backtract，则使用官方提供的`cargo-contract`即可。
 
@@ -63,7 +63,7 @@ wasm_error: Error::WasmiExecution(Trap(Trap { kind: Unreachable }))
 
 添加了`-d/--debug`后产生的编译文件一般是原文件的几百倍。因为新文件没有进行优化，且保留了大量调试信息。因此您也可以通过文件大小粗略判定是否是添加了`-d/--debug`选项后产生的文件。
 
-## **部署合约**
+## 部署合约
 
 您可以使用[Redspot](https://redspot.patract.io/zh-CN/tutorial/)或者[Substrate Protal](https://polkadot.js.org/apps/#/explorer)来部署合约。
 
@@ -86,7 +86,7 @@ $ npx redspot run scripts/deploy.js
 
    ![](./imgs/add_exist.png)
 
-## **分析日志**
+## 分析日志
 
 使用Europa部署及执行合约的过程中会有详细日志的打印，您可以根据这些日志快速定位出合约中出现的问题。通过这些日志，合约的执行过程就不再是一个黑盒。
 
@@ -117,7 +117,7 @@ $ npx redspot run scripts/deploy.js
 }
 ```
 
-### **Contract执行日志**
+### Contract执行日志
 
 根据上文日志，可以分析出以下信息。
 
@@ -150,7 +150,7 @@ $ npx redspot run scripts/deploy.js
 
 因此可以通过`selector`字段与日志中的`selector`进行比对，判定出当前通过apps发出的合约调用所对应的日志部分。
 
-### **wasmi panic backtrace**
+### wasmi panic backtrace
 
 假设在`ink!`中编写合约的方法如下。
 
@@ -214,13 +214,13 @@ call -> dispatch_using_mode -> ... -> transfer -> panic
 
 因此您可以定位到产生这次panic的原因是因为transfer这个函数中出现了panic导致。
 
-## **自定义ChainExtensions**
+## 自定义ChainExtensions
 
-### **ink logger**
+### ink logger
 
 查看[ink-log](https://github.com/patractlabs/ink-log)。
 
-### **ZKP feature**
+### ZKP feature
 
 查看[zkMega](https://github.com/patractlabs/zkmega)，相关合约示例请参见[metis/groth16](https://github.com/patractlabs/metis/tree/master/groth16)。
 

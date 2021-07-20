@@ -2,7 +2,7 @@
 
 RedSpot 运行时环境（即RedspotRuntimeEnvironment，下文简称RSE）包含了Redspot所有公开的功能。当您导入Redspot时，就获得了一个 RSE环境。
 
-## **访问RSE**
+## 访问RSE
 
 env有以下属性。
 
@@ -29,7 +29,7 @@ RuntimeEnvironment {
 import { config, redspotArguments, run, network, artifacts } from 'redspot';
 ```
 
-## **扩展 RSE**
+## 扩展 RSE
 
 您可以通过一些插件扩展 RSE ，为 RSE 增加一些额外属性或方法。例如`@redspot/patract`插件就扩展了 RSE ，提供了patract的实例。当引入patract插件后，您可以通过以下方式访问 patract 实例。
 
@@ -40,7 +40,7 @@ console.log(patract);
 
 接下来我们详细介绍一下内置的 RSE 的中的各个属性。
 
-### **config**
+### config**
 
 config 包含 redspot.config.ts 中的所有配置选项。并且包含了默认的设置， 它是一个Json对象。
 
@@ -50,7 +50,7 @@ config 包含 redspot.config.ts 中的所有配置选项。并且包含了默认
 import { config } from 'redspot';
 console.log(config.defaultNetwork);
 ```
-### **redspotArguments**
+### redspotArguments
 
 当前运行的命令的全局参数。
 
@@ -68,7 +68,7 @@ console.log(config.defaultNetwork);
   tsconfig: undefined
 }
 ```
-### **run**
+### run
 
 通过run函数，您可以在`.js`或`.ts`文件中，调用task。
 
@@ -77,7 +77,7 @@ import { run } from 'redspot';
 run('test'); // 运行测试命令
 run('test', { testFiles: './tests/erc20.test.ts' }); // 传入参数
 ```
-### **Network**
+### Network
 
 Network包含您当前正在运行的网络的信息。通过Network可以获取到API、keyring、signer等信息。Network的类型定义如下。
 
@@ -144,7 +144,7 @@ const signer = network.createSigner(pair);
 ```
 
 * network.gasLimit：它来自于config中的gaslimt，并且被解析成bn类型。
-### **artifacts**
+### artifacts
 
 通过 artifacts ，您可以访问和管理Abi，它的类型定义如下。
 

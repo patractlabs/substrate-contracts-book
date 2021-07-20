@@ -63,7 +63,7 @@ The log example corresponding to this structure is as follows.
 }
 ```
 
-## **Log field description**
+## Log field description
 
 | Field             | Description                                                  |
 | ----------------- | ------------------------------------------------------------ |
@@ -83,7 +83,7 @@ The log example corresponding to this structure is as follows.
 | nest              | Contract log of nested calls. If the current contract calls other contracts, the execution log of the called contract will be nested in this field. |
 
 
-## **Contract nested call**
+## Contract nested call
 
 Examples of mutual calls between contracts are as follows.
 

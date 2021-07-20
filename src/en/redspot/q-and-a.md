@@ -1,6 +1,6 @@
 # Common problem 
 
-## **How to upgrade Redspot？**
+## How to upgrade Redspot？
 
 Redspot is just a normal npm package, and the upgrade method is the same as other npm packages.
 
@@ -39,7 +39,7 @@ If you want to use the latest beta version, it is recommended to manually change
 
 **Note** When upgrading, it is best to upgrade all plug-ins to the latest version at the same time to avoid dependency problems.
 
-## **How to specify the version of @polkadot/api and @polkadot/api-contract?**
+## How to specify the version of @polkadot/api and @polkadot/api-contract?
 
 Redspot internally relies on @polkadot/api and @polkadot/api-contract. If you need to upgrade separately, you can add resolutions in package.json.
 
@@ -55,11 +55,49 @@ Redspot internally relies on @polkadot/api and @polkadot/api-contract. If you ne
 
 In this way, you can force the specified version. See [package.json](https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions) for details. However, the compatibility of the upgraded @polkadot/api and @polkadot/contract cannot be guaranteed.
 
-## **How to access the instance of @polkadot/api in redspot?**
+## How to access the instance of @polkadot/api in redspot?
 
 You can access it by [network.api](./runtime-environment.html#Network).
 
-## **What should I do if I cannot call the contract when using erc20-trait?**
+## How to specify the types and RPC of chain in `redspot.config.ts`?
+
+Part of the chain can be automatically configured via [@redspot/known-types](./plugin/redspot-known-types.md) (RPC calls are not supported). It can also be configured manually through `redspot.config.ts`.
+
+```typescript
+// redspot.config.ts
+import { RedspotUserConfig } from 'redspot/types';
+
+export default {
+ ...
+  network: {
+    mainnet: {
+      ...
+      account: [process.env.ACCOUNT]
+      types: {
+        ...
+      },
+      rpc: {
+        europa: {
+          forwardToHeight: {
+            description: '',
+            params: [
+              {
+                name: 'height',
+                type: 'u32'
+              }
+            ],
+            type: 'Bytes'
+          },
+        }
+        ...
+      }
+      ...
+    }
+  }
+} as RedspotUserConfig;
+```
+
+## What should I do if I cannot call the contract when using erc20-trait?**
 
 Because erc20-trait has a namespace, you must also add namespace when calling. The example is as follows
 
@@ -78,7 +116,7 @@ contract.tx.transfer(receiver.address, 7))
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
 
-### **How to ensure the security of the online private key and avoid uploading to Github?**
+### How to ensure the security of the online private key and avoid uploading to Github?
 
 You can use environment variables to configure account, as shown in the example below.
 

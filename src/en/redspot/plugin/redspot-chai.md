@@ -97,7 +97,7 @@ expect(Uint8Array([1, 2, 3])).to.equal('0x010203'); // true
 * For the types defined in Polkadot.js, equal will call `Type.eq(actual)` and judge whether they are equal.
 * For uint8Array type, equal will convert them to hexadecimal, and then judge whether they are equal.
 * For other types, the default judgment method is used to judge whether they are equal.
-## **changeTokenBalance**
+## changeTokenBalance
 
 The matcher can detect changes in the balance of erc20, and internally calls the balanceOf interface to determine the balance. Since the interface for obtaining balance of erc20-trait is `baseErc20, balanceOf`,`changeTokenBalance` is not applicable to erc20-trait.
 
@@ -110,7 +110,7 @@ await expect(() =>
 ).to.changeTokenBalances(contract, [contract.signer, receiver], [-7, 7]);
 ```
 
-## **emit**
+## emit
 
 The matcher can detect whether the contract emits an event. An example of its use is as follows.
 

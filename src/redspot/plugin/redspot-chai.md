@@ -82,7 +82,7 @@ describe('ERC20', () => {
 
 此插件更多内置的用法，详情请参见[chai](https://www.chaijs.com/)文档。
 
-## **equal**
+## equal
 
 @redspot/chai插件会修改默认的equal的匹配方式。默认的equal不支持匹配对象。但是 @redspot/chai插件可以。
 
@@ -96,7 +96,7 @@ expect(Uint8Array([1, 2, 3])).to.equal('0x010203'); // true
 * 对于Polkadot.js 中定义的类型，equal会调用`Type.eq(actual)`，并判断是否相等。
 * 对于uint8Array类型，equal会将它们都转化为十六进制，再判断是否相等。
 * 其他类型则采用默认的判断方式，判断是否相等。
-## **changeTokenBalance**
+## changeTokenBalance
 
 该匹配器可以检测erc20的余额变化，内部会调用balanceOf接口判断余额。由于erc20-trait的获取余额接口是`baseErc20，balanceOf`, 所以`changeTokenBalance`并不适用于erc20-trait 。
 
@@ -109,7 +109,7 @@ await expect(() =>
 ).to.changeTokenBalances(contract, [contract.signer, receiver], [-7, 7]);
 ```
 
-## **emit**
+## emit
 
 该匹配器可以检测合约是否发出事件，使用示例如下：
 

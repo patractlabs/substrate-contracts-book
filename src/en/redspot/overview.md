@@ -1,14 +1,14 @@
 # Introduction
 
-## **Redspot's architecture**
+## Redspot's architecture
 
 Redspot is designed around the concept of Tasks and Plug-ins. Most of Redspot's functions come from plug-ins, and you can choose which plug-in you want to use according to your needs.
 
-### **Tasks**
+### Tasks
 
 Every time you run Redspot from the terminal, you are running tasks. For example, executing the `npx redspot compile` command is to run the compilation task. To view the tasks currently available in the project, run the `npx redspot`  command. You can view the help information of any task by running `npx redspot help [task]`.
 
-### **Plug-in**
+### Plug-in
 
 Redspot installs some plug-ins by default. If you need to install or upgrade them manually, please refer to the following steps.
 

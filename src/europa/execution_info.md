@@ -65,7 +65,7 @@ pub struct NestedRuntime {
 }
 ```
 
-## **日志字段说明**
+## 日志字段说明
 
 | 关键字            |                                                              |
 | ----------------- | ------------------------------------------------------------ |
@@ -84,7 +84,7 @@ pub struct NestedRuntime {
 | sandbox_result_ok | 假如在host_function执行过程中没有`trap`，并且没有`wasm_error`，那么认为合约执行成功，打印该字段。该字段携带一个`ReturnValue`的信息，在`ink!`中，如果返回的value值不为0，那么可能是出现了一个`ink!`内定义的Error，需要查询相应的[DispatchError ](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80)。 |
 | nest              | 嵌套调用的合约日志。如果当前合约调用了其他合约，那么被调用合约的执行日志会被嵌套在该字段之中。 |
 
-## **合约嵌套调用**
+## 合约嵌套调用
 
 合约间的互相调用，示例如下。
 

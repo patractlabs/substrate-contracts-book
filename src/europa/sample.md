@@ -1,6 +1,6 @@
 # Europa 调试示例
 
-## **复制主题**
+## 复制主题
 
 1. 检出`ink!`的提交`8e8fe09565ca6d2fad7701d68ff13f12deda7eed`。
     ```bash
@@ -62,7 +62,7 @@
 
 综上，可以断定错误出现在`seal_deposit_event`这个host_function中。
 
-## **Balance类型不一致**
+## Balance类型不一致
 
 假设链上的Balance定义为u64，而`ink!`中Balance定义为u128，部署了一个普通的erc20合约。
 

@@ -17,7 +17,7 @@ In the blockchain system, it is required that for the same code and the same sta
 
 The platform for running the contract is a kind of business logic of the chain. This kind of business logic is especially open for the code that can be run on it, and the content of the contract is not controlled by the chain itself. In this case, a sandbox environment is needed to isolate the operation of various contracts.
 
-## **What is a sandbox？**
+## What is a sandbox？
 
 The concept of sandbox in the computer field is very extensive, and virtual machines are the easiest to simulate the environment of the sandbox. Therefore, in the blockchain, in general, the sandbox will be run by a virtual machine. Different chains use different virtual machines to run the contract sandbox.
 

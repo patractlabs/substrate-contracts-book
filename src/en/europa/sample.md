@@ -1,6 +1,6 @@
 # Europa debugging example
 
-## **Duplicate topics**
+## Duplicate topics
 
 1. checkout `ink!` to commit `8e8fe09565ca6d2fad7701d68ff13f12deda7eed`.
     ```bash

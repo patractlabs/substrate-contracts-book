@@ -1,6 +1,6 @@
 # 常见问题
 
-## **如何升级 Redspot？**
+## 如何升级 Redspot？
 
 Redspot 仅仅是一个普通的 npm package ，升级方式和其他 npm package 一样。
 
@@ -39,7 +39,7 @@ yarn upgrade-interactive --latest
 
 **注意 **升级时最好同时将所有的插件升级到最新版，避免产生依赖问题。
 
-## **如何指定 @polkadot/api 和 @polkadot/api-contract 的版本？**
+## 如何指定 @polkadot/api 和 @polkadot/api-contract 的版本？
 
 Redspot内部依赖 @polkadot/api 和 @polkadot/api-contract。如果您需要单独升级，可以在 package.json 添加resolutions。
 
@@ -55,18 +55,17 @@ Redspot内部依赖 @polkadot/api 和 @polkadot/api-contract。如果您需要�
 
 这样就可以强制指定版本。详情请参见[package.json](https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions)。但是不能保证升级升级后的 @polkadot/api 和 @polkadot/contract 的兼容性。
 
-## **如何在 redspot 中访问到 @polkadot/api 的实例？**
+## 如何在 redspot 中访问到 @polkadot/api 的实例？
 
 您可通过[network.api](./runtime-environment.html#Network)访问。
 
-## 如何指定链的types和RPC
+## 如何在`redspot.config.ts`中指定某条链的types和RPC
 
-部分链可以通过 [@redspot/known-types](./plugin/redspot-known-types.md) 自动配置(不支持RPC调用)。也可以通过redspot.config手动配置。
+部分链可以通过 [@redspot/known-types](./plugin/redspot-known-types.md) 自动配置(不支持RPC调用)。也可以通过`redspot.config.ts`手动配置。
 
 ```typescript
 // redspot.config.ts
 import { RedspotUserConfig } from 'redspot/types';
-
 
 export default {
  ...
@@ -98,7 +97,7 @@ export default {
 } as RedspotUserConfig;
 ```
 
-## **使用 erc20-trait 时，无法调用合约怎么办？**
+## 使用 erc20-trait 时，无法调用合约怎么办？
 
 由于 erc20-trait 多了命名空间，所以在调用的时候也必须加上命名空间，示例如下。
 
@@ -117,7 +116,7 @@ contract.tx.transfer(receiver.address, 7))
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
 
-## **如何保证线上私钥的安全，避免上传到Github？**
+## 如何保证线上私钥的安全，避免上传到Github？
 
 可以使用环境变量配置account，示例如下。
 

@@ -60,7 +60,7 @@ The parameter description is as follows.
 | getContractFactory(contractName, signer?): Promise<ContractFactory> | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 | getContractAt(contractName, address, signer): Promise<Contract> | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 
-## **ContractFactory**
+## ContractFactory
 
 ContractFactory is mainly used for contract deployment.
 

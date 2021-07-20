@@ -1,14 +1,14 @@
 # 介绍
 
-## **Redspot 的架构**
+## Redspot 的架构
 
 Redspot是围绕任务（Tasks）和插件（Plugins）的概念设计的。Redspot的大部分功能来自插件，你可按需选择要使用的插件。
 
-## **任务**
+## 任务
 
 每次从terminal运行Redspot时，你都在运行任务。例如执行`npx redspot compile`命令是运行编译任务。 要查看项目中当前可用的任务，可运行`npx redspot`命令。 通过运行`npx redspot help [task]`可以查看任何任务的帮助信息。
 
-## **插件**
+## 插件
 
 Redspot默认安装了一些插件，如果你需要手动安装或升级它们，请参见以下步骤。
 

@@ -57,7 +57,7 @@ For compiling commands, you can pass in the path of the contract to specify the 
 
 Several built-in tasks will be introduced in the future.
 
-## **Compile**
+## Compile
 
 Run the `npx redspot compile `command to compile the contract. Currently supports the compilation of [ink](https://github.com/paritytech/ink) contracts and [Solang](https://github.com/hyperledger-labs/solang) contracts. When compiling the ink contract, please make sure you have installed [cargo-contract](https://github.com/paritytech/cargo-contract). When compiling the Solang contract, please make sure you have installed [Solang](https://solang.readthedocs.io/en/latest/installing.html#building-solang-from-crates-io). In redspot.config.ts, you can configure compilation options.
 
@@ -125,7 +125,7 @@ $ npx redspot compile --docker false
 
 **Note** If you encounter permission errors, please set `docker.sudo ` in the redspot.config file to true. This will use sudo  to run Docker . Or refer to [the official Docker documentation](https://docs.docker.com/engine/install/linux-postinstall/) to configure permissions.
 
-## **TestNet**
+## TestNet
 
 If the machine has a Docker environment. A testnet can be run by Docker. The canvas testnet is currently built-in.
 
@@ -170,7 +170,7 @@ export default {
 };
 ```
 
-## **Test**
+## Test
 
 Automated testing is crucial in writing contracts. You can use Redspot for unit testing. Before running the test command, you need to ensure that the nodes to be connected have been configured correctly. The relevant configuration information of Test is as follows.
 
@@ -267,7 +267,7 @@ describe('ERC20', () => {
 `TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --timeout 60000`
 
 * Use ts-node to compile and run typescript code, you need to add `-r ts-node/register`.`TS_NODE_TRANSPILE_ONLY=true`Sets ts-node to ignore typescript type errors when running.
-## **Run**
+## Run
 
 The Run command can be used to run any typescript file. Setting `--no-compile` can avoid automatically running the compilation command `npx redspot run --no-compile`.
 
@@ -303,7 +303,7 @@ run().catch(err => {
 
 The [@redspot/patract](https://docs.patract.io/redspot/plugin/redspot-patract.html) plug-in is used here.
 
-## **Console**
+## Console
 
 You can start a Node [REPL](https://nodejs.dev/learn/how-to-use-the-nodejs-repl) console by running the `npx redspot console` command. It has a built-in Redspot Runtime Environment, where you can access plug-ins, configurations, and tasks provided by Redspot. We will have a detailed explanation later.
 

@@ -2,7 +2,7 @@
 
 When running Redspot, it will search for the closest redspot.config.js file from the current working directory, which is usually located in the root directory of the project. This file contains the entire Redspot settings information, such as configuration, plug-ins, and custom tasks.
 
-## **Configuration options**
+## Configuration options
 
 To set the configuration, you need to export the object from redspot.config.ts.
 
@@ -48,11 +48,11 @@ You can obtain configuration information through config in the `.js` file.
 import { config } from "redspot"
 console.log(config)
 ```
-## **defaultNetwork**
+## defaultNetwork**
 
 You can define the network used by default when running Redspot through the defaultNetwork field in the configuration. If this configuration is omitted, its default value is [localhost](http://localhost).
 
-## **networks**
+## networks
 
 The networks configuration field is an optional object, and the network name is mapped to its configuration. The configuration information of the default localhost is as follows.
 
@@ -89,7 +89,7 @@ The following describes the configuration options of the network part.
 |[network].endpoint|Specifies the node that the developer wants to connect to in the current network configuration. Currently, only WebSockets type RPC connections are supported, that is, only link protocols starting with `wss://` or `ws://` are supported.|
 |[network].types|Type is a concept defined in Polkadot.js, see [types.extend](https://polkadot.js.org/docs/api/start/types.extend/) for details. You can also set [`network].typesbundle`,`[network].typesSpec`, etc. If you encounter an error similar to `No such variant in enum MultiSignature`, you can add`{Address: "AccountId", LookupSource: "AccountId"}`to the type, see [impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics) for details.|
 
-## **contract**
+## contract
 
 In the contract, you can set the options of the compiler. Currently [ink](https://github.com/paritytech/ink) and [solang ](https://github.com/hyperledger-labs/solang)are supported. You can also compile the ink contract and the solang contract under the same project. For details, please refer to the [multi-contract compilation example](https://github.com/patractlabs/redspot/tree/master/examples/multi-contract ).
 
@@ -98,12 +98,13 @@ In the contract, you can set the options of the compiler. Currently [ink](https:
 |[contract].ink.toolchain|Set the toolchain used when [cargo-contract ](https://github.com/paritytech/cargo-contract) compiles the contract. It’s usually `nightly`. You can also specify `nightly-YYYY-MM-DD`.|
 |[contract].ink.sources|Set the directory of the ink contract to be searched during compilation. glob syntax.|
 | [contract].solang.sources |Set the directory of the solang contract searched during compilation. glob syntax.|
+| [contract].rpc |Similar to types, RPC is used to specify custom RPC for polkadot.js. For details, please refer to [rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom).|
 
-## **Paths**
+## Paths
 
 Paths can set the directory name of artifacts and tests files. Normally, you don't need to change this.
 
-## **mocha**
+## mocha
 
 Redspot uses mocha as the testing framework, and all options here will be passed to mocha. For more details, see [mocha](https://mochajs.org/api/mocha).
 

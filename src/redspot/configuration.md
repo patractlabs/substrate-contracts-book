@@ -2,7 +2,7 @@
 
 运行Redspot时，它将从当前工作目录开始搜索最接近的redspot.config.js文件，该文件通常位于项目的根目录下。该文件中包含整个Redspot设置信息，例如配置、插件和自定义任务等。
 
-## **配置选项**
+## 配置选项
 
 要设置配置，需要从redspot.config.ts中导出对象（Object）。
 
@@ -46,11 +46,11 @@ export default {
 import { config } from "redspot"
 console.log(config)
 ```
-## **defaultNetwork**
+## defaultNetwork
 
 您可以通过配置中的`defaultNetwork`字段来定义运行Redspot时默认使用的网络。如果省略此配置，则其默认值为localhost。
 
-## **networks**
+## networks
 
 `networks`配置字段是一个可选对象，网络名称会映射到其配置。默认的localhost的配置信息如下。
 
@@ -88,7 +88,7 @@ console.log(config)
 |[network].types|type是Polkadot.js中定义的概念，详情可参见[types.extend](https://polkadot.js.org/docs/api/start/types.extend/)。 您还可以设置[network].typesbundle、[network].typesSpec等。 如果遇到类似于No such variant in enum MultiSignature的错误，您可以在 type 中添加{ Address: "AccountId", LookupSource: "AccountId"}，详情请参见[impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics)。|
 |[network].rpc|和types类似，RPC用来指定polkadot.js的自定义RPC。详情请参见[rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom)。|
 
-## **contract**
+## contract**
 
 在contract中，您可以设置编译器的选项，目前支持[ink](https://github.com/paritytech/ink)和[solang](https://github.com/hyperledger-labs/solang)。您也可以将ink合约和solang合约放在同一项目下一起编译，详情可参见[多合约的编译示例](https://github.com/patractlabs/redspot/tree/master/examples/multi-contract )。
 
@@ -98,11 +98,11 @@ console.log(config)
 |[contract].ink.sources|设置编译时查找的ink合约的目录。glob语法。|
 | [contract].solang.sources< | 设置编译时查找的solang合约的目录。glob语法。 |
 
-## **Paths**
+## Paths
 
 Paths可以设置artifacts和tests文件的目录名。通常情况下，您无需对此进行更改。
 
-## **mocha**
+## mocha
 
 Redspot使用mocha作为测试框架，这里的所有选项，都会传递给mocha 。更多详情，请参见[mocha](https://mochajs.org/api/mocha)。
 

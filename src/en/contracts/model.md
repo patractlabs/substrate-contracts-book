@@ -14,7 +14,7 @@ As shown in the figure above, the contract model and the contract virtual machin
 
 As described above , I believe you have a clearer understanding of the concept of the contract model, and realize the limitations of the virtual machine on the upper-level contract model.
 
-## **Wasm virtual machine**
+## Wasm virtual machine
 
 The following describes the contract model that the Wasm virtual machine can run and the contract model composition of pallet-contracts.
 
@@ -48,7 +48,7 @@ In summary, the EVM contract model has the following characteristics:
 2. The contract model requires chain-related features.
 3. Treat the contract as consistent with the user and allow the contract to call the contract.
 4. Introduce an instruction billing model.
-## **Pallet-contracts contract model**
+## Pallet-contracts contract model
 
 Although pallet-contracts uses the Wasm virtual machine to execute code, its contract model is basically the same as the EVM contract model. Therefore, the contract model of pallet-contracts also has the four characteristics of the EVM contract model mentioned above. Based on the storage lease model, storage lease charging is added:
 
@@ -64,7 +64,7 @@ The host function of Wasm is used to accomplish this. As the host , the chain on
 
 * The contract model is consistent with the EVM contract model, and a storage billing model is added on this basis.
 * The interaction with the chain is realized through the host function feature of Wasm.
-## **Use Wasm virtual machine to implement other contract models**
+## Use Wasm virtual machine to implement other contract models
 
 The above describes how pallet-contracts implements the contract model on the Wasm virtual machine. It has also been mentioned in the previous document that the virtual machine and the contract model can be decoupled, so other things can also be implemented on the Wasm virtual machine. Contract model.
 
@@ -78,9 +78,9 @@ Based on this implementation, Move can still be compiled in the normal way, and 
 
 Based on this realization, Move can be compiled into Wasm and run in the Wasm virtual machine.
 
-## **Other contract models**
+## Other contract models
 
-### **EOS contract model**
+### EOS contract model
 
 EOS's contract model is similar to EVM, while strengthening the concept of account model. Therefore, the way EOS uses Wasm is also based on the execution of Wasm, and introduces chain-related functions by `host function`.
 
@@ -89,6 +89,3 @@ The main difference between the EOS and EVM models is that the EOS contract call
 ### Asynchronous contract model
 
 Pallet-actor is the beginning of substrate's attempt to implement an asynchronous contract model, but there is currently no progress. For details, please refer to the [Actor-based contract model](https://corepaper.org/contract/actor/). The `pallet-actor` model intends to use the Wasm virtual machine as the operating environment, and on this basis add asynchronous functions to improve performance. There are also a few other studies on asynchronous contract models, but they are all in the preliminary stage, so I won't elaborate on them here.
-
-
-
