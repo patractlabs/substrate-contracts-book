@@ -1,1 +1,1 @@
-# ink! 跨合约调用
+# Cross-call for ink!

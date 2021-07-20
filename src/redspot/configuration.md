@@ -86,6 +86,7 @@ console.log(config)
 |[network].accounts|是由[suri](https://polkadot.js.org/docs/keyring/start/suri/)或[KeyringPair](https://polkadot.js.org/docs/keyring/start/create/#adding-a-pair)组成的一个列表。accounts 默认为 ["//Alice", "//Bob", "//Charlie", "//Dave", "//Eve", "//Ferdie"]，详情请参见[Runtime-environment](https://docs.patract.io/redspot/runtime-environment.html#%E8%AE%BF%E9%97%AE-rse)。|
 |[network].endpoint|指明了在当前网络配置中开发者想要连接的节点。当前，只支持 WebSockets 类型的 RPC连接，即只支持 `wss://` 或 `ws://`开头的链接协议。|
 |[network].types|type是Polkadot.js中定义的概念，详情可参见[types.extend](https://polkadot.js.org/docs/api/start/types.extend/)。 您还可以设置[network].typesbundle、[network].typesSpec等。 如果遇到类似于No such variant in enum MultiSignature的错误，您可以在 type 中添加{ Address: "AccountId", LookupSource: "AccountId"}，详情请参见[impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics)。|
+|[network].rpc|和types类似，RPC用来指定polkadot.js的自定义RPC。详情请参见[rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom)。|
 
 ## **contract**
 
