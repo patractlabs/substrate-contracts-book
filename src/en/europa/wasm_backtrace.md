@@ -1,78 +1,70 @@
 # Europa's Wasm Backtrace
 
-The execution of `pallet-contracts` includes the execution in the "contract model" and the execution in Wasm. among them
+## Background Information
 
-* The execution process in the contract model is transferred to the `pallet-contracts` module through Wasm's host_function. If panic or incorrect positioning occurs, the node runtime can be located in the form of native operation.
-* Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process has a crash exception, it can only be displayed by the Wasm executor.
+The execution of `pallet-contracts` includes execution in the contract model and execution in Wasm. The execution process in the contract model is transferred to the pallet-contracts module through Wasm's host_function. If panic or incorrect positioning occurs, the runtime of the node can be positioned in the form of native operation. Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process crashes abnormally, it can only be displayed by the Wasm executor.
 
-Europa's `pallet-contracts` module currently supports 2 types of actuators:
+Europa's pallet-contracts module currently supports the following two types of actuators:
 
-* `wasmi`: Wasm interpreter developed by parity. When Wasm executes panic, it will only return an error without Backtrace. Patract forks the wasmi of parity, and adds tracking and printing of the execution stack on the original basis. When Panic appears during Wasm's execution, the current execution stack and corresponding information will be returned with an error.
-* `wasmtime`: Wasm's JIT executor, which already comes with Backtrace when it crashes.
+* `wasmi`: Wasm interpreter developed by the Parity. When Wasm executes panic, it will only return an error without Backtrace. Patract forks the official wasmi, and adds tracking and printing of the execution stack on top of the original. When a panic occurs during Wasm's execution, the current execution stack and corresponding information will be returned with an error.
+* `wasmtime`: Wasm's JIT executor, which comes with Backtrace when it crashes.
+## The conditins of Europa can print out Wasm Backtrace
 
-## Europa can print out Wasm Backtrace conditions
+Wasm can print Backtrace, requiring the `name section` in the Wasm file compiled by the contract. Since the cargo-contract provided by Parity has encapsulated many operations, the current default operation is to compile the contract in the best optimized way, and the `name section` section will be removed in this process. On the other hand, cargo-contract does not provide corresponding interfaces or options that allow you to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of cargo-contract, and you can use this modified version of cargo-contract to compile a contract Wasm file with a name section.
 
-Wasm can print Backtrace, requiring the "name section" section in the Wasm file compiled by the contract. Since the `cargo-contract` provided by parity has already encapsulated many operations, ** in the current ** default operation, the contract is compiled in the most optimal way, and the "name section" section will be removed in this process. On the other hand, `cargo-contract` does not provide corresponding interfaces or options to allow developers to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of `cargo-contract`. Developers can use this modified version of `cargo-contract` to compile the contract Wasm file with the "name section" section.
+On the other hand, the original code will be optimized during the compilation of the release, and it may be disturbed to locate the problem through the optimized Backtrace. Therefore, it is best to reduce the optimization level so that the Backtrace at the time of a crash will most likely match the original code.
 
-On the other hand, the original code will be optimized during the release compilation. The optimized Backtrace to locate the bug may be disturbed, so it is best to reduce the optimization level, so that the Backtrace will be the same as the original code when it crashes. match.
+## Install `cargo-contract` under Patract repository
 
-## Install `cargo-contract` under Patract warehouse
-
-1. Install [PatractLabs's `cargo-contract`](https://github.com/patractlabs/cargo-contract)
-
-    ```
-    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1 --force
-    ```
-
-    > Since the current version of parity's `cargo-contract` is `tag-v0.12.1`, our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
-
-    The `cargo-contract` installed in this way will **overwrite** the installed `cargo-contract`. Therefore, please pay attention to which warehouse the `cargo-contract` in the current environment comes from to prevent interference when locating problems.
-
-    Excuting an order:
+* Install [cargo-contract](https://github.com/patractlabs/cargo-contract) under Patract repository.
     ```bash
-    $ cargo install --list | grep cargo-contract
-    cargo-contract v0.12.1 (https://github.com/patractlabs/cargo-contract.git?branch=tag-v0.12.1#0d682762):
-    cargo-contract
+    $ cargo install cargo-contract --git https://github.com/patractlabs/cargo-contract --branch=v0.12.1 --force
     ```
-    The results listed can be used to determine what source the `cargo-contract` installation in the current environment comes from. For example, the above result is from Patract. If there is no parenthesis and the content in it, it means it is from `crates.io`.
 
-2. If the developer has installed the official `cargo-contract` and does not want to overwrite the installation, you can use manual compilation.
+**Note** Since the current version of Parity's `cargo-contract` is `v0.12.1` , our Patract has added features based on this version. If `cargo-contract` continues to be upgraded in the future, Patract will continue to be maintained.
 
+The `cargo-contract` installed in this way will overwrite the installed `cargo-contract`. Therefore, please pay attention to which repository the `cargo-contract` in the current environment comes from to prevent interference when locating problems.
+
+Execute the following command，The results listed can be used to judge what source the `cargo-contract` installation in the current environment comes from. For example, the following result is from Patract. If there is no parenthesis and the content in it, it means it is from `crates.io`.
+
+```bash
+$ cargo install --list | grep cargo-contract
+cargo-contract v0.12.1 (https://github.com/patractlabs/cargo-contract.git?branch=tag-v0.12.1#0d682762):
+cargo-contract
+```
+
+* If you have installed the official `cargo-contract `and does not want to overwrite the installation, you can use manual compilation.
     ```bash
     $ git clone https://github.com/patractlabs/cargo-contract --branch=tag-v0.12.1
     $ cd cargo-contract
     $ cargo build --release
     ```
 
-    After compilation, you can move the compiled product to any path that can be accessed globally, and rename it (in case it conflicts with the installed cargo-contract).
+After compilation, you can move the compiled product to any path that can be accessed globally, and rename it ,in case it conflicts with the installed cargo-contract.
 
-    ```bash
-    $ cp target/release/cargo-contract <to any path>/patract-cargo-contract
-    ```
+```bash
+$ cp target/release/cargo-contract <to any path>/patract-cargo-contract
+```
 
-    In the subsequent compilation of the ink! contract, use `patract-cargo-contract xxx` instead of `cargo +nighlty contract xxx` to execute the corresponding commands. (Please note that this method requires the default toolchain to be nightly)
+In the subsequent compilation of the ink! contract, use `patract-cargo-contract xxx` instead of `cargo +nighlty contract xxx` to execute the corresponding commands,but  this method requires the default toolchain to be nightly)
 
-## Use Patract's cargo-contract to generate `*.wasm/*.contract` files with "name section" section
+## Use Patract's cargo-contract to generate`*.wasm/*.contract`files with`name section`section
 
-Patract's `cargo-contract` provides `-d/--debug` options. When the following command is executed:
+Patract's `cargo-contract` provides `-d/--debug` options. When the following command is executed,The generated `*.wasm/*.contract` file is consistent with parity's official `cargo-contract` execution result.
 
 ```bash
 $ cargo +nightly contract build
 ```
 
-The generated `*.wasm/*.contract` file is consistent with parity's official `cargo-contract` execution result.
-
-When the following command is executed:
+When the following command is executed,The generated `*.wasm/*.contract` file is the `*.wasm/*.contract` file that is not optimized and carries the `name section` section. It is equivalent to the files generated in this way replace the files generated by the original generation logic.
 
 ```bash
 $ cargo +nightly contract build --debug
 ```
 
-The generated `*.wasm/*.contract` file is the `*.wasm/*.contract` file that is not optimized and carries the "name section" section. It is equivalent to the files generated in this way **replace** the files generated by the original generation logic.
+**Note** The size of the compiled product generated by this way is generally several hundred times the size of the original product. Therefore, the developer can pay attention to the size of the generated product to roughly determine the compiled product generated by which compilation method.
 
-**Please note that the size of the compiled product generated by this mode is generally several hundred times the size of the original product**. Therefore, the developer can pay attention to the size of the generated product to roughly determine the compiled product generated by which compilation method.
-
-For example, the following example:
+The example is as follows.
 
 ```bash
 $ cd target/ink
@@ -84,18 +76,19 @@ $ ls -h
 -rw-rw-r-- 1 root root 2.1K 3月  12 16:01 metadata.json
 ```
 
-The file with `*.old` means it was generated by the parity version of `cargo-contract` (renamed after the first compilation), on the contrary, the file with the same name is from Patract's `cargo-contract` with the addition of `-- The debug` command is generated. You can see that the new file is many times larger than the old file. And `metadata.json` is unchanged.
+The file with `*.old` means it was generated by the parity version of `cargo-contract`( renamed after the first compilation), on the contrary, the file with the same name is from Patract's `cargo-contract` with the addition of `-- The debug` command is generated. You can see that the new file is many times larger than the old file. And `metadata.json` is unchanged.
 
-## Wasm Backtrace explained
+## Wasm Backtrace description
 
-TODO: To be completed
+To be completed.
 
-## Experimental features
+## Experimental functions
+
 ### Wasm Backtrace print line number (only Wasmtime is supported)
 
 TODO: This part is not completed
 
-Add `WASMTIME_BACKTRACE_DETAILS=1` when starting Europa or set this variable as an environment variable:
+Add `WASMTIME_BACKTRACE_DETAILS=1` when starting Europa or set this variable as an environment variable
 
 ```bash
 WASMTIME_BACKTRACE_DETAILS=1 europa --tmp
@@ -104,7 +97,7 @@ export WASMTIME_BACKTRACE_DETAILS=1
 europa --tmp # run europa in normal way
 ```
 
-Then in the `wasm_error` part of europa's Japanese, there will be a line number in the original code corresponding to the crash stack:
+Then in the `wasm_error` section of Europa's log, the line number in the original code corresponding to the crash stack will appear.
 
 ```bash
 wasm_error: Error::Trap(
@@ -116,9 +109,9 @@ wasm_error: Error::Trap(
             "    0: 0x31b2 - <unknown>!core::panicking::panic::he000af669cfcac01",
             "    1: 0x3c8c - <unknown>!flipper::flippter::_::<impl flipper::flippter::Flippter>::flip::h12b84979a77ae484",
             "    2: 0x10fa - core::result::Result<T,E>::map_err::h576871030fe833d4",
-            "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1199:31",
+            "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/官方-scale-codec-2.0.1/src/codec.rs:1199:31",
             "    3: 0x10d6 - core::result::Result<T,E>::map_err::h576871030fe833d4",
-            "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1198",
+            "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/官方-scale-codec-2.0.1/src/codec.rs:1198",
             "    4: 0x3966 - <unknown>!<flipper::flippter::_::_::__ink_MessageDispatchEnum as ink_lang::dispatcher::Execute>::execute::{{closure}}::hf35b139aaf5fba3b",
             "    5: 0x3941 - <unknown>!ink_lang::dispatcher::execute_message_mut::hf62eb790d230d371",
             "    6: 0x3c12 - <unknown>!<flipper::flippter::_::_::__ink_MessageDispatchEnum as ink_lang::dispatcher::Execute>::execute::heae3e5bbfc02afa0",
@@ -131,11 +124,14 @@ wasm_error: Error::Trap(
 ),
 ```
 
-In this backtrace log, some parts that can parse the line number will be appended with the line number corresponding to the function in the error stack at the end of that line, for example:
+In this backtrace log, some parts that can parse the line number will be appended with the line number corresponding to the function in the error stack at the end of that line,The example is as follows.
 
 ```bash
 "2: 0x10fa - core::result::Result<T,E>::map_err::h576871030fe833d4",
             "                    at /home/clearloop/.cargo/registry/src/github.com-1ecc6299db9ec823/parity-scale-codec-2.0.1/src/codec.rs:1199:31"
 ```
 
-The part of `codec.rs:1199:31` means that this frame in the error stack corresponds to line `1199` and column `31` of the file `codec.rs`. The remaining lines do not have line numbers due to insufficient parsing or because the code is generated by macros.
+The `codec.rs:1199:31` part means that this frame in the error stack corresponds to `codec.rs`. The line number of the file is 1199 and the column number is 31. The remaining lines do not have line numbers due to insufficient parsing or because the code is generated by macros.
+
+
+

@@ -1,28 +1,31 @@
-## Introduction
+# Introduction
 
 ## Redspot's architecture
-Redspot is designed around the concept of Tasks and Plugins. most of Redspot's functionality comes from plugins, and as a developer you are free to choose which plugins you want to use.
 
-### Tasks 
-Every time you run Redspot from the cli, you are running a task. For example, executing the command `npx redspot compile` is running a compile task. To see what tasks are currently available in your project, run `npx redspot`. You can see help for any task by running `npx redspot help [task]`.
+Redspot is designed around the concept of Tasks and Plug-ins. Most of Redspot's functions come from plug-ins, and you can choose which plug-in you want to use according to your needs.
 
-### Plugins 
-Redspot has some plugins installed by default, if you need to install or upgrade them manually, please follow these steps.
+### Tasks
 
-For example, if you want to install the `@redspot/patract` and `@redspot/chai` plugins, go to the project root directory and follow these commands to install them
+Every time you run Redspot from the terminal, you are running tasks. For example, executing the `npx redspot compile` command is to run the compilation task. To view the tasks currently available in the project, run the `npx redspot`  command. You can view the help information of any task by running `npx redspot help [task]`.
 
-```bash
-yarn add @redspot/patract @redspot/chai
-```
+### Plug-in
 
-In the redspot configuration file ``redspot.config.js`` in the project's directory, add
+Redspot installs some plug-ins by default. If you need to install or upgrade them manually, please refer to the following steps.
 
-```typescript
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract';
-import '@redspot/chai';
+For example, install @redspot/patract and @redspot/chai plug-ins.
 
-export default {
- ...
-} as RedspotUserConfig;
-```
+1. Execute the following command in the project root directory.
+    ```sh
+    yarn add @redspot/patract @redspot/chai
+    ```
+
+2. Import the plug-in in the redspot configuration file redspot.config.js in the project directory.
+    ```typescript
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/patract';
+    import '@redspot/chai';
+    export default {
+     ...
+    } as RedspotUserConfig;
+    ```
+
