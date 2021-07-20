@@ -55,9 +55,9 @@ interface Patract {
 
 | 参数                                                         | 说明                                                         |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| getRandomSigner(from, amount): Promise<Signer>               | getRandomSigner是一个工具函数，用于创建生成随机的signer，并从 from传递一些初始的金额给它。 |
-| getContractFactory(contractName, signer?): Promise<ContractFactory> | 该函数将通过合约名和signer ，创建一个contractFactory 的实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
-| getContractAt(contractName, address, signer): Promise<Contract> | 通过合约名、合约地址和 signer，创建一个Contract实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
+| `getRandomSigner(from, amount): Promise<Signer>`               | getRandomSigner是一个工具函数，用于创建生成随机的signer，并从 from传递一些初始的金额给它。 |
+| `getContractFactory(contractName, signer?): Promise<ContractFactory>` | 该函数将通过合约名和signer ，创建一个contractFactory 的实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
+| `getContractAt(contractName, address, signer): Promise<Contract>` | 通过合约名、合约地址和 signer，创建一个Contract实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
 
 ## ContractFactory
 
@@ -72,7 +72,8 @@ const contract = await contractFactory.deploy('new', '1000');
 ```
 
 * `new ContractFactory(address, contractMetadata, api, signer)`：通过合约地址、metadata、API 和signer创建一个contractFactory 实例。
-* contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>：constructorOrId 是需要调用的合约的contructor的名字，注意对于一些使用了`trait`的合约，contructor的名字类似如下。
+* `contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：constructorOrId 是需要调用的合约的contructor的名字，注意对于一些使用了`trait`的合约，contructor的名字类似如下。
+
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000');
 ```

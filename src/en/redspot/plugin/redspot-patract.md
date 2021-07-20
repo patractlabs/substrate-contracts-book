@@ -56,9 +56,9 @@ The parameter description is as follows.
 
 | Parameter                                                    | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| getRandomSigner(from, amount): Promise<Signer>               | getRandomSigner is a utility function used to create a random signer and pass some initial amount fromfromto it. |
-| getContractFactory(contractName, signer?): Promise<ContractFactory> | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
-| getContractAt(contractName, address, signer): Promise<Contract> | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
+| `getRandomSigner(from, amount): Promise<Signer>`               | getRandomSigner is a utility function used to create a random signer and pass some initial amount fromfromto it. |
+| `getContractFactory(contractName, signer?): Promise<ContractFactory>` | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
+| `getContractAt(contractName, address, signer): Promise<Contract>` | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 
 ## ContractFactory
 
@@ -73,7 +73,7 @@ const contract = await contractFactory.deploy('new', '1000');
 ```
 
 * `new ContractFactory(address, contractMetadata, api, signer)`：you can create a contractFactory instance by contract address, metadata, API and signer.
-* contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>：constructorOrId is the name of the constructor of the contract that needs to be called. Note that for some contracts that use traits, the name of the constructor is similar to the following.
+* `contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：constructorOrId is the name of the constructor of the contract that needs to be called. Note that for some contracts that use traits, the name of the constructor is similar to the following.
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000');
 ```
