@@ -118,6 +118,12 @@ module.exports = [
     children: ['/elara/tutorial', '/elara/design', '/elara/API']
   },
   {
+    title: 'Jupiter',
+    path: '/jupiter/introduction',
+    collapsable: false,
+    children: ['/jupiter/quickstart', '/jupiter/network', '/jupiter/contract']
+  },
+  {
     title: 'PatraStore',
     path: '/patra-store/introduction',
     collapsable: false,
