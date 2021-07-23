@@ -23,22 +23,23 @@ According to this definition, it is clear that Solidity is a product that has bo
 
 1. Solidity has a Turing complete language system, so Solidity is a language (compared with BTC scripts).
 2. The grammar of Solidity has many keywords with contract characteristics, corresponding to the concept of contract language. Such as：
-| keywords              | Description                         |
-|:----|:----|
-|mapping|Typical case of contract storage|
-|msg.sender、msg.value|Variables related to contract calls|
-|view、pure|Modifier，Play a modifying role|
-|call、delegate_cal|Keywords related to contract call|
+
+    | keywords              | Description                         |
+    |:----|:----|
+    |mapping|Typical case of contract storage|
+    |msg.sender、msg.value|Variables related to contract calls|
+    |view、pure|Modifier，Play a modifying role|
+    |call、delegate_cal|Keywords related to contract call|
 
 The above concept does not exist to support the logic that the Solidity language can execute, but to serve the business logic of the Ethereum contract virtual machine.
 
-The purpose of the contract language is to correspond to the business logic of the contract model. What kind of contract model requires what kind of contract language. For example, the bottom layer of EVM is K/V type storage, so the `mapping` designed in Solidity cannot be traversed unless extra storage is attached. The contract model of EVM contract interaction is designed as a contract calling contract mode, so the `call` and `delegate_call` keywords are provided in Solidity. The same applies to other contract systems.
+The purpose of the contract language is to correspond to the business logic of the contract model. What kind of contract model requires what kind of contract language. For example, the bottom layer of EVM is Key-Value type storage, so the `mapping` designed in Solidity cannot be traversed unless extra storage is attached. The contract model of EVM contract interaction is designed as a contract calling contract mode, so the `call` and `delegate_call` keywords are provided in Solidity. The same applies to other contract systems.
 
 The contract language is an additional function built on the S language, so the functions provided by the contract language are ultimately compiled to the T language corresponding to the S language. Some of the features required by the Blockchain, such as deterministic requirements and interface features that do not allow the use of operating system calls, will be constrained at this level. Therefore, in addition to the contract language itself providing the contract model function for the S language itself, it also needs to impose certain constraints on the language itself. This step is also a difficult place in the development and understanding of the contract language. At the same time, it is precisely because of this that contract developers have a lot of discomfort in the process of using the contract model framework. Languages such as Solidity and Move are new languages developed for contract platforms. Although there are traces of grammatical simulation of other languages, they are more friendly to contract developers in terms of constraints. The contract language that adds the contract language function to the existing language does not handle this aspect very well, which is one of the reasons why it is more difficult for contract developers to use the framework function.
 
 Take ink! as an example:
 
-* The use of float should be avoided in the blockchain, because floating-point numbers may produce indeterminate behavior. Therefore, in contract/runtime development, if you need to use floating-point numbers, or when overflowing numbers are multiplied and divided, you need to introduce fixed-point numbers to deal with. Therefore, the fixed-point library provided by Substrate runtime can be introduced into the ink! contract for processing.
+* The use of float should be avoided in the blockchain, because floating-point numbers may produce indeterminate behavior. Therefore, in contract runtime development, if you need to use floating-point numbers, or when overflowing numbers are multiplied and divided, you need to introduce fixed-point numbers to deal with. Therefore, the fixed-point library provided by Substrate runtime can be introduced into the ink! contract for processing.
 * Since the contract model of `pallet-contracts` is basically the same as EVM, the contract storage of `pallet-contracts` is also composed of Key-Value mode. Then the contract model framework needs to deal with the various collection types provided in the standard library. Therefore, the collection types that may be used in the standard library are rewritten in ink!, and the process of processing the collection element types into Key-Value mode data is added. Therefore, in the ink! contract storage, if a collection type is designed, then only the types provided in the ink! standard library can be used. On the other hand, since the return value of ink! needs to export metadata for third-party processing, and the current metadata interface implementation is only implemented for the collection in the standard library, so the collection of the return value of the ink! method can only use the collection type of the standard library. The code example is as follows.
 ```rust
 #[ink::contract]
@@ -68,7 +69,7 @@ In summary, in the model structure:
 
 Because Solidity itself is positioned as a language designed for contract writing, many contract-related functions can be designed as keywords. If a language itself is not designed for contracts, then a contract language corresponding to the contract model needs to be designed based on this contract. Because it is adding new functions to this language, it is generally difficult to integrate with the language itself deeply. The final result is related to the ability of this language to expand the syntax tree. If the language itself provides more flexible interfaces (macros, plug-ins, etc.) for modifying or adding syntax trees, then the contract language can achieve more functions. If the language itself provides few such extensibility functions, then the contract language can only consider modifying the syntax required by the compiler and extensions to support the contract model, so that the final language becomes a dialect of the original language. Therefore, the former can exist in the form of a library/framework, while the latter becomes a new language, which is why this model is called a contract language.
 
-## **Pallet-contracts and the corresponding contract language**
+## Pallet-contracts and the corresponding contract language
 
 ![](./imgs/englanguage_2.jpg)
 
