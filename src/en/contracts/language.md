@@ -102,7 +102,7 @@ Although there are many limitations to using contract language frameworks, there
 | Ecological Prosperity    | In many cases, the existing basic libraries and tool libraries in the language ecology can be reused. | Almost all the basic components have to be rewritten.        |
 | Engineering cost         | Designing a library is relatively simple.                    | Designing a complete language is very complicated.           |
 
-In summary, as a contract platform designer, choosing to use the contract language framework is to "subtract" from an existing language. Choosing to use contract language is "doing addition" from scratch. Both options have their own advantages and disadvantages. Designers will make choices according to their own scenarios to attract developers to the greatest extent and promote the development of their own ecology.
+In summary, as a contract platform designer, choosing to use the contract language framework is to "substrate" from an existing language. Choosing to use contract language is "doing addition" from scratch. Both options have their own advantages and disadvantages. Designers will make choices according to their own scenarios to attract developers to the greatest extent and promote the development of their own ecology.
 
 ### Summarize
 
