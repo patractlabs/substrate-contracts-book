@@ -13,15 +13,7 @@ Redspot 从基于MIT协议的 hardhat fork 发展而来，并在其基础上移�
 
 ## 提案
 
-- [v0.1Report](./proposals/v0.2ReportCN.md)
-
-- [v0.2Report](./proposals/v0.2ReportCN.md)
-- [v0.3Report](./proposals/v0.3ReportCN.md)
-- [v0.4Report](./proposals/v0.4ProposalCN.md)
-
-
-
-
-
-
-
+- [v0.1Report](./reports/v0.2ReportCN.md)
+- [v0.2Report](./reports/v0.2ReportCN.md)
+- [v0.3Report](./reports/v0.3ReportCN.md)
+- [v0.4Report](./reports/v0.4ProposalCN.md)

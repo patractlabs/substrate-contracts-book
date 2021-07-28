@@ -68,6 +68,17 @@ module.exports = [
           '/en/redspot/plugin/redspot-patract',
           '/en/redspot/plugin/redspot-explorer',
         ]
+      },
+      {
+        title: 'Report',
+        path: '/en/redspot/reports',
+        collapsable: false,
+        children: [
+          '/en/redspot/reports/v0.1ReportEN',
+          '/en/redspot/reports/v0.2ReportEN',
+          '/en/redspot/reports/v0.3ReportEN',
+          '/en/redspot/reports/v0.4ReportEN',
+        ] 
       }
     ]
   },
