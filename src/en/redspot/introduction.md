@@ -13,8 +13,8 @@ Redspot developed from a hardhat fork based on the MIT protocol, and removed par
 
 ## proposals
 
-- [v0.1Report](./reports/v0.2ReportEN.md)
-- [v0.2Report](./reports/v0.2ReportEN.md)
-- [v0.3Report](./reports/v0.3ReportEN.md)
-- [v0.4Report](./reports/v0.4ReportEN.md)
+- [v0.1Report](./reports/v0.2Report.md)
+- [v0.2Report](./reports/v0.2Report.md)
+- [v0.3Report](./reports/v0.3Report.md)
+- [v0.4Report](./reports/v0.4Report.md)
 

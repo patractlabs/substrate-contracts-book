@@ -74,10 +74,10 @@ module.exports = [
         path: '/redspot/reports',
         collapsable: false,
         children: [
-          '/redspot/reports/v0.1ReportEN',
-          '/redspot/reports/v0.2ReportCN',
-          '/redspot/reports/v0.3ReportCN',
-          '/redspot/reports/v0.4ReportCN',
+          '/redspot/reports/v0.1Report',
+          '/redspot/reports/v0.2Report',
+          '/redspot/reports/v0.3Report',
+          '/redspot/reports/v0.4Report',
         ] 
       }
     ]
