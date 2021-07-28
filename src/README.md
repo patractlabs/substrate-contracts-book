@@ -39,7 +39,7 @@
         - [@redspot/known-types](./redspot/plugin/redspot-known-types.md)
         - [@redspot/explorer](./redspot/plugin/redspot-explorer.md)
     - [提案报告](./redspot/reports.md)
-        - [v0.1Report](./redspot/reports/v0.2Report.md)
+        - [v0.1Report](./redspot/reports/v0.1Report.md)
         - [v0.2Report](./redspot/reports/v0.2Report.md)
         - [v0.3Report](./redspot/reports/v0.3Report.md)
         - [v0.4Report](./redspot/reports/v0.4Report.md)
