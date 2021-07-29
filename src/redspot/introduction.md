@@ -11,5 +11,9 @@ Redspot是一个使ink!、Ask!等合约开发项目化，简化合约测试和�
 
 Redspot 从基于MIT协议的 hardhat fork 发展而来，并在其基础上移除了与以太坊相关的部分，添加与Substrate、`pallet-contracts`模块相关的功能。在不久的将来，Redspot将基于hardhat的核心构建更多的功能。
 
+## Redspot 议会提案报告
 
-
+- [v0.1Report](./reports/v0.1Report.md)
+- [v0.2Report](./reports/v0.2Report.md)
+- [v0.3Report](./reports/v0.3Report.md)
+- [v0.4Report](./reports/v0.4Report.md)

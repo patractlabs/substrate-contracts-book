@@ -11,3 +11,9 @@ Redspot is a contract integration construction tool that makes ink!, Ask! and ot
 
 Redspot developed from a hardhat fork based on the MIT protocol, and removed parts related to Ethereum on its basis, and added functions related to Substrate and pallet-contracts modules. In the near future, Redspot will build more functions based on the core of hardhat.
 
+## Report for Redspot proposals
+
+- [v0.1Report](./reports/v0.1Report.md)
+- [v0.2Report](./reports/v0.2Report.md)
+- [v0.3Report](./reports/v0.3Report.md)
+- [v0.4Report](./reports/v0.4Report.md)
