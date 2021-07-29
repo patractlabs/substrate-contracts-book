@@ -6,7 +6,7 @@ Ask! 提供了`ask-lang`包，它包括合约常用存储类型的实现、智�
 
 ### 内置存储类型
 
-Ask! 为AS的基本类型和标准库集合提供了支持Scale编码和存储的版本，包括 bool/i{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/string(String)/Array/Set/Map，对应于                                                                                                                                                      Bool/Int{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/ScaleString/ScaleArray/ScaleSet/ScaleMap。当在合约代码相关位置使用了上述提到的基本类型（但不包括Array、Set、Map等容器类型），Ask会在编译期自动转换为对应的Scale类型（即自动装箱/拆箱）。
+Ask! 为[AssemblyScript](https://www.assemblyscript.org/) 的基本类型和标准库集合提供了支持Scale编码和存储的版本，包括 bool/i{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/string(String)/Array/Set/Map，对应于                                                                                                                                                      Bool/Int{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/ScaleString/ScaleArray/ScaleSet/ScaleMap。当在合约代码相关位置使用了上述提到的基本类型（但不包括Array、Set、Map等容器类型），Ask会在编译期自动转换为对应的Scale类型（即自动装箱/拆箱）。
 
 您可以通过`ask-lang`导入Bool。
 

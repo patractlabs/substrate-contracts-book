@@ -6,7 +6,7 @@ Ask! provides the `ask-lang` package, which includes the implementation of commo
 
 ### Built-in storage type
 
-Ask! provides a version that supports Scale encoding and storage for the basic types of AS and standard library collections,
+Ask! provides a version that supports Scale encoding and storage for the basic types of [AssemblyScript](https://www.assemblyscript.org/) and standard library collections,
 Including bool/i{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/string(String)/Array/Set/Map,
 Corresponds to Bool/Int{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/ScaleString/ScaleArray/ScaleSet/ScaleMap.
 

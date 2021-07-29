@@ -165,6 +165,6 @@ class LibaddCaller {
 }
 ```
 
-这里的outAddress是合约Libadd的实例地址。
+这里的`outAddress`是合约Libadd的实例地址。
 
 该功能也可以调用其他智能合约语言编写的合约，例如ink!，只要遵循兼容的metadata.json规范。

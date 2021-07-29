@@ -11,7 +11,7 @@ Ask! 提供了 `ask-transform`（简称 `transform`）和 `ask-lang` 两个库�
 
 Ask! 的功能按照如下实现：
 
-- `ask-lang的`主要功能是为编写智能合约提供高层API，包括`pallet-contract`原语高层封装、Scale 编码、K/V存储抽象、常用的基本类型和通用的 interfaces。您可以通过装饰器来自动派生这些基本类的组合。
+- `ask-lang`的主要功能是为编写智能合约提供高层API，包括`pallet-contract`原语高层封装、Scale 编码、K/V存储抽象、常用的基本类型和通用的 interfaces。您可以通过装饰器来自动派生这些基本类的组合。
 - `ask-transform`的主要功能根据Ask! 代码里使用的装饰器，生成符合`pallet-contract` 规范的代码和`metadata.json`元信息文件，这个部分实现以下功能：
   - 解析合约接口和参数，并生成元数据文件。
   - 解析自定义合约装饰器，生成相应的逻辑代码。

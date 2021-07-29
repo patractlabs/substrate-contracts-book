@@ -51,7 +51,7 @@ class Flipper {
 }
 ```
 
-Ask! 提供了`@constructor`和`@message`装饰器，可以装饰`@contract`合约类中的非静态方法，它们类似于ink!中的`#[ink(constructor)]`和                              `#[ink(message)]`。
+Ask! 提供了`@constructor`和`@message`装饰器，可以装饰`@contract`合约类中的非静态方法，它们类似于ink!中的`#[ink(constructor)]`和`#[ink(message)]`。
 
 - `@constructor`装饰的方法会成为合约的一个初始化函数，每个`@contract`装饰的类必须至少需要有一个`@constructor`方法（不包括父类），父类的初始化函数不会直接成为合约初始化的函数。
 - `@message` 装饰的方法会成为合约的一个方法调用，每个`@contract`装饰的类必须至少需要有一个`@message`方法（包括父类），子类默认会继承父类的合约方法，您可以重载继承的合约的方法。

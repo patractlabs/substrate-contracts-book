@@ -58,7 +58,9 @@ class MyToken {
 
 ```
 
-## Field decorator
+##  @message
+
+Field decorator
 
 This decorator is used for non-static public methods of @contract. The decorated method serves as the message API of the contract for users to call the contract. A contract needs to define at least one `@constructor` method or inherit other contracts.
 
