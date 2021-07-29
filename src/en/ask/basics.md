@@ -7,12 +7,12 @@ Ask! provides the `ask-lang` package, which includes the implementation of commo
 ### Built-in storage type
 
 Ask! provides a version that supports Scale encoding and storage for the basic types of [AssemblyScript](https://www.assemblyscript.org/) and standard library collections,
-Including bool/i{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/string(String)/Array/Set/Map,
-Corresponds to Bool/Int{8, 16, 32, 64, 128}/u{8, 16, 32, 64, 128}/ScaleString/ScaleArray/ScaleSet/ScaleMap.
+Including `bool`/`i{8, 16, 32, 64, 128}`/`u{8, 16, 32, 64, 128}`/`string(String)`/`Array`/`Set`/`Map`,
+Corresponds to `Bool`/`Int{8, 16, 32, 64, 128}`/`u{8, 16, 32, 64, 128}`/`ScaleString`/`ScaleArray`/`ScaleSet`/`ScaleMap`.
 
-When the basic types mentioned above are used in relevant positions in the contract code (but not including container types such as Array/Set/Map), Ask! It will be automatically converted to the corresponding Scale type (that is, automatic boxing/unboxing) during compile time.
+When the basic types mentioned above are used in relevant positions in the contract code (but not including container types such as `Array`/`Set`/`Map`), Ask! It will be automatically converted to the corresponding Scale type (that is, automatic boxing/unboxing) during compile time.
 
-You can import Bool via `ask-lang`.
+You can import `Bool` via `ask-lang`.
 
 ```ts
 import { Bool } from 'ask-lang';
