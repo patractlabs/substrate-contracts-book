@@ -14,6 +14,13 @@ Himalia 是 Patract 构建的一系列不同语言的访问链`pallet-contracts`
 当前 Himalia 提供的不同语言的合约sdk有如下版本：
 
 * go: https://github.com/patractlabs/go-patract
+
 * python: https://github.com/patractlabs/py-patract
+
 * java: 还未实现
+
 * c#(.net): 还未实现 
+
+## Himalia议会提案报告
+
+- [v0.1&v0.2Report](./reports/v0.1Report.md)

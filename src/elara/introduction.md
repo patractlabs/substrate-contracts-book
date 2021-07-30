@@ -19,3 +19,8 @@ Github:  <https://github.com/patractlabs/elara>
 Homepage:  <https://elara.patract.io>
 
 Docs:<https://docs.elara.patract.io/>
+
+## Elara 议会提案报告
+
+- [v0.1Report](./reports/v0.1Report.md)
+- [v0.2Report](./reports/v0.2Report.md)

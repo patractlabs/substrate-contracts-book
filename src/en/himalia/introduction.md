@@ -14,6 +14,14 @@ Therefore, Himalia has a very important reason for existence. Himalia's position
 The contract SDKs in different languages ​​currently provided by Himalia have the following versions:
 
 * go: https://github.com/patractlabs/go-patract
+
 * python: https://github.com/patractlabs/py-patract
+
 * java: Not yet implemented
+
 * c#(.net): Not yet implemented
+
+## Report for Himalia proposals
+
+  - [v0.1&v0.2Report](./reports/v0.1Report.md)
+
