@@ -37,6 +37,15 @@ module.exports = [
       '/ask/storage-data-structure',
       '/ask/ask-cli',
       '/ask/ask-vs-ink',
+      {
+        title: 'Report',
+        path: '/ask/reports',
+        collapsable: false,
+        children: [
+          '/ask/reports/v0.1Report',
+          '/ask/reports/v0.2Report',
+        ]
+      }
     ]
   },
   {
@@ -78,7 +87,7 @@ module.exports = [
           '/redspot/reports/v0.2Report',
           '/redspot/reports/v0.3Report',
           '/redspot/reports/v0.4Report',
-        ] 
+        ]
       }
     ]
   },
@@ -91,7 +100,17 @@ module.exports = [
       '/europa/execution_info',
       '/europa/sample',
       '/europa/wasm_executor',
-      '/europa/wasm_backtrace'
+      '/europa/wasm_backtrace',
+      {
+        title: 'Report',
+        path: '/europa/reports',
+        collapsable: false,
+        children: [
+          '/europa/reports/v0.1Report',
+          '/europa/reports/v0.2Report',
+          '/europa/reports/v0.3Report',
+        ]
+      }
     ]
   },
   {
@@ -102,7 +121,16 @@ module.exports = [
       '/zkmega/tutorial',
       '/zkmega/contract',
       '/zkmega/example',
-      '/zkmega/benchmark'
+      '/zkmega/benchmark',
+      {
+        title: 'Report',
+        path: '/zkmega/reports',
+        collapsable: false,
+        children: [
+          '/zkmega/reports/v0.1Report',
+          '/zkmega/reports/v0.2Report',
+        ]
+      }
     ]
   },
   {
@@ -112,21 +140,46 @@ module.exports = [
     children: [
       '/himalia/tutorial',
       '/himalia/go-patract',
-      '/himalia/py-patract'
+      '/himalia/py-patract',
+      {
+        title: 'Report',
+        path: '/himalia/reports',
+        collapsable: false,
+        children: [
+          '/himalia/reports/v0.1Report',
+        ]
+      }
     ]
   },
   {
     title: 'Metis',
     path: '/metis/introduction',
     collapsable: false,
-    children: ['/metis/tokens', '/metis/access-control']
+    children: ['/metis/tokens', '/metis/access-control',
+      {
+        title: 'Report',
+        path: '/metis/reports',
+        collapsable: false,
+        children: [
+          '/metis/reports/M1Report',
+        ]
+      }]
   },
   '/carpo/introduction',
   {
     title: 'Elara',
     path: '/elara/introduction',
     collapsable: false,
-    children: ['/elara/tutorial', '/elara/design', '/elara/API']
+    children: ['/elara/tutorial', '/elara/design', '/elara/API',
+      {
+        title: 'Report',
+        path: '/elara/reports',
+        collapsable: false,
+        children: [
+          '/elara/reports/v0.1Report',
+          '/elara/reports/v0.2Report',
+        ]
+      }]
   },
   {
     title: 'PatraStore',

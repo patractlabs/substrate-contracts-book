@@ -42,5 +42,9 @@ native refers to the form of compiling Substrate Runtime into native machine cod
 
 The main focus of this book is Substrate's Wasm contract, so the Europa-related introductions in the following chapters are all related to the use of debugging Europa contract.
 
+## Report for Europa proposals
 
+- [v0.1Report](./reports/v0.2Report.md)
+- [v0.2Report](./reports/v0.2Report.md)
+- [v0.3Report](./reports/v0.3Report.md)
 

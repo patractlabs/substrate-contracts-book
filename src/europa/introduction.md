@@ -40,5 +40,9 @@ native(native exectuion evnironment, native runtime)指将Substrate Runtime编�
 
 本书主要关注点是Substrate的Wasm合约，所以后面章节的Europa相关的介绍均围绕与使用Europa合约调试相关。
 
+## Europa 议会提案报告
 
+- [v0.1Report](./reports/v0.1Report.md)
+- [v0.2Report](./reports/v0.2Report.md)
+- [v0.3Report](./reports/v0.3Report.md)
 

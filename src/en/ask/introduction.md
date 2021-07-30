@@ -19,3 +19,8 @@ Ask! is involved in the compilation process by writing AssemblyScript Transform.
 
 Ask! is currently being developed now, and only the v0.2 version of the Kusama financial proposal has been completed. Many current designs may undergo incompatible changes in the future.
 
+## Report for Ask！proposals
+
+- [v0.1Report](./reports/v0.1Report.md)
+
+- [v0.2Report](./reports/v0.2Report.md)
