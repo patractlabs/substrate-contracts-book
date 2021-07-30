@@ -54,3 +54,10 @@ Apache-2.0
 [loopring]: https://loopring.org/
 [BLS curve]: https://electriccoin.co/blog/new-snark-curve/
 [PLONK algorithm]: https://eprint.iacr.org/2019/953/20190827:165656
+
+## Report for zkMega proposals
+
+- [v0.1Report](./reports/v0.1Report.md)
+
+- [v0.2Report](./reports/v0.2Report.md)
+
