@@ -14,7 +14,7 @@
 
 当前 Jupiter PoA 和 Jupiter 分为不同的网络，一个是独立的测试网，一个是平行链版本，除此之外，其他功能和操作都一样。
 
-Jupiter PoA 的首页登录 [patracstore](https://patrastore.io/)
+Jupiter PoA 的首页登录 [patrastore](https://patrastore.io/)
 
 从 Jupiter PoA 切换网络到 Jupiter：
 

@@ -11,7 +11,7 @@ For contract detail, You can refer to [store-contracts](https://github.com/patra
 
 ## Network switch
 
-open [patracstore](https://patrastore.io/)，switch network to Jupiter Para：
+open [patrastore](https://patrastore.io/)，switch network to Jupiter Para：
 
 ![parastore](./img/parastore.png)
 
