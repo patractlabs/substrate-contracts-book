@@ -16,4 +16,10 @@ open [patracstore](https://patrastore.io/)，switch network to Jupiter Para：
 
 ![parastore](./img/parastore.png)
 
+Then Click Account - Faucet to get some test coin:
+
+![parastore](./img/facet.png)
+
+After wait awhile, make sure you get the test coin, then you can go to [PatraStore](https://patrastore.io/#/patract-para) to test our own pre-deployed contracts.
+
 Have fun.

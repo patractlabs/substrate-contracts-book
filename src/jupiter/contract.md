@@ -23,4 +23,8 @@ Jupiter 平行链当前部署的合约有：
 
 ![parastore](./img/parastore.png)
 
-然后可以在账户中领取测试币。
+点击《账户》-《Faucet》领取测试币
+
+![parastore](./img/facet.png)
+
+等待片刻，检查收到代币后，就可以回到 [PatraStore](https://patrastore.io/#/patract-para) 首页测试已经部署好的合约。
