@@ -187,6 +187,12 @@ module.exports = [
       }]
   },
   {
+    title: 'Jupiter',
+    path: '/jupiter/introduction',
+    collapsable: false,
+    children: ['/jupiter/quickstart', '/jupiter/network', '/jupiter/contract']
+  },
+  {
     title: 'PatraStore',
     path: '/en/patra-store/introduction',
     collapsable: false,
