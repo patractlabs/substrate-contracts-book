@@ -1,18 +1,27 @@
+
+# Jupiter testnet
+
 ## Overview
 
 Jupiter is a **contract test network** that is maintained by Patract, contains Patract contract design specifications and is compatible with the latest pallet-contracts module. Jupiter has three types of nodes, namely:
 
-- `jupiter-dev` node suitable for local quick test.
-- Independently run the `jupiter-prep` independent testnet that provides the latest contract functions to the outside world.
-- Parachain of `jupiter` contract running on relay-chain.
+- `jupiter-dev` node suitable for **local quick test**.
+- Independently run the `jupiter-prep` **independent testnet** that provides the latest contract functions to the outside world.
+- Parachain of `jupiter` contract running on **relay-chain**.
 
-The Node implementation：
+The key configuration of those three block chain network are basically the same, such as contract weight, block limit size etc. The specific configuration need to check [Jupiter network](./network.md).
+
+The repository of Jupiter is [https://github.com/patractlabs/jupiter](https://github.com/patractlabs/jupiter).
+
+After compile jupiter successfully, there are there executable file: `jupiter-dev`, `jupiter-prep`, `jupiter` in target/release directory.
+
+In the repository above, The Node implementation of those there network are:
 
 - directory `bin/node-dev`: local develop mode, convenient for developer to test contract quickly
 - directory `bin/node-prep`: testnet mode，use PoA authorities, support contract deploy, invoke
 - directory `bin/node`: parachain testnet mode，use Aura authorities, support contract deploy, invoke
 
-The Runtime implementation：
+And the Runtime implementation of those there network are:
 
 - directory `runtime/jupiter-dev`
 - directory `runtime/jupiter-prep`
