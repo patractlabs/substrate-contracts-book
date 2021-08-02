@@ -10,7 +10,7 @@ Corresponding to the concept of contract model, we can derive the concept of con
 | ink!     | The compiled results run on Frame Contract Pallet | Write a library or framework on an existing language (Rust) |
 | Vyper    | The compiled results run on EVM                   | Dialect of Python                                           |
 
-> [Vyper](https://vyper.readthedocs.io/en/stable/) is a contract-oriented Python programming language, and the compilation target is the Ethereum Virtual Machine (EVM).
+> [Vyper](https://vyper.readthedocs.io/en/stable/) is a contract-oriented Python programming language, and the compilation target is the OP_CODE which running on Ethereum Virtual Machine (EVM).
 
 For scenarios where a library or framework is added to an existing language, in most cases the function of the compiler to process the syntax tree is needed, so we prefer to call it a language framework rather than a library or framework in the conventional sense.
 
