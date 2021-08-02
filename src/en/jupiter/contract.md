@@ -16,7 +16,7 @@ open [patrastore](https://patrastore.io/)，switch network to Jupiter Para：
 ![parastore](./img/parastore.png)
 
 and you can also switch back to Jupiter PoA network.
-## Watercoller
+## Faucet
 
 Then Click Account - Faucet to get some test coin:
 
