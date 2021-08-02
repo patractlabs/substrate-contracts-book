@@ -6,14 +6,15 @@ The there Jupiter network are basically the same. For those common configuration
 
 For developer, the most import configuration need to noticed are:
 
-- `frame_system::Config`: config inside this are all the same with there network, so that the block limit and resource of those network are the same
-- `pallet_balance::Config`: the `ExistentialDeposit` is set to **0**, so that when a new account or a new contract created, you do not need to pay rent.
-- `pallet_contracts::Config` configurations are：
-  - **all config related to storage rent are set to 0**, such as `TombstoneDeposit`，`DepositPerContract`，`DepositPerStorageByte`，`RentFraction` etc.
-  - `CallStack` are all the same and set to 32, in the case of contract invoke contract, the maximum execution statck are the same.
-  - `SignedClaimHandicap` are all the same and set to 0.
-  - `Schedule` are all the same and use default value. note the`code_len` i.e the max contract size is `128k`.
-  - `ChainExtension` config are different because each network's feature supporting are different.
+1. `frame_system::Config`: config inside this are all the same with there network, so that the block limit and resource of those network are the same
+2. `pallet_balance::Config`: the `ExistentialDeposit` is set to **0**, so that when a new account or a new contract created, you do not need to pay rent.
+3. `pallet_contracts::Config` configurations are：
+
+    1. **all config related to storage rent are set to 0**, such as `TombstoneDeposit`，`DepositPerContract`，`DepositPerStorageByte`，`RentFraction` etc.
+    2. `CallStack` are all the same and set to 32, in the case of contract invoke contract, the maximum execution statck are the same.
+    3. `SignedClaimHandicap` are all the same and set to 0.
+    4. `Schedule` are all the same and use default value. note the`code_len` i.e the max contract size is `128k`.
+    5. `ChainExtension` config are different because each network's feature supporting are different.
 
 ## Three Jupiter network configuration
 

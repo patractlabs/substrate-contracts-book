@@ -10,11 +10,11 @@
 2. `pallet_balance::Config` 中的 `ExistentialDeposit` 都是 **0**，因此**产生一个新账户或者一个新合约不需要为了这个账户/合约的存活而付押金**。
 3. `pallet_contracts::Config` 中的配置主要如下：
 
-  1. **与存储租赁相关的配置都设置为0**，如 `TombstoneDeposit`，`DepositPerContract`，`DepositPerStorageByte`，`RentFraction`等。
-  2. `CallStack`的配置都是32层， 因此合约调合约最大的执行栈相同。
-  3. 与合约销毁的延迟删除的配置都相同。
-  4. 合约的 `Schedule` 配置都相同，均直接**采用了默认配置**。注意这个配置中的 `code_len` 即合约的最大大小为 `128k`
-  5. `ChainExtension`的配置会由于每个网络的特性及功能支持程度存在不同。
+    1. **与存储租赁相关的配置都设置为0**，如 `TombstoneDeposit`，`DepositPerContract`，`DepositPerStorageByte`，`RentFraction`等。
+    2. `CallStack`的配置都是32层， 因此合约调合约最大的执行栈相同。
+    3. 与合约销毁的延迟删除的配置都相同。
+    4. 合约的 `Schedule` 配置都相同，均直接**采用了默认配置**。注意这个配置中的 `code_len` 即合约的最大大小为 `128k`
+    5. `ChainExtension`的配置会由于每个网络的特性及功能支持程度存在不同。
 
 ## Jupiter 三个网络的特性及配置
 ### Jupiter Dev

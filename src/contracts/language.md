@@ -10,7 +10,7 @@
 | ink!     | 编译结果运行于Frame Contract Pallet上 | 在已有的语言（Rust）上编写一个库或者框架 |
 | Vyper    | 编译结果运行于EVM上                   | Python 的方言                            |
 
-> [Vyper](https://vyper.readthedocs.io/en/stable/)是一种面向合约的Python化的编程语言，编译目标为以太坊虚拟机 (EVM)。
+> [Vyper](https://vyper.readthedocs.io/en/stable/)是一种面向合约的Python化的编程语言，编译目标为运行以太坊虚拟机 (EVM)上的字节码。
 
 对于在现有语言上增加一个库或者框架的场景，多数情况下需要使用到编译器处理语法树的功能，因此我们更倾向于称其为语言框架，而不是一个常规意义下的库或者框架。
 
