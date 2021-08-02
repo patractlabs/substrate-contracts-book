@@ -1,15 +1,24 @@
-## Overview
+# Jupiter 测试网
+
+## 介绍
+
 Jupiter 是由 Patract 维护，包含 Patract 合约设计规范并兼容最新 pallet-contracts 模块的**合约测试网**。Jupiter 有三类节点，分别是：
 
-- 适用于本地快速测试的 `jupiter-dev` 节点。
-- 独立运行对外提供最新合约功能的 `jupiter-prep` 独立测试网。
-- 运行于中继链上的 `jupiter` 合约平行链。
+- 适用于速测试合约功能的 `jupiter-dev` **本地节点**。
+- 独立运行对外提供最新合约功能的 `jupiter-prep` **独立测试网**。
+- 运行于中继链并提供稳定合约功能的 `jupiter` **平行链测试网**。
 
-对应的节点实现分别是：
+三个区块链网络的关键配置基本相同，例如合约计费，区块资源大小等。具体的配置详见 [Jupiter 网络](./network.md)。
 
-- 目录 `bin/node-dev`：本地开发模式，有交易即立即触发，方便合约开发者快速测试
-- 目录 `bin/node-prep`：测试网模式，采用 PoA 验证人，支持合约部署，调用
-- 目录 `bin/node`：平行链测试网模式，采用 Aura 验证人，支持合约部署，调用
+Jupiter 的项目地址是 [https://github.com/patractlabs/jupiter](https://github.com/patractlabs/jupiter)。
+
+正常编译后，在编译产物目录中将会出现三个可执行性文件： `jupiter-dev`, `jupiter-prep` 和 `jupiter`。
+
+在上面链接的仓库中，三个网络对应的节点实现分别是：
+
+- 目录 `bin/node-dev`：本地开发模式，有交易即立即触发，方便合约开发者快速测试。
+- 目录 `bin/node-prep`：独立链测试网模式，采用 Babe 作为出块算法，PoA 指定验证人，支持合约部署，调用。
+- 目录 `bin/node`：平行链测试网模式，采用 Aura 作为收集人选择算法，PoA指定验证人，支持合约部署，调用。
 
 对应的 Runtime 实现分别是：
 

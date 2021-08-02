@@ -47,7 +47,7 @@ jupiter-prep 也支持先在本地进行测试：
 ```
 ./jupiter --chain ./jupiter-westend-098.json --execution wasm --wasm-execution=compiled --force-authoring --parachain-id=2000 --tmp \
 --chain ./westend-098.json --no-beefy --execution wasm --wasm-execution=compiled --tmp \
---bootnodes /dns/ws.patract-westend.patract.cn/tcp/30333/p2p/12D3KooWQYyBaNrh9QdvernDFUTapHQTD95S9a6CvSPKXVvCeWx2
+--bootnodes /dns/ws.patract-westend.patract.cn/tcp/30333/p2p/12D3KooWHfn9r5cLyVQRuLin1wsB3KUiVaMWPnnpFd7Hhff6rhUX
 ```
 
 > 注：如果需要在本地进行测试，可以修改 [jupiter-dev](https://github.com/patractlabs/jupiter/blob/master/bin/node/cli/src/command.rs#L28-L31)，并参考这里的[运行步骤](https://github.com/patractlabs/jupiter/blob/master/README.md#421-start-local-test-mode-jupiter-parachain)
