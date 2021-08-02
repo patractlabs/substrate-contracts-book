@@ -45,10 +45,7 @@ The outside node can also join Jupiter PoA testnet as sync node:
 Currently, outside node can join Jupiter testnet as sync node: 
 
 ```
-./jupiter --chain ./jupiter-westend-098.json --execution wasm --wasm-execution=compiled --force-authoring --parachain-id=2000 --tmp \
---chain ./westend-098.json --no-beefy --execution wasm --wasm-execution=compiled --tmp \
---bootnodes /dns/ws.patract-westend.patract.cn/tcp/30333/p2p/12D3KooWHfn9r5cLyVQRuLin1wsB3KUiVaMWPnnpFd7Hhff6rhUX
+./jupiter --chain ./jupiter-westend-patract.json --execution wasm --wasm-execution=compiled --parachain-id=2000 --tmp \
+-- --chain ./westend-patract.json --execution wasm --wasm-execution=compiled --tmp \
+--bootnodes /dns/ws.patract-westend.patract.cn/tcp/30333/p2p/12D3KooWFBrd6SrevJ4vLi3SY7KRYQEVbRSeoENmdDouAW7wGCvZ
 ```
-
-> Note: If you want to do in local mode, you have to modify [jupiter-dev](https://github.com/patractlabs/jupiter/blob/master/bin/node/cli/src/command.rs#L28-L31), and then refer to [steps here](https://github.com/patractlabs/jupiter/blob/master/README.md#421-start-local-test-mode-jupiter-parachain)
-
