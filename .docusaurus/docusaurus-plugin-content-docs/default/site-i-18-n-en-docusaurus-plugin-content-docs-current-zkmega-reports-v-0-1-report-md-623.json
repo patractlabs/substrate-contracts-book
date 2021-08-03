@@ -1,0 +1,23 @@
+{
+  "unversionedId": "zkmega/reports/v0.1Report",
+  "id": "zkmega/reports/v0.1Report",
+  "isDocsHomePage": false,
+  "title": "Report for zkMega v0.1（original Megaclite v0.1 )",
+  "description": "5 weeks ago, Patract Hub applied a treasury proposal #24 for Megaclite v0.1. Megaclite project will be dedicated to introducing basic zero-knowledge proof underlying support for the Polkadot ecology, so that developers can easily develop applications at the upper level through WASM smart contracts or Runtime.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/zkmega/reports/v0.1Report.md",
+  "sourceDirName": "zkmega/reports",
+  "slug": "/zkmega/reports/v0.1Report",
+  "permalink": "/en/zkmega/reports/v0.1Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/zkmega/reports/v0.1Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Report for zkMega proposals",
+    "permalink": "/en/zkmega/reports"
+  },
+  "next": {
+    "title": "Report for zkMega v0.2（original Megaclite v0.2 )",
+    "permalink": "/en/zkmega/reports/v0.2Report"
+  }
+}

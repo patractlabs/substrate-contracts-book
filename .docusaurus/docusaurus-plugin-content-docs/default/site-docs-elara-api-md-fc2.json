@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/API",
+  "id": "elara/API",
+  "isDocsHomePage": false,
+  "title": "API 接入",
+  "description": "ENDPOINT 规则",
+  "source": "@site/docs/elara/API.md",
+  "sourceDirName": "elara",
+  "slug": "/elara/API",
+  "permalink": "/elara/API",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/API.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "设计简述",
+    "permalink": "/elara/design"
+  },
+  "next": {
+    "title": "Elara议会提案报告",
+    "permalink": "/elara/reports"
+  }
+}

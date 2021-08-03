@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports/v0.1Report",
+  "id": "redspot/reports/v0.1Report",
+  "isDocsHomePage": false,
+  "title": "Redspot v0.1 报告",
+  "description": "Proposal overview",
+  "source": "@site/docs/redspot/reports/v0.1Report.md",
+  "sourceDirName": "redspot/reports",
+  "slug": "/redspot/reports/v0.1Report",
+  "permalink": "/redspot/reports/v0.1Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports/v0.1Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Redspot 议会提案报告",
+    "permalink": "/redspot/reports"
+  },
+  "next": {
+    "title": "Redspot v0.2 报告",
+    "permalink": "/redspot/reports/v0.2Report"
+  }
+}

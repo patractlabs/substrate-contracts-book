@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/reports/v0.1Report",
+  "id": "elara/reports/v0.1Report",
+  "isDocsHomePage": false,
+  "title": "v0.1Report",
+  "description": "Report for Elara v0.1",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/elara/reports/v0.1Report.md",
+  "sourceDirName": "elara/reports",
+  "slug": "/elara/reports/v0.1Report",
+  "permalink": "/en/elara/reports/v0.1Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/reports/v0.1Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Report for Elara proposals",
+    "permalink": "/en/elara/reports"
+  },
+  "next": {
+    "title": "Report for Elara v0.2",
+    "permalink": "/en/elara/reports/v0.2Report"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/q-and-a",
+  "id": "redspot/q-and-a",
+  "isDocsHomePage": false,
+  "title": "常见问题",
+  "description": "如何升级 Redspot？",
+  "source": "@site/docs/redspot/q-and-a.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/q-and-a",
+  "permalink": "/redspot/q-and-a",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/q-and-a.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "控制台",
+    "permalink": "/redspot/console"
+  },
+  "next": {
+    "title": "插件",
+    "permalink": "/redspot/plugin"
+  }
+}

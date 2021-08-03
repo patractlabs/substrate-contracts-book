@@ -1,0 +1,23 @@
+{
+  "unversionedId": "jupiter/introduction",
+  "id": "jupiter/introduction",
+  "isDocsHomePage": false,
+  "title": "Jupiter testnet",
+  "description": "Overview",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/jupiter/introduction.md",
+  "sourceDirName": "jupiter",
+  "slug": "/jupiter/introduction",
+  "permalink": "/en/jupiter/introduction",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/jupiter/introduction.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Report for Elara v0.2",
+    "permalink": "/en/elara/reports/v0.2Report"
+  },
+  "next": {
+    "title": "quickstart",
+    "permalink": "/en/jupiter/quickstart"
+  }
+}

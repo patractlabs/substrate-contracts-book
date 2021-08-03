@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports",
+  "id": "redspot/reports",
+  "isDocsHomePage": false,
+  "title": "Report for Redspot proposals",
+  "description": "The proposal report is a document submitted for review at the end of the reporting stage after Patract submitted an application to Polkdaot/Kusama Finance. Each issue of the document covers the design ideas and main content completed in this proposal.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/redspot/reports.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/reports",
+  "permalink": "/en/redspot/reports",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "@redspot_explorer plug-in",
+    "permalink": "/en/redspot/plugin/redspot-explorer"
+  },
+  "next": {
+    "title": "Report for Redspot v0.1",
+    "permalink": "/en/redspot/reports/v0.1Report"
+  }
+}

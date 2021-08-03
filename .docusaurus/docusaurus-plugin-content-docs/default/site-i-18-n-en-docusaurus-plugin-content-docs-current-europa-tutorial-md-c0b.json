@@ -1,0 +1,23 @@
+{
+  "unversionedId": "europa/tutorial",
+  "id": "europa/tutorial",
+  "isDocsHomePage": false,
+  "title": "Europa tutorial",
+  "description": "Background Information",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/europa/tutorial.md",
+  "sourceDirName": "europa",
+  "slug": "/europa/tutorial",
+  "permalink": "/en/europa/tutorial",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/europa/tutorial.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "What is Europa？",
+    "permalink": "/en/europa/introduction"
+  },
+  "next": {
+    "title": "Europa contract execution log analysis",
+    "permalink": "/en/europa/execution_info"
+  }
+}

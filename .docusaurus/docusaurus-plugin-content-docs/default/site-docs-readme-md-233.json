@@ -1,0 +1,23 @@
+{
+  "unversionedId": "summary",
+  "id": "summary",
+  "isDocsHomePage": false,
+  "title": "Summary",
+  "description": "- 介绍",
+  "source": "@site/docs/README.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/README.md",
+  "version": "current",
+  "frontMatter": {
+    "id": "summary",
+    "title": "Summary",
+    "slug": "/"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Substrate 合约书",
+    "permalink": "/contracts/introduction"
+  }
+}

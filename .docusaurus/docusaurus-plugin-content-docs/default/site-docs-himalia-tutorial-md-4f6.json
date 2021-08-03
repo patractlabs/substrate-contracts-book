@@ -1,0 +1,23 @@
+{
+  "unversionedId": "himalia/tutorial",
+  "id": "himalia/tutorial",
+  "isDocsHomePage": false,
+  "title": "tutorial",
+  "description": "Himalia 用于与链的合约部分交互的sdk，需要首先启动一个节点才能进行后续的执行过程。",
+  "source": "@site/docs/himalia/tutorial.md",
+  "sourceDirName": "himalia",
+  "slug": "/himalia/tutorial",
+  "permalink": "/himalia/tutorial",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/himalia/tutorial.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Himalia",
+    "permalink": "/himalia/introduction"
+  },
+  "next": {
+    "title": "go-patract",
+    "permalink": "/himalia/go-patract"
+  }
+}

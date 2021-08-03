@@ -1,0 +1,23 @@
+{
+  "unversionedId": "europa/reports",
+  "id": "europa/reports",
+  "isDocsHomePage": false,
+  "title": "Europa议会提案报告",
+  "description": "提案报告是Patract向Polkdaot/Kusama财政提交申请后，在结束汇报阶段提交评审的文档。每一期文档涵盖了本次提案中的设计思路，完成的主要内容。",
+  "source": "@site/docs/europa/reports.md",
+  "sourceDirName": "europa",
+  "slug": "/europa/reports",
+  "permalink": "/europa/reports",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/europa/reports.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Europa 的Wasm Backtrace",
+    "permalink": "/europa/wasm_backtrace"
+  },
+  "next": {
+    "title": "Europa v0.1 报告",
+    "permalink": "/europa/reports/v0.1Report"
+  }
+}

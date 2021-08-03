@@ -1,0 +1,14 @@
+{
+  "unversionedId": "pallet-contracts/introduction",
+  "id": "pallet-contracts/introduction",
+  "isDocsHomePage": false,
+  "title": "pallet-contracts 合约模块",
+  "description": "pallet-contracts合约模块, 一般称呼为“Contracts Pallet” 或者 “FRAME Contracts pallet”，又或者称呼为“Substrate Smart Contracts”，是parity官方研发的Wasm合约模块。",
+  "source": "@site/docs/pallet-contracts/introduction.md",
+  "sourceDirName": "pallet-contracts",
+  "slug": "/pallet-contracts/introduction",
+  "permalink": "/pallet-contracts/introduction",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/pallet-contracts/introduction.md",
+  "version": "current",
+  "frontMatter": {}
+}

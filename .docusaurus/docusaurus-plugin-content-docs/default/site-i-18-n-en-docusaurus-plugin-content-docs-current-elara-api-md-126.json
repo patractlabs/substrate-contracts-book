@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/API",
+  "id": "elara/API",
+  "isDocsHomePage": false,
+  "title": "API access",
+  "description": "ENDPOINT Rules",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/elara/API.md",
+  "sourceDirName": "elara",
+  "slug": "/elara/API",
+  "permalink": "/en/elara/API",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/API.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Design Brief",
+    "permalink": "/en/elara/design"
+  },
+  "next": {
+    "title": "Report for Elara proposals",
+    "permalink": "/en/elara/reports"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "unversionedId": "zkmega/metis",
+  "id": "zkmega/metis",
+  "isDocsHomePage": false,
+  "title": "Metis",
+  "description": "TODO",
+  "source": "@site/docs/zkmega/metis.md",
+  "sourceDirName": "zkmega",
+  "slug": "/zkmega/metis",
+  "permalink": "/zkmega/metis",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/zkmega/metis.md",
+  "version": "current",
+  "frontMatter": {}
+}

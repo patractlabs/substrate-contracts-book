@@ -1,0 +1,23 @@
+{
+  "unversionedId": "jupiter/quickstart",
+  "id": "jupiter/quickstart",
+  "isDocsHomePage": false,
+  "title": "quickstart",
+  "description": "编译",
+  "source": "@site/docs/jupiter/quickstart.md",
+  "sourceDirName": "jupiter",
+  "slug": "/jupiter/quickstart",
+  "permalink": "/jupiter/quickstart",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/jupiter/quickstart.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Jupiter 测试网",
+    "permalink": "/jupiter/introduction"
+  },
+  "next": {
+    "title": "Jupiter 网络",
+    "permalink": "/jupiter/network"
+  }
+}

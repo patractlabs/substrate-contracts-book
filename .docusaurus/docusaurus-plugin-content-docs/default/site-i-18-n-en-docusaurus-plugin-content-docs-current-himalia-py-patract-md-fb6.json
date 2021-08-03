@@ -1,0 +1,23 @@
+{
+  "unversionedId": "himalia/py-patract",
+  "id": "himalia/py-patract",
+  "isDocsHomePage": false,
+  "title": "py-patract",
+  "description": "PatractPy is a contract SDK to support the development of Python scripts that interact with contracts, including automated scripts to support testing. Unlike PatractGo, PatractPy is mainly for script development, so PatractPy mainly completes contract-related RPC interfaces, and completes contract deployment and instantiation-related operations.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/himalia/py-patract.md",
+  "sourceDirName": "himalia",
+  "slug": "/himalia/py-patract",
+  "permalink": "/en/himalia/py-patract",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/himalia/py-patract.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "go-patract",
+    "permalink": "/en/himalia/go-patract"
+  },
+  "next": {
+    "title": "Report for Himalia proposals",
+    "permalink": "/en/himalia/reports"
+  }
+}

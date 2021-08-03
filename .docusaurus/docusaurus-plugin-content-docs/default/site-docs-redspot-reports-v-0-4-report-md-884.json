@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports/v0.4Report",
+  "id": "redspot/reports/v0.4Report",
+  "isDocsHomePage": false,
+  "title": "Redspot v0.4 报告",
+  "description": "10个月前，我们提交了Redspotv0.1的国库提案#0，并描述了未来4个版本的开发规划。几周前，我们提交了v0.4的国库提案#44，现在我们已经完成了全部的计划。Redspot has become a powerful development environment, testing framework and asset pipeline for Pallet-Contracts. Redspot is trying to let the development of ink! be projectized and simplify the testing and interacting with contracts.  源码和文档在https://github.com/patractlabs/redspot/",
+  "source": "@site/docs/redspot/reports/v0.4Report.md",
+  "sourceDirName": "redspot/reports",
+  "slug": "/redspot/reports/v0.4Report",
+  "permalink": "/redspot/reports/v0.4Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports/v0.4Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Redspot v0.3 报告",
+    "permalink": "/redspot/reports/v0.3Report"
+  },
+  "next": {
+    "title": "introduction",
+    "permalink": "/europa/introduction"
+  }
+}

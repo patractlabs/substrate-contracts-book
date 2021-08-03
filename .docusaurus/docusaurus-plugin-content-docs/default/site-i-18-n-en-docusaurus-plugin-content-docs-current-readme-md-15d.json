@@ -1,0 +1,23 @@
+{
+  "unversionedId": "summary",
+  "id": "summary",
+  "isDocsHomePage": false,
+  "title": "Summary",
+  "description": "- Introduction",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/README.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/en/",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/README.md",
+  "version": "current",
+  "frontMatter": {
+    "id": "summary",
+    "title": "Summary",
+    "slug": "/"
+  },
+  "sidebar": "docs",
+  "next": {
+    "title": "Substrate contract",
+    "permalink": "/en/contracts/introduction"
+  }
+}

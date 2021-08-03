@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/design",
+  "id": "elara/design",
+  "isDocsHomePage": false,
+  "title": "Design Brief",
+  "description": "Elara has long-term development iteration planning and operation and maintenance goals, in order to be able to support the continuous transition of Polkadot ecological developers from the 10,000+ level to the 100 million+ level. The core of Elara is a set of high-performance, high-availability and high-scalability distributed architecture. It is significantly different from other projects that provide Node API Service:",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/elara/design.md",
+  "sourceDirName": "elara",
+  "slug": "/elara/design",
+  "permalink": "/en/elara/design",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/design.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tutorial",
+    "permalink": "/en/elara/tutorial"
+  },
+  "next": {
+    "title": "API access",
+    "permalink": "/en/elara/API"
+  }
+}

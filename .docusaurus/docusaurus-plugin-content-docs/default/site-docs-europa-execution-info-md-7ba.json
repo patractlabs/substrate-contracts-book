@@ -1,0 +1,23 @@
+{
+  "unversionedId": "europa/execution_info",
+  "id": "europa/execution_info",
+  "isDocsHomePage": false,
+  "title": "Europa 合约执行日志分析",
+  "description": "背景信息",
+  "source": "@site/docs/europa/execution_info.md",
+  "sourceDirName": "europa",
+  "slug": "/europa/execution_info",
+  "permalink": "/europa/execution_info",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/europa/execution_info.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Europa教程",
+    "permalink": "/europa/tutorial"
+  },
+  "next": {
+    "title": "Europa 调试示例",
+    "permalink": "/europa/sample"
+  }
+}

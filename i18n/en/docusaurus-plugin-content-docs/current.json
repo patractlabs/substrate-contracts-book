@@ -1,0 +1,58 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.介绍": {
+    "message": "Introduction",
+    "description": "The label for category 介绍 in sidebar docs"
+  },
+  "sidebar.docs.category.ink!": {
+    "message": "ink!",
+    "description": "The label for category ink! in sidebar docs"
+  },
+  "sidebar.docs.category.ask!": {
+    "message": "ask!",
+    "description": "The label for category ask! in sidebar docs"
+  },
+  "sidebar.docs.category.Reports": {
+    "message": "Reports",
+    "description": "The label for category Reports in sidebar docs"
+  },
+  "sidebar.docs.category.Redspot": {
+    "message": "Redspot",
+    "description": "The label for category Redspot in sidebar docs"
+  },
+  "sidebar.docs.category.Plugin": {
+    "message": "Plugin",
+    "description": "The label for category Plugin in sidebar docs"
+  },
+  "sidebar.docs.category.Europa": {
+    "message": "Europa",
+    "description": "The label for category Europa in sidebar docs"
+  },
+  "sidebar.docs.category.zkMega": {
+    "message": "zkMega",
+    "description": "The label for category zkMega in sidebar docs"
+  },
+  "sidebar.docs.category.Himalia": {
+    "message": "Himalia",
+    "description": "The label for category Himalia in sidebar docs"
+  },
+  "sidebar.docs.category.Metis": {
+    "message": "Metis",
+    "description": "The label for category Metis in sidebar docs"
+  },
+  "sidebar.docs.category.Elara": {
+    "message": "Elara",
+    "description": "The label for category Elara in sidebar docs"
+  },
+  "sidebar.docs.category.Jupiter": {
+    "message": "Jupiter",
+    "description": "The label for category Jupiter in sidebar docs"
+  },
+  "sidebar.docs.category.PatraStore": {
+    "message": "PatraStore",
+    "description": "The label for category PatraStore in sidebar docs"
+  }
+}

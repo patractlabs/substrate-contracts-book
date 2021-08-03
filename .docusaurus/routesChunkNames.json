@@ -1,0 +1,382 @@
+{
+  "/en/-d5f": {
+    "component": "1be78505",
+    "versionMetadata": "935f2afb"
+  },
+  "/en/-d71": {
+    "component": "17896441",
+    "content": "15db3f49"
+  },
+  "/en/ask/ask-cli-1e1": {
+    "component": "17896441",
+    "content": "3b89d4b8"
+  },
+  "/en/ask/ask-vs-ink-860": {
+    "component": "17896441",
+    "content": "03e1847b"
+  },
+  "/en/ask/basics-cd8": {
+    "component": "17896441",
+    "content": "4ab33a3e"
+  },
+  "/en/ask/decorators-03b": {
+    "component": "17896441",
+    "content": "c96af0e6"
+  },
+  "/en/ask/design-d1b": {
+    "component": "17896441",
+    "content": "3bf10d6f"
+  },
+  "/en/ask/introduction-601": {
+    "component": "17896441",
+    "content": "5455c973"
+  },
+  "/en/ask/reports-827": {
+    "component": "17896441",
+    "content": "ceaeb60b"
+  },
+  "/en/ask/reports/v0.1Report-76d": {
+    "component": "17896441",
+    "content": "44f5b875"
+  },
+  "/en/ask/reports/v0.2Report-86f": {
+    "component": "17896441",
+    "content": "fa191a56"
+  },
+  "/en/ask/storage-data-structure-a40": {
+    "component": "17896441",
+    "content": "1ae5e1a2"
+  },
+  "/en/ask/tutorial-28a": {
+    "component": "17896441",
+    "content": "62a9611c"
+  },
+  "/en/carpo/introduction-323": {
+    "component": "17896441",
+    "content": "69fbb100"
+  },
+  "/en/contracts/introduction-04f": {
+    "component": "17896441",
+    "content": "9471497e"
+  },
+  "/en/contracts/language-8ac": {
+    "component": "17896441",
+    "content": "8b186687"
+  },
+  "/en/contracts/model-40a": {
+    "component": "17896441",
+    "content": "485ade61"
+  },
+  "/en/contracts/overview-642": {
+    "component": "17896441",
+    "content": "4f938ea8"
+  },
+  "/en/contracts/wasm_first_step-ef2": {
+    "component": "17896441",
+    "content": "e6bc3a88"
+  },
+  "/en/elara/API-8e9": {
+    "component": "17896441",
+    "content": "1265a115"
+  },
+  "/en/elara/design-7f1": {
+    "component": "17896441",
+    "content": "afa06ab1"
+  },
+  "/en/elara/introduction-028": {
+    "component": "17896441",
+    "content": "ba89813c"
+  },
+  "/en/elara/reports-acf": {
+    "component": "17896441",
+    "content": "03b90294"
+  },
+  "/en/elara/reports/v0.1Report-690": {
+    "component": "17896441",
+    "content": "16d8a3a0"
+  },
+  "/en/elara/reports/v0.2Report-98c": {
+    "component": "17896441",
+    "content": "c3739073"
+  },
+  "/en/elara/tutorial-f88": {
+    "component": "17896441",
+    "content": "24750716"
+  },
+  "/en/europa/execution_info-c17": {
+    "component": "17896441",
+    "content": "06165ac7"
+  },
+  "/en/europa/introduction-341": {
+    "component": "17896441",
+    "content": "55e0eae3"
+  },
+  "/en/europa/reports-132": {
+    "component": "17896441",
+    "content": "a88b501a"
+  },
+  "/en/europa/reports/v0.1Report-83b": {
+    "component": "17896441",
+    "content": "131e1b52"
+  },
+  "/en/europa/reports/v0.2Report-a3c": {
+    "component": "17896441",
+    "content": "29f8f131"
+  },
+  "/en/europa/reports/v0.3Report-000": {
+    "component": "17896441",
+    "content": "71dd10af"
+  },
+  "/en/europa/sample-7b7": {
+    "component": "17896441",
+    "content": "74864453"
+  },
+  "/en/europa/tutorial-b36": {
+    "component": "17896441",
+    "content": "c0bfff8b"
+  },
+  "/en/europa/wasm_backtrace-218": {
+    "component": "17896441",
+    "content": "013502d9"
+  },
+  "/en/europa/wasm_executor-b64": {
+    "component": "17896441",
+    "content": "49bb1d08"
+  },
+  "/en/himalia/go-patract-978": {
+    "component": "17896441",
+    "content": "2261cf2b"
+  },
+  "/en/himalia/introduction-f0c": {
+    "component": "17896441",
+    "content": "37a1b090"
+  },
+  "/en/himalia/py-patract-9d1": {
+    "component": "17896441",
+    "content": "fb61c1c3"
+  },
+  "/en/himalia/reports-e6f": {
+    "component": "17896441",
+    "content": "b6bf71c7"
+  },
+  "/en/himalia/reports/v0.1Report-d58": {
+    "component": "17896441",
+    "content": "a9f9bfae"
+  },
+  "/en/himalia/tutorial-02b": {
+    "component": "17896441",
+    "content": "ef30a70c"
+  },
+  "/en/ink/call-contracts-50d": {
+    "component": "17896441",
+    "content": "e0772ebe"
+  },
+  "/en/ink/cargo-contract-4ad": {
+    "component": "17896441",
+    "content": "277ed14d"
+  },
+  "/en/ink/edsl-basic-4c4": {
+    "component": "17896441",
+    "content": "6a18a0d0"
+  },
+  "/en/ink/framework-8f5": {
+    "component": "17896441",
+    "content": "e1fd4807"
+  },
+  "/en/ink/ink-solidity-b25": {
+    "component": "17896441",
+    "content": "5ab8e78e"
+  },
+  "/en/ink/introduction-5a1": {
+    "component": "17896441",
+    "content": "ce895183"
+  },
+  "/en/ink/trap-5b3": {
+    "component": "17896441",
+    "content": "a49eaf4e"
+  },
+  "/en/ink/tutorial-a81": {
+    "component": "17896441",
+    "content": "c33e9f1f"
+  },
+  "/en/jupiter/contract-240": {
+    "component": "17896441",
+    "content": "92b385cf"
+  },
+  "/en/jupiter/introduction-1c3": {
+    "component": "17896441",
+    "content": "90926928"
+  },
+  "/en/jupiter/network-ec9": {
+    "component": "17896441",
+    "content": "1e974ee5"
+  },
+  "/en/jupiter/quickstart-4ae": {
+    "component": "17896441",
+    "content": "d0799f95"
+  },
+  "/en/metis/access-control-6f8": {
+    "component": "17896441",
+    "content": "1bf9a083"
+  },
+  "/en/metis/introduction-040": {
+    "component": "17896441",
+    "content": "ccf63b9c"
+  },
+  "/en/metis/reports-f10": {
+    "component": "17896441",
+    "content": "feebe1b5"
+  },
+  "/en/metis/reports/M1Report-c5d": {
+    "component": "17896441",
+    "content": "b02c90bb"
+  },
+  "/en/metis/tokens-a49": {
+    "component": "17896441",
+    "content": "a7a19d4d"
+  },
+  "/en/pallet-contracts/introduction-3f8": {
+    "component": "17896441",
+    "content": "61225d08"
+  },
+  "/en/patra-store/getting-starter-84d": {
+    "component": "17896441",
+    "content": "b25c24dc"
+  },
+  "/en/patra-store/introduction-bab": {
+    "component": "17896441",
+    "content": "fec5dc79"
+  },
+  "/en/patra-store/overview-6fe": {
+    "component": "17896441",
+    "content": "20e2252c"
+  },
+  "/en/patra-store/publish-dapps-e10": {
+    "component": "17896441",
+    "content": "4100c591"
+  },
+  "/en/patract/introduction-e5e": {
+    "component": "17896441",
+    "content": "84dc7862"
+  },
+  "/en/redspot/configuration-8b0": {
+    "component": "17896441",
+    "content": "850c0835"
+  },
+  "/en/redspot/console-1a4": {
+    "component": "17896441",
+    "content": "e19673c5"
+  },
+  "/en/redspot/introduction-5fe": {
+    "component": "17896441",
+    "content": "ec4b5c6b"
+  },
+  "/en/redspot/overview-561": {
+    "component": "17896441",
+    "content": "fa1f8aed"
+  },
+  "/en/redspot/plugin-911": {
+    "component": "17896441",
+    "content": "14f491ed"
+  },
+  "/en/redspot/plugin/redspot-chai-6f9": {
+    "component": "17896441",
+    "content": "b01fbf73"
+  },
+  "/en/redspot/plugin/redspot-decimals-daf": {
+    "component": "17896441",
+    "content": "3e8c144c"
+  },
+  "/en/redspot/plugin/redspot-explorer-6ba": {
+    "component": "17896441",
+    "content": "b6952df3"
+  },
+  "/en/redspot/plugin/redspot-gas-reporter-5ae": {
+    "component": "17896441",
+    "content": "55029f3d"
+  },
+  "/en/redspot/plugin/redspot-known-types-845": {
+    "component": "17896441",
+    "content": "027bc6e4"
+  },
+  "/en/redspot/plugin/redspot-patract-fb3": {
+    "component": "17896441",
+    "content": "6d97a267"
+  },
+  "/en/redspot/q-and-a-d81": {
+    "component": "17896441",
+    "content": "0d54baf4"
+  },
+  "/en/redspot/reports-ef0": {
+    "component": "17896441",
+    "content": "06a99cd0"
+  },
+  "/en/redspot/reports/v0.1Report-f73": {
+    "component": "17896441",
+    "content": "93713575"
+  },
+  "/en/redspot/reports/v0.2Report-99b": {
+    "component": "17896441",
+    "content": "a29615ad"
+  },
+  "/en/redspot/reports/v0.3Report-84d": {
+    "component": "17896441",
+    "content": "3dcdde6b"
+  },
+  "/en/redspot/reports/v0.4Report-f12": {
+    "component": "17896441",
+    "content": "175b3c0c"
+  },
+  "/en/redspot/runtime-environment-e1e": {
+    "component": "17896441",
+    "content": "407e6975"
+  },
+  "/en/redspot/tasks-db1": {
+    "component": "17896441",
+    "content": "65453716"
+  },
+  "/en/redspot/tutorial-651": {
+    "component": "17896441",
+    "content": "542b71c3"
+  },
+  "/en/solang/introduction-f6c": {
+    "component": "17896441",
+    "content": "845c5d91"
+  },
+  "/en/zkmega/benchmark-7f0": {
+    "component": "17896441",
+    "content": "21467837"
+  },
+  "/en/zkmega/contract-f43": {
+    "component": "17896441",
+    "content": "46cf1dce"
+  },
+  "/en/zkmega/example-f07": {
+    "component": "17896441",
+    "content": "6ab78222"
+  },
+  "/en/zkmega/introduction-6c3": {
+    "component": "17896441",
+    "content": "5f9eedcd"
+  },
+  "/en/zkmega/metis-ecd": {
+    "component": "17896441",
+    "content": "ee000f58"
+  },
+  "/en/zkmega/reports-dfa": {
+    "component": "17896441",
+    "content": "6a47aa27"
+  },
+  "/en/zkmega/reports/v0.1Report-877": {
+    "component": "17896441",
+    "content": "6230c080"
+  },
+  "/en/zkmega/reports/v0.2Report-71f": {
+    "component": "17896441",
+    "content": "d340c001"
+  },
+  "/en/zkmega/tutorial-af8": {
+    "component": "17896441",
+    "content": "7738bf6e"
+  }
+}

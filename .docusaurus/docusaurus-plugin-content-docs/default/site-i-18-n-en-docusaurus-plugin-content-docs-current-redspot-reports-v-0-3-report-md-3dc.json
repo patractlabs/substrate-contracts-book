@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports/v0.3Report",
+  "id": "redspot/reports/v0.3Report",
+  "isDocsHomePage": false,
+  "title": "Report for Redspot v0.3",
+  "description": "5 weeks ago, Patract Hub launched a Treasury Proposal #23 for Redspot v0.3, and now we have finished all the development works on time. For a quick review, you can visit our website at https://redspot.patract.io.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/redspot/reports/v0.3Report.md",
+  "sourceDirName": "redspot/reports",
+  "slug": "/redspot/reports/v0.3Report",
+  "permalink": "/en/redspot/reports/v0.3Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports/v0.3Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Report for Redspot v0.2",
+    "permalink": "/en/redspot/reports/v0.2Report"
+  },
+  "next": {
+    "title": "Report for Redspot v0.4",
+    "permalink": "/en/redspot/reports/v0.4Report"
+  }
+}

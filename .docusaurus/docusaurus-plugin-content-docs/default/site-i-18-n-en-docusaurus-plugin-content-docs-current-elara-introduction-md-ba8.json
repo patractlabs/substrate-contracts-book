@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/introduction",
+  "id": "elara/introduction",
+  "isDocsHomePage": false,
+  "title": "Elara",
+  "description": "In Polkadot, Kusama or Parachain, RPC is the interface between Dapp and the network. As the Polkadot network continues to expand, more and more parachains will be online, and more and more parachains will support smart contract functions. Faced with more and more parallel chains, developers need to build and maintain multiple chain node RPCs in order to interact with them, which will be a huge development cost for them.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/elara/introduction.md",
+  "sourceDirName": "elara",
+  "slug": "/elara/introduction",
+  "permalink": "/en/elara/introduction",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/introduction.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Carpo",
+    "permalink": "/en/carpo/introduction"
+  },
+  "next": {
+    "title": "Tutorial",
+    "permalink": "/en/elara/tutorial"
+  }
+}

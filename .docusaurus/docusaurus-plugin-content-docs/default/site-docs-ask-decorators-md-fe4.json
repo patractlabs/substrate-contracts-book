@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ask/decorators",
+  "id": "ask/decorators",
+  "isDocsHomePage": false,
+  "title": "Ask! 装饰器",
+  "description": "Ask! 提供了一组装饰器来实现智能合约，通过传递参数对象来配置装饰器的行为。装饰器主要分为两层，类装饰器和字段装饰器，字段装饰器必须正确匹配相应的类装饰器。当使用的装饰器不加参数时，可以省略小括号。",
+  "source": "@site/docs/ask/decorators.md",
+  "sourceDirName": "ask",
+  "slug": "/ask/decorators",
+  "permalink": "/ask/decorators",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ask/decorators.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "基础",
+    "permalink": "/ask/basics"
+  },
+  "next": {
+    "title": "存储",
+    "permalink": "/ask/storage-data-structure"
+  }
+}

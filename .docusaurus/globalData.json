@@ -1,0 +1,485 @@
+{
+  "docusaurus-plugin-content-docs": {
+    "default": {
+      "path": "/en/",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/en/",
+          "mainDocId": "summary",
+          "docs": [
+            {
+              "id": "ask/ask-cli",
+              "path": "/en/ask/ask-cli",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/ask-vs-ink",
+              "path": "/en/ask/ask-vs-ink",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/basics",
+              "path": "/en/ask/basics",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/decorators",
+              "path": "/en/ask/decorators",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/design",
+              "path": "/en/ask/design",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/introduction",
+              "path": "/en/ask/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/reports",
+              "path": "/en/ask/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/reports/v0.1Report",
+              "path": "/en/ask/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/reports/v0.2Report",
+              "path": "/en/ask/reports/v0.2Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/storage-data-structure",
+              "path": "/en/ask/storage-data-structure",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ask/tutorial",
+              "path": "/en/ask/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "carpo/introduction",
+              "path": "/en/carpo/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contracts/introduction",
+              "path": "/en/contracts/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contracts/language",
+              "path": "/en/contracts/language",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contracts/model",
+              "path": "/en/contracts/model",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contracts/overview",
+              "path": "/en/contracts/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "contracts/wasm_first_step",
+              "path": "/en/contracts/wasm_first_step",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/API",
+              "path": "/en/elara/API",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/design",
+              "path": "/en/elara/design",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/introduction",
+              "path": "/en/elara/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/reports",
+              "path": "/en/elara/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/reports/v0.1Report",
+              "path": "/en/elara/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/reports/v0.2Report",
+              "path": "/en/elara/reports/v0.2Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "elara/tutorial",
+              "path": "/en/elara/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/execution_info",
+              "path": "/en/europa/execution_info",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/introduction",
+              "path": "/en/europa/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/reports",
+              "path": "/en/europa/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/reports/v0.1Report",
+              "path": "/en/europa/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/reports/v0.2Report",
+              "path": "/en/europa/reports/v0.2Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/reports/v0.3Report",
+              "path": "/en/europa/reports/v0.3Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/sample",
+              "path": "/en/europa/sample",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/tutorial",
+              "path": "/en/europa/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/wasm_backtrace",
+              "path": "/en/europa/wasm_backtrace",
+              "sidebar": "docs"
+            },
+            {
+              "id": "europa/wasm_executor",
+              "path": "/en/europa/wasm_executor",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/go-patract",
+              "path": "/en/himalia/go-patract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/introduction",
+              "path": "/en/himalia/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/py-patract",
+              "path": "/en/himalia/py-patract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/reports",
+              "path": "/en/himalia/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/reports/v0.1Report",
+              "path": "/en/himalia/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "himalia/tutorial",
+              "path": "/en/himalia/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/call-contracts",
+              "path": "/en/ink/call-contracts",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/cargo-contract",
+              "path": "/en/ink/cargo-contract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/edsl-basic",
+              "path": "/en/ink/edsl-basic",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/framework",
+              "path": "/en/ink/framework",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/ink-solidity",
+              "path": "/en/ink/ink-solidity",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/introduction",
+              "path": "/en/ink/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/trap",
+              "path": "/en/ink/trap",
+              "sidebar": "docs"
+            },
+            {
+              "id": "ink/tutorial",
+              "path": "/en/ink/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "jupiter/contract",
+              "path": "/en/jupiter/contract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "jupiter/introduction",
+              "path": "/en/jupiter/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "jupiter/network",
+              "path": "/en/jupiter/network",
+              "sidebar": "docs"
+            },
+            {
+              "id": "jupiter/quickstart",
+              "path": "/en/jupiter/quickstart",
+              "sidebar": "docs"
+            },
+            {
+              "id": "metis/access-control",
+              "path": "/en/metis/access-control",
+              "sidebar": "docs"
+            },
+            {
+              "id": "metis/introduction",
+              "path": "/en/metis/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "metis/reports",
+              "path": "/en/metis/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "metis/reports/M1Report",
+              "path": "/en/metis/reports/M1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "metis/tokens",
+              "path": "/en/metis/tokens",
+              "sidebar": "docs"
+            },
+            {
+              "id": "pallet-contracts/introduction",
+              "path": "/en/pallet-contracts/introduction"
+            },
+            {
+              "id": "patra-store/getting-starter",
+              "path": "/en/patra-store/getting-starter",
+              "sidebar": "docs"
+            },
+            {
+              "id": "patra-store/introduction",
+              "path": "/en/patra-store/introduction"
+            },
+            {
+              "id": "patra-store/overview",
+              "path": "/en/patra-store/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "patra-store/publish-dapps",
+              "path": "/en/patra-store/publish-dapps",
+              "sidebar": "docs"
+            },
+            {
+              "id": "patract/introduction",
+              "path": "/en/patract/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/configuration",
+              "path": "/en/redspot/configuration",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/console",
+              "path": "/en/redspot/console",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/introduction",
+              "path": "/en/redspot/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/overview",
+              "path": "/en/redspot/overview",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin",
+              "path": "/en/redspot/plugin",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-chai",
+              "path": "/en/redspot/plugin/redspot-chai",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-decimals",
+              "path": "/en/redspot/plugin/redspot-decimals",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-explorer",
+              "path": "/en/redspot/plugin/redspot-explorer",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-gas-reporter",
+              "path": "/en/redspot/plugin/redspot-gas-reporter",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-known-types",
+              "path": "/en/redspot/plugin/redspot-known-types",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/plugin/redspot-patract",
+              "path": "/en/redspot/plugin/redspot-patract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/q-and-a",
+              "path": "/en/redspot/q-and-a",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/reports",
+              "path": "/en/redspot/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/reports/v0.1Report",
+              "path": "/en/redspot/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/reports/v0.2Report",
+              "path": "/en/redspot/reports/v0.2Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/reports/v0.3Report",
+              "path": "/en/redspot/reports/v0.3Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/reports/v0.4Report",
+              "path": "/en/redspot/reports/v0.4Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/runtime-environment",
+              "path": "/en/redspot/runtime-environment",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/tasks",
+              "path": "/en/redspot/tasks",
+              "sidebar": "docs"
+            },
+            {
+              "id": "redspot/tutorial",
+              "path": "/en/redspot/tutorial",
+              "sidebar": "docs"
+            },
+            {
+              "id": "solang/introduction",
+              "path": "/en/solang/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "summary",
+              "path": "/en/",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/benchmark",
+              "path": "/en/zkmega/benchmark",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/contract",
+              "path": "/en/zkmega/contract",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/example",
+              "path": "/en/zkmega/example",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/introduction",
+              "path": "/en/zkmega/introduction",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/metis",
+              "path": "/en/zkmega/metis"
+            },
+            {
+              "id": "zkmega/reports",
+              "path": "/en/zkmega/reports",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/reports/v0.1Report",
+              "path": "/en/zkmega/reports/v0.1Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/reports/v0.2Report",
+              "path": "/en/zkmega/reports/v0.2Report",
+              "sidebar": "docs"
+            },
+            {
+              "id": "zkmega/tutorial",
+              "path": "/en/zkmega/tutorial",
+              "sidebar": "docs"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

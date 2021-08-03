@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ask/introduction",
+  "id": "ask/introduction",
+  "isDocsHomePage": false,
+  "title": "什么是Ask! 智能合约编程",
+  "description": "背景信息",
+  "source": "@site/docs/ask/introduction.md",
+  "sourceDirName": "ask",
+  "slug": "/ask/introduction",
+  "permalink": "/ask/introduction",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ask/introduction.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "ink! 当前的坑",
+    "permalink": "/ink/trap"
+  },
+  "next": {
+    "title": "Ask!教程",
+    "permalink": "/ask/tutorial"
+  }
+}

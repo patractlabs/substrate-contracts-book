@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ask/design",
+  "id": "ask/design",
+  "isDocsHomePage": false,
+  "title": "设计",
+  "description": "Ask! 设计总览",
+  "source": "@site/docs/ask/design.md",
+  "sourceDirName": "ask",
+  "slug": "/ask/design",
+  "permalink": "/ask/design",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ask/design.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Ask!教程",
+    "permalink": "/ask/tutorial"
+  },
+  "next": {
+    "title": "基础",
+    "permalink": "/ask/basics"
+  }
+}

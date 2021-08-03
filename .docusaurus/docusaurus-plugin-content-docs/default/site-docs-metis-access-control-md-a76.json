@@ -1,0 +1,23 @@
+{
+  "unversionedId": "metis/access-control",
+  "id": "metis/access-control",
+  "isDocsHomePage": false,
+  "title": "Access Control",
+  "description": "虽然智能合约应用是去中心化的，但在合约中实现必要的中心化访问控制可以使合约更加安全。",
+  "source": "@site/docs/metis/access-control.md",
+  "sourceDirName": "metis",
+  "slug": "/metis/access-control",
+  "permalink": "/metis/access-control",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/metis/access-control.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "ERC20",
+    "permalink": "/metis/tokens"
+  },
+  "next": {
+    "title": "Metis议会提案报告",
+    "permalink": "/metis/reports"
+  }
+}

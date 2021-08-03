@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ink/cargo-contract",
+  "id": "ink/cargo-contract",
+  "isDocsHomePage": false,
+  "title": "cargo-contract",
+  "description": "",
+  "source": "@site/docs/ink/cargo-contract.md",
+  "sourceDirName": "ink",
+  "slug": "/ink/cargo-contract",
+  "permalink": "/ink/cargo-contract",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ink/cargo-contract.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "ink! 与solidity的对比",
+    "permalink": "/ink/ink-solidity"
+  },
+  "next": {
+    "title": "ink! 当前的坑",
+    "permalink": "/ink/trap"
+  }
+}

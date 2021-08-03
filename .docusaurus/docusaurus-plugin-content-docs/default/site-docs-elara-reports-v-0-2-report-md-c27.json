@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/reports/v0.2Report",
+  "id": "elara/reports/v0.2Report",
+  "isDocsHomePage": false,
+  "title": "Elara v0.2 报告",
+  "description": "回顾 Elara v0.2 的设计目标",
+  "source": "@site/docs/elara/reports/v0.2Report.md",
+  "sourceDirName": "elara/reports",
+  "slug": "/elara/reports/v0.2Report",
+  "permalink": "/elara/reports/v0.2Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/reports/v0.2Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "v0.1Report",
+    "permalink": "/elara/reports/v0.1Report"
+  },
+  "next": {
+    "title": "Jupiter 测试网",
+    "permalink": "/jupiter/introduction"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ink/call-contracts",
+  "id": "ink/call-contracts",
+  "isDocsHomePage": false,
+  "title": "Cross-call for ink!",
+  "description": "",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/ink/call-contracts.md",
+  "sourceDirName": "ink",
+  "slug": "/ink/call-contracts",
+  "permalink": "/en/ink/call-contracts",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ink/call-contracts.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "ink! eDSL basic elements",
+    "permalink": "/en/ink/edsl-basic"
+  },
+  "next": {
+    "title": "Compare ink! and solidity",
+    "permalink": "/en/ink/ink-solidity"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports",
+  "id": "redspot/reports",
+  "isDocsHomePage": false,
+  "title": "Redspot 议会提案报告",
+  "description": "提案报告是Patract向Polkdaot/Kusama财政提交申请后，在结束汇报阶段提交评审的文档。每一期文档涵盖了本次提案中的设计思路，完成的主要内容。",
+  "source": "@site/docs/redspot/reports.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/reports",
+  "permalink": "/redspot/reports",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "@redspot/explorer插件",
+    "permalink": "/redspot/plugin/redspot-explorer"
+  },
+  "next": {
+    "title": "Redspot v0.1 报告",
+    "permalink": "/redspot/reports/v0.1Report"
+  }
+}

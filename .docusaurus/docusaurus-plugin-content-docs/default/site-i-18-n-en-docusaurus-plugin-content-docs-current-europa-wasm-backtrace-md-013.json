@@ -1,0 +1,23 @@
+{
+  "unversionedId": "europa/wasm_backtrace",
+  "id": "europa/wasm_backtrace",
+  "isDocsHomePage": false,
+  "title": "Europa's Wasm Backtrace",
+  "description": "Background Information",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/europa/wasm_backtrace.md",
+  "sourceDirName": "europa",
+  "slug": "/europa/wasm_backtrace",
+  "permalink": "/en/europa/wasm_backtrace",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/europa/wasm_backtrace.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Europa Wasm executor",
+    "permalink": "/en/europa/wasm_executor"
+  },
+  "next": {
+    "title": "Report for Europa proposals",
+    "permalink": "/en/europa/reports"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/plugin/redspot-decimals",
+  "id": "redspot/plugin/redspot-decimals",
+  "isDocsHomePage": false,
+  "title": "@redspot_decimals插件",
+  "description": "背景信息",
+  "source": "@site/docs/redspot/plugin/redspot-decimals.md",
+  "sourceDirName": "redspot/plugin",
+  "slug": "/redspot/plugin/redspot-decimals",
+  "permalink": "/redspot/plugin/redspot-decimals",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/plugin/redspot-decimals.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "插件",
+    "permalink": "/redspot/plugin"
+  },
+  "next": {
+    "title": "@redspot_known-types插件",
+    "permalink": "/redspot/plugin/redspot-known-types"
+  }
+}

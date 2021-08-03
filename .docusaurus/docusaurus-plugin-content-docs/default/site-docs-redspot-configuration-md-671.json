@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/configuration",
+  "id": "redspot/configuration",
+  "isDocsHomePage": false,
+  "title": "配置信息",
+  "description": "运行Redspot时，它将从当前工作目录开始搜索最接近的redspot.config.js文件，该文件通常位于项目的根目录下。该文件中包含整个Redspot设置信息，例如配置、插件和自定义任务等。",
+  "source": "@site/docs/redspot/configuration.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/configuration",
+  "permalink": "/redspot/configuration",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/configuration.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "介绍",
+    "permalink": "/redspot/overview"
+  },
+  "next": {
+    "title": "Tasks",
+    "permalink": "/redspot/tasks"
+  }
+}

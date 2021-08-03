@@ -1,0 +1,23 @@
+{
+  "unversionedId": "jupiter/introduction",
+  "id": "jupiter/introduction",
+  "isDocsHomePage": false,
+  "title": "Jupiter 测试网",
+  "description": "介绍",
+  "source": "@site/docs/jupiter/introduction.md",
+  "sourceDirName": "jupiter",
+  "slug": "/jupiter/introduction",
+  "permalink": "/jupiter/introduction",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/jupiter/introduction.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Elara v0.2 报告",
+    "permalink": "/elara/reports/v0.2Report"
+  },
+  "next": {
+    "title": "quickstart",
+    "permalink": "/jupiter/quickstart"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/tutorial",
+  "id": "redspot/tutorial",
+  "isDocsHomePage": false,
+  "title": "Redspot 教程",
+  "description": "环境准备",
+  "source": "@site/docs/redspot/tutorial.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/tutorial",
+  "permalink": "/redspot/tutorial",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/tutorial.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "什么是Redspot",
+    "permalink": "/redspot/introduction"
+  },
+  "next": {
+    "title": "介绍",
+    "permalink": "/redspot/overview"
+  }
+}

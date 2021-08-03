@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/reports/v0.2Report",
+  "id": "redspot/reports/v0.2Report",
+  "isDocsHomePage": false,
+  "title": "Redspot v0.2 报告",
+  "description": "Patract Hub (https//polkadot.polkassembly.io/treasury/13) , and now we have finished the development (https//youtu.be/nVhLW_XEhk).",
+  "source": "@site/docs/redspot/reports/v0.2Report.md",
+  "sourceDirName": "redspot/reports",
+  "slug": "/redspot/reports/v0.2Report",
+  "permalink": "/redspot/reports/v0.2Report",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/reports/v0.2Report.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Redspot v0.1 报告",
+    "permalink": "/redspot/reports/v0.1Report"
+  },
+  "next": {
+    "title": "Redspot v0.3 报告",
+    "permalink": "/redspot/reports/v0.3Report"
+  }
+}

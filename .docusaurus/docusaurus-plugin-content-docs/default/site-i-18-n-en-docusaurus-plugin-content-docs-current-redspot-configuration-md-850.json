@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/configuration",
+  "id": "redspot/configuration",
+  "isDocsHomePage": false,
+  "title": "Configuration information",
+  "description": "When running Redspot, it will search for the closest redspot.config.js file from the current working directory, which is usually located in the root directory of the project. This file contains the entire Redspot settings information, such as configuration, plug-ins, and custom tasks.",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/redspot/configuration.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/configuration",
+  "permalink": "/en/redspot/configuration",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/configuration.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/en/redspot/overview"
+  },
+  "next": {
+    "title": "Tasks",
+    "permalink": "/en/redspot/tasks"
+  }
+}

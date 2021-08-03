@@ -1,0 +1,23 @@
+{
+  "unversionedId": "elara/design",
+  "id": "elara/design",
+  "isDocsHomePage": false,
+  "title": "设计简述",
+  "description": "Elara有长期的开发迭代规划和运维目标，为的是能够支撑Polkadot生态开发者从万+级别到亿+级别的持续跃迁。Elara的核心是一套高性能、高可用和高扩展的分布式架构。与其他提供 Node API Service的项目有显著区别：",
+  "source": "@site/docs/elara/design.md",
+  "sourceDirName": "elara",
+  "slug": "/elara/design",
+  "permalink": "/elara/design",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/elara/design.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Tutorial",
+    "permalink": "/elara/tutorial"
+  },
+  "next": {
+    "title": "API 接入",
+    "permalink": "/elara/API"
+  }
+}

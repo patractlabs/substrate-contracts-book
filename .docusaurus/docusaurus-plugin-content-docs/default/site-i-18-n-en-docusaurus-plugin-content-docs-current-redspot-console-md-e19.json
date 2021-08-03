@@ -1,0 +1,23 @@
+{
+  "unversionedId": "redspot/console",
+  "id": "redspot/console",
+  "isDocsHomePage": false,
+  "title": "Console",
+  "description": "Redspot provides a powerful console that allows you to use commands and contracts to do operations, and you can also call scripts located in the scripts directory to do repetitive tasks. Redspot's console also has many rich features, such as:",
+  "source": "@site/i18n/en/docusaurus-plugin-content-docs/current/redspot/console.md",
+  "sourceDirName": "redspot",
+  "slug": "/redspot/console",
+  "permalink": "/en/redspot/console",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/redspot/console.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "Runtime Environment",
+    "permalink": "/en/redspot/runtime-environment"
+  },
+  "next": {
+    "title": "Common problem",
+    "permalink": "/en/redspot/q-and-a"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "unversionedId": "ask/basics",
+  "id": "ask/basics",
+  "isDocsHomePage": false,
+  "title": "基础",
+  "description": "Ask! 提供了ask-lang包，它包括合约常用存储类型的实现、智能合约底层原语的封装等。",
+  "source": "@site/docs/ask/basics.md",
+  "sourceDirName": "ask",
+  "slug": "/ask/basics",
+  "permalink": "/ask/basics",
+  "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ask/basics.md",
+  "version": "current",
+  "frontMatter": {},
+  "sidebar": "docs",
+  "previous": {
+    "title": "设计",
+    "permalink": "/ask/design"
+  },
+  "next": {
+    "title": "Ask! 装饰器",
+    "permalink": "/ask/decorators"
+  }
+}
