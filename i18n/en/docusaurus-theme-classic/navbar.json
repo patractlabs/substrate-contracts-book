@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "My Site",
+    "description": "The title in the navbar"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.主页": {
+    "message": "Home",
+    "description": "Navbar item with label 主页"
+  },
+  "item.label.博客": {
+    "message": "Blog",
+    "description": "Navbar item with label 博客"
+  }
+}

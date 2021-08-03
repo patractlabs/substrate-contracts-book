@@ -1,66 +1,33 @@
-# Substrate Contracts Book
-This is the source repo to build "Substrate Contracts Book".
+# Website
 
-Currently, everyone can access our book from here:
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-* 中文：[《Substrate 合约书》](https://patractlabs.github.io/substrate-contracts-book/)
-* English: [\<Substrate Contracts Book\>](https://patractlabs.github.io/substrate-contracts-book/en) (not yet now, need translation)
+### Installation
 
-## Install
-This repo is build by [vuepress](https://vuepress.vuejs.org)
-
-First you should install nodejs
-
-The second step is to install dependencies
-
-use npm
-```bash
-$ npm install
 ```
-use yarn
-```bash
-$ npm i -g yarn
-$ yarn install
+$ yarn
 ```
 
-## Sidebar configuration
+### Local Development
 
-Sidebar config file is in `src/.vuepress/config`, `sidebar-en.js` is english, `sidebar-zh.js` is chinese
-
-```javascript
-[
-  {
-    title: 'Group 1',   // Required
-    path: '/introduction',      // Required, The path to jump
-    collapsable: false, // Required, set it to false
-    children: [
-      '/contracts/overview',
-      '/contracts/model',
-      '/contracts/language',
-      '/contracts/wasm_first_step'
-    ]
-  },
-  {
-    title: 'Group 2',   // Required
-    path: '/foo/',      // Required, The path to jump
-    collapsable: false, // Required, set it to false
-    children: [
-      '/ink/tutorial'
-    ]
-  }
-]
+```
+$ yarn start
 ```
 
-## Develop
-```base
-$ yarn dev
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+### Build
+
 ```
-
-
-## Build
-```bash
 $ yarn build
 ```
 
-## Publish to gh-pages
-use `github-pages-deploy-action` to deploy
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+```
+$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
