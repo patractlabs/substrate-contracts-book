@@ -5,7 +5,7 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 export default [
   {
     path: '/en/',
-    component: ComponentCreator('/en/','d5f'),
+    component: ComponentCreator('/en/','f34'),
     routes: [
       {
         path: '/en/',
@@ -15,7 +15,7 @@ export default [
       },
       {
         path: '/en/ask/ask-cli',
-        component: ComponentCreator('/en/ask/ask-cli','1e1'),
+        component: ComponentCreator('/en/ask/ask-cli','392'),
         exact: true,
         'sidebar': "docs"
       },

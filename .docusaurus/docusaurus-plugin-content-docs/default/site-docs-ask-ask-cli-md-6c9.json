@@ -7,17 +7,17 @@
   "source": "@site/docs/ask/ask-cli.md",
   "sourceDirName": "ask",
   "slug": "/ask/ask-cli",
-  "permalink": "/ask/ask-cli",
+  "permalink": "/en/ask/ask-cli",
   "editUrl": "https://github.com/patractlabs/substrate-contracts-book/docs/ask/ask-cli.md",
   "version": "current",
   "frontMatter": {},
   "sidebar": "docs",
   "previous": {
-    "title": "存储",
-    "permalink": "/ask/storage-data-structure"
+    "title": "Storage",
+    "permalink": "/en/ask/storage-data-structure"
   },
   "next": {
-    "title": "Ask!和ink!的特性比较",
-    "permalink": "/ask/ask-vs-ink"
+    "title": "Ask! and ink! Comparison of characteristics",
+    "permalink": "/en/ask/ask-vs-ink"
   }
 }
