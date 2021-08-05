@@ -24,7 +24,7 @@ cargo install cargo-contract --force
 
 **注意** 使用`cargo-contrac`t时，必须在当前的环境中准备好`wasm-opt`，详情请参见[cargo-contract](https://github.com/paritytech/cargo-contract)。
 
-如果您不希望在本机上安装Rust、cargo-contract环境，您可以使用Docker拉取镜像进行环境准备。详情请参见[Tasks](https://docs.patract.io/redspot/tasks.html)部分。
+如果您不希望在本机上安装Rust、cargo-contract环境，您可以使用Docker拉取镜像进行环境准备。详情请参见[Tasks](./tasks)部分。
 
 ### 准备能运行合约的区块链节点
 

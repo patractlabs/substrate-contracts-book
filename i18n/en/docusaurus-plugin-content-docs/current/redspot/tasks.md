@@ -301,7 +301,7 @@ run().catch(err => {
 });
 ```
 
-The [@redspot/patract](https://docs.patract.io/redspot/plugin/redspot-patract.html) plug-in is used here.
+The [@redspot/patract](./plugin/redspot-patract) plug-in is used here.
 
 ## Console
 

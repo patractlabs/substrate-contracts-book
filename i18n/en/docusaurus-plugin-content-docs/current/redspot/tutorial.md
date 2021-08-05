@@ -24,7 +24,7 @@
 
 **Note** When using cargo-contract, wasm-opt must be prepared in the current environment. For details, please refer to [cargo-contract](https://github.com/paritytech/cargo-contract).
 
-If you don't want to install Rust and cargo-contract environment on your local machine, you can use Docker to pull the image to prepare the environment. See the [Tasks](https://docs.patract.io/redspot/tasks.html) section for details.
+If you don't want to install Rust and cargo-contract environment on your local machine, you can use Docker to pull the image to prepare the environment. See the [Tasks](./tasks) section for details.
 
 ### Prepare blockchain nodes that can run the contract
 
@@ -313,5 +313,5 @@ You will get results similar to the following.
   4 passing (46s)
 ```
 
-For more built-in information, see [tasks](https://patractlabs.github.io/substrate-contracts-book/redspot/tasks.html).
+For more built-in information, see [tasks](./tasks).
 

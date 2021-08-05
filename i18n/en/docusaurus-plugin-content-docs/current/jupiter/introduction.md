@@ -57,5 +57,5 @@ Inside:
 
 > Note1：Patract intergration of contract module，refer to this project link [patracts](https://github.com/patractlabs/patracts)
 
-> Note2：The ChainExtension of Zero-Knowledge refer to this link [zkmega](https://docs.patract.io/zkmega/tutorial.html)
+> Note2：The ChainExtension of Zero-Knowledge refer to this link [zkmega](/zkmega/tutorial)
 

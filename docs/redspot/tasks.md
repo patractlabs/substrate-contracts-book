@@ -297,7 +297,7 @@ run().catch(err => {
 });
 ```
 
-这里使用了[@redspot/patract插件](https://docs.patract.io/redspot/plugin/redspot-patract.html)。
+这里使用了[@redspot/patract插件](./plugin/redspot-patract)。
 
 ## Console
 

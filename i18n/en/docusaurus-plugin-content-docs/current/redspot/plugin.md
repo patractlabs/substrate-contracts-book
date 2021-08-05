@@ -15,10 +15,10 @@ export default {
 
 The following plug-ins are now provided.
 
-* [@redspot/chai](https://docs.patract.io/redspot/plugin/redspot-chai.html)
-* [@redspot/decimals](https://docs.patract.io/redspot/plugin/redspot-decimals.html)
-* [@redspot/explorer](https://docs.patract.io/redspot/plugin/redspot-explorer.html)
-* [@redspot/gas-reporter](https://docs.patract.io/redspot/plugin/redspot-gas-reporter.html)
-* [@redspot/known-types](https://docs.patract.io/redspot/plugin/redspot-known-types.html)
-* [@redspot/patract](https://docs.patract.io/redspot/plugin/redspot-patract.html)
+* [@redspot/chai](./plugin/redspot-chai)
+* [@redspot/decimals](./plugin/redspot-decimals)
+* [@redspot/explorer](./plugin/redspot-explorer)
+* [@redspot/gas-reporter](./plugin/redspot-gas-reporter)
+* [@redspot/known-types](./plugin/redspot-known-types)
+* [@redspot/patract](./plugin/redspot-patract)
 
