@@ -9,7 +9,7 @@ import { patract } from 'redspot';
 ```
 ## patract的类型定义
 
-```typescript
+```typescript live
 interface Patract {
   Contract: Contract;
   ContractFactory: ContractFactory;

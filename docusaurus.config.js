@@ -14,6 +14,7 @@ module.exports = {
     locales: ['zh', 'en']
   },
   themeConfig: {
+    hideableSidebar: true,
     navbar: {
       logo: {
         alt: 'Substrate Contracts Book',
@@ -58,7 +59,7 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
-            'https://github.com/patractlabs/substrate-contracts-book/',
+            'https://github.com/patractlabs/substrate-contracts-book/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
