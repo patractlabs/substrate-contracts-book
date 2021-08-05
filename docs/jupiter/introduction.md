@@ -61,5 +61,5 @@ Patract 的 `FRAME contracts pallet` 通过 ChainExtension 为合约提供了一
 
 > 注1：Patract 集成合约模块，可以参考 [patracts](https://github.com/patractlabs/patracts)
 
-> 注2：Zero-Knowledge 的相关文档也可以参考：[zkmega](https://docs.patract.io/zkmega/tutorial)
+> 注2：Zero-Knowledge 的相关文档也可以参考：[zkmega](/zkmega/tutorial)
 

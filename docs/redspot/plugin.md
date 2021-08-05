@@ -15,12 +15,12 @@ export default {
 
 现在提供的有以下这些插件：
 
-* [@redspot/chai](https://docs.patract.io/redspot/plugin/redspot-chai)
-* [@redspot/decimals](https://docs.patract.io/redspot/plugin/redspot-decimals)
-* [@redspot/explorer](https://docs.patract.io/redspot/plugin/redspot-explorer)
-* [@redspot/gas-reporter](https://docs.patract.io/redspot/plugin/redspot-gas-reporter)
-* [@redspot/known-types](https://docs.patract.io/redspot/plugin/redspot-known-types)
-* [@redspot/patract](https://docs.patract.io/redspot/plugin/redspot-patract)
+* [@redspot/chai](./plugin/redspot-chai)
+* [@redspot/decimals](./plugin/redspot-decimals)
+* [@redspot/explorer](./plugin/redspot-explorer)
+* [@redspot/gas-reporter](./plugin/redspot-gas-reporter)
+* [@redspot/known-types](./plugin/redspot-known-types)
+* [@redspot/patract](./plugin/redspot-patract)
 
 
 
