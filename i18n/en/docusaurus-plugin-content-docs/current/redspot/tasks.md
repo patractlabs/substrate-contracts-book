@@ -115,7 +115,7 @@ Before running the compile command, make sure that Docker is installed on the ma
 $ npx redspot compile
 ```
 
-**Note **When using Docker to compile, it may be affected by the network environment. For example, China requires a VPN proxy, which will cause the compilation time to be too long. If you use`ctrl+c`to exit the current compilation command halfway, the Docker container will not automatically stop deleting.
+**Note** When using Docker to compile, it may be affected by the network environment. For example, China requires a VPN proxy, which will cause the compilation time to be too long. If you use`ctrl+c`to exit the current compilation command halfway, the Docker container will not automatically stop deleting.
 
 Now it will be compiled with Docker by default. If you want to change the default behavior, please add the `--docker false` parameter.
 

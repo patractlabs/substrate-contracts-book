@@ -167,15 +167,13 @@ module.exports = {
       label: 'Metis',
       collapsed: true,
       items: [
-        'metis/introduction',
-        'metis/tokens',
-        'metis/access-control',
+        'metis/introduction',        
         {
           type: 'category',
           label: 'Reports',
           collapsed: true,
           items: [
-            'metis/reports',
+            'metis/reports/reports',
             'metis/reports/M1Report'
           ]
         }
