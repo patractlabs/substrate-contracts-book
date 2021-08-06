@@ -263,7 +263,7 @@ describe('ERC20', () => {
 `TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --timeout 60000`
 
 * 使用ts-node编译运行typescript代码，需要加上`-r ts-node/register`。`TS_NODE_TRANSPILE_ONLY=true`设置ts-node运行时忽略typescript类型错误。
-## Run**
+## Run
 
 Run 命令可以用来运行任一typescript文件。设置`--no-compile`可以避免自动运行编译命令`npx redspot run --no-compile`。
 
