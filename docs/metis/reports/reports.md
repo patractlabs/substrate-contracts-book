@@ -6,5 +6,4 @@
 
 当前Metis的提案报告有如下内容：
 
-- [M1Report](./reports/M1Report.md)
-
+- [M1Report](./M1Report.md)

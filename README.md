@@ -33,7 +33,7 @@ This command generates static content into the `build` directory and can be serv
 ### Write translations
 
 ```
-$ yarn write-translations --local {language}
+$ yarn write-translations --locale {language}
 ```
 
 This command will generates translations in `i18n/{language}` folder.
