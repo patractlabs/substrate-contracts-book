@@ -84,6 +84,7 @@ slug: /
   - [quickstart](./jupiter/quickstart.md)
   - [network](./jupiter/network.md)
   - [contract](./jupiter/contract.md)
+  - [xcmp](./jupiter/xcmp.md)  
 - [PatraStore](./patra-store/introduction.md)
     - [Overview](./patra-store/overview.md)
     - [Getting Starter](./patra-store/getting-starter.md)

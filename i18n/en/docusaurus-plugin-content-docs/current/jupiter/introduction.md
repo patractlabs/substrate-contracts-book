@@ -34,7 +34,7 @@ And the Runtime implementation of those there network are:
 - 1.0.0: Jupiter PoA network release, including jupiter-prep and jupiter-dev
 - 1.0.1: Setting Jupiter PoA ss58prefix to 26, from now on Jupiter will use 26 as address ss58prefix
 - 1.0.2: Support Zero-Knowledge、randomness
-- 1.0.3: Add Parachain feature, and Jupiter PC1 network release
+- 1.0.3: Add Parachain feature, support XCMP cross chain transfer, and Jupiter PC1 network release
 
 ## Contract
 
