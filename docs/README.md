@@ -92,6 +92,7 @@ slug: /
   - [快速开始](./jupiter/quickstart.md)
   - [Jupiter网络](./jupiter/network.md)
   - [合约](./jupiter/contract.md)
+  - [跨链转账](./jupiter/xcmp.md)  
 - [PatraStore](./patra-store/introduction.md)
     - [Overview](./patra-store/overview.md)
     - [Getting Starter](./patra-store/getting-starter.md)

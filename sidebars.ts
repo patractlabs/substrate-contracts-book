@@ -210,6 +210,7 @@ module.exports = {
         'jupiter/quickstart',
         'jupiter/network',
         'jupiter/contract',
+        'jupiter/xcmp',
       ]
     },
     {
