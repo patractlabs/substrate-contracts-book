@@ -1,4 +1,4 @@
-# XCMP
+# XCMP Transfer
 
 XCMP only limit to Patract own Westend relaychain and Jupiter parachain, current xcmp function include:
 
