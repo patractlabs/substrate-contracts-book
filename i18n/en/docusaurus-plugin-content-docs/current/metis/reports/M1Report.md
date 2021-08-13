@@ -1,275 +1,346 @@
-# Patract's proposal about Metis (ink! and Ask! Standard Library)
+# Patract's treasury report for Metis M1 (Wasm Contract Library)
 
-[Metis](https://github.com/patractlabs/metis) will be the Wasm contract standard library developed by Patract Labs. Patract Labs will work with community forces to formulate various Wasm contract standards, develop corresponding implementations of ink! and Ask! versions, and conduct audits by professional institutions.
+6 weeks ago，Patract applied a [proposal #469](https://polkadot.polkassembly.io/post/469) for Metis M1, Now, we have finished all the work and you can review our codebase at：
 
-## 0. Motivation
+- [Metis](https://github.com/patractlabs/metis)
+- [Metis Documentation](https://patractlabs.github.io/metis/overview.html)
 
-We believe that in the Wasm contract ecosystem, a development library similar to Openzeppelin-contracts is very necessary. This is Metis. For the sake of simplicity and readability, the patterns and meta-language provided by this library should be as consistent with Openzeppelin-contracts as possible, so as to reduce the burden on developers and effectively absorb the experience accumulated in the Solidity ecosystem.
+Metis proposed and implemented [`MCCI` architecture](https://patractlabs.github.io/metis/use-component.html#metis-mcci-architecture). MCCI acrhitecture facilitates smart contract development by composititing independent components. Here are a list of components currently implemented:
 
-But you need to realize that the Wasm contract development based on ink! and Ask! is very different from the EVM contract development based on Solidity. Wasm's mature system support allows developers to use a variety of different languages and tools to develop smart contracts. Based on these mature or rapid iteration platforms, developers can enjoy a large number of underlying facilities support and development experience accumulation, but different languages and tools often have different considerations and trade-offs. This means that developers will use completely different codes to express the same mechanism and design, which will bring huge communication costs and mental burdens to the community.
-
-Faced with such problems, we need to summarize and accumulate the implementation model in the development of smart contracts. This idea was introduced in the book "Implementation Patterns" by Kent Beck. The purpose of summarizing the implementation mode is to clearly and accurately express the developer's intentions and ideas through these clear patterns, so that "code that others can understand" can be implemented. In contract development, this idea is very important.
-
-From Openzeppelin-contracts, we can see that it summarizes several implementation models in the development of smart contracts, such as the "contract expansion model" based on the Solidity inheritance grammar. These implementation models are valuable experience accumulated in the Solidity ecology. Of course, different languages have different ways of practicing these modes. Metis will implement these modes and provide corresponding support on different platforms. For example, in Rust, it is obvious that you cannot directly use inheritance to implement contract expansion. For this, Metis will provide code implementation examples and provide a series of help libraries to reduce the developer's mental cost.
-
-Metis will be more than just a Wasm contract standard library. We hope that through the practice of Metis, we can fully inherit and absorb previous contract development experience while exploring the best practices of Wasm contract development.
-
-## 1. Problem
-
-At present, contract-based developers mainly face the following problems:
-
-- Lack of reliable implementation of common contracts (such as ERC20)
-- It is difficult to achieve contract combination and expansion similar to the Solidity inheritance mechanism
-- Lack of a series of reliable public components to implement contracts
-- Lack of experience accumulation and model summary based on ink! development contracts
-
-The above problems severely limit the current ink!-based contract development ecology. Metis will solve these problems while avoiding the existing problems in Solidity.
-
-## 2. Contract Standard Library
-
-Metis will implement a series of common components, similar to the Openzeppelin-contracts development library. These components will be thoroughly tested and code audited. These components will be as consistent as possible with Openzeppelin-contracts, which can reduce the burden on developers and effectively absorb the experience accumulated in the Solidity ecosystem.
-
-Metis will include the following components:
-
-- Openzeppelin-contracts-like components, including basic Access and Security components, as well as Token and Governance components
-- Component developed for ink! contracts, wasm-based contracts can support better abstraction mechanisms, and we can implement more complex and practical components
-- Summarizing abstract components from mature contract projects, metis will absorb the experience and accumulation of the community, including both the mature Solidity ecology and emerging blockchain contract projects.
-- The expansion of ink! contracts, including basic data structures for different scenarios, etc.
-
-In the previous version of Metis, we will first implement Openzeppelin-contracts-like components for developers to use. These components include:
-
-- Token: ERC20, ERC721, ERC777, ERC1155 and the expansion contract of the above Token contract
-- Access: Ownable, AccessControl, TimelockController
-- Security: PullPayment, ReentrancyGuard, Pausable
-
-## 3. ink! component
-
-Most of Metis development libraries are composed of contract components. In Solidity, the introduction of contract components can be implemented based on inheritance. Generally, the contract components will include the following parts:
-
-- Component Storage: The storage state related to the logic of the component itself, these states do not need to be exposed to the outside
-- Component Message: The externally-facing Message of the component
-- Component Event: The event that the component's own logic will  emit
-- Component internal interface: an interface for other logic in the contract to call
-
-For example, common Ownable contracts:
-
-```Solidity
-abstract contract Ownable is Context {
-    // Component Storage
-    address private _owner;
-
-    // Component Event
-    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);
-    
-    // Component internal interface
-    modifier onlyOwner() {
-        ...
-    }
-
-    // Component Event
-    function renounceOwnership() public virtual onlyOwner {
-        ...
-    }
-
-    ...
-}
-```
-
-If a contract needs to be Ownable, just inherit the contract:
-
-```Solidity
-contract Escrow is Ownable {
-...
-}
-```
-
-Similarly, other components can also have Ownable through inheritance:
-
-```Solidity
-contract Pausable is Ownable {
-  ...
-  function unpause() public onlyOwner whenPaused {
-      ...
-  }
-}
-```
-
-The intention of inheritance here is actually composition rather than an `is-a` relationship. Although excessive use of inheritance in Solidity will cause many problems, inheritance for specific intentions is still an important way to achieve it.
-
-In contract development based on ink!, through metis, we can also achieve the same motivation based on generics and traits:
-
-```rust
-...
-
-#[metis::contract] // metis contract macro, will use ink_lang::contract auto
-mod flipper {
-    ...
-
-    #[ink(storage)]
-    #[import(ownable)] // flipper import the ownable
-    pub struct Flipper {
-        ownable: ownable::Data<Flipper>, // data by ownable
-
-        value: bool,
-    }
-
-    #[ink(event)]
-    #[metis(ownable)] // TODO: event in ink! will refactor
-    pub struct OwnershipTransferred {
-        ...
-    }
-
-    impl Flipper {
-        ...
-
-        #[ink(message)]
-        pub fn flip(&mut self) {
-            // check owner
-            ownable::Impl::ensure_caller_is_owner(self);
-
-            self.value = !self.value;
-        }
-
-        ...
-
-        #[ink(message)]
-        pub fn renounce_ownership(&mut self) {
-            ownable::Impl::renounce_ownership(self) // owner message
-        }
-
-        ...
-    }
-}
-```
-
-Metis assists developers to achieve the same function through a series of helper macros. In order to improve the auditability of the contract, here we hope that users clearly implement storage, event and message declarations.
-
-At the same time, metis has improved the implementation of components:
-
-```rust
-...
-
-// Storage
-#[metis::component::storage]
-pub struct Data<E>
-where
-    E: Env,
-{
-    owner: Lazy<Option<E::AccountId>>,
-}
-
-// Event trait
-pub trait EventEmit<E: Env>: EnvAccess<E> {
-    ...
-}
-
-// Impl trait
-pub trait Impl<E: Env>: Storage<E> + EventEmit<E> {
-    // logics
-    fn init(&mut self) {
-        self.get_mut().set_ownership(&Some(Self::caller()));
-    }
-
-    fn renounce_ownership(&mut self) {
-        self.ensure_caller_is_owner();
-
-        self.emit_event_ownership_transferred(
-            self.get().get_ownership().clone(),
-            None);
-
-        self.get_mut().set_ownership(&None);
-    }
-
-    ...
-
-    /// Panic if `owner` is not an owner
-    fn ensure_owner(&self, owner: &E::AccountId) {
-        assert!(&self.get().get_ownership().clone().unwrap() == owner);
-    }
-
-    ...
-}
-
-```
-
-Such components can extend their functions by inheriting other components, such as an ERC20 component with the function of destroying tokens:
-
-```rust
-...
-
-pub trait Impl<E>: erc20::Impl<E>
-where
-    E: Env,
-{
-    fn _burn(&mut self, account: &E::AccountId, amount: E::Balance) -> Result<()> {
-        ...
-    }
-
-    fn burn(&mut self, amount: E::Balance) -> Result<()> {
-        self._burn(&Self::caller(), amount)
-    }
-
-    fn burn_from(&mut self, account: &E::AccountId, amount: E::Balance) -> Result<()> {
-        ...
-    }
-}
-```
-
-Based on metis, we can implement various contract combination modes implemented by Solidity through inheritance under limited intent, and at the same time, with the help of rust's zero-cost abstraction, these abstractions will not bring additional performance consumption.
-
-## 4. Overall Roadmap
-
-Metis for ink! is divided into several milestones:
-
-- **[M1]** Implement basic component macros and components, improve component testing support, developers can build regular DAPPs based on Metis
-- **[M2]** Complete component macros, complete component development support, developers can build custom components. Complete the api support corresponding to the metis component.
-- **[M3]** Rich component library, complete component and API support for governance and financial mechanism, perfect mathematical library suitable for contract development to support DeFi-type contracts that require complex calculations.
-
-Considering that the current ink! and contract-pallet are still in iteration, some metis features will be implemented based on subsequent improvements, including:
-
-* Contract proxy and upgradeable support will depend on the improvement of subsequent contract calls, by [739](https://github.com/paritytech/ink/issues/739).
-* The Event in the component, the Event in the current ink! cannot be independent of the contract, by [759](https://github.com/paritytech/ink/issues/759), the event in the current component is only an early implementation, and it will be refactored based on the improvement of ink! in the future.
-
-With the richness and completeness of the ink! contract community, metis will further implement more public components and libraries to assist developers in developing large-scale contract projects. Therefore, we may arrange [MR] milestones. It will be developed based on the iterative schedule of ink!
-
-* **[MR]** According to the ink!'s iterative progress, community feedback, contract upgrades, contract proxy and cross-contract call support, refactor Event-related implementations, improve basic components and add development assistance macros to reduce duplication while ensuring auditability Code.
-
-## 5. Detailed timeline of M1 (3 developers * 5 weeks)
-
-- Week 1: 
-  - M1.1 Design and develop macros that support the development of metis components, and determine the component development paradigm
-  - M1.2 Design and develop macros that support the introduction of metis components into contracts, and determine the development paradigm for contract expansion and introduction of components
-- Week 2:
-  - M1.3 Design and develop unit test support for components
-  - M1.4 design and develop integration test support based on Redspot
-- Week 3:
-  - M1.5 Complete the implementation and testing of Access related components
-  - M1.6 Complete the implementation and testing of Security related components
-- Week 4:
-  - M1.7 Complete the implementation and testing of Token related components
-  - M1.8 Complete the detailed Metis component design document
-- Week 5:
-  - M1.9 Complete documentation and examples of metis components
-
-Cost of M1 (15 developers \* weeks):
-* Operating activities: $3000 ( Rent and Devices: $200 per employee \* week )
-* Developer payments: $28500 ( $1900 per developer \* week )
-* Total Cost: $31500
-* Treasury Proposal: 1166 DOT ($27/DOT)
-
-## 6. How to verify M1
-
-Complete the macros and tests related to the metis component, and all the tests can pass. Complete the detailed metis component design document. Complete the implementation and testing of the following contract components, all tests can pass:
-
-- ERC20 and its expansion components (including increasingly issuance, destruction, etc.)
+- ERC20 and its expansion components
 - ERC721 and its expansion components
 - ERC777 and its expansion components
 - ERC1155 and its expansion components
 - Ownable
 - AccessControl
 - TimelockController
-- PullPayment
+- Escrow(PullPayment)
+- support(ERC165)
 - ReentrancyGuard
 - Pausable
 
-Complete the documentation and examples of the above contract components. 
+For detailed usages and implemented examples, please refer [Metis Documentation](https://patractlabs.github.io/metis/index.html).
+
+During the development of Metis, we have refined the smart contract testing procedures based on Redspot by tweaking the underlying mechanism. For usages of testing purposes, please refer [Example](https://github.com/patractlabs/metis/tree/master/example).
+
+> **NOTE** Please be aware that due to large volume of Metis's testcases, we should run tests separately for each contract. For detailed commands, please refer [Metis Example README](https://github.com/patractlabs/metis/blob/master/example/README.md)
+
+## 1. Metis's future development plan
+
+- ~~**[M1]** Implement basic macros and implementations for components; improve component testing support; developers can build regular DAPPs based on Metis~~
+- **[M2]** Complete component macros; complete component development support so that developers can build custom components; complete the api support corresponding to the metis component.
+- **[M3]** Rich component library; complete component and API support for governance and financial mechanism; thorough mathematical library for contract development to support DeFi-type contracts that require complex calculations.
+
+## 2. Report
+
+### 2.1 Implement basic component macros
+
+We have implemented the following marcos for components development:
+
+- `contract` : to define the contract following metis contract standard.
+- `import` : to generate code to implement the components.
+- `metis` : to define the metis component.
+- `stub` : to implement stub in metis.
+- `reentrancy_guard` : helper macro for the `reentrancy_guard` component.
+- `supports` : helper macro for the erc165 supports api.
+- `hash` : to calculate the hash of a string during compilation.
+- `selector_id` : to calculate the `selector_id`  of a `message`.
+
+**NOTE** The currently available macros listed above are minimal implementations which will be extended and fortified in [M2] milestone, please refer [Use Component](https://patractlabs.github.io/metis/use-component.html)
+
+### 2.2 Components
+
+
+The most important work in this version is implementing the Metis components for constructing smart contracts.
+
+#### Metis-MCCI architecture
+
+- `M` : Data model. Most contracts read and write contract environmental states. These states map to specific data models. Each model is associated with only one component.
+- `C` : component. A component is a reusable, independent implementation unit that encapsulates data and methods but maintains orthogonality with other components.
+- `C` : controller. The controller coordinates the components and implements the contract interface.
+- `I` : interface. The interface is the user interface of the contract. The interface defines the interactions of the contract and further defines the metadata.
+
+```txt
+┌───────┐          ┌───────────────┬────────────────────────────────┐
+│       │          │ Interface     │ Control                        │
+│       │          │               │  ┌─────────────────────┐       │
+│       │          │  Constructor  │  │ Component           │       │
+│ User  │  Call    │               │  │ ┌───────────────────┴──┐    │
+│       ├─────────►│  Messages     │  │ │ Component            │    │
+│       │          │               │  │ │ ┌────────────────────┴─┐  │
+│       │          │  Events       │  │ │ │ Component            │  │
+├───────┤          │               │  │ │ │        ┌───────────┐ │  │
+│       │  Call    │               │  │ │ │ Msgs   │           │ │  │
+│       ├─────────►│               │  │ │ │        │ Module    │ │  │
+│       │          │               │  │ │ │ Apis   │           │ │  │
+│ Apps  │          │               │  │ │ │        │           │ │  │
+│       │  Event   │               │  └─┤ │ Events └───────────┘ │  │
+│       │◄─────────┤               │    └─┤                      │  │
+│       │          │               │      └──────────────────────┘  │
+│       │          │               │                                │
+└───────┘          └───────────────┴────────────────────────────────┘
+```
+
+As shown in the figure, under the MCCI architecture, a contract is composed of a series of reusable components. The contract interaction is implemented through the interconnection of components and defined by interface and controller.
+
+The contract's interface defines the contract's interaction, including:
+
+- constructor
+- message
+- event
+
+A user can interact with smart contract based on these three things. In fact, these three things also constitute `ink!'`s macros as the main part of contract metadata.
+
+For a contract, these three things are guaranteed to be deterministic, unambiguous, and easy to understand. Therefore, the interface of the contract code needs to stay cohesive.
+
+The contract controller is responsible for integrating the components. We break the main logic of the contract down into a series of reusable components, which can **extend** and **compose** based on other components.
+
+A data model is the encapsulation of contract state from contract logic.  Each contract component requires different attributes in its data model. Therefore, a complete contract will be composed of multiple data models. 
+
+In generally, the data model also contributes to the contract interaction, formulating the contract interface, but in most case, external applications and users will not interact with blockchain states which stores contract data. Therefore, the external encapsulation of the data model is not emphasized here.
+
+#### Inheritance Vs Composition
+
+In contract development, we emphasize the audibility of contracts but the use of inheritance feature in solidity makes contract hard for code auditing: The contract logic is spread into multiple files or even in different projects. Therefore, in Metis, we do not directly inherit the interface and implementation of the contract, but in instead components and data model are introduced to composite the final contract.
+
+Each component implements a series of functions including the methods for messages and apis. Components can **extend** and **compose** based on other components.
+
+Most components look like this:
+
+```rust
+/// The `EventEmit` impl the event emit api for ownable component.
+pub trait EventEmit<E: Env>: EnvAccess<E> {
+    /// Emit OwnershipTransferred event
+    fn emit_event_ownership_transferred(
+        &mut self,
+        previous_owner: Option<E::AccountId>,
+        new_owner: Option<E::AccountId>,
+    );
+}
+
+/// The `Impl` define ownable component impl funcs
+pub trait Impl<E: Env>: Storage<E, Data<E>> + EventEmit<E> {
+    /// init Initializes the contract setting the deployer as the initial owner.
+    fn init(&mut self) {
+        // logic
+    }
+
+    /// Message impl 
+    fn one_message_impl(&mut self) -> Result<()> {
+        // msg impl which will call by ```xxx::Impl::one_message_impl(self)```
+
+        // use the hook
+        self.hook(xxx)?
+
+        Ok(())
+    }
+
+    /// Message for Query impl
+    fn one_query_impl(& self, param_acc: &E::AccountId) -> Data {
+        Data::default()
+    }
+
+    /// API for other message
+    fn check_xxx(&self, owner: &E::AccountId) {
+    }
+
+    // Hook which need impl by contract
+    fn hook(&mut self, params: &E::Balance) -> Result<()>;
+}
+
+```
+
+Some components contain a default implementation:
+
+```rust
+// a default impl, each contract which impl storage and event emitter can be component
+impl<E: Env, T: Storage<E, Data<E>> + EventEmit<E>> Impl<E> for T {}
+```
+
+To use this component, we can import this to contract:
+
+```rust
+#![cfg_attr(not(feature = "std"), no_std)]
+
+#[metis_lang::contract] // use `metis_lang::contract`
+pub mod contract {
+    // use the component: xxx1 and xxx2
+    use metis_component_xxx1 as xxx1;
+    use metis_component_xxx2 as xxx2;
+
+    // use `import` and `metis` marco
+    use metis_lang::{
+        import,
+        metis,
+    };
+
+    #[ink(storage)]
+    #[import(xxx1, xxx2)] // import the component
+    pub struct Contract {
+        // add data to storage, which use Contract as Env to Data
+        xxx1: xxx1::Data<Contract>,
+        xxx2: xxx2::Data<Contract>,
+    }
+
+    /// add event for component
+    /// in emit it will be emit_event_ownership_transferred
+    #[ink(event)]
+    #[metis(xxx1)] // event for xxx1
+    pub struct OwnershipTransferred {
+        /// previous owner account id
+        #[ink(topic)]
+        previous_owner: Option<AccountId>,
+        /// new owner account id
+        #[ink(topic)]
+        new_owner: Option<AccountId>,
+    }
+
+    /// Event emitted when payee withdraw
+    #[ink(event)]
+    #[metis(xxx2)] // event for xxx1
+    pub struct OtherEvent {
+        #[ink(topic)]
+        pub payee: AccountId,
+        pub amount: Balance,
+    }
+
+    impl xxx1::Impl<Contract> for Contract {
+        fn hook(
+            &mut self,
+            params: &E::Balance
+        ) -> Result<()> {
+            // some logic
+
+            Ok(())
+        }
+    }
+
+    // impl
+    impl Contract {
+        #[ink(constructor)]
+        pub fn new() -> Self {
+            // impl for default
+            let mut instance = Self {
+                xxx1: xxx1::Data::new(),
+                xxx2: xxx2::Data::new(),
+            };
+
+            // init call
+            xxx1::Impl::init(&mut instance);
+            xxx2::Impl::init(&mut instance);
+
+            // return instance
+            instance
+        }
+
+        /// commits for one_message_impl
+        #[ink(message)]
+        pub fn one_message_impl(&mut self) -> Result<()> {
+            // some other check
+            xxx2::Impl::do_some_check(self);
+            xxx1::Impl::one_message_impl(self)
+        }
+
+        /// commits for one_query_impl
+        #[ink(message, payable)]
+        pub fn one_query_impl(&self, payee: AccountId) {
+            xxx1::Impl::one_query_impl(self, payee)
+        }
+
+        /// commits for other_message_impl
+        #[ink(message)]
+        pub fn other_message_impl(&mut self, payee: AccountId) {
+            xxx1::Impl::check_xxx(self)
+            // other logic
+        }
+    }
+
+    #[cfg(test)]
+    mod tests {
+        // test for contract
+    }
+}
+```
+
+#### Hook and Impl
+
+In the previous example, we can see the function `hook`:
+
+```rust
+    // Hook which need impl by contract
+    fn hook(&mut self, params: &E::Balance) -> Result<()>;
+```
+
+In some components, the hook has a default implementation:
+
+```rust
+    /// @dev Hook that is called before any token transfer. This includes
+    /// calls to {send}, {transfer}, {operatorSend}, minting and burning.
+    ///
+    /// Calling conditions:
+    ///
+    /// - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens
+    /// will be to transferred to `to`.
+    /// - when `from` is zero, `amount` tokens will be minted for `to`.
+    /// - when `to` is zero, `amount` of ``from``'s tokens will be burned.
+    /// - `from` and `to` are never both zero.
+    ///
+    /// To learn more about hooks,
+    /// head to xref:ROOT:extending-contracts.adoc#using-hooks[Using Hooks].
+    fn _before_token_transfer(
+        &mut self,
+        _operator: &E::AccountId,
+        _from: &Option<&E::AccountId>,
+        _to: &Option<&E::AccountId>,
+        _amount: &E::Balance,
+    ) -> Result<()> {
+        Ok(())
+    }
+```
+
+The hook will be called automatically by component functions. User can define their own hook. Here is an example in Pausable ERC20 component:
+
+```rust
+    fn before_token_transfer(
+        &mut self,
+        _from: &E::AccountId,
+        _to: &E::AccountId,
+        _amount: E::Balance,
+    ) -> Result<()> {
+        metis_pausable::Impl::<E>::ensure_not_paused(self);
+
+        Ok(())
+    }
+```
+
+The Pausable ERC20 component extends the native erc20 component by implementing the hook.
+
+#### Metis Contract component
+
+In future versions of Metis, we will first fully implement openZeppelin-contracts components for developers to use. These components include:
+
+- Token: ERC20, ERC721, ERC777, ERC1155 and extensions of the above Token contracts
+- Access: Ownable, AccessControl, TimelockController
+- Security: PullPayment, ReentrancyGuard, Pausable
+
+Metis will implement a set of common components, similar to the OpenZeppelin-Contracts library. All library code are ensured to be fully tested and audited,
+These components will be kept as consistent as possible with OpenZeppelin-contracts to flat the developer's learning curve by absorbing the experience learned from Solidity Ecology:
+
+- [ERC20](https://patractlabs.github.io/metis/tokens/erc20.html)
+- [ERC721](https://patractlabs.github.io/metis/tokens/erc721.html)
+- [ERC777](https://patractlabs.github.io/metis/tokens/erc777.html)
+- [ERC1155](https://patractlabs.github.io/metis/tokens/erc1155.html)
+- [Ownable](https://patractlabs.github.io/metis/access-control/ownable.html)
+- [AccessControl](https://patractlabs.github.io/metis/access-control/access-control.html)
+- [Access Control Enumerable](https://patractlabs.github.io/metis/access-control/access-control-enumerable.html#access-control-enumerable)
+- [TimelockController](https://patractlabs.github.io/metis/governance/timelock-controller.html)
+- [Escrow(PullPayment)](https://patractlabs.github.io/metis/utilities/escrow.html)
+- [Support(ERC165)](https://patractlabs.github.io/metis/tools/erc165.html)
+- [ReentrancyGuard](https://patractlabs.github.io/metis/security/reentrancy-guard.html)
+- [Pausable](https://patractlabs.github.io/metis/security/pausable.html)
+
+Please refer to the documentation for details of each component.
+
+### 2.3 Examples and tests
+
+Each component is shipped with examples of default implementation and testcases by ink! offchain test environments and redspot.

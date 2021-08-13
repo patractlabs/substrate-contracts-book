@@ -1,32 +1,31 @@
-# 介绍
+# Introduction
 
-## Redspot 的架构
+## Redspot's architecture
 
-Redspot是围绕任务（Tasks）和插件（Plugins）的概念设计的。Redspot的大部分功能来自插件，你可按需选择要使用的插件。
+Redspot is designed around the concept of Tasks and Plug-ins. Most of Redspot's functions come from plug-ins, and you can choose which plug-in you want to use according to your needs.
 
-## 任务
+### Tasks
 
-每次从terminal运行Redspot时，你都在运行任务。例如执行`npx redspot compile`命令是运行编译任务。 要查看项目中当前可用的任务，可运行`npx redspot`命令。 通过运行`npx redspot help [task]`可以查看任何任务的帮助信息。
+Every time you run Redspot from the terminal, you are running tasks. For example, executing the `npx redspot compile` command is to run the compilation task. To view the tasks currently available in the project, run the `npx redspot`  command. You can view the help information of any task by running `npx redspot help [task]`.
 
-## 插件
+### Plug-in
 
-Redspot默认安装了一些插件，如果你需要手动安装或升级它们，请参见以下步骤。
+Redspot installs some plug-ins by default. If you need to install or upgrade them manually, please refer to the following steps.
 
-例如安装@redspot/patract 和@redspot/chai插件。
+For example, install @redspot/patract and @redspot/chai plug-ins.
 
-1. 在项目根目录下执行以下命令。
-```bash
-yarn add @redspot/patract @redspot/chai
-```
-2. 在项目的目录中的redspot 配置文件`redspot.config.js`中导入插件。
-```typescript
-import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract';
-import '@redspot/chai';
-export default {
- ...
-} as RedspotUserConfig;
-```
+1. Execute the following command in the project root directory.
+    ```sh
+    yarn add @redspot/patract @redspot/chai
+    ```
 
-
+2. Import the plug-in in the redspot configuration file redspot.config.js in the project directory.
+    ```typescript
+    import { RedspotUserConfig } from 'redspot/types';
+    import '@redspot/patract';
+    import '@redspot/chai';
+    export default {
+     ...
+    } as RedspotUserConfig;
+    ```
 

@@ -33,7 +33,7 @@ Jupiter 的项目地址是 [https://github.com/patractlabs/jupiter](https://gith
 - 1.0.0: Jupiter PoA 网络正式发布，包含jupiter-prep 及 jupiter-dev
 - 1.0.1: 设置 Jupiter PoA 的 ss58prefix 为 26，今后Jupiter沿用 26 作为地址的ss58prefix
 - 1.0.2: 支持 ZK、随机数
-- 1.0.3: 增加平行链
+- 1.0.3: 增加平行链，支持 XCMP 跨链转账
 
 ## Contract
 

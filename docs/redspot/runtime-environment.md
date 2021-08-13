@@ -1,58 +1,59 @@
 # Runtime Environment
 
-RedSpot 运行时环境（即RedspotRuntimeEnvironment，下文简称RSE）包含了Redspot所有公开的功能。当您导入Redspot时，就获得了一个 RSE环境。
+The RedSpot Runtime Environment (RSE) contains all the publicly available functions of Redspot. When you import Redspot, you get an RSE environment.
 
-## 访问RSE
+## Accessing RSE
 
-env有以下属性。
+Env has the following attributes.
 
-```plain
+```typescript
 RuntimeEnvironment {
-                config; // 用户的配置文件
-    redspotArguments; // 运行命令时的全局参数，包含 network、logLevel 等。
-    run； // 运行命令的函数
-    network; // 包含了 api、keyring 等属性。
-    artifacts; // 管理合约编译的产物
+                config; // the user's configuration file 
+    redspotArguments; // global arguments to run the command, including network , logLevel, etc.
+    run; // function to run the command
+    network; // Contains attributes such as api , keyring etc.
+    artifacts; // the product of managing contract compilation
 }
 ```
 
-在Redspot控制台中，env的这些属性会被注入到全局变量中，您可以直接访问它们。
+In the Redspot console, these properties of env will be injected into global variables, and you can directly access them.
 
-```plain
+```bash
 > network.name
 'development'
 ```
 
-在`.js`或者`.ts`文件中，您可以通过`import env from 'redspot'`来访问 RSE。
+In `.js` or `.ts` files, you can access RSE by `import env from 'redspot'`.
 
 ```typescript
 import { config, redspotArguments, run, network, artifacts } from 'redspot';
 ```
 
-## 扩展 RSE
+## Extending RSE
 
-您可以通过一些插件扩展 RSE ，为 RSE 增加一些额外属性或方法。例如`@redspot/patract`插件就扩展了 RSE ，提供了patract的实例。当引入patract插件后，您可以通过以下方式访问 patract 实例。
+You can extend RSE through some plug-ins and add some additional properties or methods to RSE. For example, the `@redspot/patract` plugin extends RSE and provides examples of patract. When the patract plugin is introduced, you can access the patract instance in the following way.
 
 ```typescript
 import { patract } from 'redspot';
 console.log(patract);
 ```
 
-接下来我们详细介绍一下内置的 RSE 的中的各个属性。
+Next, we will introduce each attribute of the built-in RSE in detail.
 
-### config**
+### config
 
-config 包含 redspot.config.ts 中的所有配置选项。并且包含了默认的设置， 它是一个Json对象。
+config contains all the configuration options in redspot.config.ts，and contains the default settings, it is a Json object.
 
-获取当前配置的默认连接的网络。
+Get the currently configured default connection network.
 
 ```typescript
 import { config } from 'redspot';
 console.log(config.defaultNetwork);
 ```
+
 ### redspotArguments
 
-当前运行的命令的全局参数。
+Global parameters of the currently running command.
 
 ```bash
 > redspotArguments
@@ -68,18 +69,20 @@ console.log(config.defaultNetwork);
   tsconfig: undefined
 }
 ```
+
 ### run
 
-通过run函数，您可以在`.js`或`.ts`文件中，调用task。
+Through the run function, you can call tasks in `.js` or`.ts` files.
 
 ```typescript
 import { run } from 'redspot';
-run('test'); // 运行测试命令
-run('test', { testFiles: './tests/erc20.test.ts' }); // 传入参数
+run('test'); // run the test command
+run('test', { testFiles: './tests/erc20.test.ts' }); // pass in parameters
 ```
+
 ### Network
 
-Network包含您当前正在运行的网络的信息。通过Network可以获取到API、keyring、signer等信息。Network的类型定义如下。
+Network contains the information about the network you are currently running. API keyring, signer and other information can be obtained through Network. The type of Network is defined as follows.
 
 ```typescript
 export interface Network {
@@ -95,14 +98,14 @@ export interface Network {
 }
 ```
 
-* network.name：当前正在使用的网络的名称。
-* network.config：当前正在使用的网络的配置选项，等价于`config.networks[network.name]`。
-* network.provider：相当于Polkadot.js 中的[wsprovider](https://polkadot.js.org/docs/api/start/create/#providers)的实例。他们具有相同的接口。`redspot.config.ts`中配置的endpoint会被用于network.provider的实例化参数。
-* network.registry：相当于Polkadot.js中的Registry的实例，用于管理类型的编解码。它也包含了用户在`redspot.config.ts`中配置的types类型定义，更多详情请参见[Type creation](https://polkadot.js.org/docs/api/start/types.create/)。
-* network.keyring：相当于Polkadot.js中的 Keyring 的实例，默认是 ss25519 类型。在API初始化完成后，会设置默认的ss58 的值。更多信息，请参见[keyring](https://polkadot.js.org/docs/api/start/keyring)。
-* network.getSigners：在`redspot.config.ts`中配置的accounts ，会被解析成signer 。通过 getSigners函数，可以获取所有的signer，其中个数组与accounts中配置的账号对应。
+* network.name: The name of the network currently in use.
+* network.config: The configuration options of the network currently in use, equivalent to`config.networks[network.name]`.
+* network.provider: equivalent to an instance of [wsprovider](https://polkadot.js.org/docs/api/start/create/#providers) in Polkadot.js. They have the same interface. The endpoint configured in `redspot.config.ts` will be used as the instantiation parameter of network.provider.
+* network.registry: equivalent to the instance of Registry in Polkadot.js, used to manage the type of codec. It also contains the type definitions configured by the user in `redspot.config.ts` . For more details, please refer to [Type creation](https://polkadot.js.org/docs/api/start/types.create/).
+* network.keyring: equivalent to an instance of Keyring in Polkadot.js, the default is ss25519 type. After the API initialization is complete, the default value of ss58 will be set. For more information, see [keyring](https://polkadot.js.org/docs/api/start/keyring).
+* network.getSigners: The accounts configured`in redspot.config.ts`will be parsed into signers. Through the getSigners function, all signers can be obtained, and one of the arrays corresponds to the account configured in accounts.
 
-获取所有signer。
+Get all signers.
 
 ```typescript
 import { network } from 'redspot';
@@ -111,7 +114,7 @@ network.getSigners().then(signers => {
 });
 ```
 
-实际上signer与Polkadot.js的signer是兼容的。signer的类型定义如下。
+In fact, the signer is compatible with the signer of Polkadot.js. The type of signer is defined as follows.
 
 ```typescript
 export interface Signer {
@@ -122,7 +125,7 @@ export interface Signer {
 }
 ```
 
-您也可以将它用在Polkadot.js 中，进行交易签名。
+You can also use it in Polkadot.js to sign transactions.
 
 ```typescript
 import { network } from 'redspot';
@@ -137,16 +140,16 @@ async run() {
 }
 ```
 
-* network.createSigner：通过createSigner函数可以生成一个signer，它接收一个keyringpair ，将其转化为signer实例。
+* network.createSigner：A signer can be generated through the createSigner function, which receives a keyringpair and converts it into a signer instance.
 ```typescript
 const pair = keyring.createFromUri(uri);
 const signer = network.createSigner(pair);
 ```
 
-* network.gasLimit：它来自于config中的gaslimt，并且被解析成bn类型。
+* network.gasLimit :It comes from gaslimt in config and is parsed into bn type.
 ### artifacts
 
-通过 artifacts ，您可以访问和管理Abi，它的类型定义如下。
+Through artifacts, you can access and manage Abi. Its type is defined as follows.
 
 ```typescript
 export interface Artifacts {
@@ -162,22 +165,22 @@ export interface Artifacts {
 }
 ```
 
-| 字段                          | 说明                                                   |
+| Field                         | Description                                                  |
 |:----|:----|
-|artifacts.readArtifact|通过合约名字，获取合约的metadata，它会返回一个Json对象|
-|artifacts.readArtifactSync|artifacts.readArtifact的同步版本|
-|artifacts.readAllArtifact|获取所有的合约的metadata|
-|artifacts.readAllArtifactSync|artifacts.readAllArtifact的同步版本|
-|artifacts.getArtifactPath|获取指定合约的metadata的文件路径|
-|artifacts.getArtifactPathSync|artifacts.getArtifactPath的同步版本|
-|artifacts.artifactExists|判断一个合约的metadata是否存在|
-|artifacts.getArtifactPaths|获取所有合约的metadata的文件路径|
-|artifacts.copyToArtifactDir|将文件拷贝到artifact目录|
+|artifacts.readArtifact|You can get the metadata of the contract by the contract name, it will return a Json object|
+|artifacts.readArtifactSync|Synchronized version of artifacts.readArtifact|
+|artifacts.readAllArtifact|Get the metadata of all contracts|
+| artifacts.readAllArtifactSync |Synchronized version of artifacts.readAllArtifact|
+|artifacts.getArtifactPath|Get the file path of the metadata of the specified contract|
+|artifacts.getArtifactPathSync|Synchronized version of artifacts.getArtifactPath|
+|artifacts.artifactExists|Judge whether the metadata of a contract exists|
+|artifacts.getArtifactPaths|Get the file path of the metadata of all contracts|
+|artifacts.copyToArtifactDir|Copy the file to the artifact directory|
 
 
 * artifacts.readArtifact
 
-通过合约名字，获取合约的metadata，它会返回一个Json对象。其中的Wasm就是合约编译出来的 Wasm文件。
+Get the metadata of the contract through the contract name, and it will return a Json object. The Wasm is the Wasm file compiled from the contract.
 
 ```typescript
 {
@@ -202,11 +205,6 @@ export interface Artifacts {
   };
 }
 ```
-
-
-
-
-****
 
 
 

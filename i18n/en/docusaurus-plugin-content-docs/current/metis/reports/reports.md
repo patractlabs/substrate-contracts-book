@@ -6,4 +6,4 @@ The report represents the work results of the Patract team this time, and it is 
 
 The current Metis proposal report has the following content:
 
-- [M1Report](./reports/M1Report.md)
+- [M1Report](./M1Report.md)

@@ -1,12 +1,12 @@
-# @redspot_chai插件
+# @redspot_chai  plug-in
 
-## 背景信息
+## Background Information
 
-该插件提供了一组便于编写合约测试用例的匹配器，设计灵感来自于[waffle](https://ethereum-waffle.readthedocs.io/en/latest/matchers.html)。
+The plug-in provides a set of matchers that are easy to write contract test cases, and the design is inspired by [waffle](https://ethereum-waffle.readthedocs.io/en/latest/matchers.html).
 
-## 使用前提条件
+## Prerequisites for use
 
-引入@redspot/chai插件。该插件会自动修改chai匹配器，您无需手动调用。
+Before using，please import @redspot/chai plugin. The plug-in will automatically modify the chai matcher, so you don't need to call it manually.
 
 ```typescript
 // redspot.config.ts
@@ -16,9 +16,10 @@ export default {
  ...
 } as RedspotUserConfig;
 ```
-## 使用示例
 
-使用@redspot/chai插件的完整实例如下。
+## Example of usage
+
+A complete example of using the @redspot/chai plug-in is as follows.
 
 ```typescript
 import BN from 'bn.js';
@@ -80,11 +81,11 @@ describe('ERC20', () => {
 });
 ```
 
-此插件更多内置的用法，详情请参见[chai](https://www.chaijs.com/)文档。
+For more built-in usages of this plugin, please refer to the [chai](https://www.chaijs.com/) documentation for details.
 
 ## equal
 
-@redspot/chai插件会修改默认的equal的匹配方式。默认的equal不支持匹配对象。但是 @redspot/chai插件可以。
+The @redspot/chai plug-in will modify the default equal matching method. The default equal does not support matching objects，but @redspot/chai plugin can.
 
 ```typescript
 expect(new BN(1000)).to.equal(1000); // true
@@ -92,13 +93,13 @@ expect(AccountId).to.equal('5Gdjkw....'); // true
 expect(Uint8Array([1, 2, 3])).to.equal('0x010203'); // true
 ```
 
-* 对于BN类型，equal会调用`new BN(expected).eq(actual)`，并判断是否相等。
-* 对于Polkadot.js 中定义的类型，equal会调用`Type.eq(actual)`，并判断是否相等。
-* 对于uint8Array类型，equal会将它们都转化为十六进制，再判断是否相等。
-* 其他类型则采用默认的判断方式，判断是否相等。
+* For the BN type, equal will call `new BN(expected).eq(actual)` and judge whether it is equal.
+* For the types defined in Polkadot.js, equal will call `Type.eq(actual)` and judge whether they are equal.
+* For uint8Array type, equal will convert them to hexadecimal, and then judge whether they are equal.
+* For other types, the default judgment method is used to judge whether they are equal.
 ## changeTokenBalance
 
-该匹配器可以检测erc20的余额变化，内部会调用balanceOf接口判断余额。由于erc20-trait的获取余额接口是`baseErc20，balanceOf`, 所以`changeTokenBalance`并不适用于erc20-trait 。
+The matcher can detect changes in the balance of erc20, and internally calls the balanceOf interface to determine the balance. Since the interface for obtaining balance of erc20-trait is `baseErc20, balanceOf`,`changeTokenBalance` is not applicable to erc20-trait.
 
 ```typescript
 await expect(() =>
@@ -111,9 +112,9 @@ await expect(() =>
 
 ## emit
 
-该匹配器可以检测合约是否发出事件，使用示例如下：
+The matcher can detect whether the contract emits an event. An example of its use is as follows.
 
-* 检测是否有Transfer事件被emit
+* Detect whether a Transfer event is emitted
     ```typescript
     await expect(contract.tx.transfer(receiver.address, 7)).to.emit(
       contract,
@@ -121,14 +122,14 @@ await expect(() =>
     );
     ```
 
-* 检测该事件是否包含指定的参数
+* Detect whether the event contains the specified parameters
     ```typescript
     await expect(contract.tx.transfer(receiver.address, 7))
       .to.emit(contract, 'Transfer')
       .withArgs(sender.address, receiver.address, 7);
     ```
 
-* 不期待发出事件
+* Don't expect to emit events
     ```typescript
     await expect(
       contract.tx.transfer(sender.address, 7, {

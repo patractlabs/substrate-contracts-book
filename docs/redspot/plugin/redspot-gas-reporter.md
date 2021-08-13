@@ -1,16 +1,16 @@
-# @redspot_gas-reporter 插件
+# @redspot_gas-reporter plug-in
 
-## 背景信息
+## Background Information
 
-该插件会在测试完成时，打印出所调用的合约的交易的gas使用量。
+The plug-in will print out the gas usage of the transaction of the called contract when the test is completed.
 
 ![](./image/gas.png)
 
 
-## 如何使用插件？
+## How to use the plug-in?
 
-1. 导入@redspot/gas-reporter 插件。
-2. 在`redspot.config.ts`中加入此插件，即可自动运行。
+1. Import the @redspot/gas-reporter plugin.
+2. Add this plug-in to redspot.config.ts and it will run automatically.
     ```typescript
     // redspot.config.ts
     import { RedspotUserConfig } from 'redspot/types';

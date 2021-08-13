@@ -1,35 +1,34 @@
-# @redspot_decimals插件
+# @redspot_decimals plug-in
 
-## 背景信息
+## Background Information
 
-`@redspot/decimals`是一个可以自动转换数字精度的插件，例如可以将`1 DOT`转换为`10000000000`。
+@redspot/decimals is a plug-in that can automatically convert number precision, for example, it can convert 1 DOT to 10000000000.
 
-## 实现功能
+## Realize the function
 
-固定的 decimal
+Fixed decimal
 
 * `1 DOT`=>`10 ** 10`
 * `1 KSM`=>`10 ** 12`
 
-自动获取链的`tokenDecimal`
+Obtain the tokenDecimal of the chain automatically
 
 * `1 UNIT`=>`10 ** tokenDecimal`
+## How to use the plug-in?
 
-如何使用插件？
-
-1. 使用以下命令安装插件。
+1. Use the following command to install the plug-in.
     ```bash
     yarn add @redspot/decimals
     ```
 
-2. 在`redspot.config.ts`中导入插件，然后就可以使用该插件了。
+2. Import the plug-in in redspot.config.ts, and then you can use the plug-in.
     ```typescript
     import '@redspot/decimals'
     ```
 
-## 使用示例
+## Example of use
 
-* 在部署合约的时候使用
+* Used when deploying contracts
     ```typescript
     const contract = await contractFactory.deployed('new', '10000', {
       gasLimit: '400000000000',
@@ -37,7 +36,7 @@
     });
     ```
 
-* 在转账中使用
+* Use in transfer
     ```typescript
     import { network } from 'redspot';
     const { api } = network;

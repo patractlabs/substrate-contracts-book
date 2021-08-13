@@ -1,19 +1,201 @@
-# 什么是Redspot
+## Installation
+### Prerequisites
+Please follow the guide on [ink!](https://substrate.dev/substrate-contracts-workshop/#/0/setup) to setup **rust**, **cargo** and **cargo-contracts** 
 
-Redspot是一个使ink!、Ask!等合约开发项目化，简化合约测试和交互过程的合约集成构建工具。
+Please follow the guide on [Nodejs](https://nodejs.org/) to install node and npm
 
-## 背景信息
+Install NPX
+```
+sudo npm install -g npx
+```
+### Setup Local Test Node
+You will need test blockchain node to deploy the contracts and test them.
+* [**Canvas**](https://github.com/paritytech/canvas-node) (test node by substrate)
+```
+cargo install canvas-node --git https://github.com/paritytech/canvas-node.git --tag v0.1.9 --force --locked
+```
+Start **Canvas**
+```
+canvas --dev --tmp
+```
+* [**Europa**](../europa/introduction.md) (Patract modification)
+```
+cargo install europa --git=https://github.com/patractlabs/europa.git --force --locked
+```
+Start **Europa**
+```
+europa --tmp
+```
 
-* Redspot 的功能贯穿整个合约开发环节，您可以构建丰富的插件来扩展Redspot的功能，自动化执行重复步骤的过程，最大程度地减轻您的负担。
-* Redspot的设计目标类似以太坊生态中的Truffle，但是具备比Truffle更广泛的扩展功能。
-* Redspot是一个灵活的系统。`pallet-contracts`合约模块可以被直接或在一定程度上的修改后集成到Substrate链中。[hardhat](https://github.com/nomiclabs/hardhat)具有出色的设计架构，允许使用插件来添加新功能，因此Redspot使用hardhat作为自己的核心架构。
-## 更多信息
+### Install Redspot
+```
+npm install --save-dev redspot
+```
+To use your local installation of Redspot, you need to use `npx` to run it (i.e. `npx redspot`).
 
-Redspot 从基于MIT协议的 hardhat fork 发展而来，并在其基础上移除了与以太坊相关的部分，添加与Substrate、`pallet-contracts`模块相关的功能。在不久的将来，Redspot将基于hardhat的核心构建更多的功能。
+## Quick start
+This guide will cover the basics of creating a Redspot project. The barebone without plugins allows you to run tasks, compile wasm contract and run tests automatically.
 
-## Redspot 议会提案报告
+### Running Tasks
+To get a quick a look of what's availabe in redspot, run `npx redspot` in your project directory:
+```bash
+$ npx redspot
+Redspot version 0.11.4
 
-- [v0.1Report](./reports/v0.1Report.md)
-- [v0.2Report](./reports/v0.2Report.md)
-- [v0.3Report](./reports/v0.3Report.md)
-- [v0.4Report](./reports/v0.4Report.md)
+Usage: redspot [GLOBAL OPTIONS] <TASK> [TASK OPTIONS]
+
+GLOBAL OPTIONS:
+
+  --config           	A Redspot config file. 
+  --help             	Shows this message, or a task's help if its name is provided 
+  --log-level        	Set log levels 1-5 (default: "2")
+  --max-memory       	The maximum amount of memory that Redspot can use. 
+  --network          	The network to connect to. 
+  --show-stack-traces	Show stack traces. 
+  --tsconfig         	Reserved redspot argument -- Has no effect. 
+  --verbose          	Enables Redspot verbose logging 
+  --version          	Shows redspot's version. 
+
+  AVAILABLE TASKS:
+
+  check   	Check whatever you need
+  clean   	Clears the cache and deletes all artifacts
+  compile 	Compiles the entire project, building all artifacts
+  console 	Opens a redspot console
+  explorer	Start redspot explorer
+  help    	Prints this message
+  run     	Runs a user-defined script after compiling the project
+  test    	Runs mocha tests
+  testnet 	Running the test network
+
+To get help for a specific task run: npx redspot help [task]
+
+```
+
+### To create your first Redspot project:
+```
+npx redspot-new erc20
+```
+Once the command runs, you will see the following directory tree
+```
++-- contracts
+|   +-- Cargo.lock
+|   +-- Cargo.toml
+    +-- lib.rs
++-- scripts
+|   +-- deploy.ts
++-- tests
+|   +-- erc20.test.ts
++-- redspot.config.ts
++-- package.json
+```
+
+### Compile your contract
+Netx, taking a look at `contracts/`, you should find `lib.rs`.This is the sample codes for a erc20 contract written in ***ink!***  with off-chain tests. For details, please refer [ink!](https://substrate.dev/substrate-contracts-workshop/#/0/setup)
+
+To compile it, simply run:
+```
+npx redspot compile
+```
+You might see error like this
+
+```
+ERROR: Building the contract in debug mode requires an ink! version newer than `3.0.0-rc3`!
+```
+
+This is cargo-contract complaining about the ink version. To fix this, edit `contracts/Cargo.toml`
+change the ink dependency from `3.0.0-rc3` to `"3.0.0-rc4`. It should look like
+
+```
+[package]
+name = "erc20"
+version = "3.0.0-rc4"
+authors = ["Parity Technologies <admin@parity.io>"]
+edition = "2018"
+
+[dependencies]
+ink_primitives = { version = "3.0.0-rc4", git = "https://github.com/paritytech/ink", default-features = false }
+ink_metadata = { version = "3.0.0-rc4", git = "https://github.com/paritytech/ink", default-features = false, features = ["derive"], optional = true }
+ink_env = { version = "3.0.0-rc4", git = "https://github.com/paritytech/ink", default-features = false }
+ink_storage = { version = "3.0.0-rc4", git = "https://github.com/paritytech/ink", default-features = false }
+ink_lang = { version = "3.0.0-rc4", git = "https://github.com/paritytech/ink", default-features = false }
+```
+
+Another possible error
+```
+ERROR: Your wasm-opt version is 91, but we require a version >= 99.
+```
+To fix this, download the latest binary release for [bianryen](https://github.com/WebAssembly/binaryen)
+
+After compilation, you should see a new dir 
+
+```
+artifacts
+  └─ erc20.contracts
+  └─ erc20.json
+```
+
+`artifacts/erc20.contract` is the compiled contract source code to deployed to blockchain node
+
+`artifacts/erc20.json` describes all the interfaces that can be used to interact with your contract which acts the same as `ABI` in ethereum.
+
+### Deploy your contract
+
+Redspot automates the deploy process, so users won't need to update the contract file themselves.
+
+First, make sure you have started the blockchain node, here we use canvas for demo:
+
+```
+canvas --dev --tmp
+```
+
+*** Config endpoint in `deploy.ts`, this points to websocket of the blockchain node ***
+```typescript
+{
+        ...
+        networks: {
+    development: {
+      endpoint: 'ws://127.0.0.1:9944', // 
+      types: {},
+      ...
+    },
+  },
+}
+```
+*** Deploy ***
+```
+npx redspot run scripts/deploy.ts --no-compile
+```
+Making sure add `--no-compile` at the end since Redspot will compile every time by default 
+
+After the contract is successfully deployed, you can get information similar to this.
+```
+Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
+```
+
+*** Test your contract ***
+```bash
+npx redspot test --no-compile
+```
+The result will be looking like this
+```
+   ✓ Assigns initial balance (9189ms)
+    ✓ Transfer adds amount to destination account (23906ms)
+    ✓ Transfer emits event (17993ms)
+    ✓ Can not transfer above the amount (17997ms)
+    ✓ Can not transfer from empty account (24001ms)
+
+
+  5 passing (2m)
+
+┌──────────┬──────────┬──────────────────────────┬───────────────────────────┬──────────────────────────┬───────┐
+│          │          │ Min                      │ Max                       │ Avg                      │       │
+├──────────┼──────────┼─────────────┬────────────┼─────────────┬─────────────┼─────────────┬────────────┼───────┤
+│ Contract │ Message  │ EstimateGas │ Weight     │ EstimateGas │ Weight      │ EstimateGas │ Weight     │ Calls │
+├──────────┼──────────┼─────────────┼────────────┼─────────────┼─────────────┼─────────────┼────────────┼───────┤
+│ erc20    │ transfer │ 4782870832  │ 5280208832 │ 9451855260  │ 10397508443 │ 7604329958  │ 8280994032 │ 5     │
+└──────────┴──────────┴─────────────┴────────────┴─────────────┴─────────────┴─────────────┴────────────┴───────┘
+
+```
+
+## Congrats! You now know the basic of Redspot! Let's dive deep.

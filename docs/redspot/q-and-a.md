@@ -1,19 +1,19 @@
-# 常见问题
+# Common problem 
 
-## 如何升级 Redspot？
+## How to upgrade Redspot？
 
-Redspot 仅仅是一个普通的 npm package ，升级方式和其他 npm package 一样。
+Redspot is just a normal npm package, and the upgrade method is the same as other npm packages.
 
-* `npm upgrade`：升级所有依赖。
-* `npm upgrade redspot`： 仅升级Redspot。
+* `npm upgrade`：upgrade all dependencies.
+* `npm upgrade redspot`： Only upgrade Redspot.
 
-如果您使用的是 yarn，那么您可执行以下命令将所有依赖升级到稳定版。
+If you are using yarn, you can execute the following command to upgrade all dependencies to the stable version.
 
 ```bash
 yarn upgrade-interactive --latest
 ```
 
-如果您想要使用最新的测试版，推荐手动更改 package.json 中的版本号，然后重新安装依赖。
+If you want to use the latest beta version, it is recommended to manually change the version number in package.json and then reinstall the dependencies.
 
 ```json
 {
@@ -37,11 +37,11 @@ yarn upgrade-interactive --latest
 }
 ```
 
-**注意 **升级时最好同时将所有的插件升级到最新版，避免产生依赖问题。
+**Note** When upgrading, it is best to upgrade all plug-ins to the latest version at the same time to avoid dependency problems.
 
-## 如何指定 @polkadot/api 和 @polkadot/api-contract 的版本？
+## How to specify the version of @polkadot/api and @polkadot/api-contract?
 
-Redspot内部依赖 @polkadot/api 和 @polkadot/api-contract。如果您需要单独升级，可以在 package.json 添加resolutions。
+Redspot internally relies on @polkadot/api and @polkadot/api-contract. If you need to upgrade separately, you can add resolutions in package.json.
 
 ```json
 /// package.json
@@ -53,15 +53,15 @@ Redspot内部依赖 @polkadot/api 和 @polkadot/api-contract。如果您需要�
 ...
 ```
 
-这样就可以强制指定版本。详情请参见[package.json](https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions)。但是不能保证升级升级后的 @polkadot/api 和 @polkadot/contract 的兼容性。
+In this way, you can force the specified version. See [package.json](https://classic.yarnpkg.com/en/docs/package-json/#toc-resolutions) for details. However, the compatibility of the upgraded @polkadot/api and @polkadot/contract cannot be guaranteed.
 
-## 如何在 redspot 中访问到 @polkadot/api 的实例？
+## How to access the instance of @polkadot/api in redspot?
 
-您可通过[network.api](./runtime-environment#network)访问。
+You can access it by [network.api](./runtime-environment#network).
 
-## 如何在`redspot.config.ts`中指定某条链的types和RPC
+## How to specify the types and RPC of chain in `redspot.config.ts`?
 
-部分链可以通过 [@redspot/known-types](./plugin/redspot-known-types.md) 自动配置(不支持RPC调用)。也可以通过`redspot.config.ts`手动配置。
+Part of the chain can be automatically configured via [@redspot/known-types](./plugin/redspot-known-types.md) (RPC calls are not supported). It can also be configured manually through `redspot.config.ts`.
 
 ```typescript
 // redspot.config.ts
@@ -97,9 +97,9 @@ export default {
 } as RedspotUserConfig;
 ```
 
-## 使用 erc20-trait 时，无法调用合约怎么办？
+## What should I do if I cannot call the contract when using erc20-trait?**
 
-由于 erc20-trait 多了命名空间，所以在调用的时候也必须加上命名空间，示例如下。
+Because erc20-trait has a namespace, you must also add namespace when calling. The example is as follows
 
 ```typescript
 // erc20
@@ -116,9 +116,9 @@ contract.tx.transfer(receiver.address, 7))
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
 
-## 如何保证线上私钥的安全，避免上传到Github？
+### How to ensure the security of the online private key and avoid uploading to Github?
 
-可以使用环境变量配置account，示例如下。
+You can use environment variables to configure account, as shown in the example below.
 
 ```typescript
 // redspot.config.ts
@@ -136,13 +136,13 @@ export default {
 } as RedspotUserConfig;
 ```
 
-运行脚本
+Run script
 
 ```bash
 REDSPOT_NETWORK=mainnet ACCOUNT="//Alice" npx redspot run ./scripts/deploy.ts
 ```
 
-您也可以使用[dotenv](https://github.com/motdotla/dotenv)等工具。此外，[redspot-explorer](./plugin/redspot-explorer)插件支持使用浏览器中的 polkadot extensions 签名。
+You can also use tools for example [dotenv](https://github.com/motdotla/dotenv). In addition, the [redspot-explorer](./plugin/redspot-explorer) plug-in supports signatures using polkadot extensions in the browser.
 
 
 

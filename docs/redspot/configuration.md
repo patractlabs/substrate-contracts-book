@@ -1,10 +1,10 @@
-# 配置信息
+# Configuration information
 
-运行Redspot时，它将从当前工作目录开始搜索最接近的redspot.config.js文件，该文件通常位于项目的根目录下。该文件中包含整个Redspot设置信息，例如配置、插件和自定义任务等。
+When running Redspot, it will search for the closest redspot.config.js file from the current working directory, which is usually located in the root directory of the project. This file contains the entire Redspot settings information, such as configuration, plug-ins, and custom tasks.
 
-## 配置选项
+## Configuration options
 
-要设置配置，需要从redspot.config.ts中导出对象（Object）。
+To set the configuration, you need to export the object from redspot.config.ts.
 
 ```typescript
 import { RedspotUserConfig } from 'redspot/types';
@@ -41,18 +41,20 @@ export default {
   }
 } as RedspotUserConfig;
 ```
-您可在`.js`文件中，通过`config`获取配置信息。
+
+You can obtain configuration information through config in the `.js` file.
+
 ```typescript
 import { config } from "redspot"
 console.log(config)
 ```
-## defaultNetwork
+## defaultNetwork**
 
-您可以通过配置中的`defaultNetwork`字段来定义运行Redspot时默认使用的网络。如果省略此配置，则其默认值为localhost。
+You can define the network used by default when running Redspot through the defaultNetwork field in the configuration. If this configuration is omitted, its default value is [localhost](http://localhost).
 
 ## networks
 
-`networks`配置字段是一个可选对象，网络名称会映射到其配置。默认的localhost的配置信息如下。
+The networks configuration field is an optional object, and the network name is mapped to its configuration. The configuration information of the default localhost is as follows.
 
 ```typescript
 {
@@ -65,7 +67,7 @@ console.log(config)
 }
 ```
 
-您也可以配置其他网络名称，例如配置mainnet，某个网络的名字some_network_name等。
+You can also configure other network names, such as mainnet, some_network_name, etc.
 
 ```typescript
 {
@@ -78,33 +80,33 @@ console.log(config)
 }
 ```
 
-下文介绍了network部分的配置选项。
+The following describes the configuration options of the network part.
 
-| 配置字段                   | 说明                                                         |
+| Configuration options | Description                                                  |
 |:----|:----|
-| [network].gasLimit |用于设置实例化或通过交易调用合约的时需要提供的gaslimit的默认值。这个值必须是整数，没有精度。如果这个值过小，将返回contracts.OutOfGas错误。最大的gaslimit是这条Substrate的链在Runtime中用于DispatchClass::Normal的最大值。例如在Substrate的Node节点的配置中是NORMAL_DISPATCH_RATIO * MAXIMUM_BLOCK_WEIGHT = 75% * 2000000000000。建议此值设置高一点。|
-|[network].accounts|是由[suri](https://polkadot.js.org/docs/keyring/start/suri/)或[KeyringPair](https://polkadot.js.org/docs/keyring/start/create/#adding-a-pair)组成的一个列表。accounts 默认为 ["//Alice", "//Bob", "//Charlie", "//Dave", "//Eve", "//Ferdie"]，详情请参见[Runtime-environment](./runtime-environment#%E8%AE%BF%E9%97%AErse)。|
-|[network].endpoint|指明了在当前网络配置中开发者想要连接的节点。当前，只支持 WebSockets 类型的 RPC连接，即只支持 `wss://` 或 `ws://`开头的链接协议。|
-|[network].types|type是Polkadot.js中定义的概念，详情可参见[types.extend](https://polkadot.js.org/docs/api/start/types.extend/)。 您还可以设置[network].typesbundle、[network].typesSpec等。 如果遇到类似于No such variant in enum MultiSignature的错误，您可以在 type 中添加{ Address: "AccountId", LookupSource: "AccountId"}，详情请参见[impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics)。|
-|[network].rpc|和types类似，RPC用来指定polkadot.js的自定义RPC。详情请参见[rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom)。|
+| [network].gasLimit |Used to set the default value of gaslimit that needs to be provided when instantiating or calling a contract through a transaction. This value must be an integer and has no precision. If this value is too small, contracts.`OutOfGas error` will be returned. The maximum gaslimit is the maximum value that this Substrate chain uses for `DispatchClass::Normal` in Runtime. For example, in the configuration of the Node node of Substrate, it is `NORMAL_DISPATCH_RATIO * MAXIMUM_BLOCK_WEIGHT = 75% * 2000000000000`. It is recommended to set this value higher.|
+|[network].accounts|It is a list composed of [suri](https://polkadot.js.org/docs/keyring/start/suri/) or [KeyringPair](https://polkadot.js.org/docs/keyring/start/create/#adding-a-pair). The accounts default is ["//Alice", "//Bob", "//Charlie", "//Dave", "//Eve", "//Ferdie"], please refer to [Runtime-environment](./runtime-environment#%E8%AE%BF%E9%97%AErse) for details.|
+|[network].endpoint|Specifies the node that the developer wants to connect to in the current network configuration. Currently, only WebSockets type RPC connections are supported, that is, only link protocols starting with `wss://` or `ws://` are supported.|
+|[network].types|Type is a concept defined in Polkadot.js, see [types.extend](https://polkadot.js.org/docs/api/start/types.extend/) for details. You can also set [`network].typesbundle`,`[network].typesSpec`, etc. If you encounter an error similar to `No such variant in enum MultiSignature`, you can add`{Address: "AccountId", LookupSource: "AccountId"}`to the type, see [impact-on-extrinsics](https://polkadot.js.org/docs/api/start/types.extend/#impact-on-extrinsics) for details.|
 
-## contract**
+## contract
 
-在contract中，您可以设置编译器的选项，目前支持[ink](https://github.com/paritytech/ink)和[solang](https://github.com/hyperledger-labs/solang)。您也可以将ink合约和solang合约放在同一项目下一起编译，详情可参见[多合约的编译示例](https://github.com/patractlabs/redspot/tree/master/examples/multi-contract )。
+In the contract, you can set the options of the compiler. Currently [ink](https://github.com/paritytech/ink) and [solang ](https://github.com/hyperledger-labs/solang)are supported. You can also compile the ink contract and the solang contract under the same project. For details, please refer to the [multi-contract compilation example](https://github.com/patractlabs/redspot/tree/master/examples/multi-contract ).
 
-| 选项                       | 说明                                                         |
+| Editor Options            | Description                                                  |
 |:----|:----|
-| [contract].ink.toolchain   |设置[cargo-contract](https://github.com/paritytech/cargo-contract)编译合约时，所使用的 toolchain。通常都是nightly。您也可以指定为nightly-YYYY-MM-DD。|
-|[contract].ink.sources|设置编译时查找的ink合约的目录。glob语法。|
-| [contract].solang.sources< | 设置编译时查找的solang合约的目录。glob语法。 |
+|[contract].ink.toolchain|Set the toolchain used when [cargo-contract ](https://github.com/paritytech/cargo-contract) compiles the contract. It’s usually `nightly`. You can also specify `nightly-YYYY-MM-DD`.|
+|[contract].ink.sources|Set the directory of the ink contract to be searched during compilation. glob syntax.|
+| [contract].solang.sources |Set the directory of the solang contract searched during compilation. glob syntax.|
+| [contract].rpc |Similar to types, RPC is used to specify custom RPC for polkadot.js. For details, please refer to [rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom).|
 
 ## Paths
 
-Paths可以设置artifacts和tests文件的目录名。通常情况下，您无需对此进行更改。
+Paths can set the directory name of artifacts and tests files. Normally, you don't need to change this.
 
 ## mocha
 
-Redspot使用mocha作为测试框架，这里的所有选项，都会传递给mocha 。更多详情，请参见[mocha](https://mochajs.org/api/mocha)。
+Redspot uses mocha as the testing framework, and all options here will be passed to mocha. For more details, see [mocha](https://mochajs.org/api/mocha).
 
 
 

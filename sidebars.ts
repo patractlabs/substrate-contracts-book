@@ -59,13 +59,30 @@ module.exports = {
       label: 'Redspot',
       collapsed: true,
       items: [
-        'redspot/introduction',
-        'redspot/tutorial',
-        'redspot/overview',
-        'redspot/configuration',
-        'redspot/tasks',
-        'redspot/runtime-environment',
-        'redspot/console',
+        {
+          type: 'category',
+          label: 'Getting Started',
+          collapsed: false,
+          items: [
+            'redspot/intro/Overview',
+            'redspot/intro/Installation',
+            'redspot/intro/Quick start',
+            'redspot/intro/integrate',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          collapsed: false,
+          items: [
+            'redspot/guides/tasks',
+            'redspot/guides/configuration',
+            'redspot/guides/runtime-environment',
+            'redspot/guides/console',
+            'redspot/guides/docker',
+            'redspot/guides/explorer',
+          ]
+        },
         'redspot/q-and-a',
         {
           type: 'category',
@@ -79,6 +96,14 @@ module.exports = {
             'redspot/plugin/redspot-gas-reporter',
             'redspot/plugin/redspot-patract',
             'redspot/plugin/redspot-explorer'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Advanced',
+          collapsed: false,
+          items: [
+            'redspot/advanced/write-plugins'
           ]
         },
         {
@@ -167,15 +192,13 @@ module.exports = {
       label: 'Metis',
       collapsed: true,
       items: [
-        'metis/introduction',
-        'metis/tokens',
-        'metis/access-control',
+        'metis/introduction',        
         {
           type: 'category',
           label: 'Reports',
           collapsed: true,
           items: [
-            'metis/reports',
+            'metis/reports/reports',
             'metis/reports/M1Report'
           ]
         }
@@ -212,6 +235,7 @@ module.exports = {
         'jupiter/quickstart',
         'jupiter/network',
         'jupiter/contract',
+        'jupiter/xcmp',
       ]
     },
     {

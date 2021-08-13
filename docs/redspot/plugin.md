@@ -1,19 +1,19 @@
-# 插件
+# Plug-in
 
-## 背景信息
+## Background Information
 
-Redspot的核心功能包括Redspot runtime environment、编译合约、运行测试和运行脚本。其他功能，例如与合约的测试套件、合约交互、访问合约、设置不同的链的配置等，都由插件提供，您可以按需选择。引入一个插件的方式很简单，将它作为一个npm的依赖添加，然后在`redspot.config.ts`中加入即可。示例如下。
+The core functions of Redspot include Redspot runtime environment, compiling contracts, running tests and running scripts. Other functions, such as the test suite with the contract, contract interaction, access to the contract, and configuration of different chains, are all provided by the plug-in, and you can choose the plug-ins according to your needs. The way to introduce a plug-in is very simple, add it as a dependency of npm, and then add it in `redspot.config.ts`. The example is as follows.
 
 ```typescript
 import { RedspotUserConfig } from 'redspot/types';
-import '@redspot/patract'; // 引入 @redspot/patract 插件
-import '@redspot/chai'; // 引入 @redspot/chai 插件
+import '@redspot/patract'; // introduce the @redspot/patract plugin
+import '@redspot/chai'; // import @redspot/chai plugin
 export default {
  ...
 } as RedspotUserConfig;
 ```
 
-现在提供的有以下这些插件：
+The following plug-ins are now provided.
 
 * [@redspot/chai](./plugin/redspot-chai)
 * [@redspot/decimals](./plugin/redspot-decimals)
@@ -21,6 +21,4 @@ export default {
 * [@redspot/gas-reporter](./plugin/redspot-gas-reporter)
 * [@redspot/known-types](./plugin/redspot-known-types)
 * [@redspot/patract](./plugin/redspot-patract)
-
-
 

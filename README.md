@@ -14,10 +14,10 @@ $ yarn
 $ yarn start
 ```
 
-or start with translation
+or start with English
 
 ```
-$ yarn start --locale {language}
+$ yarn start --locale en
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
@@ -33,7 +33,7 @@ This command generates static content into the `build` directory and can be serv
 ### Write translations
 
 ```
-$ yarn write-translations --local {language}
+$ yarn write-translations --locale {language}
 ```
 
 This command will generates translations in `i18n/{language}` folder.

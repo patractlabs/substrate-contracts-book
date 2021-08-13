@@ -1,9 +1,10 @@
 # Tasks
 
-## Background Information
+## What are tasks
 
-In the root directory of the Redspot project, execute the following command to view the [tasks](./overview) currently supported by Redspot.
+Every time you run `npx Redspot xxx`, you are running tasks. For example, `npx redspot compile` runs the compilation task. 
 
+To view the tasks currently available by redspot
 ```bash
 npx redspot
 ```
@@ -37,25 +38,56 @@ AVAILABLE TASKS:
 To get help for a specific task run: npx redspot help [task]
 ```
 
-The help information is divided into two parts，GLOBAL OPTIONS and TASKS. Through TASK, you can call Redspot's built-in tasks or custom tasks. For example, execute the `npx redspot compile ` command to run the compile contract command. Usually each task will provide its own parameter configuration. You can view the help information by executing the `npx redspot compile --help` command.
+### Global OPTIONS
 
+*** Defines the global configuration of Redspot runtime. It can be attached to any task. *** 
+
+To specify the connection to the Substrate network (substrate network needs to be configured in config).
+
+```
+npx redspot test --network substrate
+``` 
+To specify the level of the log to be printed, and the log level is 2 by default
+```
+npx redspot test --log-level 3
+```
+
+You can also set GLOBAL OPTIONS through environment variables.
+
+Set the log level: 
+```
+REDSPOT_LOG_LEVEL=5 npx redspot test.
+```
+Set up the network: 
+```
+REDSPOT_NETWORK=substrate npx redspot test.
+```
+
+### Task OPTIONS
+Usually each task will provide its own parameter configuration.
 ```bash
-Redspot version 0.10.1
-Usage: redspot [GLOBAL OPTIONS] compile [...sourcePattern]
+$ npx redspot compile --help
+Redspot version 0.11.4
+
+Usage: redspot [GLOBAL OPTIONS] compile --docker <BOOLEAN> --quiet <BOOLEAN> [...sourcePattern]
+
+OPTIONS:
+
+  --docker	Compiling with docker 
+  --quiet 	Check for document changes 
+
 POSITIONAL ARGUMENTS:
-  sourcePattern        A glob string that is matched against (default: [])
+
+  sourcePattern	A glob string that is matched against (default: [])
+
 compile: Compiles the entire project, building all artifacts
+
 For global options help run: redspot help
+
 ```
 
 For compiling commands, you can pass in the path of the contract to specify the contract that needs to be compiled, for example,`npx redspot compile examples/erc20`.
 
-`GLOBAL OPTIONS ` is the global configuration of Redspot runtime. It can be attached to any task. For example, `npx redspot test --network substrate` will specify the connection to the Substrate network (substrate network needs to be configured in config).`npx redspot test --log-level 3  `will specify the level of the log to be printed, and the log level is 2 by default. You can also set GLOBAL OPTIONS through environment variables.
-
-* Set the log level: `REDSPOT_LOG_LEVEL=5 npx redspot test`.
-* Set up the network: `REDSPOT_NETWORK=substrate npx redspot test`.
-
-Several built-in tasks will be introduced in the future.
 
 ## Compile
 
@@ -115,7 +147,7 @@ Before running the compile command, make sure that Docker is installed on the ma
 $ npx redspot compile
 ```
 
-**Note **When using Docker to compile, it may be affected by the network environment. For example, China requires a VPN proxy, which will cause the compilation time to be too long. If you use`ctrl+c`to exit the current compilation command halfway, the Docker container will not automatically stop deleting.
+**Note** When using Docker to compile, it may be affected by the network environment. For example, China requires a VPN proxy, which will cause the compilation time to be too long. If you use`ctrl+c`to exit the current compilation command halfway, the Docker container will not automatically stop deleting.
 
 Now it will be compiled with Docker by default. If you want to change the default behavior, please add the `--docker false` parameter.
 
