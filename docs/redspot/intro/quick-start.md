@@ -60,7 +60,15 @@ Once the command runs, you will see the following directory tree
 ```
 
 ### Clone an existing project
-You can also clone an existing redspot project. For example, you can clone this [project](https://github.com/atenjin/redspot-ink-example2) 
+You can also clone an **existing redspot** project. For example, you can clone this [project](https://github.com/atenjin/redspot-ink-example2) 
+
+And then, do `yarn` to build the dependencies for Redspot project, then the `npx redspot` command will exist in this project.
+
+```bash
+cd <project>
+yarn
+npx redspot
+```
 
 ### Compile your contract
 Netx, taking a look at `contracts/`, you should find `lib.rs`.This is the sample codes for a erc20 contract written in ***ink!***  with off-chain tests. For details, please refer [ink!](https://substrate.dev/substrate-contracts-workshop/#/0/setup)
