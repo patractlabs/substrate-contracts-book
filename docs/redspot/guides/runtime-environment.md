@@ -8,7 +8,7 @@ Env has the following attributes.
 
 ```typescript
 RuntimeEnvironment {
-                config; // the user's configuration file 
+    config; // the user's configuration file 
     redspotArguments; // global arguments to run the command, including network , logLevel, etc.
     run; // function to run the command
     network; // Contains attributes such as api , keyring etc.
@@ -16,7 +16,7 @@ RuntimeEnvironment {
 }
 ```
 
-In the Redspot console, these properties of env will be injected into global variables, and you can directly access them.
+In the Redspot console, these properties of env will be injected as global variable which you can directly access them.
 
 ```bash
 > network.name
@@ -31,7 +31,7 @@ import { config, redspotArguments, run, network, artifacts } from 'redspot';
 
 ## Extending RSE
 
-You can extend RSE through some plug-ins and add some additional properties or methods to RSE. For example, the `@redspot/patract` plugin extends RSE and provides examples of patract. When the patract plugin is introduced, you can access the patract instance in the following way.
+You can extend RSE through some plug-ins and add some additional properties or methods to RSE. For example, the `@redspot/patract` plugin extends RSE and provides examples of patract. When a patract plugin is imported, you can access the patract instance in the following way.
 
 ```typescript
 import { patract } from 'redspot';
@@ -72,7 +72,7 @@ Global parameters of the currently running command.
 
 ### run
 
-Through the run function, you can call tasks in `.js` or`.ts` files.
+Through the run function, you can call tasks ending `.js` or`.ts` from your script.
 
 ```typescript
 import { run } from 'redspot';
@@ -80,7 +80,7 @@ run('test'); // run the test command
 run('test', { testFiles: './tests/erc20.test.ts' }); // pass in parameters
 ```
 
-### Network
+### network
 
 Network contains the information about the network you are currently running. API keyring, signer and other information can be obtained through Network. The type of Network is defined as follows.
 
@@ -149,7 +149,7 @@ const signer = network.createSigner(pair);
 * network.gasLimit :It comes from gaslimt in config and is parsed into bn type.
 ### artifacts
 
-Through artifacts, you can access and manage Abi. Its type is defined as follows.
+Through `artifacts`, you can access and manage Abi. Here are the properties of `artifacts`:
 
 ```typescript
 export interface Artifacts {
@@ -180,7 +180,7 @@ export interface Artifacts {
 
 * artifacts.readArtifact
 
-Get the metadata of the contract through the contract name, and it will return a Json object. The Wasm is the Wasm file compiled from the contract.
+Get the metadata of the contract through the contract name, and it will return a Json object containing compiled wasm code and abi.
 
 ```typescript
 {

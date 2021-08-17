@@ -1,14 +1,20 @@
 # @redspot_patract plug-in
 
-## Background Information
+## What
 
-@redspot/patract is similar to @polkadot/contract, used to access contracts, send transactions, etc. But @redspot/patract's API is easier to use. The plug-in will extend the Redspot runtime environment and add the patract attribute, so you can access the patract instance.
+@redspot/patract is similar to @polkadot/contract, used to access contracts, send transactions, etc but designed to be easier to use. The plug-in will extend the Redspot runtime environment and add the patract attributes, so you can access the patract instance in runtime environment.
 
+
+## Installation
+```
+$ yarn add @redspot/patract
+```
+Add this to your `redspot.config.ts`:
 ```typescript
 import { patract } from 'redspot';
 ```
 
-## Type definition of patract
+## Type definitions
 
 ```typescript
 interface Patract {
@@ -52,7 +58,7 @@ interface Patract {
 }
 ```
 
-The parameter description is as follows.
+Here is the description of each parameter:
 
 | Parameter                                                    | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -60,7 +66,8 @@ The parameter description is as follows.
 | `getContractFactory(contractName, signer?): Promise<ContractFactory>` | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 | `getContractAt(contractName, address, signer): Promise<Contract>` | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 
-## ContractFactory
+## Usages
+### ContractFactory
 
 ContractFactory is mainly used for contract deployment.
 
@@ -107,7 +114,7 @@ value refers to the amount passed to the contract to be created.
 * `contractFactory.attach(address)：Contract`:Use the specified contract address to generate Contract instances.
 * `contractFactory.connect(signer)：contractFactory`：use the specified signer to create a new contractFactory instance.
 
-**Contract**
+### Contract
 
 * `new Contract(address, contractMetadata, api, signer)`：Create a contractFactory instance through the contract address, contract metadata, API and signer.
 * `contract.query.MessageName(...args[, overrides])`：Similar to Polkadot.js, contract.query[MessageName] can call contracts.callrpc. For example, in the erc20 contract, the account balance is obtained.
@@ -151,7 +158,7 @@ const result = await contract.tx.transfer(someddress, 7);
 
 Unlike Polkadot.js, this function returns a promise. The resolve of the promise will not be called until the transaction is on the chain or the transaction execution error occurs.
 
-The return value types are as follows.
+The return value types are:
 
 ```typescript
 export interface TransactionResponse {

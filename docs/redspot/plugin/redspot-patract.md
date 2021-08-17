@@ -1,13 +1,20 @@
-# @redspot_patract插件
+# @redspot_patract plug-in
 
-## 背景信息
+## What
 
-@redspot/patract和@polkadot/contract类似，用于访问合约、发送交易等。但@redspot/patract 的 API更易于使用。该插件会扩展Redspot runtime environment ，并添加patract属性，您可以这样访问 patract实例。
+@redspot/patract is similar to @polkadot/contract, used to access contracts, send transactions, etc but designed to be easier to use. The plug-in will extend the Redspot runtime environment and add the patract attributes, so you can access the patract instance in runtime environment.
 
+
+## Installation
+```
+$ yarn add @redspot/patract
+```
+Add this to your `redspot.config.ts`:
 ```typescript
 import { patract } from 'redspot';
 ```
-## patract的类型定义
+
+## Type definitions
 
 ```typescript
 interface Patract {
@@ -51,17 +58,18 @@ interface Patract {
 }
 ```
 
-参数说明如下。
+Here is the description of each parameter:
 
-| 参数                                                         | 说明                                                         |
+| Parameter                                                    | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
-| `getRandomSigner(from, amount): Promise<Signer>`               | getRandomSigner是一个工具函数，用于创建生成随机的signer，并从 from传递一些初始的金额给它。 |
-| `getContractFactory(contractName, signer?): Promise<ContractFactory>` | 该函数将通过合约名和signer ，创建一个contractFactory 的实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
-| `getContractAt(contractName, address, signer): Promise<Contract>` | 通过合约名、合约地址和 signer，创建一个Contract实例。合约必须已编译成功，且能够在artifacts找到对于的metadata文件。 |
+| `getRandomSigner(from, amount): Promise<Signer>`               | getRandomSigner is a utility function used to create a random signer and pass some initial amount fromfromto it. |
+| `getContractFactory(contractName, signer?): Promise<ContractFactory>` | This function will create an instance of contractFactory through the contract name and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
+| `getContractAt(contractName, address, signer): Promise<Contract>` | Create a Contract instance through the contract name, contract address, and signer.The contract must be compiled successfully, and the metadata file can be found in artifacts. |
 
-## ContractFactory
+## Usages
+### ContractFactory
 
-ContractFactory 主要用于合约的部署。
+ContractFactory is mainly used for contract deployment.
 
 ```typescript
 import { patract } from 'redspot';
@@ -71,16 +79,15 @@ const contractFactory = await getContractFactory('erc20', signers[0]);
 const contract = await contractFactory.deploy('new', '1000');
 ```
 
-* `new ContractFactory(address, contractMetadata, api, signer)`：通过合约地址、metadata、API 和signer创建一个contractFactory 实例。
-* `contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：constructorOrId 是需要调用的合约的contructor的名字，注意对于一些使用了`trait`的合约，contructor的名字类似如下。
-
+* `new ContractFactory(address, contractMetadata, api, signer)`：you can create a contractFactory instance by contract address, metadata, API and signer.
+* `contractFactory.deploy(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：constructorOrId is the name of the constructor of the contract that needs to be called. Note that for some contracts that use traits, the name of the constructor is similar to the following.
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000');
 ```
 
-args是您所使用的contructor需要传入参数列表。
+args is the list of parameters that the contructor you use needs to pass in.
 
-overrides是可选项，可以用于指定gasLimit、value、signer、salt等。
+Overrides are optional and can be used to specify gasLimit, value, signer, salt, etc.
 
 ```typescript
 const contract = await contractFactory.deploy('baseErc20,new', '1000', {
@@ -91,30 +98,31 @@ const contract = await contractFactory.deploy('baseErc20,new', '1000', {
 });
 ```
 
-gasLimit指这次交易能够使用的最大的gas值。
+gasLimit refers to the maximum gas value that can be used in this transaction.
 
-salt用于合约的地址的生成。部署人、部署参数和salt一致的话，将会生成同一个合约地址。
+The salt is used to generate the address of the contract. If the deployer, deployment parameters and salt are the same, the same contract address will be generated.
 
-signer创建contractFactory时，会有一个signer参数，用于默认的交易签名。 signer项目可以覆盖默认的签名账户。
+When the signer creates a contractFactory, there will be a signer parameter, which is used for the default transaction signature. The signer project can override the default signing account.
 
-value指传递给即将创建的合约的金额。
+value refers to the amount passed to the contract to be created.
 
-**注意** `@redspot/patract`插件不会处理数字金额精度，需要您自行处理。
+**Note** The @redspot/patract plugin will not handle the accuracy of the digital amount, you need to handle it yourself.
 
-* `contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：该方法和`contractFactory.deploy`类似，唯一的区别是`deployed`会预先检查即将生成的合约地址是否存在，如果存在，那么不会去尝试部署，而是直接使用该合约地址创建Contract实例。
-* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：如果Wasm已上传到链上，您可以直接调用`contractFactory.instantiate`实例化合约。它的参数与`deploy`一致，但返回的是合约地址。
-* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：如果Wasm已上传到链上，您可以直接调用`contractFactory.instantiate`实例化合约。它的参数与`deploy`一致，但返回的是合约地址。
-* `contractFactory.attach(address)：Contract`:使用指定的合约地址生成`Contract`实例。
-* `contractFactory.connect(signer)：contractFactory`：使用指定的signer，创建一个新的contractFactory 实例。
-## Contract
+* `contractFactory.deployed(constructorOrId, ...args[ , overrides ]): Promise<Contract>`：This method is similar to contractFactory.deploy, the only difference is that deployed will check in advance whether the address of the contract to be generated exists, if it exists, then Will not try to deploy, but directly use the contract address to create a Contract instance.
+* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：If Wasm has been uploaded to the chain, you can directly call`contractFactory.instantiate`to instantiate the contract. Its parameters are the same as deploy, but it returns the contract address.
+* `contractFactory.instantiate(constructorOrId, ...args[ , overrides ]): Promise<ContractAddress>`：If Wasm has been uploaded to the chain, you can directly call`contractFactory.instantiate`to instantiate the contract. Its parameters are the same as deploy, but it returns the contract address.
+* `contractFactory.attach(address)：Contract`:Use the specified contract address to generate Contract instances.
+* `contractFactory.connect(signer)：contractFactory`：use the specified signer to create a new contractFactory instance.
 
-* `new Contract(address, contractMetadata, api, signer)`：通过合约地址、合约的 metadata、API和signer创建一个contractFactory实例。
-* `contract.query.MessageName(...args[, overrides])`：与Polkadot.js中类似， contract.query[MessageName] 能够调用`contracts.call`rpc。例如在erc20合约中，获取账户余额。
+### Contract
+
+* `new Contract(address, contractMetadata, api, signer)`：Create a contractFactory instance through the contract address, contract metadata, API and signer.
+* `contract.query.MessageName(...args[, overrides])`：Similar to Polkadot.js, contract.query[MessageName] can call contracts.callrpc. For example, in the erc20 contract, the account balance is obtained.
 ```typescript
 const result = await contract.query.balanceOf(someaddress);
 ```
 
-返回值的类型如下。
+The type of return value is as follows.
 
 ```typescript
 export interface ContractCallOutcome {
@@ -125,7 +133,7 @@ export interface ContractCallOutcome {
 }
 ```
 
-它和Polkadot.js api-contract中是一致。overrides是可选项，可以用于指定gasLimit、value 等。
+It is consistent with Polkadot.js api-contract. Overrides are optional and can be used to specify gasLimit, value, etc.
 
 ```typescript
 const contract = await contract.query.balanceOf('baseErc20,new', '1000', {
@@ -135,22 +143,22 @@ const contract = await contract.query.balanceOf('baseErc20,new', '1000', {
 });
 ```
 
-gasLimit value指的是`contracts.call`RPC 中的gasLimit和value 。signer可以指定`contracts.call`的origin地址。
+The gasLimit value refers to the gasLimit and value in contracts.call RPC. The signer can specify the origin address of contracts.call.
 
-* `contract.estimateGas.MessageName(...args[, overrides])`：该函数与`contract.query.MessageName`类似，但返回值是预估将要消耗的gas。
-    ```typescript
-    const result = await contract.estimateGas.balanceOf(someaddress);
-    result; // BN(232130000000)
-    ```
+* `contract.estimateGas.MessageName(...args[, overrides])`：This function is similar to`contract.query.MessageName`, but the return value is the estimated gas that will be consumed.
+```typescript
+const result = await contract.estimateGas.balanceOf(someaddress);
+result; // BN(232130000000)
+```
 
-* `contract.tx.MessageName(...args[,overrides])`：通过`contract.tx.MessageName`可以执行合约的交易，示例如下。
-    ```typescript
-    const result = await contract.tx.transfer(someddress, 7);
-    ```
+* `contract.tx.MessageName(...args[,overrides])`：Contract transactions can be executed through`contract.tx.MessageName`, the example is as follows.
+```typescript
+const result = await contract.tx.transfer(someddress, 7);
+```
 
-和Polkadot.js不同，该函数会返回一个promise 。等到交易上链，或交易执行出错后该promise的resolve才会被调用。
+Unlike Polkadot.js, this function returns a promise. The resolve of the promise will not be called until the transaction is on the chain or the transaction execution error occurs.
 
-返回值类型如下。
+The return value types are:
 
 ```typescript
 export interface TransactionResponse {
@@ -171,9 +179,9 @@ export interface DecodedEvent {
 }
 ```
 
-您可以直接通过`result.events`获取已解析的合约的事件。如果执行出错，您可以通过`result.error.message`获取错误信息。
+You can get the parsed contract events directly through`result.events`. If there is an error in execution, you can get the error message through`result.error.message`.
 
-overrides是可选项，可以用于指定gasLimit、value、signer 等。
+Overrides are optional and can be used to specify gasLimit, value, signer, etc.
 
 ```typescript
 const contract = await contract.tx.transfer(someddress, 7, {
@@ -183,13 +191,12 @@ const contract = await contract.tx.transfer(someddress, 7, {
 });
 ```
 
-| 参数     | 说明                          |
+| Parameter | Description                                                |
 |:----|:----|
-|gasLimit|这次交易能够使用的最大的gas值|
-|value|传递给即将创建的合约的金额|
-|signer|用于覆盖默认的signer|
+|gasLimit|The maximum gas value that can be used in this transaction|
+|value|Amount passed to the contract to be created|
+|signer|Used to override the default signer|
 
 
-* `contract.attach(address)：Contract`：使用指定的合约地址生成Contract实例。
-* `contract.connect(signer)：Contract`：使用指定的signer，创建一个新的Contract 实例
-
+* `contract.attach(address)：Contract`：Use the specified contract address to generate a Contract instance.
+* `contract.connect(signer)：Contract`：Use the specified signer to create a new Contract instance.

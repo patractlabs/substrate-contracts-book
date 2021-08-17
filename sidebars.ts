@@ -59,20 +59,37 @@ module.exports = {
       label: 'Redspot',
       collapsed: true,
       items: [
-        'redspot/introduction',
-        'redspot/tutorial',
-        'redspot/overview',
-        'redspot/configuration',
-        'redspot/tasks',
-        'redspot/runtime-environment',
-        'redspot/console',
+        {
+          type: 'category',
+          label: 'Getting Started',
+          collapsed: false,
+          items: [
+            'redspot/intro/overview',
+            'redspot/intro/installation',
+            'redspot/intro/quick-start',
+            'redspot/intro/integrate',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          collapsed: false,
+          items: [
+            'redspot/guides/tasks',
+            'redspot/guides/configuration',
+            'redspot/guides/runtime-environment',
+            'redspot/guides/console',
+            'redspot/guides/docker',
+            'redspot/guides/explorer',
+          ]
+        },
         'redspot/q-and-a',
         {
           type: 'category',
           label: 'Plugin',
           collapsed: true,
           items: [
-            'redspot/plugin',
+            'redspot/plugin/plugin',
             'redspot/plugin/redspot-decimals',
             'redspot/plugin/redspot-known-types',
             'redspot/plugin/redspot-chai',
@@ -83,11 +100,20 @@ module.exports = {
         },
         {
           type: 'category',
+          label: 'Advanced',
+          collapsed: true,
+          items: [
+            'redspot/advanced/write-plugins',
+            'redspot/advanced/multi-contract-compilation'
+          ]
+        },
+        {
+          type: 'category',
           label: 'Reports',
           collapsed: true,
-          collapsible: false,
+          collapsible: true,
           items: [
-            'redspot/reports',
+            'redspot/reports/reports',
             'redspot/reports/v0.1Report',
             'redspot/reports/v0.2Report',
             'redspot/reports/v0.3Report',
