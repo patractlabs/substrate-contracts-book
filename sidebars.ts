@@ -64,8 +64,8 @@ module.exports = {
           label: 'Getting Started',
           collapsed: false,
           items: [
-            'redspot/intro/Overview',
-            'redspot/intro/Installation',
+            'redspot/intro/overview',
+            'redspot/intro/installation',
             'redspot/intro/quick-start',
             'redspot/intro/integrate',
           ]

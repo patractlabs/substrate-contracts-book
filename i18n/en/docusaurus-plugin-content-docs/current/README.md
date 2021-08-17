@@ -26,8 +26,8 @@ slug: /
     - [basic](./ask/basics.md)
 - [Solang](./solang/introduction.md)
 - [Redspot](./redspot/intro/Overview.md)
-    - [Redsopt 教程](./redspot/intro/Overview.md)
-        - [Setup Environment](./redspot/intro/Installation.md)
+    - [Redsopt 教程](./redspot/intro/overview.md)
+        - [Setup Environment](./redspot/intro/installation.md)
         - [Quick Start](./redspot/intro/quick-start.md)
         - [Integrate into an existing contract project](./redspot/intro/integrate.md)
 
