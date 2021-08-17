@@ -7,7 +7,7 @@ Redspot also comes with explorer based on @polkadot/apps with lots of modificati
 ### Features
 1. Redesigned the layout and menu with more highlight on the contract module; Improved the night mode of polkadot apps, adjusted the UI, and adjusted the color scheme; Delete pages that are irrelevant for contract development. Merged the tools page.
 
-![img](https://i.imgur.com/NS58LA9.png)
+  ![img](https://i.imgur.com/NS58LA9.png)
 
 2. The explorer will use the network configured in redspot config, so users do not have to configure themself..
 3. The account configured in the redspot config will appear in the explorer and can be used the same way as the accounts created on the webpage.
@@ -30,7 +30,9 @@ $ yarn add @redspot/explorer
 Then add below in `redspot.config.ts`：
 
 ```javascript
-...import "@redspot/explorer";...
+// ...
+import "@redspot/explorer";
+// ...
 ```
 
 ### Quick start

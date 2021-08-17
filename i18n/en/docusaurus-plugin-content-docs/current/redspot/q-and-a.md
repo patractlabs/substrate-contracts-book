@@ -116,7 +116,7 @@ contract.tx.transfer(receiver.address, 7))
 contract.tx["baseErc20,transfer"](receiver.address, 7))
 ```
 
-### How to ensure the security of the online private key and avoid uploading to Github?
+## How to ensure the security of the online private key and avoid uploading to Github?
 
 You can use environment variables to configure account, as shown in the example below.
 

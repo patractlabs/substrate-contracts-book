@@ -8,7 +8,7 @@ Env has the following attributes.
 
 ```typescript
 RuntimeEnvironment {
-                config; // the user's configuration file 
+    config; // the user's configuration file 
     redspotArguments; // global arguments to run the command, including network , logLevel, etc.
     run; // function to run the command
     network; // Contains attributes such as api , keyring etc.
