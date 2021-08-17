@@ -6,7 +6,7 @@ The report represents the work results of the Patract team this time, and it is 
 
 The current Redspot proposal report has the following content:
 
-- [v0.1Report](./reports/v0.1Report.md)
-- [v0.2Report](./reports/v0.2Report.md)
-- [v0.3Report](./reports/v0.3Report.md)
-- [v0.4Report](./reports/v0.4Report.md)
+- [v0.1Report](./v0.1Report.md)
+- [v0.2Report](./v0.2Report.md)
+- [v0.3Report](./v0.3Report.md)
+- [v0.4Report](./v0.4Report.md)

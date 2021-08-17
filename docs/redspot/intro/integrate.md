@@ -1,140 +1,198 @@
 # Integrate into an existing contract project
 
-Redspot can be easily integrated into existing contract projects. Let's take the contract in the examples directory in the official [ ink](https://github.com/paritytech/ink) repository as an example.
+Redspot can be easily integrated into existing contract projects. We can use `cargo contract` to initiate an ink! contract and wraps it with Redspot. 
 
 ## Setup your project
-Clone the ink warehouse and open the ink directory.
- ```bash
-    git clone https://github.com/paritytech/ink.git
-    cd ink
+First, create a new directory
+```
+mkdir redspot-tutorial
+cd redspot-tutorial
 ```
 
+```
+cargo contract new erc20
+```
+This command will create a new project folder named `erc20` with this content:
+
+```bash
+`erc20`
+  └─ lib.rs                <-- Contract Source Code
+  └─ Cargo.toml            <-- Rust Dependencies and ink! Configuration
+  └─ .gitignore
+```
+Follow the ink official [instruction](https://substrate.dev/substrate-contracts-workshop/#/2/create-erc20) to complete writing contract. If you have already completed the tutorial, you can copy the contract source code [here](https://github.com/atenjin/redspot-ink-example2/tree/master/contracts/erc20)
+
 ## Write configs
-Create the following three files in the root directory of ink.
+Create the following three files in the directory `redspot-tutorial`
+
 * **redspot.config.ts**
     ```typescript
-    import { RedspotUserConfig } from 'redspot/types';
-    import '@redspot/patract'; // import @redspot/patract plugin
-    import '@redspot/chai'; // import @redspot/chai plugin
-    export default {
-      defaultNetwork: 'development', // default network
-      contract: {
-        ink: {
-          toolchain: 'nightly',      // specify the toolchain version for contract compliation
-          sources: ['examples/**/*'] // the directory where contracts locate
-        }
+  import { RedspotUserConfig } from "redspot/types";
+  import "@redspot/patract";
+  import "@redspot/chai";
+  import "@redspot/gas-reporter";
+  import "@redspot/known-types";
+  import "@redspot/watcher";
+  import "@redspot/explorer";
+  import "@redspot/decimals";
+
+  export default {
+    defaultNetwork: "development",
+    contract: {
+      ink: {
+        docker: false,
+        toolchain: "nightly",
+        sources: ["contracts/**/*"],
       },
-      networks: {
-        // development network configuration
-        development: {
-          endpoint: 'ws://127.0.0.1:9944',
-          types: {},
-          gasLimit: '400000000000', // default gasLimit
-          explorerUrl:
-            'https://polkadot.js.org/apps/#/explorer/query/?rpc=ws://127.0.0.1:9944/'
-        },
+    },
+    networks: {
+      development: {
+        endpoint: "ws://127.0.0.1:9944",
+        gasLimit: "400000000000",
+        types: {},
       },
-      mocha: {
-        timeout: 60000
-      }
-    } as RedspotUserConfig;
+      jupiter: {
+        endpoint: "wss://jupiter-poa.elara.patract.io",
+        gasLimit: "400000000000",
+        accounts: ["//Alice"],
+        types: {},
+      },
+    },
+    mocha: {
+      timeout: 60000,
+    },
+    docker: {
+      sudo: false,
+      runTestnet:
+        "docker run -p 9944:9944 --rm redspot/contract /bin/bash -c 'canvas --rpc-cors all --tmp --dev --ws-port=9944 --ws-external'",
+    },
+  } as RedspotUserConfig;
     ```
 
 * **package.json**
-    ```json
-    {
-      "name": "examples",
-      "version": "0.1.0",
-      "private": true,
-      "resolutions": {
-        "@polkadot/api": "^3.10.2",
-        "@polkadot/api-contract": "^3.10.2"
-      },
-      "dependencies": {
-        "@redspot/chai": "^0.10.1",
-        "@redspot/patract": "^0.10.1",
+```json
+  {
+    "name": "redspot-tutorial",
+    "version": "0.0.0",
+    "private": true,
+    "engines": {
+        "node": ">=14.x"
+    },
+    "resolutions": {
+        "@polkadot/api": "4.11.2",
+        "@polkadot/api-contract": "4.11.2",
+        "@polkadot/types": "4.11.2",
+        "@polkadot/util": "6.11.1",
+        "typescript": "4.2.4"
+    },
+    "dependencies": {
+        "@redspot/chai": "^0.11.4",
+        "@redspot/decimals": "^0.11.4",
+        "@redspot/explorer": "^0.11.8",
+        "@redspot/gas-reporter": "^0.11.4",
+        "@redspot/known-types": "^0.11.8",
+        "@redspot/patract": "^0.11.4",
+        "@redspot/watcher": "^0.11.4",
         "@types/chai": "^4.2.14",
         "@types/mocha": "^8.0.3",
         "chai": "^4.2.0",
-        "redspot": "^0.10.1",
-        "typescript": "^4.0.2"
-      },
-      "scripts": {
+        "redspot": "^0.11.4",
+        "ts-node": "^10.0.0",
+        "typescript": "^4.2.4"
+    },
+    "module": "true",
+    "scripts": {
         "build": "npx redspot compile",
         "test": "npx redspot test"
-      }
     }
-    ```
+  }
+```
 
 * **tsconfig.json**
-    ```json
-    {
-      "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "strict": true,
-        "esModuleInterop": true,
-        "outDir": "dist",
-        "noImplicitAny": false
-      },
-      "include": [
-        "**/*.ts"
-      ],
-      "exclude": [
-        "node_modules"
-      ],
-      "files": [
-        "./redspot.config.ts",
-      ]
-    }
-    ```
+```json
+  {
+    "compilerOptions": {
+      "target": "es5",
+      "module": "commonjs",
+      "strict": true,
+      "esModuleInterop": true,
+      "outDir": "dist",
+      "noImplicitAny": false
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules"],
+    "files": ["./redspot.config.ts"]
+  }
+```
 
 ## Install npm dependencies. 
 It is recommended that you use [yarn](https://classic.yarnpkg.com/en/docs/install) as the package manager.
-    ```bash
-    yarn or npm install
-    ```
+
+```bash
+yarn or npm install
+```
 
 ## Compile your project
 Run the `npx redspot compile` command in the root directory of the project to compile all contracts in the examples directory.
-    ```bash
-    npx redspot compile examples/erc20
-    ```
 
-This command will specify to compile the erc20 contract. After the compilation is complete, you can find the information generated by the compilation in the artifacts directory.
+```bash
+npx redspot compile erc20
+```
+
+This command will specify to compile the erc20 contract. After the compilation is complete, you can find the information generated by the compilation in the `artifacts` directory.
 
 ## Deploy contract
 
 Now you can run a deployment script through Redspot.
 
-1. Create a deploy.ts file in the root directory of ink.
-    ```typescript
-    import { network, patract } from "redspot";
-    const { getContractFactory } = patract;
-    const { getSigners, api } = network;
-    async function run() {
-        console.log("deploy erc20");
-        await api.isReady;
-        console.log("deploy erc201");
-        const signers = await getSigners();
-        const signer = signers[0];
-        const contractFactory = await getContractFactory("erc20", signer);
-        const contract = await contractFactory.deploy("new", "1000000", {
-            gasLimit: "200000000000",
-            value: "10000000000000000",
-        });
-        console.log(
-            "Deploy successfully. The contract address: ",
-            contract.address.toString()
-        );
-        api.disconnect();
-    }
-    run().catch((err) => {
-        console.log(err);
-    });
-    ```
+### Write deploy script
+Create a new directory called `scripts`
+  
+  Create a `deploy.ts` file in the root directory of ink.
+```typescript
+  import { patract, network } from "redspot";
 
-2. Make sure that the network has been configured correctly in redspot.config.ts.
+  const { getContractFactory } = patract;
+  const { createSigner, keyring, api } = network;
+
+  async function run() {
+    await api.isReady;
+
+    // The redspot signer supports passing in an address. If you want to use  substrate uri, you can do it like this:
+    // const signer = createSigner(keyring.createFromUri("bottom drive obey lake curtain smoke basket hold race lonely fit walk//Alice"));
+    // Or get the configured account from redspot config:
+    // const signer = (await getSigners())[0]
+    const signer = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY"; // Alice Address
+
+    const contractFactory = await getContractFactory("erc20", signer);
+
+    const balance = await api.query.system.account(signer);
+
+    console.log("Balance: ", balance.toHuman());
+
+    // The `deploy` method will attempt to deploy a new contract.
+    // The `deployed` method will first find out if the same contract already exists based on the parameters.
+    // If the contract exists, it will be returned, otherwise a new contract will be created.
+    const contract = await contractFactory.deploy("new", "1000000", {
+      gasLimit: "400000000000",
+      value: "10000 UNIT",
+    });
+
+    console.log("");
+    console.log(
+      "Deploy successfully. The contract address: ",
+      contract.address.toString()
+    );
+
+    api.disconnect();
+  }
+
+  run().catch((err) => {
+    console.log(err);
+  });
+```
+### config test blockchain node
+Make sure that the network desinated to deploy has been configured correctly in redspot.config.ts.
     ```typescript
     {
             ...
@@ -148,68 +206,91 @@ Now you can run a deployment script through Redspot.
     }
     ```
 
-3. Add`--no-compile`to prevent repeated compilation and run the deploy.ts file.
-    ```plain
-    npx redspot run ./deploy.ts --no-compile
-    ```
-
-## Result verification
-
+Add`--no-compile`to prevent repeated compilation and run the deploy.ts file.
+```bash
+npx redspot run scripts/deploy.ts --no-compile
+```
+### run compile
 After the contract is successfully deployed, you can get information similar to this.
-
-    Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
+```
+Deploy successfully. The contract address:  5CqB5Mh9UdVbTE1Gt5PJfWSiCHydJaJsA31HjKGti1Z2fn78
+```
 
 ## Test contract
 
-Add the erc20.test.ts file in the tests directory to test the erc20 contract.
+Create a new directory called `tests`
+
+Add the erc20.test.ts file in the `tests` directory to test the erc20 contract.
 
 ```typescript
-import BN from 'bn.js';
-import { expect } from 'chai';
-import { patract, network, artifacts } from 'redspot';
+import { expect } from "chai";
+import { artifacts, network, patract } from "redspot";
+
 const { getContractFactory, getRandomSigner } = patract;
-const { api, getSigners } = network;
-describe('ERC20', () => {
+
+const { api, getAddresses, getSigners } = network;
+
+describe("ERC20", () => {
   after(() => {
     return api.disconnect();
   });
+
   async function setup() {
-    const one = new BN(10).pow(new BN(api.registry.chainDecimals[0]));
-    const signers = await getSigners();
-    const Alice = signers[0];
-    const sender = Alice;
-    const contractFactory = await getContractFactory('erc20', sender);
-    const contract = await contractFactory.deploy('new', '1000');
-    const abi = artifacts.readArtifact('erc20');
+    await api.isReady
+    const signerAddresses = await getAddresses();
+    const Alice = signerAddresses[0];
+    const sender = await getRandomSigner(Alice, "10000 UNIT");
+    const contractFactory = await getContractFactory("erc20", sender.address);
+    const contract = await contractFactory.deploy("new", "1000");
+    const abi = artifacts.readArtifact("erc20");
     const receiver = await getRandomSigner();
-    return { sender, contractFactory, contract, abi, receiver, Alice, one };
+
+    return { sender, contractFactory, contract, abi, receiver, Alice };
   }
-  it('Assigns initial balance', async () => {
+
+  it("Assigns initial balance", async () => {
     const { contract, sender } = await setup();
     const result = await contract.query.balanceOf(sender.address);
     expect(result.output).to.equal(1000);
   });
-  it('Transfer emits event', async () => {
+
+  it("Transfer adds amount to destination account", async () => {
+    const { contract, receiver } = await setup();
+
+    await expect(() =>
+      contract.tx.transfer(receiver.address, 7)
+    ).to.changeTokenBalance(contract, receiver, 7);
+
+    await expect(() =>
+      contract.tx.transfer(receiver.address, 7)
+    ).to.changeTokenBalances(contract, [contract.signer, receiver], [-7, 7]);
+  });
+
+  it("Transfer emits event", async () => {
     const { contract, sender, receiver } = await setup();
+
     await expect(contract.tx.transfer(receiver.address, 7))
-      .to.emit(contract, 'Transfer')
+      .to.emit(contract, "Transfer")
       .withArgs(sender.address, receiver.address, 7);
   });
-  it('Can not transfer above the amount', async () => {
+
+  it("Can not transfer above the amount", async () => {
     const { contract, receiver } = await setup();
+
     await expect(contract.tx.transfer(receiver.address, 1007)).to.not.emit(
       contract,
-      'Transfer'
+      "Transfer"
     );
   });
-  it('Can not transfer from empty account', async () => {
-    const { contract, Alice, one, sender } = await setup();
-    const emptyAccount = await getRandomSigner(Alice, one.muln(10000));
+
+  it("Can not transfer from empty account", async () => {
+    const { contract, Alice, sender } = await setup();
+
+    const emptyAccount = await getRandomSigner(Alice, "10 UNIT");
+
     await expect(
-      contract.tx.transfer(sender.address, 7, {
-        signer: emptyAccount
-      })
-    ).to.not.emit(contract, 'Transfer');
+      contract.connect(emptyAccount).tx.transfer(sender.address, 7)
+    ).to.not.emit(contract, "Transfer");
   });
 });
 ```
@@ -218,11 +299,4 @@ Run the test command.
 
 ```bash
 npx redspot test --no-compile
-```
-
-You will get results similar to the following.
-
-```bash
-✓ Can not transfer from empty account (17912ms)
-  4 passing (46s)
 ```

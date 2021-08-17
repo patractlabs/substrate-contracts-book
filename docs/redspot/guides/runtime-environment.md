@@ -80,7 +80,7 @@ run('test'); // run the test command
 run('test', { testFiles: './tests/erc20.test.ts' }); // pass in parameters
 ```
 
-### Network
+### network
 
 Network contains the information about the network you are currently running. API keyring, signer and other information can be obtained through Network. The type of Network is defined as follows.
 

@@ -55,7 +55,7 @@ You can also set GLOBAL OPTIONS through environment variables.
 
 Set the log level: 
 ```
-REDSPOT_LOG_LEVEL=5 npx redspot test.
+REDSPOT_LOG_LEVEL=5 npx redspot test
 ```
 Set up the network: 
 ```

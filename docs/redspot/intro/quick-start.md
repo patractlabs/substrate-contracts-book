@@ -1,7 +1,7 @@
-## Quick start
+# Quick Start
 This guide will cover the basics of creating a Redspot project. The barebone without plugins allows you to run tasks, compile wasm contract and run tests automatically.
 
-### Running Tasks
+## Running Tasks
 To get a quick a look of what's availabe in redspot, run `npx redspot` in your project directory:
 ```bash
 $ npx redspot
@@ -37,7 +37,9 @@ To get help for a specific task run: npx redspot help [task]
 
 ```
 
-### To create your first Redspot project:
+## Create your first Redspot project:
+
+### Use Redspot template 
 Redspot provide built-in contract templates to help developers start coding their own wasm contract without knowing all details of Redspot.
 To start a Redspot project for erc20
 ```
@@ -56,6 +58,9 @@ Once the command runs, you will see the following directory tree
 +-- redspot.config.ts
 +-- package.json
 ```
+
+### Clone an existing project
+You can also clone an existing redspot project. For example, you can clone this [project](https://github.com/atenjin/redspot-ink-example2) 
 
 ### Compile your contract
 Netx, taking a look at `contracts/`, you should find `lib.rs`.This is the sample codes for a erc20 contract written in ***ink!***  with off-chain tests. For details, please refer [ink!](https://substrate.dev/substrate-contracts-workshop/#/0/setup)

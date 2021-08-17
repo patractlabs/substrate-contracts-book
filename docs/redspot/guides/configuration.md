@@ -2,6 +2,8 @@
 
 When running `npx redspot` command, it will search for the closest `redspot.config.ts` file from the current working directory, which is usually located in the root directory of the project. This file contains configuration for the entire Redspot, such as configuration, plug-ins, and custom tasks.
 
+The entirety of your Redspot setup such tasks, plugins, network and other configs is configured through this file.
+
 ## Configuration options
 
 To set the configuration, you need to export the object from `redspot.config.ts`.
@@ -93,7 +95,7 @@ In the contract, you can set the options of the compiler. Currently [ink](https:
 | [contract].solang.sources |Set the directory of the solang contract searched during compilation. glob syntax.|
 | [contract].rpc |Similar to types, RPC is used to specify custom RPC for polkadot.js. For details, please refer to [rpc.custom](https://polkadot.js.org/docs/api/start/rpc.custom).|
 
-## Paths
+## paths
 
 Paths can set the directory name of artifacts and tests files. Normally, you don't need to change this.
 

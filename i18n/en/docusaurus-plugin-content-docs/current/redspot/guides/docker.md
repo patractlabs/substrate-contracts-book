@@ -1,7 +1,7 @@
 # Docker  
 In Redspot v0.4, we added support for using docker to compile contracts. This will ensure that the compiled wasm code being consistent across different platforms.
 
-Currently, will use [redspot/contract](https://github.com/patractlabs/docker-images/tree/master/contract) to compile and run the testnet. It is modified on the basis of [contract docker image](https://github.com/paritytech/scripts/blob/master/dockerfiles/contracts-ci-linux/Dockerfile) provided by Parity Tech.
+Currently, will use [redspot/contract](https://github.com/patractlabs/docker-images/tree/master/contract) docker to compile and run the testnet. It is modified on the basis of [contract docker image](https://github.com/paritytech/scripts/blob/master/dockerfiles/contracts-ci-linux/Dockerfile) provided by Parity Tech.
 
 ### TestNet
 

@@ -66,7 +66,7 @@ module.exports = {
           items: [
             'redspot/intro/Overview',
             'redspot/intro/Installation',
-            'redspot/intro/Quick start',
+            'redspot/intro/quick-start',
             'redspot/intro/integrate',
           ]
         },
@@ -89,7 +89,7 @@ module.exports = {
           label: 'Plugin',
           collapsed: true,
           items: [
-            'redspot/plugin',
+            'redspot/plugin/plugin',
             'redspot/plugin/redspot-decimals',
             'redspot/plugin/redspot-known-types',
             'redspot/plugin/redspot-chai',
@@ -101,18 +101,19 @@ module.exports = {
         {
           type: 'category',
           label: 'Advanced',
-          collapsed: false,
+          collapsed: true,
           items: [
-            'redspot/advanced/write-plugins'
+            'redspot/advanced/write-plugins',
+            'redspot/advanced/multi-contract-compilation'
           ]
         },
         {
           type: 'category',
           label: 'Reports',
           collapsed: true,
-          collapsible: false,
+          collapsible: true,
           items: [
-            'redspot/reports',
+            'redspot/reports/reports',
             'redspot/reports/v0.1Report',
             'redspot/reports/v0.2Report',
             'redspot/reports/v0.3Report',
