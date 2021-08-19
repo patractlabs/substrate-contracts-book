@@ -37,7 +37,8 @@ AVAILABLE TASKS:
 To get help for a specific task run: npx redspot help [task]
 ```
 
-## Global OPTIONS
+## Task Options
+### Global OPTIONS
 
 *** Defines the global configuration of Redspot runtime. It can be attached to any task. *** 
 
@@ -62,7 +63,7 @@ Set up the network:
 REDSPOT_NETWORK=substrate npx redspot test.
 ```
 
-## Task OPTIONS
+### Task OPTIONS
 Usually each task will provide its own parameter configuration.
 For example
 ```bash
@@ -287,7 +288,7 @@ describe('ERC20', () => {
 ```
 * The `setup` function creates random account called `Alice` and assigned fixed balance to this account. This account will then be used to perform various tests to ensure that the test results are the same every time.
 * In this test file, two Redspot plugins are used，`@redspot/patract` and `@redspot/chai`. For details, please refer [Plugins](./plugin)
-* `npx redspot test` wraps to `mocha` to perform the test. You can directly `mocha` command to run. For example, you can run test:
+* `npx redspot test` wraps `mocha` to perform the test. You can also directly run `mocha` command to run. For example, you can run test:
 ```bash
 TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --timeout 60000
 ```
@@ -297,9 +298,9 @@ TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --time
 ## `run`
 The Run command can be used to run any typescript file. Setting `--no-compile` can avoid automatically running the compilation command `npx redspot run --no-compile`.
 
-Like Test, it is just a command wrap around `TS_NODE_TRANSPILE_ONLY=true node -r ts-node/register [filepath]`.
+Like Test, it is just a command wraps around `TS_NODE_TRANSPILE_ONLY=true node -r ts-node/register [filepath]`.
 
-We used `npx redspot run` for deployment in [Quick Start](../intro/Quick Start)
+We used `npx redspot run` for deployment in [Quick Start](../intro/quick-start)
 You can use Run to run the deployment script, for example:
 
 ```typescript
