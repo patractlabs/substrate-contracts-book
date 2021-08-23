@@ -32,7 +32,7 @@ slug: /
       - [v0.1Report](./ask/reports/v0.1Report.md)
       - [v0.2Report](./ask/reports/v0.2Report.md)
 - [Solang](./solang/introduction.md)
-- [Redspot](./redspot/intro/Overview.md)
+- [Redspot](./redspot/intro/overview.md)
     - [Redsopt 教程](./redspot/intro/overview.md)
         - [Setup Environment](./redspot/intro/installation.md)
         - [Quick Start](./redspot/intro/quick-start.md)
