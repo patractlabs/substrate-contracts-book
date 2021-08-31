@@ -57,6 +57,8 @@ Most of the business logic of the chain will run in the sandbox system, and the 
 
 `pallet-contracts`: Wasm contracts use Wasm virtual machine to run contracts. Unlike `pallet-evm,`if the chain is running in Wasm form, the virtual machine of Wasm contract jumps out of the current Runtime Wasm virtual machine and recreates a new Wasm virtual machine. The machine is running. Up to now,`Wasmtime` is recommended for the Wasm virtual machine of Runtime, and`Wasmi`can only be used for `pallet-contracts`. Pallet-contracts can also be executed using Wasmtime, but Parity currently believes that Wasmtime is relatively uncontrollable, so `Wasmtime` has not yet been adopted. Currently they have related plans and prototype code to use `Wasmtime` to run`pallet-contracts`contracts.
 
+> Notice, after the pr [Remove dependency on sandboxing host functions #9592](https://github.com/paritytech/substrate/pull/9592) was merged in substrate, wasmi no longer jumps out of the current Wasm execution in the execution environment of Wasm The device executes independently, but as a normal program running in the current Wasm environment. The running model at this time is consistent with `pallet-evm`. That is, a Wasm interpreter is run in the Wasm environment, and Wasm code is executed in the interpreter.
+
 In short, in the process of running the contract, most chains adopt a sandbox model to run the contract. And for EVM and for the `pallet-contracts` model, a virtual machine is created every time a contract is run.
 
 ## More information

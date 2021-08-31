@@ -25,7 +25,7 @@ slug: /
     - [design](./ask/design.md)
     - [basic](./ask/basics.md)
 - [Solang](./solang/introduction.md)
-- [Redspot](./redspot/intro/Overview.md)
+- [Redspot](./redspot/intro/overview.md)
     - [Redsopt 教程](./redspot/intro/overview.md)
         - [Setup Environment](./redspot/intro/installation.md)
         - [Quick Start](./redspot/intro/quick-start.md)
