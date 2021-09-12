@@ -1,12 +1,12 @@
-# Europa议会提案报告
+# Report for Europa proposals 
 
-提案报告是Patract向Polkdaot/Kusama财政提交申请后，在结束汇报阶段提交评审的文档。每一期文档涵盖了本次提案中的设计思路，完成的主要内容。
+The proposal report is a document submitted for review at the end of the reporting stage after Patract submitted an application to Polkdaot/Kusama Finance. Each issue of the document covers the design ideas and main content completed in this proposal.
 
-报告代表着本次Patract团队的工作成果，同时也是很好的参考文档。
+The report represents the work results of the Patract team this time, and it is also a good reference document.
 
-当前Europa的提案报告有如下内容：
+The current Europa  proposal report has the following content:
 
-- [v0.1Report](./reports/v0.1Report.md)
+- [v0.1Report](./reports/v0.2Report.md)
 - [v0.2Report](./reports/v0.2Report.md)
 - [v0.3Report](./reports/v0.3Report.md)
 
