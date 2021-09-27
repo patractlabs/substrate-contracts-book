@@ -181,13 +181,12 @@ export interface DecodedEvent {
 
 You can get the parsed contract events directly through`result.events`. If there is an error in execution, you can get the error message through`result.error.message`.
 
-Overrides are optional and can be used to specify gasLimit, value, signer, etc.
+Overrides are optional and can be used to specify gasLimit, value, etc.
 
 ```typescript
 const contract = await contract.tx.transfer(someddress, 7, {
   gasLimit：'1231231231233123123'
   value: '3213321000000000000000000'
-  signer： signers[1]
 });
 ```
 
@@ -195,7 +194,6 @@ const contract = await contract.tx.transfer(someddress, 7, {
 |:----|:----|
 |gasLimit|The maximum gas value that can be used in this transaction|
 |value|Amount passed to the contract to be created|
-|signer|Used to override the default signer|
 
 
 * `contract.attach(address)：Contract`：Use the specified contract address to generate a Contract instance.
