@@ -130,7 +130,7 @@ An example of log printing is as follows.
 * `selector`:Which method of contract is called upon
 * `args`、`value`: related parameters of this contract call
 * `gas_limit`、`gas_left`：gas consumption
-* `env_trace`、`sandbox_result_ok`：Tracing interaction between contract Wasm execution and pallet-contracts, 
+* `env_trace`、`sandbox_result_ok`：Tracing interaction between contract Wasm execution and `pallet-contracts`, 
 * `sandbox_result_ok`: The final result of Wasm executor (Wasm executor result and contract execution result are different).
 * `nest`：Describes the nested relationship when contract calling another contract. Since this is empty, it appears that this call only involves the execution of one contract. See the following text for details.
 
@@ -195,7 +195,7 @@ When this method is called, the following log will be printed in Europa.
 }
 ```
 
-**Note** `--keep-debug-symbols --optimization-passes=0` parameters need to be placed when using `ccargo +nightly contract build` to enable backtrace.
+**Note** `--keep-debug-symbols --optimization-passes=0` parameters need to be placed when using `cargo +nightly contract build` to enable backtrace.
 
 From Europa's log, the order of execution is:
 

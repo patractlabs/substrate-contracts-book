@@ -1,23 +1,23 @@
 # Europa UI
 
-Europa ships with a powerful Graphic User Interface that helps use better understand the node and contract execution without spending too much time on the configs and commands.
+Europa ships with a powerful Graphic User Interface that helps user better understand the node and contract execution without spending too much time learning the configs and commands.
 
 ## Installation
 ### Download Binary Releases
 
-Detailed release information can be found here [Release v0.3.40](https://github.com/patractlabs/europa-ui/releases/tag/v0.3.40).
+Detailed release information can be found here [Release v0.3.32](https://github.com/patractlabs/europa-ui/releases/tag/v0.3.32).
 Currently, 3 operating systems are supportd:
-* **Windows** 10 (21H1 and above) [europa-ui-v0.3.40-x86_64-darwin.dmg](https://github.com/patractlabs/europa-ui/releases/download/v0.3.40/europa-ui-v0.3.40-x86_64-darwin.dmg)
-* **MacOS** (10.15.7 and above) [europa-ui-v0.3.40-x86_64-linux.AppImage](https://github.com/patractlabs/europa-ui/releases/download/v0.3.40/europa-ui-v0.3.40-x86_64-linux.AppImage)
+* **Windows** 10 (21H1 and above) [europa-ui-v0.3.32-x86_64-darwin.dmg](https://github.com/patractlabs/europa-ui/releases/download/v0.3.32/europa-ui-v0.3.32-x86_64-darwin.dmg)
+* **MacOS** (10.15.7 and above) [europa-ui-v0.3.32-x86_64-linux.AppImage](https://github.com/patractlabs/europa-ui/releases/download/v0.3.32/europa-ui-v0.3.32-x86_64-linux.AppImage)
 > MacOS doesn't support M1, but you can try to use Rosetta to run the binary package of macOS. We do not guarantee all compatibility.
-* **Ubuntu** (20.04 and above) [europa-ui-v0.3.40-x86_64-win.exe](https://github.com/patractlabs/europa-ui/releases/download/v0.3.40/europa-ui-v0.3.30-x86_64-win.exe)
+* **Ubuntu** (20.04 and above) [europa-ui-v0.3.32-x86_64-win.exe](https://github.com/patractlabs/europa-ui/releases/download/v0.3.32/europa-ui-v0.3.30-x86_64-win.exe)
 >  For Ubuntu, we only guarantee Ubuntu 20.04 and above to work. Europa UI won't run on Ubuntu 18.04 and below due to the compatibility of glibc.*
 
 *NOTE* 
 
-ink! Stabilize `seal_debug_message` after pr [paritytech/ink#902](https://github.com/paritytech/ink/commit/fdae16d7a9384ae4d475b99a7d86f72e1927e665). Thus, if use the ink! which after this commit, the pallet-contracts should support stable seal_debug_message either. 
+ink! Stabilize `seal_debug_message` after pr [paritytech/ink#902](https://github.com/paritytech/ink/commit/fdae16d7a9384ae4d475b99a7d86f72e1927e665). Thus, if use the ink! which after this commit, the `pallet-contracts` should support stable seal_debug_message either. 
 
-To use ink! supports `seal_debug_message`, making sure running Europa >= v0.3.40 or node will report `Error: Other`. Otherwise, use Europa <= v0.3.30
+To use ink! supports `seal_debug_message`, making sure running Europa >= v0.3.32 or node will report `Error: Other`. Otherwise, use Europa <= v0.3.30
 
 ## Start the Europa node
 

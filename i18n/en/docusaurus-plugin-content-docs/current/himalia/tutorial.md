@@ -2,7 +2,7 @@
 
 The SDK used by Himalia to interact with the contract part of the chain needs to start a node before proceeding with the subsequent execution process.
 
-For nodes with `pallet-contracts` function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's [Document](./europa/introduction.md).
+For nodes with `pallet-contracts` function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's [Document](./europa/intro/overview.md).
 
 Europa can be easily installed and used with the following commands:
 

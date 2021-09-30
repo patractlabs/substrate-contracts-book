@@ -90,8 +90,6 @@ Examples of mutual calls between contracts are as follows.
 
   ![](../imgs/call_other_1.png)
 
-The log is as follows.
-
 ```sh
 1: NestedRuntime {
 	self_account: A,
@@ -113,8 +111,6 @@ The log is as follows.
   ![](../imgs/call_other_2.png)
 
 
-The log is as follows.
-
 ```bash
 1: NestedRuntime {
         self_account: A,
@@ -133,7 +129,7 @@ The log is as follows.
 ```
 
 ##  `env_trace`:
-Indicates that during the execution of the current layer of the contract, each time host_function is called in the contract WASM execution, a record will be added to the list here. Because all host_functions and the definitions in [`define_env!` in the `Pallet Contracts` module](https://github.com/paritytech/substrate/blob/master/frame/contracts/src/wasm/runtime.rs#L610 ) are related, so tracing `env_trace` can trace the process of interacting with `Pallet Contracts` during the execution of the current WASM contract. 
+Indicates that during the execution of the current layer of the contract, each time host_function is called in the contract WASM execution, a record will be added to the list here. Because all host_functions and the definitions in [`define_env!` in the `pallet contracts` module](https://github.com/paritytech/substrate/blob/master/frame/contracts/src/wasm/runtime.rs#L610 ) are related, so tracing `env_trace` can trace the process of interacting with `pallet contracts` during the execution of the current WASM contract. 
 
 For example, if following thing appears in `env_trace`:
 
@@ -146,21 +142,21 @@ On the other hand, the statistics of `env_trace` are relatively **fine-grained**
 And if there is an error in `host_function` that causes the contract to end execution, `env_trace` records the last error `host_function` call, so you can directly locate which `host_function` caused the contract execution exception.
 
 ## `trap_reason`: 
-According to the definition of `TrapReason` in `Pallet Contracts`, `trap_reason` can be divided into 2 categories:
+According to the definition of `TrapReason` in `pallet contracts`, `trap_reason` can be divided into 2 categories:
 
-1. `Return` & `Termination` & `Restoration`: indicates that the contract exit is the design of `Pallet Contracts`, not an internal error. This type of trap indicates that the contract is executed normally and is not an error.
+1. `Return` & `Termination` & `Restoration`: indicates that the contract exit is the design of `pallet contracts`, not an internal error. This type of trap indicates that the contract is executed normally and is not an error.
 2. `SupervisorError`: Indicates that an error occurred during the execution of the contract calling host_function.
 
-Therefore, the current Europa log printing design is designed to record whenever `trap_reason` appears. On the other hand, `trap_reason` may not always appear during the execution of the contract. Combining the design of `Pallet Contracts` and `ink!`, there is a case where the successful execution of the contract or the execution failure in the `ink!` layer does not generate `trap_reason`. Therefore, in addition to recording `trap_reason`, Europa also **records the results returned by the WASM executor after execution, which is recorded with `sandbox_result_ok`. **
+Therefore, the current Europa log printing design is designed to record whenever `trap_reason` appears. On the other hand, `trap_reason` may not always appear during the execution of the contract. Combining the design of `pallet contracts` and `ink!`, there is a case where the successful execution of the contract or the execution failure in the `ink!` layer does not generate `trap_reason`. Therefore, in addition to recording `trap_reason`, Europa also **records the results returned by the WASM executor after execution, which is recorded with `sandbox_result_ok`. **
 
 
 ## `sandbox_result_ok`: 
 
-The value of `sandbox_result_ok` represents the result of the contract after the WASM executor is executed. This value could have been recorded as `sandbox_result`, including correct and incorrect conditions. However, due to the limitations of Rust and combined with the business logic of `Pallet Contracts`, only the result of `sandbox_result` is kept as `Ok` here. **For log printing, Europa is designed to print `sandbox_result_ok` only when trap_reason is the first case, as information to assist in judging contract execution. **
+The value of `sandbox_result_ok` represents the result of the contract after the WASM executor is executed. This value could have been recorded as `sandbox_result`, including correct and incorrect conditions. However, due to the limitations of Rust and combined with the business logic of `pallet contracts`, only the result of `sandbox_result` is kept as `Ok` here. **For log printing, Europa is designed to print `sandbox_result_ok` only when trap_reason is the first case, as information to assist in judging contract execution. **
 
 `sandbox_result_ok` is the WASM executor [result after calling `invoke`](https://github.com/paritytech/substrate/blob/712085115cdef4a79a66747338c920d6ba4e479f/frame/contracts/src/wasm/mod.rs#L155-L156) After the processing of `to_execution_result`, if there is no `trap_reason`, the result of `Ok(..)` is [discarded](https://github.com/paritytech/substrate/blob/712085115cdef4a79a66747338c920d6ba4e479f /frame/contracts/src/wasm/runtime.rs#L366-L368). But in fact there are two situations here:
 
 1. An error occurred in `ink!`: According to the implementation of `ink!`, before calling the functions wrapped by the contract `#[ink(message)]` and `#[ink(constructor)]`, the input The process of decoding and matching `selector`. If an error occurs during this process, the contract will return [error code `DispatchError`](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L22). But for the WASM executor, the WASM code is executed normally, so the result will be returned, including this error code. **This contract execution process is an error situation. **
 2. The return value of `#[ink(message)]` is defined as `()`: According to the implementation of `ink!`, if the return value type is `()`, `seal_reason` will not be called, so it will not Contains `trap_reason`. **This contract execution process is an correct situation. **
 
-Since `ink!` is only a contract implementation that runs on `Pallet Contracts`, other implementations may have different rules, so currently `sandbox_result_ok` is only used to assist in determining the execution of the `ink!` contract, the value is [` ReturnValue`](https://github.com/paritytech/substrate/blob/712085115cdef4a79a66747338c920d6ba4e479f/primitives/wasm-interface/src/lib.rs#L462-L467). Among them, if the `<num>` part of `ReturnValue::Value(<num>)` of the log is not 0, it means that there may be an error in the execution of `ink!`. You can use `ink!` for [`DispatchError` The error code](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80) determines the error.
+Since `ink!` is only a contract implementation that runs on `pallet contracts`, other implementations may have different rules, so currently `sandbox_result_ok` is only used to assist in determining the execution of the `ink!` contract, the value is [` ReturnValue`](https://github.com/paritytech/substrate/blob/712085115cdef4a79a66747338c920d6ba4e479f/primitives/wasm-interface/src/lib.rs#L462-L467). Among them, if the `<num>` part of `ReturnValue::Value(<num>)` of the log is not 0, it means that there may be an error in the execution of `ink!`. You can use `ink!` for [`DispatchError` The error code](https://github.com/paritytech/ink/blob/abd5cf14c0883cb2d5acf81f2277aeec330aa843/crates/lang/src/error.rs#L66-L80) determines the error.

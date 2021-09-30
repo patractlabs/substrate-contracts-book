@@ -5,7 +5,7 @@
 
 # Europa Overview
 
-Europa is a private test blockchain based on Substrate to help Runtime Pallet and Contract Pallet development. It modifies the native Substrate chain by removing unnecessary components such as Wasm execution and p2p while adding some great features to help developers get more insights of the contract execution details
+Europa is a private test blockchain based on Substrate to help Runtime Pallet and `pallet-contracts` development. It modifies the native Substrate chain by removing unnecessary components such as Wasm execution and p2p while adding some great features to help developers get more insights of the contract execution details
 
 
 ## How does it work

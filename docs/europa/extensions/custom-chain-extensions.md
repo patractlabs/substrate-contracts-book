@@ -8,15 +8,15 @@ Please check  https://github.com/patractlabs/ink-log for more specifications.
 
 Ink-log provides pretty log printing for [Ink!](https://github.com/paritytech/ink) smart contract，it's implmented by `ChainExtension`.
 
-## Usage
-### 1. Pallet-contracts in Substrate Runtime
-
-`runtime_log`: In the `ink-log/runtime` directory, this library is based on the contents of the `function_id` and `LoggerExt` structures passed from `ChainExtensions` to call the corresponding logs under debug in `frame_support` to print. It is an implementation library of `ink_log` prepared for developers of the chain. **For example, chain developers can use it in their own ChainExtensions:
-
 **dependencies** 
 > In newest `pallet-contracts` and ink! version, the log feature has been enhanced. So the `ink-log` is no longer needed.
 > 
 > We advice developer use `ink_env::debug_println!(...)` instead of this `ink-log`.
+
+## Usage
+### 1. Pallet-contracts in Substrate Runtime
+
+`runtime_log`: In the `ink-log/runtime` directory, this library is based on the contents of the `function_id` and `LoggerExt` structures passed from `ChainExtensions` to call the corresponding logs under debug in `frame_support` to print. It is an implementation library of `ink_log` prepared for developers of the chain. **For example, chain developers can use it in their own ChainExtensions:
 
 Add this to your `Cargo.toml`:
 ```

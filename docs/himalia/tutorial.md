@@ -2,7 +2,7 @@
 
 Himalia 用于与链的合约部分交互的sdk，需要首先启动一个节点才能进行后续的执行过程。
 
-对于有`pallet-contracts`功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的[文档](./europa/introduction.md)。
+对于有`pallet-contracts`功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的[文档](./europa/intro/overview.md)。
 
 Europa 可以以一下命令简单安装使用：
 

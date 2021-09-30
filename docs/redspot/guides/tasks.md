@@ -286,7 +286,7 @@ describe('ERC20', () => {
   }
 ```
 * The `setup` function creates random account called `Alice` and assigned fixed balance to this account. This account will then be used to perform various tests to ensure that the test results are the same every time.
-* In this test file, two Redspot plugins are used，`@redspot/patract` and `@redspot/chai`. For details, please refer [Plugins](./plugin)
+* In this test file, two Redspot plugins are used，`@redspot/patract` and `@redspot/chai`. For details, please refer [Plugins](../plugin/plugin.md)
 * `npx redspot test` wraps to `mocha` to perform the test. You can directly `mocha` command to run. For example, you can run test:
 ```bash
 TS_NODE_TRANSPILE_ONLY=true mocha -r ts-node/register tests/erc20.test.ts --timeout 60000
@@ -329,7 +329,7 @@ run().catch(err => {
 ```
 This deployment script deploys the contract to targetted network and returns the contract address that holds the `erc20` contract.
 
-The [@redspot/patract](./plugin/redspot-patract) plug-in is used here as `getContractFactory`.
+The [@redspot/patract](../plugin/redspot-patract.md) plug-in is used here as `getContractFactory`.
 
 ## `console`
 
