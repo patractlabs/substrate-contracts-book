@@ -34,7 +34,7 @@ The host function execution error will cause Trap, and will record `TrapReason`.
 
 ### Execution during debugging
 
-The Europa forked version of `pallet contracts` has designed an object to record any information that can help debugging during contract execution:
+The Europa forked version of `pallet-contracts` has designed an object to record any information that can help debugging during contract execution:
 
 ```rust
 /// Record the contract execution context.
