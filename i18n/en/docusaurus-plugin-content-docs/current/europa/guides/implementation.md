@@ -28,11 +28,11 @@ Europa's own `ep-sandbox` only has the `std` version (because Europa has removed
 
 Currently `ep-sandbox` uses a forked version of `wasmi` as the executor, so the error it throws is `WasmiError`. See the next chapter for errors in`wasmi`.
 
-### error of host_functions:
+### Error of host_functions:
 
 The host function execution error will cause Trap, and will record `TrapReason`. No modification to the data structure, just record.
 
-###  Execution during debugging
+### Execution during debugging
 
 The Europa forked version of `pallet contracts` has designed an object to record any information that can help debugging during contract execution:
 
