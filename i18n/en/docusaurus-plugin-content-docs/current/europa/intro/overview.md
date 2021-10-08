@@ -1,12 +1,10 @@
+# Europa Overview
 
 <div style={{textAlign: 'center'}}>
   <img height="200" src="https://patract.io/images/products/Europa.svg" />
 </div>
 
-# Europa Overview
-
 Europa is a private test blockchain based on Substrate to help Runtime Pallet and `pallet-contracts` development. It modifies the native Substrate chain by removing unnecessary components such as Wasm execution and p2p while adding some great features to help developers get more insights of the contract execution details
-
 
 ## How does it work
 Europa runs as standalone daemon to serve JSON-RPC and Websocket requests. By default, it only mines a block every time it receive extrinsics. Extrinsic, by definition, means state changes that come from the outside the blockchain node itself. For example, a transaction is an extrinsic. Europa is a fork of substrate blockchain with handy modifications, so theoretically, runtime pallets and contracts developed through Europa will work on all substrate based chains as well. 
