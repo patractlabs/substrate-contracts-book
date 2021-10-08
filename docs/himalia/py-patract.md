@@ -27,7 +27,7 @@ The basic api split into 2 parts:
 - Contract, include:
   - contractExecutor: This api could construct an extrinsic to call a contract, would be packed into a block and change state.
   - contractReader: This api could construct a rpc request to call a contract, do not pack into a block and do not change any state.
-  - contractCreator: This api is used for `instantiate` a contract and holding the WASM code and metadata, receive following parameters:
+  - contractCreator: This api is used for `instantiate` a contract and holding the Wasm code and metadata, receive following parameters:
     - `gas_limit`
     - `endowment`
     - `deployment_salt` (`salt` parameter in `instantiate`)

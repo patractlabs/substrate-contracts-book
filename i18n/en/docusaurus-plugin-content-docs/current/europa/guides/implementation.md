@@ -3,28 +3,28 @@
 
 During the contract debugging process, Europa believes that developers need:
 
-1. Rich error information: WASM records the error information during the entire execution process, including WASM executor errors and host_function errors. The backtrace information of wasmi will be unified with the error information here.
+1. Rich error information: Wasm records the error information during the entire execution process, including Wasm executor errors and host_function errors.
 2. Execution in the debugging process: The main modification information of `pallet contracts`, the "contract stack" is used to record the process of contract calling contract, and any information that can assist debugging during the execution of this layer of contract, such as the situation of calling the host_function, selector, and calling contract parameters, etc.
 
 Europa made the following modifications:
 
-### error on the wasm executor layer：
+### Error on the wasm executor layer：
 
 Europa designed our own `ep-sandbox` to replace the original `sp-sandbox` used by `pallet contracts`, and modified `ep_sandbox::Error`
 
 ```rust
-use patract_wasmi::Error as WasmiError;
 pub enum Error {
-Module(WasmiError),
-OutOfBounds,
-Execution,
-WasmiExecution(WasmiError),
+   Module,
+   OutOfBounds,
+   Execution,
+   /// Wasm inner trap
+   Trap(imp::Trap),
 }
 ```
 
-`Module(WasmiError)` carries the original error information of the WASM layer, and the `to_execution_result` in `frame/contracts/src/wasm/runtime.rs` is converted to `String` to throw an error message.
+`Trap(imp::Trap)` carries backtrace information of the Wasm layer, it can help developers to get the detailed information for execution stack.
 
-Europa's own `ep-sandbox` only has the `std` version (because Europa has removed all WASM parts, there is no need for `ep-sandbox` to support `no-std`), so in the future, **`ep-sandbox` can be replaced with different wasm executors to support running tests of different wasm executors, and replaced with wasm executors that support debugging and other features. **
+Europa's own `ep-sandbox` only has the `std` version (because Europa has removed all Wasm parts, there is no need for `ep-sandbox` to support `no-std`), so in the future, **`ep-sandbox` can be replaced with different wasm executors to support running tests of different wasm executors, and replaced with wasm executors that support debugging and other features. **
 
 Currently `ep-sandbox` uses a forked version of `wasmi` as the executor, so the error it throws is `WasmiError`. See the next chapter for errors in`wasmi`.
 
@@ -103,119 +103,9 @@ The attributes are basically `Option<>`. For example, before calling the contrac
 
 The current information of `NestedRuntime` is only printed in the log. **In the future, `NestedRuntime` will be stored locally and provide corresponding RPC for external access**. Therefore, in the future, third-party applications can obtain `NestedRuntime` for further processing. For example, in our `Redspot`, a plug-in can be designed to generate a contract call another contract topology based on the information of `NestedRuntime`, and a visual contract call path can be generated on the web wallet interface, etc.
 
-## On `wasmi` Layer
-What happends to the `pallet contracts` while we calling a contract?
+## On `wasmtime` Layer
 
-- **Get the WASM binary from storage**
-- **Inject gas meter to the contract**
-- Inject stack height to the contract
-- Put the contract into `sp-sandbox` and execute it
-- Get the result from `sp-sandbox` and return the result to us
-
-
-Europa forked wasmi and integrated it into `ep-sandbox`. Forked `pallet contracts` can obtain the error information of forked `wasmi` through `ep-sandbox`, including the backtrace information of `wasmi`.
-
-If you need to make `wasmi` can retain the backtrace information during execution, you need to have the following functions:
-
-1. The "name section" section is required in the WASM source file (see [the specification of name section)](https://webassembly.github.io/spec/core/appendix/custom.html#name-section))
-2. Keep the "name section" information in the process of checking the contract by `pallet contracts` and still have a corresponding relationship with the wasm source file after the process.
-3. During the execution of `wasmi`, the execution stack needs to be preserved with the key information of the functions. At the same time, the "name section" needs to be parsed and correspond to the function information reserved by the `wasmi` execution stack.
-
-The changes to 2 involve `cargo-build` and `parity-wasm`, while the changes to 1 and 3 are mainly in the forked `wasmi`, and a small part involves `pwasm-utils`.
-
-**To save debug info from the scraper of `pallet contracts`** 
-1. Store name section while building WASM module
-`pallet contracts` builds WASM modules from storage and drops custom sections by default, here we should get them back.
-
-2. Update function indices in name section while injecting gas meter
-`pallet contracts` reorders the indcies of functions in our WASM contracts after injecting gas memter to the WASM contracts at [paritytech/wasm-utils/gas/mod.rs#L467](https://github.com/paritytech/wasm-utils/blob/d9432bafa9321f8e0e5b8a143f1ed858dbbbe272/src/gas/mod.rs#L467), this will mess up the function indecies in name section that we can not get the correct backtraces.
-
-3. Impelment WASM backtrace to WASMI
-
-- Source: [patractlabs/wasmi](https://github.com/patractlabs/wasmi)
-
-Remember the last two steps in chapter 2, the core part of enabling WASM backtrace to `Pallet Contract` is making `wasmi` support backtrace.
-
-The process of executing a function in the interpreter of wasmi is like:
-
-- Invoke the target function
-- call and call and call over again
-- Panic if the process breaks.
-
-### Add function info field to `FuncRef`
-
-`FuncRef` is the 'function' wasmi interpreter calling directly, so we need to embed the debug info into the `FuncRef` as the first time, source at [wasmi/func.rs#L26](https://github.com/patractlabs/wasmi/blob/v0.6.2/src/func.rs#L26).
-
-```
-//! patractlabs/wasmi/src/func.rs#L26
-/// ...
-pub struct FuncRef {
-    /// ...
-    /// Function name and index for debug
-    info: Option<(usize, String)>,
-}
-```
-
-### Set function info using name section while parsing WASM modules
-
-We alread have the `info` field in `FuncRef`, now we need to fill this field using name section while parsing WASM modules, source at [wasmi/module#L343](https://github.com/patractlabs/wasmi/blob/7a6feaea70f47aa6e62f097fb0d9a4ea0ce7d1fc/src/runner.rs#L1491).
-
-```
-//! wasmi/src/module.rs#L343
-// ...
-if has_name_section {
-     if let Some(name) = function_names.get((index + import_count) as u32) {
-         func_instance = func_instance.set_info(index, name.to_string());
-     } else {
-         func_instance = func_instance.set_info(index, "<unknown>".to_string());
-     }
-}
-// ...
-```
-
-### Make the interpreter support `trace`
-
-However, we don't need to get infos of every functions but the panicked series in the stack of the interpreter, source at [wasmi/runner.rs#L1491](https://github.com/patractlabs/wasmi/blob/7a6feaea70f47aa6e62f097fb0d9a4ea0ce7d1fc/src/runner.rs#L1491).
-
-```
-//! wasmi/src/runner.rs#L1491
-/// Get the functions of current the stack
-pub fn trace(&self) -> Vec<Option<&(usize, String)>> {
-    self.buf.iter().map(|f| f.info()).collect::<Vec<_>>()
-}
-```
-
-### Gather debug infos when program breaks
-
-Just gather backtraces when we invoke function failed, source at [wasmi/func.rs#L170](https://github.com/patractlabs/wasmi/blob/7a6feaea70f47aa6e62f097fb0d9a4ea0ce7d1fc/src/func.rs#L170).
-
-```
-//! wasmi/src/func.rs#L170
-// ...
-
-let res = interpreter.start_execution(externals);
-if let Err(trap) = res {
-let mut stack = interpreter
-    .trace()
-    .iter()
-    .map(|n| {
-        if let Some(info) = n {
-            format!("{:#}[{}]", rustc_demangle::demangle(&info.1), info.0)
-        } else {
-            "<unknown>".to_string()
-        }
-    })
-    .collect::<Vec<_>>();
-
-// Append the panicing trap
-stack.append(&mut trap.wasm_trace().clone());
-stack.reverse();
-
-// Embed this info into the trap
-Err(trap.set_wasm_trace(stack))
-
-// ...
-```
+Currently, europa use wasmtime for execution. And wasmtime support to record the backtrace. europa collects them and record in local.
 
 ## Contract Log functions
 
@@ -229,67 +119,68 @@ Therefore, Europa provides a log library [patractlabs/ink-log](https://github.co
 The `ink-log` is generally implemented by the `ChainExtension` of `pallet contracts`, the agreed `function_id` is `0xfeffff00`, and the message is transmitted in the wasm memory through the structure `LoggerExt`. Therefore this library is divided into the following two parts:
 
 ### `ink_log`:
- In the `ink-log/contracts` directory, provide `info!`, `debug!`, `warn!`, `error!`, `trace!`, same as Rust's `log` library in the same macro, and the call method of the macro is also the same. These macros are packaged implementations of `seal_chain_extensions` on the ink! side, and are **tool library for contract developers**. For example, after this library is introduced in the contract `Cargo.toml`, the log can be printed as follows:
 
-   In `Cargo.toml`:
+In the `ink-log/contracts` directory, provide `info!`, `debug!`, `warn!`, `error!`, `trace!`, same as Rust's `log` library in the same macro, and the call method of the macro is also the same. These macros are packaged implementations of `seal_chain_extensions` on the ink! side, and are **tool library for contract developers**. For example, after this library is introduced in the contract `Cargo.toml`, the log can be printed as follows:
 
-   ```cargo
-   [dependencies]
-   ink_log = { version = "0.1", git = "https://github.com/patractlabs/ink-log", default-features = false, features = ["ink-log-chain-extensions"] }
-   
-   [features]
-   default = ["std"]
-   std = [
-   	# ...
-   	"ink_log/std"
-   ]
-   ```
+In `Cargo.toml`:
 
-   In the contract, you can use the following methods to print logs in the node:
+```cargo
+[dependencies]
+ink_log = { version = "0.1", git = "https://github.com/patractlabs/ink-log", default-features = false, features = ["ink-log-chain-extensions"] }
 
-   ```rust
-   ink_log::info!(target: "flipper-contract", "latest value is: {}", self.value);
-   ```
+[features]
+default = ["std"]
+std = [
+ # ...
+ "ink_log/std"
+]
+```
 
-### `runtime_log`: 
+In the contract, you can use the following methods to print logs in the node:
+
+```rust
+ink_log::info!(target: "flipper-contract", "latest value is: {}", self.value);
+```
+
+### `runtime_log`:
 In the `ink-log/runtime` directory, this library is based on the contents of the `function_id` and `LoggerExt` structures passed from `ChainExtensions` to call the corresponding logs under `debug` in `frame_support` to print. It is an implementation library of `ink_log` prepared for developers of the chain. **For example, chain developers can use it in their own `ChainExtensions`:
 
-   In `Cargo.toml`：
+In `Cargo.toml`：
 
-   ```rust
-   [dependencies]
-   runtime_log = { version = "0.1", git = "https://github.com/patractlabs/ink-log", default-features = false }
-   
-   [features]
-   default = ["std"]
-   std = [
-   	# ...
-   	"runtime_log/std"
-   ]
-   ```
+```rust
+[dependencies]
+runtime_log = { version = "0.1", git = "https://github.com/patractlabs/ink-log", default-features = false }
 
-   In `ChainExtensions`'s implementation：
+[features]
+default = ["std"]
+std = [
+# ...
+"runtime_log/std"
+]
+```
 
-   ```rust
-   pub struct CustomExt;
-   impl ChainExtension for CustomExt {
-   	fn call<E: Ext>(func_id: u32, env: Environment<E, InitState>) -> Result<RetVal, DispatchError>
-   	where
-   		<E::T as SysConfig>::AccountId: UncheckedFrom<<E::T as SysConfig>::Hash> + AsRef<[u8]>,
-   	{
-           match func_id {
-               ... => {/* other ChainExtension */ }
-               0xfeffff00 => {
-                   // TODO add other libs
-           		runtime_log::logger_ext!(func_id, env);
-   		        // or use
-                   // LoggerExt::call::<E>(func_id, env)
-                   Ok(RetVal::Converging(0))
-               }`europa_forwardToHeight`
-           }	
-   	}
+In `ChainExtensions`'s implementation：
+
+```rust
+pub struct CustomExt;
+impl ChainExtension for CustomExt {
+   fn call<E: Ext>(func_id: u32, env: Environment<E, InitState>) -> Result<RetVal, DispatchError>
+      where
+              <E::T as SysConfig>::AccountId: UncheckedFrom<<E::T as SysConfig>::Hash> + AsRef<[u8]>,
+   {
+      match func_id {
+         ... => {/* other ChainExtension */ }
+         0xfeffff00 => {
+            // TODO add other libs
+            runtime_log::logger_ext!(func_id, env);
+            // or use
+            // LoggerExt::call::<E>(func_id, env)
+            Ok(RetVal::Converging(0))
+         }`europa_forwardToHeight`
+      }
    }
-   ```
+}
+```
 
 **`ink_log` corresponds to `runtime_log`, so if contract developers need to use `ink_log`, they need to pay attention to the chain corresponding to the debugging contract that needs to implement `runtime_log`. **
 

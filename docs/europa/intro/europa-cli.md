@@ -159,7 +159,7 @@ The `selector` field under the `NestedRuntime {}` block indicates the selector u
 
 Therefore, by comparing `metadata.json`, you are able to locate the coresponding contract function.  
 
-## wasmi panic backtrace
+## Wasmtime panic backtrace
 
 Suppose following contract method written in ink!:
 

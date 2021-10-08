@@ -133,7 +133,7 @@ def main():
     # load deployer key
     alice = Keypair.create_from_uri('//Alice')
     bob = Keypair.create_from_uri('//Bob')
-    # 1. load a contract from WASM file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
+    # 1. load a contract from Wasm file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
     # in this example, we use `ink/example/erc20` contract as example.
     contract = ContractFactory.create_from_file(
             substrate=substrate, # should provide a subtrate endpoint
