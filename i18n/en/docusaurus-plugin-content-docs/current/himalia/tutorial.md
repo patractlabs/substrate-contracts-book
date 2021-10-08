@@ -2,7 +2,7 @@
 
 The SDK used by Himalia to interact with the contract part of the chain needs to start a node before proceeding with the subsequent execution process.
 
-For nodes with `pallet-contracts` function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's [Document](./europa/introduction.md).
+For nodes with `pallet-contracts` function, we recommend Europa as an alternative to nodes. For more information, please refer to Europa's [Document](./europa/intro/overview.md).
 
 Europa can be easily installed and used with the following commands:
 
@@ -133,7 +133,7 @@ def main():
     # load deployer key
     alice = Keypair.create_from_uri('//Alice')
     bob = Keypair.create_from_uri('//Bob')
-    # 1. load a contract from WASM file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
+    # 1. load a contract from Wasm file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
     # in this example, we use `ink/example/erc20` contract as example.
     contract = ContractFactory.create_from_file(
             substrate=substrate, # should provide a subtrate endpoint

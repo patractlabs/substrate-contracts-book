@@ -28,7 +28,7 @@
 
 **Note** erc20.wasm must be used here instead of erc20-opt.wasm, otherwise the wasm backtrace cannot be printed normally.
 
-During the deployment process, you will encounter `DuplicateTopics` and the Europa log is as follows.
+During the deployment process, you will encounter `DuplicateTopics` and the Europa log looks like:
 
 ```sh
 1: NestedRuntime {
@@ -66,7 +66,7 @@ In summary, it can be concluded that the error occurred in the host_function of 
 
 Assuming that the balance on the chain is defined as u64, and the balance in ink! is defined as u128, an ordinary erc20 contract is deployed.
 
-When reading `total_supply`, the log content in Europa is as follows.
+When reading `total_supply`, the log content in Europa looks like:
 
 ```bash
 1: NestedRuntime {
@@ -94,7 +94,7 @@ When reading `total_supply`, the log content in Europa is as follows.
 }
 ```
 
-When calling `tranfer`, the log in Europa is as follows.
+When calling `tranfer`, the log in Europa looks like:
 
 ```bash
 1: NestedRuntime {

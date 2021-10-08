@@ -103,7 +103,7 @@ After executing the above command, a directory `extension` will be generated und
 
 ### On-chain environmental testing
 
-Ask! currently does not support unit testing. You can use the contract execution environment sandbox [Europa](../europa/introduction) provided by Patract to deploy and test the contract. After starting Europa, you can deploy and call the contract in the `target` directory through [https://polkadot.js.org/apps](https://polkadot.js.org/apps). This process is similar to ink! The operation process of the contract is the same.
+Ask! currently does not support unit testing. You can use the contract execution environment sandbox [Europa](../europa/intro/overview) provided by Patract to deploy and test the contract. After starting Europa, you can deploy and call the contract in the `target` directory through [https://polkadot.js.org/apps](https://polkadot.js.org/apps). This process is similar to ink! The operation process of the contract is the same.
 
 
 

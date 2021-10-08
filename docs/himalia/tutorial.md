@@ -2,7 +2,7 @@
 
 Himalia 用于与链的合约部分交互的sdk，需要首先启动一个节点才能进行后续的执行过程。
 
-对于有`pallet-contracts`功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的[文档](./europa/introduction.md)。
+对于有`pallet-contracts`功能的节点，我们推荐使用 Europa 作为节点的替代。更多的信息请参阅Europa的[文档](./europa/intro/overview.md)。
 
 Europa 可以以一下命令简单安装使用：
 
@@ -133,7 +133,7 @@ def main():
     # load deployer key
     alice = Keypair.create_from_uri('//Alice')
     bob = Keypair.create_from_uri('//Bob')
-    # 1. load a contract from WASM file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
+    # 1. load a contract from Wasm file and metadata.json file (Those files is complied by [ink!](https://github.com/paritytech/ink))
     # in this example, we use `ink/example/erc20` contract as example.
     contract = ContractFactory.create_from_file(
             substrate=substrate, # should provide a subtrate endpoint

@@ -57,7 +57,7 @@ In this way, you can force the specified version. See [package.json](https://cla
 
 ## How to access the instance of @polkadot/api in redspot?
 
-You can access it by [network.api](./guides/runtime-environment#network).
+You can access it by [network.api](./guides/runtime-environment.md).
 
 ## How to specify the types and RPC of chain in `redspot.config.ts`?
 

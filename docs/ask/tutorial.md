@@ -108,5 +108,5 @@ npx ask examples/flipper/flipper.ts
 
 ### 链上环境测试
 
-Ask! 当前不支持单元测试，您可以采用Patract提供的合约执行环境沙盒[Europa](../europa/introduction.md)进行合约的部署调用和测试。启动Europa后，您可以通过 [https://polkadot.js.org/apps](https://polkadot.js.org/apps) 将`target`目录下的合约进行部署和调用，这个过程和ink!合约的操作过程一致。
+Ask! 当前不支持单元测试，您可以采用Patract提供的合约执行环境沙盒[Europa](../europa/intro/overview)进行合约的部署调用和测试。启动Europa后，您可以通过 [https://polkadot.js.org/apps](https://polkadot.js.org/apps) 将`target`目录下的合约进行部署和调用，这个过程和ink!合约的操作过程一致。
 

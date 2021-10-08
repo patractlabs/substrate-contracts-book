@@ -2,15 +2,16 @@
 
 ## Background Information
 
-The execution of `pallet-contracts` includes execution in the contract model and execution in Wasm. The execution process in the contract model is transferred to the pallet-contracts module through Wasm's host_function. If panic or incorrect positioning occurs, the runtime of the node can be positioned in the form of native operation. Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process crashes abnormally, it can only be displayed by the Wasm executor.
+The execution of `pallet-contracts` includes execution in the contract model and execution in Wasm. The execution process in the contract model is transferred to the `pallet-contracts` module through Wasm's host_function. If panic or incorrect positioning occurs, the runtime of the node can be positioned in the form of native operation. Since the execution process in Wasm is in the Wasm virtual machine, it is a black box to the outside world. If the internal execution process crashes abnormally, it can only be displayed by the Wasm executor.
 
-Europa's pallet-contracts module currently supports the following two types of actuators:
+Europa's `pallet-contracts` module currently supports the following two types of actuators:
 
 * `wasmi`: Wasm interpreter developed by the Parity. When Wasm executes panic, it will only return an error without Backtrace. Patract forks the official wasmi, and adds tracking and printing of the execution stack on top of the original. When a panic occurs during Wasm's execution, the current execution stack and corresponding information will be returned with an error.
 * `wasmtime`: Wasm's JIT executor, which comes with Backtrace when it crashes.
+
 ## The conditins of Europa can print out Wasm Backtrace
 
-Wasm can print Backtrace, requiring the `name section` in the Wasm file compiled by the contract. Since the cargo-contract provided by Parity has encapsulated many operations, the current default operation is to compile the contract in the best optimized way, and the `name section` section will be removed in this process. On the other hand, cargo-contract does not provide corresponding interfaces or options that allow you to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of cargo-contract, and you can use this modified version of cargo-contract to compile a contract Wasm file with a name section.
+Wasm can print Backtrace, requiring the `name section` in the Wasm file compiled by the contract. Since `cargo-contract` provided by Parity encapsulated many operations, the current default operation is to compile the contract in the best optimized way, and the `name section` section will be removed in this process. On the other hand, cargo-contract does not provide corresponding interfaces or options that allow you to adjust the optimization conditions used in contract compilation and whether to retain some debugging information. Therefore, Patract can only provide a modified version of cargo-contract, and you can use this modified version of cargo-contract to compile a contract Wasm file with a name section.
 
 On the other hand, the original code will be optimized during the compilation of the release, and it may be disturbed to locate the problem through the optimized Backtrace. Therefore, it is best to reduce the optimization level so that the Backtrace at the time of a crash will most likely match the original code.
 

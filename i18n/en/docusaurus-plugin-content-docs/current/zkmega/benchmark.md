@@ -28,7 +28,7 @@ cargo build -p jupiter-dev --all-features --release
 
 Here we test the curevs on ubuntu LTS 20.04, Time is measured in us
 
-| Curve             | Native                           | Time(us) | WASM                           | Time(us) | Speed(Native/WASM) |
+| Curve             | Native                           | Time(us) | Wasm                           | Time(us) | Speed(Native/Wasm) |
 |-------------------|----------------------------------|----------|--------------------------------|----------|--------------------|
 | bls12\_377(~9.5x) | native\_bls12\_377\_add          | 9.588    | wasm\_bls12\_377\_add          | 29.02    | ~3x                |
 |                   | native\_bls12\_377\_mul          | 183.1    | wasm\_bls12\_377\_mul          | 1893     | ~10x               |

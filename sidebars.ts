@@ -127,12 +127,38 @@ module.exports = {
       label: 'Europa',
       collapsed: true,
       items: [
-        'europa/introduction',
-        'europa/tutorial',
-        'europa/execution_info',
-        'europa/sample',
-        'europa/wasm_executor',
-        'europa/wasm_backtrace',
+        {
+          type: 'category',
+          label: 'Get Started',
+          collapsed: false,
+          items: [
+            'europa/intro/overview',
+            'europa/intro/europa-ui',
+            'europa/intro/europa-cli'
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          collapsed: false,
+          items: [
+            'europa/guides/architecture',
+            'europa/guides/implementation',
+            'europa/guides/custom-rpcs',
+            'europa/guides/contract-log',
+            'europa/guides/backtrace',
+            'europa/guides/debug-example',
+            'europa/guides/wasm-executor',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Chain Extensions',
+          collapsed: false,
+          items: [
+            'europa/extensions/custom-chain-extensions'
+          ]
+        },
         {
           type: 'category',
           label: 'Reports',
