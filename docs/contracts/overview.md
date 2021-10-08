@@ -52,6 +52,8 @@ EOS采用了Wasm作为合约的虚拟机，当时也是EOS的优势。相比于�
 
 `pallet-contracts`：Wasm合约使用Wasm虚拟机运行合约，与`pallet-evm`不同的是，如果链是以Wasm形态运行，Wasm合约的虚拟机是跳出当前Runtime Wasm虚拟机，重新创建了一个新的Wasm虚拟机运行。截止目前，Runtime的Wasm虚拟机推荐采用的是`Wasmtime`，而`pallet-contracts`只能采用`Wasmi`。`pallet-contracts`也可以使用`Wasmtime`执行，但是当前Parity认为`Wasmtime`不可控性比较大，因此暂时还未采用`Wasmtime`。当前他们有相关计划，也有原型代码来使用`Wasmtime`运行`pallet-contracts`的合约。
 
+> 注意，在substrate合并了提交[Remove dependency on sandboxing host functions #9592](https://github.com/paritytech/substrate/pull/9592)后，wasmi 在 Wasm 的执行环境下不再跳出当前 Wasm 执行器独立执行，而是视作一段正常的程序运行于当前的 Wasm 环境中。此时的运行模型就与 pallet-evm 是一致的，即在 Wasm 环境中运行了一个 Wasm 解释器，在该解释器中去执行 Wasm 代码。
+
 总之在运行合约的过程中，大部分链都采用了一种沙盒的模型去运行合约。而对于EVM和
 
 `pallet-contracts`模型而言，每运行一个合约就会创建一个虚拟机。
