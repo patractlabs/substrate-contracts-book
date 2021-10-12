@@ -58,7 +58,7 @@ module.exports = {
           routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.ts'),
           editUrl:
-            'https://github.com/patractlabs/substrate-contracts-book/',
+            'https://github.com/patractlabs/substrate-contracts-book/edit/master',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
