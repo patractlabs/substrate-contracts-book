@@ -219,14 +219,89 @@ module.exports = {
       label: 'Metis',
       collapsed: true,
       items: [
-        'metis/introduction',        
+        {
+          type: 'category',
+          label: 'Get Started',
+          collapsed: false,
+          items: [
+            'metis/intro/overview',
+            'metis/intro/motivation',
+            'metis/intro/architecture',
+            'metis/intro/differences',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Guides',
+          collapsed: false,
+          items: [
+            'metis/guides/imports',
+            'metis/guides/macros',
+            'metis/guides/extensions',
+            'metis/guides/hook',
+            {
+              type: 'category',
+              label: 'Access control',
+              collapsed: true,
+              items: [
+                'metis/guides/access-control/ownable',
+                'metis/guides/access-control/access-control',
+                'metis/guides/access-control/access-control-enumerable',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Governance',
+              collapsed: true,
+              items: [
+                'metis/guides/governance/timelock-controller',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Security',
+              collapsed: true,
+              items: [
+                'metis/guides/security/pausable',
+                'metis/guides/security/reentrancy-guard',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Tokens',
+              collapsed: true,
+              items: [
+                'metis/guides/tokens/erc20',
+                'metis/guides/tokens/erc721',
+                'metis/guides/tokens/erc777',
+                'metis/guides/tokens/erc1155',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Tools',
+              collapsed: true,
+              items: [
+                'metis/guides/tools/erc165',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Utilities',
+              collapsed: true,
+              items: [
+                'metis/guides/utilities/escrow',
+              ]
+            }
+          ]
+        },
         {
           type: 'category',
           label: 'Reports',
           collapsed: true,
           items: [
             'metis/reports/reports',
-            'metis/reports/M1Report'
+            'metis/reports/M1Report',
           ]
         }
       ]

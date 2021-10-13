@@ -1,68 +1,66 @@
-# Patract Metis M1 开发报告(Wasm合约标准库)
+# Patract's treasury report for Metis M1 (Wasm Contract Library)
 
-6周前，Patract 向波卡国库申请了关于 Metis M1 的第57号（[https://polkadot.polkassembly.io/treasury/57](https://polkadot.polkassembly.io/treasury/57)）提案。现在，我们已经完成了 M1 的所有工作，大家可以在以下网站上查看我们的代码库。
+6 weeks ago，Patract applied a [proposal #469](https://polkadot.polkassembly.io/post/469) for Metis M1, Now, we have finished all the work and you can review our codebase at：
 
-* Metis GitHub: [https://github.com/patractlabs/metis](https://github.com/patractlabs/metis)
-* Metis文档: [https://patractlabs.github.io/metis/#/./zh-cn/overview](https://patractlabs.github.io/metis/#/./zh-cn/overview)
-* Metis提出并实现了 MCCI 架构: [https://patractlabs.github.io/metis/#/./zh-cn/use-component?id=metis-mcci-architecture](https://patractlabs.github.io/metis/#/./zh-cn/use-component?id=metis-mcci-architecture) 。
+- [Metis](https://github.com/patractlabs/metis)
+- [Metis Documentation](https://patractlabs.github.io/metis/overview.html)
 
-MCCI 架构通过组合独立组件来促进了智能合约的开发。 以下是当前实现的组件列表：
+Metis proposed and implemented [`MCCI` architecture](https://patractlabs.github.io/metis/use-component.html#metis-mcci-architecture). MCCI acrhitecture facilitates smart contract development by composititing independent components. Here are a list of components currently implemented:
 
-- ERC20及其扩展组件
-- ERC721及其扩展组件
-- ERC777及其扩展组件
-- ERC1155及其扩展组件
+- ERC20 and its expansion components
+- ERC721 and its expansion components
+- ERC777 and its expansion components
+- ERC1155 and its expansion components
 - Ownable
 - AccessControl
 - TimelockController
-- PullPayment
+- Escrow(PullPayment)
 - support(ERC165)
 - ReentrancyGuard
-- Pauseable
+- Pausable
 
-详细用法和实现示例，请参考 Metis 文档（[https://patractlabs.github.io/metis/#/zh-cn/](https://patractlabs.github.io/metis/#/zh-cn/)）。
+For detailed usages and implemented examples, please refer [Metis Documentation](https://patractlabs.github.io/metis/index.html).
 
-在 Metis 的开发过程中，我们通过对底层机制的调整，完善了基于 Redspot 的智能合约测试程序。测试用途的使用请参考示例（[https://github.com/patractlabs/metis/tree/master/example](https://github.com/patractlabs/metis/tree/master/example)）。
+During the development of Metis, we have refined the smart contract testing procedures based on Redspot by tweaking the underlying mechanism. For usages of testing purposes, please refer [Example](https://github.com/patractlabs/metis/tree/master/example).
 
-> 注意：由于 Metis 的测试用例量很大，我们应该为每个合约单独运行测试。 详细命令请参考 Metis 示例自述文件: [https://github.com/patractlabs/metis/blob/master/example/README.md](https://github.com/patractlabs/metis/blob/master/example/README.md)。
+> **NOTE** Please be aware that due to large volume of Metis's testcases, we should run tests separately for each contract. For detailed commands, please refer [Metis Example README](https://github.com/patractlabs/metis/blob/master/example/README.md)
 
-## 1. Metis 的未来开发计划
+## 1. Metis's future development plan
 
-* ~~**[M1]** 实现组件的基本宏和实现； 改进组件测试支持； 开发者可以基于 Metis 构建常规 DAPP 。~~
-* **[M2]** 完整的组件宏； 完善的组件开发支持，以便开发人员能够建立自定义组件； 完成 Metis 组件对应的 API 支持。
-* **[M3]** 丰富的组件库； 对治理和财务机制的完整组件和 API 支持； 用于合约开发的完整数学库，以支持需要复杂计算的 DeFi 类型合约。
+- ~~**[M1]** Implement basic macros and implementations for components; improve component testing support; developers can build regular DAPPs based on Metis~~
+- **[M2]** Complete component macros; complete component development support so that developers can build custom components; complete the api support corresponding to the metis component.
+- **[M3]** Rich component library; complete component and API support for governance and financial mechanism; thorough mathematical library for contract development to support DeFi-type contracts that require complex calculations.
 
-## 2. 报告
+## 2. Report
 
-### 2.1 实现基本组件宏
+### 2.1 Implement basic component macros
 
-我们已经为组件开发实现了以下 marcos：
+We have implemented the following marcos for components development:
 
-- `contract` : 按照 Metis 的合约标准定义合约。
-- `import` : 生成代码来实现组件。
-- `metis` : 定义 Metis 组件。
-- `stub` : 在 Metis 中实现存根。
-- `reentrancy_guard` : `reentrancy_guard` 组件的辅助宏。
-- `supports` : ERC165 的辅助宏支持 API。
-- `hash` : 在编译期间计算字符串的哈希值。
-- `selector_id` : 计算消息的 `selector_id` .
+- `contract` : to define the contract following metis contract standard.
+- `import` : to generate code to implement the components.
+- `metis` : to define the metis component.
+- `stub` : to implement stub in metis.
+- `reentrancy_guard` : helper macro for the `reentrancy_guard` component.
+- `supports` : helper macro for the erc165 supports api.
+- `hash` : to calculate the hash of a string during compilation.
+- `selector_id` : to calculate the `selector_id`  of a `message`.
 
-注意：上面列出的当前可用的宏是最小的实现，将在 [M2] 里程碑中进行扩展和强化，请参阅使用组件: [https://patractlabs.github.io/metis/use-component.html](https://patractlabs.github.io/metis/use-component.html)。
+**NOTE** The currently available macros listed above are minimal implementations which will be extended and fortified in [M2] milestone, please refer [Use Component](https://patractlabs.github.io/metis/use-component.html)
 
-### 2.2 组件
+### 2.2 Components
 
-此版本中最重要的工作是实现用于构建智能合约的 Metis 组件。
 
-#### Metis——MCCI 架构
+The most important work in this version is implementing the Metis components for constructing smart contracts.
 
-* M : 数据模型。 大多数合约读取和写入合约环境状态。 这些状态映射到特定的数据模型。 每个模型仅与一个组件相关联。
-* C: 组件。成分。 组件是一个可重用的、独立的实现单元，它封装了数据和方法，但与其他组件保持正交性。
-* C: 控制器。控制器协调各组件并实现合约接口。
-I:接口。合约的用户接口。该接口定义了合约的交互，并进一步定义了 metadata.。
+#### Metis-MCCI architecture
 
-如图所示，在 MCCI 架构下，一份合约由一系列可重复使用的组件组成。合约交互是通过组件的相互连接实现的，并由接口和控制器定义。
+- `M` : Data model. Most contracts read and write contract environmental states. These states map to specific data models. Each model is associated with only one component.
+- `C` : component. A component is a reusable, independent implementation unit that encapsulates data and methods but maintains orthogonality with other components.
+- `C` : controller. The controller coordinates the components and implements the contract interface.
+- `I` : interface. The interface is the user interface of the contract. The interface defines the interactions of the contract and further defines the metadata.
 
-```text
+```txt
 ┌───────┐          ┌───────────────┬────────────────────────────────┐
 │       │          │ Interface     │ Control                        │
 │       │          │               │  ┌─────────────────────┐       │
@@ -81,28 +79,33 @@ I:接口。合约的用户接口。该接口定义了合约的交互，并进一
 │       │          │               │      └──────────────────────┘  │
 │       │          │               │                                │
 └───────┘          └───────────────┴────────────────────────────────┘
-
 ```
 
-合约的接口定义了合约的交互，包括：
+As shown in the figure, under the MCCI architecture, a contract is composed of a series of reusable components. The contract interaction is implemented through the interconnection of components and defined by interface and controller.
+
+The contract's interface defines the contract's interaction, including:
+
 - constructor
 - message
 - event
 
-用户可以根据这三点与智能合约进行交互。事实上，这三部分也构成了 ink! 合约 metadata 的主要部分。
+A user can interact with smart contract based on these three things. In fact, these three things also constitute `ink!'`s macros as the main part of contract metadata.
 
-对于一个合约来说，这三部分必须是确定、明确和易于理解的。因此，合约代码的接口需要保证内聚性。
+For a contract, these three things are guaranteed to be deterministic, unambiguous, and easy to understand. Therefore, the interface of the contract code needs to stay cohesive.
 
-合约控制器负责整合各组件。我们把合约的主要逻辑分拆成一系列可重用的组件，这些组件可以在其他组件的基础上进行扩展和组合。
-数据模型是对合约状态和合约逻辑的封装。每个合约组件在其数据模型中需要不同的属性。因此，一个完整的合约将由多个数据模型组成。
+The contract controller is responsible for integrating the components. We break the main logic of the contract down into a series of reusable components, which can **extend** and **compose** based on other components.
 
-一般来说，数据模型也有助于合约交互，制定合约的接口，但在大多数情况下，外部应用程序和用户不会与存储合约数据的区块链状态进行互动。因此，这里不强调数据模型的外部封装。
+A data model is the encapsulation of contract state from contract logic.  Each contract component requires different attributes in its data model. Therefore, a complete contract will be composed of multiple data models. 
 
-#### 继承 VS 组合
+In generally, the data model also contributes to the contract interaction, formulating the contract interface, but in most case, external applications and users will not interact with blockchain states which stores contract data. Therefore, the external encapsulation of the data model is not emphasized here.
 
-在合约开发中，我们强调合约的可审计性，Solidity中对继承特性的使用，会使得合约难以进行代码审计：合约逻辑被分散到多个文件甚至不同的项目中。因此，在 Metis 中，我们不直接继承合约的接口和实现，而是引入组件和数据模型组合最终的合约。
-每个组件都实现了一系列的功能，包括消息和 APIs 的方法。组件可以基于其他组件进行扩展和组合。
-大多数组件看起来像这样：
+#### Inheritance Vs Composition
+
+In contract development, we emphasize the audibility of contracts but the use of inheritance feature in solidity makes contract hard for code auditing: The contract logic is spread into multiple files or even in different projects. Therefore, in Metis, we do not directly inherit the interface and implementation of the contract, but in instead components and data model are introduced to composite the final contract.
+
+Each component implements a series of functions including the methods for messages and apis. Components can **extend** and **compose** based on other components.
+
+Most components look like this:
 
 ```rust
 /// The `EventEmit` impl the event emit api for ownable component.
@@ -144,16 +147,17 @@ pub trait Impl<E: Env>: Storage<E, Data<E>> + EventEmit<E> {
     // Hook which need impl by contract
     fn hook(&mut self, params: &E::Balance) -> Result<()>;
 }
+
 ```
 
-一些组件包含默认实现：
+Some components contain a default implementation:
 
 ```rust
 // a default impl, each contract which impl storage and event emitter can be component
 impl<E: Env, T: Storage<E, Data<E>> + EventEmit<E>> Impl<E> for T {}
 ```
 
-要用这个组件，我们可以将其导入到合约中：
+To use this component, we can import this to contract:
 
 ```rust
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -258,16 +262,17 @@ pub mod contract {
 }
 ```
 
-#### Hook 和 Impl
+#### Hook and Impl
 
-在前面的例子中，我们可以看到函数 hook：
+In the previous example, we can see the function `hook`:
 
 ```rust
     // Hook which need impl by contract
     fn hook(&mut self, params: &E::Balance) -> Result<()>;
 ```
 
-在某些组件中， hook有一个默认实现：
+In some components, the hook has a default implementation:
+
 ```rust
     /// @dev Hook that is called before any token transfer. This includes
     /// calls to {send}, {transfer}, {operatorSend}, minting and burning.
@@ -293,7 +298,7 @@ pub mod contract {
     }
 ```
 
-该hook将被组件函数自动调用。 用户可以定义自己的hook。 这里有一个例子，是在 Pausable ERC20 组件中：
+The hook will be called automatically by component functions. User can define their own hook. Here is an example in Pausable ERC20 component:
 
 ```rust
     fn before_token_transfer(
@@ -308,33 +313,34 @@ pub mod contract {
     }
 ```
 
-Pausable ERC20 组件通过实现hook扩展了本地 ERC20 组件。
+The Pausable ERC20 component extends the native erc20 component by implementing the hook.
 
-#### Metis合约组件
+#### Metis Contract component
 
-在Metis的未来版本中，我们将首先完整实现 openZeppelin-contracts 组件供开发者使用。 这些组件包括：
+In future versions of Metis, we will first fully implement openZeppelin-contracts components for developers to use. These components include:
 
-- Token：ERC20、ERC721、ERC777、ERC1155 以及这些 Token 合约的扩展。
-- 访问权限：Ownable、AccessControl、TimelockController。
-- 安全性：PullPayment、ReentrancyGuard、Pausable。
+- Token: ERC20, ERC721, ERC777, ERC1155 and extensions of the above Token contracts
+- Access: Ownable, AccessControl, TimelockController
+- Security: PullPayment, ReentrancyGuard, Pausable
 
-Metis 将实现一套通用组件，类似于OpenZeppelin-Contracts库。确保所有库的代码都经过全面测试和审计，这些组件将尽可能地与 OpenZeppelin-Contracts 保持一致，通过吸收从 Solidity 生态中学到的经验来平滑开发者的学习曲线：
+Metis will implement a set of common components, similar to the OpenZeppelin-Contracts library. All library code are ensured to be fully tested and audited,
+These components will be kept as consistent as possible with OpenZeppelin-contracts to flat the developer's learning curve by absorbing the experience learned from Solidity Ecology:
 
-- ERC20（https://patractlabs.github.io/metis/tokens/erc20.html）
-- ERC721（https://patractlabs.github.io/metis/tokens/erc721.html）
-- ERC777（https://patractlabs.github.io/metis/tokens/erc777.html）
-- ERC1155（https://patractlabs.github.io/metis/tokens/erc1155.html）
-- Ownable（https://patractlabs.github.io/metis/access-control/ownable.html）
-- AccessControl（https://patractlabs.github.io/metis/access-control/access-control.html）
-- Access Control Enumerable（https://patractlabs.github.io/metis/access-control/access-control-enumerable.html#access-control-enumerable）
-- TimelockController（https://patractlabs.github.io/metis/governance/timelock-controller.html）
-- Escrow(PullPayment)（https://patractlabs.github.io/metis/utilities/escrow.html）
-- Support(ERC165)（https://patractlabs.github.io/metis/tools/erc165.html）
-- ReentrancyGuard（https://patractlabs.github.io/metis/security/reentrancy-guard.html）
-- Pausable（https://patractlabs.github.io/metis/security/pausable.html）
+- [ERC20](https://patractlabs.github.io/metis/tokens/erc20.html)
+- [ERC721](https://patractlabs.github.io/metis/tokens/erc721.html)
+- [ERC777](https://patractlabs.github.io/metis/tokens/erc777.html)
+- [ERC1155](https://patractlabs.github.io/metis/tokens/erc1155.html)
+- [Ownable](https://patractlabs.github.io/metis/access-control/ownable.html)
+- [AccessControl](https://patractlabs.github.io/metis/access-control/access-control.html)
+- [Access Control Enumerable](https://patractlabs.github.io/metis/access-control/access-control-enumerable.html#access-control-enumerable)
+- [TimelockController](https://patractlabs.github.io/metis/governance/timelock-controller.html)
+- [Escrow(PullPayment)](https://patractlabs.github.io/metis/utilities/escrow.html)
+- [Support(ERC165)](https://patractlabs.github.io/metis/tools/erc165.html)
+- [ReentrancyGuard](https://patractlabs.github.io/metis/security/reentrancy-guard.html)
+- [Pausable](https://patractlabs.github.io/metis/security/pausable.html)
 
-有关每个组件的详细信息，请参阅文档。
+Please refer to the documentation for details of each component.
 
-### 2.3 示例和测试
+### 2.3 Examples and tests
 
-每个组件都附带了 ink! 链下测试环境和 Redspot 的默认实现示例和测试用例。
+Each component is shipped with examples of default implementation and testcases by ink! offchain test environments and redspot.

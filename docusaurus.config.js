@@ -14,6 +14,9 @@ module.exports = {
     locales: ['zh', 'en']
   },
   themeConfig: {
+    prism: {
+      additionalLanguages: ['rust'],
+    },
     navbar: {
       logo: {
         alt: 'Substrate Contracts Book',
