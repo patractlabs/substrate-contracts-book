@@ -33,11 +33,6 @@ Role bearers are not sorted in any particular way, and their ordering may change
 > for more information.
 
 ```rust
-    /// Returns one of the accounts that have `role`. `index` must be a
-    /// value between 0 and {get_role_member_count}, non-inclusive.
-    ///
-    /// Role bearers are not sorted in any particular way, and their ordering may
-    /// change at any point.
     fn get_role_member(&self, role: &RoleId, index: usize) -> E::AccountId {
         match Storage::<E, Data<E>>::get(self).role_members.get(role) {
             None => panic!("no found role by id"),
@@ -51,8 +46,6 @@ Role bearers are not sorted in any particular way, and their ordering may change
 Returns the number of accounts that have `role`. Can be used together with {getRoleMember} to enumerate all bearers of a role.
 
 ```rust
-    /// Returns the number of accounts that have `role`. Can be used
-    /// together with {getRoleMember} to enumerate all bearers of a role.
     fn get_role_member_count(&self, role: &RoleId) -> usize {
         match Storage::<E, Data<E>>::get(self).role_members.get(role) {
             None => panic!("no found role by id"),

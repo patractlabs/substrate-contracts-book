@@ -35,11 +35,6 @@ Returns a Result indicating whether the operation succeeded.
 Emits a `Transfer` event.
 
 ```rust
-    /// Moves `amount` tokens from the caller's account to `recipient`.
-    ///
-    /// Returns a Result indicating whether the operation succeeded.
-    ///
-    /// Emits a `Transfer` event.
     fn transfer(&mut self, to: E::AccountId, value: E::Balance) -> Result<()> {
         self._transfer_from_to(Self::caller(), to, value)
     }
@@ -61,18 +56,6 @@ desired value afterwards:
 Emits an `Approval` event.
 
 ```rust
-    /// Sets `amount` as the allowance of `spender` over the caller's tokens.
-    ///
-    /// Returns a boolean value indicating whether the operation succeeded.
-    ///
-    /// IMPORTANT: Beware that changing an allowance with this method brings the risk
-    /// that someone may use both the old and the new allowance by unfortunate
-    /// transaction ordering. One possible solution to mitigate this race
-    /// condition is to first reduce the spender's allowance to 0 and set the
-    /// desired value afterwards:
-    /// <https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729>
-    ///
-    /// Emits an `Approval` event.
     fn approve(&mut self, spender: E::AccountId, amount: E::Balance) -> Result<()> {
         self._approve(Self::caller(), spender, amount)
     }
@@ -89,13 +72,6 @@ Returns a boolean value indicating whether the operation succeeded.
 Emits a `Transfer` event.
 
 ```rust
-    /// Moves `amount` tokens from `sender` to `recipient` using the
-    /// allowance mechanism. `amount` is then deducted from the caller's
-    /// allowance.
-    ///
-    /// Returns a boolean value indicating whether the operation succeeded.
-    ///
-    /// Emits a `Transfer` event.
     fn transfer_from(
         &mut self,
         from: E::AccountId,
@@ -136,7 +112,6 @@ Returns the name of the token.
 Returns the symbol of the token, usually a shorter version of the name.
 
 ```rust
-    /// Returns the symbol of the token, usually a shorter version of the name.
     fn symbol(&self) -> String {
         self.get().symbol().clone()
     }
@@ -156,16 +131,6 @@ overridden;
 > no way affects any of the arithmetic of the contract
 
 ```rust
-    /// Returns the number of decimals used to get its user representation.
-    /// For example, if `decimals` equals `2`, a balance of `505` tokens should
-    /// be displayed to a user as `5,05` (`505 / 10 ** 2`).
-    ///
-    /// Tokens usually opt for a value of 18, imitating the relationship between
-    /// Ether and Wei in ETH. This is the value {ERC20} uses, unless this function is
-    /// overridden;
-    ///
-    /// NOTE: This information is only used for _display_ purposes: it in
-    /// no way affects any of the arithmetic of the contract
     fn decimals(&self) -> u8 {
         self.get().decimals().clone()
     }
@@ -176,7 +141,6 @@ overridden;
 Returns the amount of tokens owned by `account`.
 
 ```rust
-    /// Returns the amount of tokens owned by `account`.
     fn balance_of(&self, account: E::AccountId) -> E::Balance {
         self.get().balance_of(&account)
     }
@@ -187,7 +151,6 @@ Returns the amount of tokens owned by `account`.
 Returns the amount of tokens in existence.
 
 ```rust
-    /// Returns the amount of tokens in existence.
     fn total_supply(&self) -> E::Balance {
         self.get().total_supply()
     }
@@ -202,11 +165,6 @@ zero by default.
 This value changes when `approve` or `transfer_from` are called.
 
 ```rust
-    /// Returns the remaining number of tokens that `spender` will be
-    /// allowed to spend on behalf of `owner` through `transfer_from`. This is
-    /// zero by default.
-    ///
-    /// This value changes when `approve` or `transfer_from` are called.
     fn allowance(&self, owner: E::AccountId, spender: E::AccountId) -> E::Balance {
         self.get().allowance(owner, spender)
     }
@@ -232,14 +190,6 @@ Requirements:
 - `account` cannot be the zero address.
 
 ```rust
-    /// Creates `amount` tokens and assigns them to `account`, increasing
-    /// the total supply.
-    ///
-    /// Emits a `Transfer` event with `from` set to the zero address.
-    ///
-    /// Requirements:
-    ///
-    /// - `account` cannot be the zero address.
     fn _mint(&mut self, account: E::AccountId, amount: E::Balance) -> Result<()> {
         let null_account = E::AccountId::default();
         if account == null_account {
@@ -272,14 +222,6 @@ Requirements:
 - `account` must have at least `amount` tokens.
 
 ```rust
-    /// Destroys `amount` tokens from `account`, reducing the
-    /// total supply.
-    ///
-    /// Emits a {Transfer} event with `to` set to the None address.
-    ///
-    /// Requirements:
-    ///
-    /// - `account` must have at least `amount` tokens.
     fn _burn(&mut self, account: E::AccountId, amount: E::Balance) -> Result<()> {
         let null_account = E::AccountId::default();
 
@@ -322,18 +264,6 @@ Requirements:
 - `sender` must have a balance of at least `amount`.
 
 ```rust
-    /// Moves tokens `amount` from `sender` to `recipient`.
-    ///
-    /// This is internal function is equivalent to `transfer`, and can be used to
-    /// e.g. implement automatic token fees, slashing mechanisms, etc.
-    ///
-    /// Emits a `Transfer` event.
-    ///
-    /// Requirements:
-    ///
-    /// - `sender` cannot be the zero address.
-    /// - `recipient` cannot be the zero address.
-    /// - `sender` must have a balance of at least `amount`.
     fn _transfer_from_to(
         &mut self,
         sender: E::AccountId,
@@ -380,16 +310,6 @@ will be to transferred to `to`.
 - `from` and `to` are never both zero.
 
 ```rust
-    /// Hook that is called before any transfer of tokens. This includes
-    /// minting and burning.
-    ///
-    /// Calling conditions:
-    ///
-    /// - when `from` and `to` are both non-zero, `amount` of ``from``'s tokens
-    /// will be to transferred to `to`.
-    /// - when `from` is zero, `amount` tokens will be minted for `to`.
-    /// - when `to` is zero, `amount` of ``from``'s tokens will be burned.
-    /// - `from` and `to` are never both zero.
     fn _before_token_transfer(
         &mut self,
         _from: &E::AccountId,
@@ -407,7 +327,6 @@ will be to transferred to `to`.
 Event emitted when a token transfer occurs.
 
 ```rust
-    /// Event emitted when a token transfer occurs.
     #[ink(event)]
     #[metis(erc20)]
     pub struct Transfer {
@@ -424,8 +343,6 @@ Event emitted when a token transfer occurs.
 Event emitted when an approval occurs that `spender` is allowed to withdraw up to the amount of `value` tokens from `owner`.
 
 ```rust
-    /// Event emitted when an approval occurs that `spender` is allowed to withdraw
-    /// up to the amount of `value` tokens from `owner`.
     #[ink(event)]
     #[metis(erc20)]
     pub struct Approval {

@@ -40,7 +40,6 @@ where
 Stores the sent amount as credit to be withdrawn.
 
 ```rust
-    /// Stores the sent amount as credit to be withdrawn.
     /// @param payee The destination address of the funds.
     fn deposit(&mut self, payee: E::AccountId) {
         self.ensure_caller_is_owner();
@@ -66,14 +65,6 @@ param:
 - `payee` : The address whose funds will be withdrawn and transferred to.
 
 ```rust
-    /// @dev Withdraw accumulated balance for a payee, forwarding all gas to the
-    /// recipient.
-    ///
-    /// WARNING: Forwarding all gas opens the door to reentrancy vulnerabilities.
-    /// Make sure you trust the recipient, or are either following the
-    /// checks-effects-interactions pattern or using {ReentrancyGuard}.
-    ///
-    /// @param payee The address whose funds will be withdrawn and transferred to.
     fn withdraw(&mut self, payee: E::AccountId) {
         self.ensure_caller_is_owner();
 
@@ -95,7 +86,6 @@ param:
 Return the deposits of payee
 
 ```rust
-    /// Return the deposits of payee
     fn deposits_of(&self, payee: &E::AccountId) -> E::Balance {
         Storage::<E, Data<E>>::get(self).get(payee)
     }
@@ -108,7 +98,6 @@ Return the deposits of payee
 Event emitted when payee deposit amount
 
 ```rust
-    /// Event emitted when payee deposit amount
     #[ink(event)]
     #[metis(escrow)]
     pub struct Deposited {
@@ -123,7 +112,6 @@ Event emitted when payee deposit amount
 Event emitted when payee withdraw
 
 ```rust
-    /// Event emitted when payee withdraw
     #[ink(event)]
     #[metis(escrow)]
     pub struct Withdrawn {

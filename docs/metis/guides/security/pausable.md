@@ -40,11 +40,6 @@ Requirements:
 - The contract must be not paused.
 
 ```rust
-    /// Pause the contract, will emit the Paused Event
-    ///
-    /// Requirements:
-    ///
-    /// - The contract must be not paused.
     fn _pause(&mut self) {
         self.ensure_not_paused();
         self.get_mut().pause();
@@ -61,11 +56,6 @@ Requirements:
 - The contract must be paused.
 
 ```rust
-    /// Unpause the contract, will emit the `Unpaused` Event
-    ///
-    /// Requirements:
-    ///
-    /// - The contract must be paused.
     fn _unpause(&mut self) {
         self.ensure_paused();
         self.get_mut().unpause();
@@ -80,7 +70,6 @@ Requirements:
 Returns true if the contract is paused, and false otherwise
 
 ```rust
-    /// Returns true if the contract is paused, and false otherwise
     fn paused(&self) -> bool {
         self.get().is_paused()
     }
@@ -95,7 +84,6 @@ A contract with `Pausable` component can use `ensure_paused` and `ensure_not_pau
 Panic if current is not paused.
 
 ```rust
-    /// Panic if current is not paused.
     fn ensure_paused(&self) {
         assert!(self.get().is_paused(), "Pausable: ensure paused");
     }
@@ -106,7 +94,6 @@ Panic if current is not paused.
 Panic if current is paused.
 
 ```rust
-    /// Panic if current is paused.
     fn ensure_not_paused(&self) {
         assert!(!self.get().is_paused(), "Pausable: ensure not paused");
     }
@@ -119,7 +106,6 @@ Panic if current is paused.
 The Event will emit when the contract is into paused state.
 
 ```rust
-    /// Event emitted when Pause
     #[ink(event)]
     #[metis(pausable)]
     pub struct Paused {
@@ -134,7 +120,6 @@ The Event will emit when the contract is into paused state.
 The Event will emit when the contract is unpaused.
 
 ```rust
-    /// Event emitted when unPause
     #[ink(event)]
     #[metis(pausable)]
     pub struct Unpaused {

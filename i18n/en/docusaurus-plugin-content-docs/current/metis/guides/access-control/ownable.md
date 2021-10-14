@@ -54,8 +54,6 @@ all this need owner as caller.
 `renounce_ownership` Leaves the contract without owner. It will not be possible to call `ensure_xxx` functions anymore. Can only be called by the current owner.
 
 ```rust
-    /// Leaves the contract without owner. It will not be possible to call
-    /// `ensure_xxx` functions anymore. Can only be called by the current owner.
     /// NOTE: Renouncing ownership will leave the contract without an owner,
     /// thereby removing any functionality that is only available to the owner.
     #[ink(message)]
@@ -73,8 +71,6 @@ all this need owner as caller.
 Transfers ownership of the contract to a new account (`new_owner`). Can only be called by the current owner.
 
 ```rust
-    /// Transfers ownership of the contract to a new account (`new_owner`).
-    /// Can only be called by the current owner.
     #[ink(message)]
     pub fn transfer_ownership(&mut self, new_owner: AccountId) {
         ownable::Impl::transfer_ownership(self, &new_owner)
@@ -88,7 +84,6 @@ Transfers ownership of the contract to a new account (`new_owner`). Can only be 
 `owner` Return the owner AccountId.
 
 ```rust
-    /// Return the owner AccountId.
     #[ink(message)]
     pub fn owner(&self) -> Option<AccountId> {
         *ownable::Impl::owner(self)
@@ -104,7 +99,6 @@ A contract with `Ownable` component can allow `owner` to be granted exclusive ac
 `ensure_owner` check if `owner` is the owner of the contract, panic if the `owner` not the owner of the contract.
 
 ```rust
-    /// Panic if `owner` is not an owner
     fn ensure_owner(&self, owner: &E::AccountId) {
         assert!(&self.get().get_ownership().clone().unwrap() == owner);
     }
@@ -115,7 +109,6 @@ A contract with `Ownable` component can allow `owner` to be granted exclusive ac
 `ensure_caller_is_owner` check if caller is the owner of the contract, panic if the caller not the owner of the contract.
 
 ```rust
-    /// Panic if caller is not an owner
     fn ensure_caller_is_owner(&self) {
         self.ensure_owner(&Self::caller());
     }

@@ -51,13 +51,6 @@ Requirements:
 - the caller must have the 'proposer' role.
 
 ```rust
-    /// Schedule an operation containing a single transaction.
-    ///
-    /// Emits a `CallScheduled` event.
-    ///
-    /// Requirements:
-    ///
-    /// - the caller must have the 'proposer' role.
     fn schedule(
         &mut self,
         target: E::AccountId,
@@ -86,11 +79,6 @@ Requirements:
 - the caller must have the 'proposer' role.
 
 ```rust
-    /// Cancel an operation.
-    ///
-    /// Requirements:
-    ///
-    /// - the caller must have the 'proposer' role.
     fn cancel(&mut self, id: [u8; 32]) {
         access_control::Impl::ensure_caller_role(self, PROPOSER_ROLE);
 
@@ -115,13 +103,6 @@ Requirements:
 - the caller must have the 'executor' role.
 
 ```rust
-    /// Execute an (ready) operation containing a single transaction.
-    ///
-    /// Emits a `CallExecuted` event.
-    ///
-    /// Requirements:
-    ///
-    /// - the caller must have the 'executor' role.
     fn execute(
         &mut self,
         target: E::AccountId,
@@ -147,8 +128,6 @@ Requirements:
 Returns whether an id correspond to a registered operation. This includes both Pending, Ready and Done operations.
 
 ```rust
-    /// Returns whether an id correspond to a registered operation. This
-    /// includes both Pending, Ready and Done operations.
     fn is_operation(&self, id: &[u8; 32]) -> bool {
         self.get_timestamp(id) > E::Timestamp::from(0_u8)
     }
@@ -159,7 +138,6 @@ Returns whether an id correspond to a registered operation. This includes both P
 Returns whether an operation is pending or not.
 
 ```rust
-    /// Returns whether an operation is pending or not.
     fn is_operation_pending(&self, id: &[u8; 32]) -> bool {
         self.get_timestamp(id) > E::Timestamp::from(_DONE_TIMESTAMP)
     }
@@ -170,7 +148,6 @@ Returns whether an operation is pending or not.
 Returns whether an operation is ready or not.
 
 ```rust
-    /// Returns whether an operation is ready or not.
     fn is_operation_ready(&self, id: &[u8; 32]) -> bool {
         let timestamp = self.get_timestamp(id);
         timestamp > E::Timestamp::from(_DONE_TIMESTAMP)
@@ -183,7 +160,6 @@ Returns whether an operation is ready or not.
 Returns whether an operation is done or not.
 
 ```rust
-    /// Returns whether an operation is done or not.
     fn is_operation_done(&self, id: &[u8; 32]) -> bool {
         self.get_timestamp(id) == E::Timestamp::from(_DONE_TIMESTAMP)
     }
@@ -194,8 +170,6 @@ Returns whether an operation is done or not.
 Returns the timestamp at with an operation becomes ready (0 for unset operations, 1 for done operations).
 
 ```rust
-    /// Returns the timestamp at with an operation becomes ready (0 for
-    /// unset operations, 1 for done operations).
     fn get_timestamp(&self, id: &[u8; 32]) -> E::Timestamp {
         *Storage::<E, Data<E>>::get(self)
             .timestamps
@@ -211,9 +185,6 @@ Returns the minimum delay for an operation to become valid.
 This value can be changed by executing an operation that calls `update_delay`.
 
 ```rust
-    /// Returns the minimum delay for an operation to become valid.
-    ///
-    /// This value can be changed by executing an operation that calls `update_delay`.
     fn get_min_delay(&self) -> E::Timestamp {
         *Storage::<E, Data<E>>::get(self).min_delay
     }
@@ -226,8 +197,6 @@ Returns the identifier of an operation containing a single transaction.
 > NOTE: This `hash = Blake2x256(target + value + data + predecessor + salt)`
 
 ```rust
-    /// Returns the identifier of an operation containing a single
-    /// transaction.
     fn hash_operation(
         &self,
         target: &E::AccountId,
@@ -261,10 +230,6 @@ considered. Granting a role to `AccountId::default()` is equivalent to enabling
 this role for everyone.
 
 ```rust
-    /// To make a function callable only by a certain role. In
-    /// addition to checking the sender's role, `address(0)` 's role is also
-    /// considered. Granting a role to `address(0)` is equivalent to enabling
-    /// this role for everyone.
     fn ensure_only_role_or_open_role(&self, role: RoleId) {
         if !access_control::Impl::has_role(self, role, E::AccountId::default()) {
             access_control::Impl::ensure_caller_role(self, role);
@@ -279,7 +244,6 @@ this role for everyone.
 Emitted when a call is scheduled as part of operation `id`.
 
 ```rust
-    /// Emitted when a call is scheduled as part of operation `id`.
     #[ink(event)]
     #[metis(timelock_controller)]
     pub struct CallScheduled {
@@ -298,7 +262,6 @@ Emitted when a call is scheduled as part of operation `id`.
 Emitted when a call is performed as part of operation `id`.
 
 ```rust
-    /// Emitted when a call is performed as part of operation `id`.
     #[ink(event)]
     #[metis(timelock_controller)]
     pub struct CallExecuted {
@@ -315,7 +278,6 @@ Emitted when a call is performed as part of operation `id`.
 Emitted when operation `id` is cancelled.
 
 ```rust
-    /// Emitted when operation `id` is cancelled.
     #[ink(event)]
     #[metis(timelock_controller)]
     pub struct Cancelled {
@@ -329,7 +291,6 @@ Emitted when operation `id` is cancelled.
 Emitted when the minimum delay for future operations is modified.
 
 ```rust
-    /// Emitted when the minimum delay for future operations is modified.
     #[ink(event)]
     #[metis(timelock_controller)]
     pub struct MinDelayChange {

@@ -70,14 +70,12 @@ the functions:
 ```
 - `_set_entered` : set current status to `_ENTERED`
 ```rust
-    /// set current status to entered
     fn _set_entered(&mut self) {
         self.get_mut().set_entered();
     }
 ```
 - `_set_not_entered` : set current status to `_NOT_ENTERED`
 ```rust
-    /// set current status to not entered
     fn _set_not_entered(&mut self) {
         self.get_mut().set_not_entered();
     }
