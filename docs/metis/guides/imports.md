@@ -1,4 +1,4 @@
-# Use metis components
+# Use Metis components
 
 !> Warnning: We can redefine the name of metis component, but we should keep in mind that all component names should be changed after import.
 

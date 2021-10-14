@@ -4,6 +4,8 @@ Metis is the standard contract Library for ink!, an eDSL written in Rust for WAS
 ## Git repository
 For detailed implmentations and examples, please check [Metis](https://github.com/patractlabs/metis)
 
+> Note: This document is based on Metis 0.1. Since Metis is still under active developments, please refer the most updated [Metis Docs](https://patractlabs.github.io/metis/#/./en-us/overview) for changes and new features. 
+
 ## Contracts
 ***A library for secure smart contract development***. Build on mature solutions used OpenZeppelin 
 
@@ -14,16 +16,58 @@ For detailed implmentations and examples, please check [Metis](https://github.co
 - Reusable ink! components to build custom contracts.
 
 ## Installation
-add required dependencies in `cargo.toml` in your ink! contract project directory.
+Add required dependencies in `cargo.toml` in your ink! contract project directory.
 
-> Note: metis_lang is a must-have dependency while other dependencies are required on demand. For more details, please check [Metis Examples](https://github.com/patractlabs/metis/tree/main/example)
+> Note: `metis_lang` is a must-have dependency while other dependencies are required on demand. For more details, please check [Metis Examples](https://github.com/patractlabs/metis/tree/main/example)
 
 ```rust
 metis_lang = { git = "https://github.com/patractlabs/metis", default-features = false }
 metis_erc20 = { git = "https://github.com/patractlabs/metis", default-features = false }
 metis_ownable = { git = "https://github.com/patractlabs/metis", default-features = false }
 metis_pausable = { git = "https://github.com/patractlabs/metis", default-features = false }
+```
 
+## Version Control
+> Since ink! is still under active development, which contains breaking changes, developers need to use the corresponding Metis version:
+
+### Use ink! dependencies from `crates.io`:
+
+e.g.:
+
+```rust
+[dependencies]
+ink_lang = { version = "3.0.0-rc5", default-features = false }
+```
+
+For this situation, Metis provides different branch/tag to support different ink! version. Like here ink! version
+is `3.0.0-rc5`, then Metis provides branch `ink/3.0.0-rc5` to allow developer to use the same ink! source. In this 
+branch, Metis' dependencies for ink! will point to `ink_lang = { version = "3.0.0-rc5", git = "https://github.com/paritytech/ink", default-features = false }` as well:
+
+```rust
+[dependencies]
+ink_lang = { version = "3.0.0-rc5", default-features = false }
+metis_lang = { github = "https://github.com/patractlabs/metis", branch = "ink/3.0.0-rc5", default-features = false }
+```
+
+For now, the relationship between Metis branch/tag and ink! release version are following:
+
+* ink!: `3.0.0-rc5` | Metis branch: `ink/3.0.0-rc5`
+
+### Use ink! dependencies from github repo:
+
+e.g.:
+
+```rust
+[dependencies]
+ink_lang = { version = "3.0.0-rc5", git = "https://github.com/paritytech/ink", git = "https://github.com/paritytech/ink", default-features = false }
+```
+
+For this situation, developer should use Metis master branch directly. In master, Metis' dependencies for ink! will be github repo as well.
+
+```rust
+[dependencies]
+ink_lang = { version = "3.0.0-rc5", git = "https://github.com/paritytech/ink", default-features = false }
+metis_lang = { github = "https://github.com/patractlabs/metis", default-features = false }
 ```
 
 ## Sample Usages
