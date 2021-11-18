@@ -33,22 +33,58 @@ module.exports = {
       label: 'ask!',
       collapsed: true,
       items: [
-        'ask/introduction',
-        'ask/tutorial',
-        'ask/design',
-        'ask/basics',
-        'ask/decorators',
-        'ask/storage-data-structure',
-        'ask/ask-cli',
-        'ask/ask-vs-ink',
+        {
+          type: 'category',
+          label: 'Getting Started',
+          collapsed: false,
+          items: [
+            'ask/intro/overview',
+            'ask/intro/quickstart',
+            'ask/intro/why-ask',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Decorators',
+          collapsed: false,
+          items: [
+            'ask/guides/architecture',
+            'ask/guides/ask-ink',
+            'ask/guides/global',
+            'ask/guides/ask-cli',
+            {
+              type: 'category',
+              label: 'Decorators',
+              collapsed: false,
+              items: [
+                'ask/guides/decorators/overview',
+                'ask/guides/decorators/contract-decorator',
+                'ask/guides/decorators/event-decorator',
+              ]
+            },
+            {
+              type: 'category',
+              label: 'Data Structure and Storage',
+              collapsed: false,
+              items: [
+                'ask/guides/types-storage/basic_types',
+                'ask/guides/types-storage/storage'
+              ]
+            },
+            'ask/guides/cross-contract',
+            'ask/guides/mechanism',
+            'ask/guides/examples',
+          ]
+        },
         {
           type: 'category',
           label: 'Reports',
           collapsed: true,
+          collapsible: true,
           items: [
-            'ask/reports',
             'ask/reports/v0.1Report',
             'ask/reports/v0.2Report',
+            'ask/reports/v0.3Report',
           ]
         }
       ]
