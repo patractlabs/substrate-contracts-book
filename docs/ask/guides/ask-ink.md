@@ -1,6 +1,6 @@
-# Ask! and ink! Comparison of characteristics
+# Ask! vs ink!
 
-The following table briefly lists the characteristics of ink! and Ask!.
+If you have written contracts ink!, you can grab ask! quickly by simply understand their differences. 
 
 |                              | ink!                        | Ask!                                  |
 | :--------------------------- | :-------------------------- | :------------------------------------ |
@@ -15,4 +15,4 @@ The following table briefly lists the characteristics of ink! and Ask!.
 | Has Interfaces?              | Yes (Rust Traits)           | Yes                                   |
 | Has Inheritance?             | No                          | Yes                                   |
 | Support unit test?           | Yes                         | No                                    |
-| Support cross-contract calls | Preliminary                 | Handy                                 |
+| Support cross-contract calls | Not production ready        | Yes                                   |
