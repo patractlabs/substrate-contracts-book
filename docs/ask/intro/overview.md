@@ -3,8 +3,8 @@ ask! is an Embedded Domain Specific Language (EDSL) to write WebAssembly based s
 
 Unlike solidity, ask! is not a standalone languange but more like a assemblyscript "contract format" with customized `@message` decorator. Those decorators tell ask! compiler how the smart contract is define and further compiles them to WASM bytecode compatible with Substrate.
 
-## Assemblyscirpt
-ask! is subset of Assemblyscrip while Assemblyscript is a subset of Typescript syntax. Currently, a large group of developers are using Typescript since Typescript has relatively low learning curve. Therefore, Patract Labs optmisticly believes with the introduction of ask!, we would see a good growth of contract developers in Substrate.
+## Assemblyscript
+ask! is subset of Assemblyscript while Assemblyscript is a subset of Typescript syntax. Currently, a large group of developers are using Typescript since Typescript has relatively low learning curve. Therefore, Patract Labs optimistically believes with the introduction of ask!, we would see a good growth of contract developers in Substrate.
 
 ## ask! vs ink!
 | languange      | ask! | ink!     |
