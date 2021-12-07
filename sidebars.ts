@@ -375,16 +375,5 @@ module.exports = {
         'jupiter/xcmp',
       ]
     },
-    {
-      type: 'category',
-      label: 'PatraStore',
-      collapsed: true,
-      items: [
-        'patra-store/overview',
-        'patra-store/getting-starter',
-        'patra-store/publish-dapps'
-      ]
-    },
-    'patract/introduction',
   ],
 };
