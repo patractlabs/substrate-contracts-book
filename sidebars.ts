@@ -342,7 +342,6 @@ module.exports = {
         }
       ]
     },
-    'carpo/introduction',
     {
       type: 'category',
       label: 'Elara',

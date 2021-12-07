@@ -118,7 +118,6 @@ slug: /
         - [Utilities - Escrow](./metis/guides/utilities/escrow.md)                       
     - [Report](./metis/reports/reports.md)
       - [v0.1Report](./metis/reports/M1Report.md)
-- [Carpo](./carpo/introduction.md)
 - [Patract](./patract/introduction.md)
 - [Elara](./elara/introduction.md)
     - [tutorial](./elara/tutorial.md)
